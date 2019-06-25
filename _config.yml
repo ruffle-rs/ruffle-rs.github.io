@@ -1,0 +1,26 @@
+title: Ruffle
+# email: mwelsh@gmail.com
+description: >- 
+  Flash Player emulator written in the Rust programming language
+baseurl: ""
+url: "https://ruffle.rs"
+# twitter_username: jekyllrb
+github_username:  ruffle-rs
+github_url: "https://github.com/ruffle-rs/ruffle"
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+show_excerpts: true
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
