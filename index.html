@@ -10,27 +10,53 @@ title: Ruffle
 {%- include head.html -%}
 
 <body>
-	<div class="wrapper">
-		<main>
-			<header>
-				<canvas id="logo" width="400" height="200"></canvas>
-				<script type="module">
-					import init, { Player } from "./assets/ruffle.js";
-					async function run() {
-						// Load and initialize WebAssembly module asynchronously.
-						await init();
-						fetch("assets/logo-anim.swf")
-							.then(response => {
-								response.arrayBuffer().then(data => {
-									let logoCanvas = document.getElementById("logo");
-									let player = Player.new(logoCanvas, new Uint8Array(data));
-								})
-							});
-					}
-					run();
-				</script>
-			</header>
+	<main>
+		<header>
+			<nav class="navbar fixed-top navbar-expand navbar-light">
+				<a class="navbar-brand" href="#">
+					<img src="{{ "/assets/logo.png" | relative_url }}" height="30" alt="" loading="lazy">
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+					aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item active">
+							<a class="nav-link" href="#what-is-ruffle">What is Ruffle</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#usage">Usage</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#release">Release</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#compatibility">Compatibility</a>
+						</li>
+					</ul>
+				</div>
 
+			</nav>
+		</header>
+
+		<section class="section splash">
+			<canvas id="logo" width="400" height="200"></canvas>
+			<script type="module">
+				import init, { Player } from "./assets/ruffle.js";
+				async function run() {
+					// Load and initialize WebAssembly module asynchronously.
+					await init();
+					fetch("assets/logo-anim.swf")
+						.then(response => {
+							response.arrayBuffer().then(data => {
+								let logoCanvas = document.getElementById("logo");
+								let player = Player.new(logoCanvas, new Uint8Array(data));
+							})
+						});
+				}
+				run();
+			</script>
 			<p>
 				<em>ruffle</em> is a Flash Player emulator built in the Rust programming language.
 			</p>
@@ -41,13 +67,129 @@ title: Ruffle
 				<li><a href="https://discord.gg/J8hgCQN">discord</a>
 				</li>
 			</ul>
-		</main>
+			<a class="header-down-arrow" href="#what-is-ruffle">
+				<img src="{{ "/assets/downarrow.png" | relative_url }}" alt="" loading="lazy">
+			</a>
+		</section>
+		<section class="section content">
+			<h2 id="what-is-ruffle">What is ruffle</h2>
+			<div class="row">
+				<div class="col-sm">
+					<img src="{{ "/assets/logo.png" | relative_url }}" class="img-fluid m-3">
+				</div>
+				<div class="col-sm">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+					et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+					aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur.
+				</div>
+				<div class="col-sm">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+					et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+					aliquip ex ea commodo consequat.
+				</div>
+			</div>
+		</section>
+		<section class="section content">
+			<h2 id="usage">Usage</h2>
+			<div class="row">
+				<div class="col-sm-3">
+					<img src="{{ "/assets/undraw_design_components.svg" | relative_url }}" class="img-fluid">
+				</div>
+				<div class="col-sm">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+					et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+					aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur.
+				</div>
+				<div class="col-sm">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+					et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+					aliquip ex ea commodo consequat.
+				</div>
+			</div>
+		</section>
+		<section class="section content">
+			<h2 id="release">Release</h2>
+			<div class="row">
+				<div class="col-sm-2">
+					<img src="{{ "/assets/undraw_relaunch_day.svg" | relative_url }}" class="img-fluid">
+				</div>
+				<div class="col-sm-10">
+					<table class="table w-100">
+						<thead>
+							<tr>
+								<th>Version</th>
+								<th>Release notes</th>
+								<th>Download</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1.0.0</td>
+								<td>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+										et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+										aliquip ex ea commodo consequat.
+								</td>
+								<td>
+									<ul>
+										<li>
+											<a
+												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-10-28/ruffle_nightly_2020_10_28_extension.zip">Extension</a>
+										</li>
+										<li>
+											<a
+												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-10-28/ruffle_nightly_2020_10_28_firefox.xpi">Firefox</a>
+										</li>
+										<li>
+											<a
+												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-10-28/ruffle_nightly_2020_10_28_linux.tar.gz">Linux</a>
+										</li>
+										<li>
+											<a
+												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-10-28/ruffle_nightly_2020_10_28_mac.tar.gz">Mac</a>
+										</li>
+										<li>
+											<a
+												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-10-28/ruffle_nightly_2020_10_28_windows.zip">Windows</a>
+										</li>
+										<li>
+											<a
+												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-10-28/ruffle_nightly_2020_10_28_selfhosted.zip">Self
+												hosted</a>
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+		<section class="section content">
+			<h2 id="compatibility">Compatibility</h2>
+			<div class="row">
+				<div class="col-sm-3">
+					<img src="{{ "/assets/undraw_progressive_app.svg" | relative_url }}" class="img-fluid">
+				</div>
+				<div class="col-sm">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+					et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+					aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur.
+				</div>
+				<div class="col-sm">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+					et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+					aliquip ex ea commodo consequat.
+				</div>
+			</div>
+		</section>
+	</main>
 
-	</div>
-
-	<!-- start GitHub corner -->
-	<a href="{{ site.github_url }}" class="github-corner" aria-label="View source on GitHub"><svg width="150"
-			height="150" viewBox="0 0 250 250"
+	<a href="{{ site.github_url }}" class="github-corner" aria-label="View source on GitHub">
+		<svg width="150" height="150" viewBox="0 0 250 250"
 			style="fill:#FFAD33; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
 			<path d="M0,0 L115,115 L250,250 L250,0 Z"></path>
 			<path
@@ -56,9 +198,9 @@ title: Ruffle
 			<path
 				d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
 				fill="currentColor" class="octo-body"></path>
-		</svg></a>
-	<!-- end GitHub corner -->
-
+		</svg>
+	</a>
+	{%- include footer.html -%}
 </body>
 
 </html>
