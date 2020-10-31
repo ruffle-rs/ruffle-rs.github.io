@@ -252,7 +252,8 @@ DEPENDENCIES
   github-pages
   jekyll-feed (~> 0.9)
   jekyll-seo-tag (~> 2.1)
+  jekyll-watch (~> 2.2.1)
   tzinfo-data
 
 BUNDLED WITH
-   2.0.1
+   2.1.4
