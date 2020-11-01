@@ -6,17 +6,19 @@
   $(document).ready(function () {
     var $nav = $('.navbar');
     var $headerarrow = $('.header-down-arrow');
-    $nav.hide();
+    //$nav.hide();
 
     // fade in .navbar
     $(function () {
       $(window).scroll(function () {
         // set distance user needs to scroll before we start fadeIn
         if ($(this).scrollTop() > window.innerHeight / 2) { //For dynamic effect use $nav.height() instead of '100'
-          $nav.fadeIn();
+          //$nav.fadeIn();
+          $nav.addClass("active");
           $headerarrow.fadeOut();
         } else {
-          $nav.fadeOut();
+          //$nav.fadeOut();
+          $nav.removeClass("active");
           $headerarrow.fadeIn();
         }
       });
