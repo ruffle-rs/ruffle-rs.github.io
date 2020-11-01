@@ -5,11 +5,6 @@ a:visited {
   color: #FC0;
 }
 
-.splash {
-  padding: 100px 0;
-  text-align: center;
-}
-
 .navbar {
   background-color: #31497D;
   font-size: 1rem;
@@ -25,13 +20,36 @@ a:visited {
 }
 
 .section {
-  height: 100vh;
-  padding-left: 6rem;
-  padding-right: 6rem;
+  min-height: 100vh;
+}
+
+.section.splash {
+  padding-top: 10vh;
+  text-align: center;
+}
+
+.section.splash p {
+  margin: 10vh;
+}
+
+.section.splash ul {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.section.splash li {
+  padding: 10px 6vw;
 }
 
 .section.content {
-  font-size: 1.3rem;
+  font-size: 1rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
 }
 
 .section.content table.table {
@@ -44,11 +62,15 @@ a:visited {
 }
 
 .section h2 {
-  padding-top:4rem;
+  padding-top:10rem;
   margin-left:1rem;
   margin-bottom: 2rem;
   text-transform: capitalize;
   border-bottom: solid 1px #31497D;
+}
+
+.section.content .col-sm {
+  margin-bottom: 1rem;
 }
 
 .header-down-arrow {
@@ -63,6 +85,7 @@ a:visited {
 }
 
 .header-down-arrow img {
+  width: 10vw;
   -webkit-animation: no-transform 1s 1s ease-out forwards;
           animation: no-transform 1s 1s ease-out forwards;
   opacity: 0;
@@ -97,6 +120,57 @@ footer .description {
   font-size: 1.3rem;
 }
 
+footer .social {
+  margin-right: 1rem;
+}
+
+footer ul {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.github-corner {
+  z-index:9999;
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out
+}
+
+@media screen and (max-width: 800px) {
+  footer .social .username {
+    display:none;
+  }
+
+  footer .description {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+  }
+
+  footer .social {
+    margin-right:0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    width: 100%;
+  }
+
+  .splash {
+    width: 100%;
+  }
+
+  .section.splash #logo {
+    width: 350px!important;
+  }
+
+  footer .description {
+    font-size: 0.8rem;
+  }
+  
+}
+
 /* Animations */
 
 @-webkit-keyframes no-transform {
@@ -115,81 +189,6 @@ footer .description {
   }
 }
 
-// @-webkit-keyframes pulse {
-//   0% {
-//     opacity: 1;
-//     -webkit-transform: none;
-//             transform: none;
-//   }
-//   50% {
-//     opacity: .8;
-//     -webkit-transform: scale(.8);
-//             transform: scale(.8);
-//   }
-//   100% {
-//     opacity: 1;
-//     -webkit-transform: none;
-//             transform: none;
-//   }
-// }
-
-// @keyframes pulse {
-//   0% {
-//     opacity: 1;
-//     -webkit-transform: none;
-//             transform: none;
-//   }
-//   50% {
-//     opacity: .8;
-//     -webkit-transform: scale(.8);
-//             transform: scale(.8);
-//   }
-//   100% {
-//     opacity: 1;
-//     -webkit-transform: none;
-//             transform: none;
-//   }
-// }
-
-@media screen and (max-width: 600px) {
-  body {
-    width: 100%;
-  }
-
-  .splash {
-    width: 100%;
-  }
-  
-  img {
-    width: 200px
-  }
-}
-
-.section.splash p {
-  margin: 100px 0px;
-}
-
-.section.splash ul {
-  margin: 0;
-  padding: 0;
-  max-width: 100%;
-  display: flex;
-  list-style-type: none;
-  justify-content: center;
-  align-items: center;
-}
-
-.section.splash li {
-  padding: 10px 50px;
-}
-
-.github-corner {
-  z-index:9999;
-}
-
-.github-corner:hover .octo-arm {
-  animation: octocat-wave 560ms ease-in-out
-}
 
 @keyframes octocat-wave {
 

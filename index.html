@@ -12,7 +12,7 @@ title: Ruffle
 <body>
 	<main>
 		<header>
-			<nav class="navbar fixed-top navbar-expand navbar-light">
+			<nav class="navbar fixed-top navbar-expand-lg navbar-light">
 				<a class="navbar-brand" href="#">
 					<img src="{{ "/assets/logo.png" | relative_url }}" height="30" alt="" loading="lazy">
 				</a>
@@ -29,7 +29,7 @@ title: Ruffle
 							<a class="nav-link" href="#usage">Usage</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#release">Release</a>
+							<a class="nav-link" href="#releases">Releases</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#compatibility">Compatibility</a>
@@ -41,7 +41,7 @@ title: Ruffle
 		</header>
 
 		<section class="section splash">
-			<canvas id="logo" width="400" height="200"></canvas>
+			<canvas id="logo"></canvas>
 			<script type="module">
 				import init, { Player } from "./assets/ruffle.js";
 				async function run() {
@@ -74,16 +74,16 @@ title: Ruffle
 		<section class="section content">
 			<h2 id="what-is-ruffle">What is ruffle</h2>
 			<div class="row">
-				<div class="col-sm">
+				<div class="col-sm col-sm-4">
 					<img src="{{ "/assets/logo.png" | relative_url }}" class="img-fluid m-3">
 				</div>
-				<div class="col-sm">
+				<div class="col-sm col-sm-4">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
 					et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 					aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 					cillum dolore eu fugiat nulla pariatur.
 				</div>
-				<div class="col-sm">
+				<div class="col-sm col-sm-4">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
 					et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 					aliquip ex ea commodo consequat.
@@ -93,7 +93,7 @@ title: Ruffle
 		<section class="section content">
 			<h2 id="usage">Usage</h2>
 			<div class="row">
-				<div class="col-sm-3">
+				<div class="col-sm col-sm-3">
 					<img src="{{ "/assets/undraw_design_components.svg" | relative_url }}" class="img-fluid">
 				</div>
 				<div class="col-sm">
@@ -110,13 +110,13 @@ title: Ruffle
 			</div>
 		</section>
 		<section class="section content">
-			<h2 id="release">Release</h2>
+			<h2 id="releases">Releases</h2>
 			<div class="row">
-				<div class="col-sm-2">
+				<div class="col-sm col-sm-2">
 					<img src="{{ "/assets/undraw_relaunch_day.svg" | relative_url }}" class="img-fluid">
 				</div>
-				<div class="col-sm-10">
-					<table class="table w-100">
+				<div class="col-sm col-sm-10">
+					<table class="table table-responsive w-100">
 						<thead>
 							<tr>
 								<th>Version</th>
@@ -130,7 +130,11 @@ title: Ruffle
 								<td>
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
 										et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-										aliquip ex ea commodo consequat.
+										aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+										aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+										cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+										aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+										cillum dolore eu fugiat nulla pariatur.
 								</td>
 								<td>
 									<ul>
@@ -170,7 +174,7 @@ title: Ruffle
 		<section class="section content">
 			<h2 id="compatibility">Compatibility</h2>
 			<div class="row">
-				<div class="col-sm-3">
+				<div class="col-sm col-sm-3">
 					<img src="{{ "/assets/undraw_progressive_app.svg" | relative_url }}" class="img-fluid">
 				</div>
 				<div class="col-sm">
