@@ -80,16 +80,21 @@ title: Ruffle
 				<div class="col-sm col-sm-4">
 					<img src="{{ "/assets/logo.png" | relative_url }}" class="img-fluid my-3">
 				</div>
-				<div class="col-sm col-sm-4">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-					et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-					aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur.
-				</div>
-				<div class="col-sm col-sm-4">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-					et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-					aliquip ex ea commodo consequat.
+				<div class="col-sm">
+					<p>
+						Designed to be easy to use and install, users or website owners may install Ruffle and existing
+						flash content will "just work", with no extra configuration required. Ruffle will detect all
+						existing Flash content on a website and automatically "polyfill" it into a Ruffle player,
+						allowing seamless and transparent upgrading of websites that still rely on Flash content.
+					</p>
+					<p>
+						Ruffle is entirely an open source project and maintained by volunteers. We're all passionate
+						about the preservation of internet history, and were drawn to working on this project to help
+						preserve the many websites and plethora of content that will no longer be accessible when
+						users can no longer run the official Flash Player. If you would like to help support this
+						project, we welcome all contributions of any kind - even if it's just playing some old games
+						and seeing how well they run ;)
+					</p>
 				</div>
 			</div>
 		</section>
@@ -99,16 +104,48 @@ title: Ruffle
 				<div class="col-sm col-sm-3">
 					<img src="{{ "/assets/undraw_design_components.svg" | relative_url }}" class="img-fluid">
 				</div>
-				<div class="col-sm">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-					et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-					aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur.
+				<div class="col-sm col-sm-6">
+					<h3>Installing on a website you own</h3>
+					<p>
+						Download the 'standalone' version of Ruffle from <a href="#" onclick="return false">here</a>, and include the following JavaScript on any page with
+					Flash content:
+					{% capture javascript_installation %}<script src="path/to/ruffle/ruffle.js"></script>{% endcapture %}
+					<pre>{{ javascript_installation |  xml_escape }}</pre>
+					</p>
+					<p>
+					You'll need to make sure your web server is configured to serve <code>.wasm</code> files correctly,
+					so please visit
+					<a href="https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#configure-wasm-mime-type">our wiki</a>
+					if you need help with that.
+					</p>
 				</div>
-				<div class="col-sm">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-					et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-					aliquip ex ea commodo consequat.
+				<div class="col-sm col-sm-6">
+					<h3>Installing the browser extension</h3>
+					<p>
+						If you visit websites that have Flash content but aren't using Ruffle, or are using an older
+						version of Ruffle and you want to ensure you're using the latest and greatest, then our browser
+						extension is the perfect thing for you!
+						<ul>
+							<li>Chrome: <a href="#" onclick="return false">download from the Chrome Web Store</a></li>
+							<li>Firefox: <a href="#" onclick="return false">download from Firefox Add-ons</a></li>
+							<li>Safari: <a href="#" onclick="return false">download and install manually</a></li>
+							<li>Edge: <a href="#" onclick="return false">download and install manually</a></li>
+						</ul>
+					</p>
+				</div>
+				<div class="col-sm col-sm-6">
+					<h3>Installing the desktop application</h3>
+					<p>
+						If you want to run Flash content on your computer without a browser in-between, we have native
+						applications that will take full advantage of your GPU and system resources to get those extra
+						frames when playing the original Meat Boy.
+						<ul>
+							<li>Windows x64: <a href="#" onclick="return false">download ruffle.exe</a></li>
+							<li>macOS: <a href="#" onclick="return false">download ruffle</a></li>
+							<li>linux: <a href="#" onclick="return false">download ruffle</a></li>
+							<li>Alternatively: install <a href="https://rustup.rs/" open="_blank">rustup</a> and run <code>cargo install ruffle</code></li>
+						</ul>
+					</p>
 				</div>
 			</div>
 		</section>
