@@ -66,9 +66,8 @@ title: Ruffle
 
 			<ul>
 				<li><a href="{{ site.github_url }}">source</a></li>
-				<li><a href="https://ruffle.rs/demo">demo</a>
-				<li><a href="https://discord.gg/J8hgCQN">discord</a>
-				</li>
+				<li><a href="https://ruffle.rs/demo">demo</a></li>
+				<li><a href="https://discord.gg/J8hgCQN">discord</a></li>
 			</ul>
 			<a class="header-down-arrow" href="#what-is-ruffle">
 				<img src="{{ "/assets/downarrow.png" | relative_url }}" alt="" loading="lazy">
@@ -81,6 +80,12 @@ title: Ruffle
 					<img src="{{ "/assets/logo.png" | relative_url }}" class="img-fluid my-3">
 				</div>
 				<div class="col-sm">
+					<p>
+						Ruffle is a Flash Player emulator that is written in Rust and compiled down to Wasm to run inside
+						all modern browsers safely and efficiently. Leveraging the safety of the modern browser sandbox,
+						we can avoid all the security pitfalls that Flash had a reputation for, letting us confidently put
+						Flash back on the web - where it belongs.
+					</p>
 					<p>
 						Designed to be easy to use and install, users or website owners may install Ruffle and existing
 						flash content will "just work", with no extra configuration required. Ruffle will detect all
@@ -256,21 +261,62 @@ title: Ruffle
 					<img src="{{ "/assets/undraw_launch_day.svg" | relative_url }}" class="img-fluid">
 				</div>
 				<div class="col-sm">
-					<h3>How to get involved</h3>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-					et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-					aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur.
+					<h3>How to help the project</h3>
+					<p>
+						We are entirely an open source project and do this for the sake of preserving history,and we are not
+						a large team at that. We absolutely welcome and request your help if you are willing to provide it.
+						There are 4 main ways to help this project, and we will be extremely grateful for any.
+					</p>
 
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-					et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-					aliquip ex ea commodo consequat.
+					<h3>Contributing code</h3>
+					<p>
+						There are two main codebases in two languages: The actual player in Rust, and the web interface
+						& browser UI in JavaScript. If you have any experience in either area and would like to assist,
+						please feel free to read our
+						<a href="https://github.com/ruffle-rs/ruffle/blob/master/CONTRIBUTING.md" target="_blank">contribution guidelines</a>,
+						<a href="https://github.com/ruffle-rs/ruffle/issues" target="_blank">search for some issues to tackle</a>,
+						and
+						<a href="https://discord.gg/J8hgCQN" target="_blank">join our discord</a> to ask questions!
+					</p>
+
+					<h3>Testing content</h3>
+					<p>
+						Arguably more important than contributing code, is testing Ruffle out. Go install Ruffle and try out
+						your favourite games and anomations. Look for any difference from the official Flash Player, and
+						report your findings to us. If you find any bugs, changes of behaviour, performance issues or
+						any visual differences then please report those to 
+						<a href="https://github.com/ruffle-rs/ruffle/issues" target="_blank">our bug tracker</a>.
+						If it runs flawlessly, come 
+						<a href="https://discord.gg/J8hgCQN" target="_blank">share the good news on our Discord</a>!
+					</p>
+
+					<h3>Sponsor the project</h3>
+					<p>
+						If you are able and willing to, we welcome any financial support to help us fund the project going
+						forwards. With your help, we can afford to spend more time dedicated to Ruffle, and pay for expenses
+						such as build servers and hosting.
+						We accept donations and sponsorships through Open Source Collective 501(c)(6). For more information,
+						or to view the options available for sponsoring the project, please visit
+						<a href="https://opencollective.com/ruffle" target="_blank">our Open Collective page</a>.
+					</p>
+
+					<h3>Spread the word!</h3>
+					<p>
+						Is your favourite flash based site shutting down? Let them know they can add one javascript file
+						and keep it running!
+						Feeling nostalgic for some old flash games? Go play some on Newgrounds with ruffle installed, and
+						tell your friends about it!
+						Maybe you're a streamer and looking for some silly content? There's literally decades worth, now
+						unlocked and accessible once more.
+					</p>					
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm">
-					<h3>Sponsors</h3>
+					<h3>Diamond Sponsors</h3>
 					<p>
+						We'd like to thank all of our sponsors, who help make this project possible.
+						Below are our Diamond level sponsors, without whom we would not be here. Thank you.
 						<ul class="sponsors">
 							<li>
 								<a href="https://www.newgrounds.com/" target="_blank" rel="nofollow">
@@ -298,23 +344,10 @@ title: Ruffle
 								</a>
 							</li>
 						</ul>
+						Want to join them? <a href="https://opencollective.com/ruffle" target="_blank">Sponsor Ruffle today!</a>
 					</p>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-sm">
-					<h3>As seen on</h3>
-					<p>
-						<ul class="as-seen-on">
-							<li>
-								<a href="https://archive.org/" target="_blank" rel="nofollow">
-									<img src="{{ "/assets/as-seen-on/Internet_Archive_logo_and_wordmark.svg" | relative_url }}" class="img-fluid" width="200" height="200">
-								</a>
-							</li>							
-						</ul>
-					</p>
-				</div>
-			</div>		
 		</section>
 	</main>
 
