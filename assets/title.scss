@@ -10,6 +10,18 @@ pre, code {
   font-size: 1rem;
 }
 
+table {
+  border:none;
+}
+
+table th {
+  background-color:#FFAD33;
+}
+
+table tr:nth-child(2n) {
+  background-color: transparent;
+}
+
 .navbar {
   //background-color: #31497D;
   background-color: transparent;
@@ -74,6 +86,19 @@ pre, code {
   margin: 1rem!important;
 }
 
+.section.content table.table.downloads td {
+  vertical-align: middle;
+}
+
+.section.content table.table ul.row {
+  display:flex;
+  flex-direction: row;
+}
+
+.section.content table.table ul.row li {
+  margin-right:1rem;
+}
+
 .section h2 {
   padding-top:10rem;
   margin-left:1rem;
@@ -82,11 +107,18 @@ pre, code {
   border-bottom: solid 1px #31497D;
 }
 
-.section.content .col-sm {
+.section.content .col-base {
   margin-bottom: 1rem;
 }
 
-.section.content .row.demo .col-sm {
+.section.content .col-base.col-img {
+  display:flex;
+  flex-direction: column;
+  flex-basis: content;
+  justify-content: center;
+}
+
+.section.content .row.demo .col-base {
   border: solid 1px;
 }
 
@@ -177,7 +209,7 @@ footer ul {
     margin-right:0;
   }
 
-  .section.content .row.demo .col-sm {
+  .section.content .row.demo .col-base {
     display: none;
   }
 }
