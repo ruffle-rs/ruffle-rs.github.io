@@ -76,14 +76,16 @@ title: Ruffle
 		<section class="section content">
 			<h2 id="what-is-ruffle">What is ruffle</h2>
 			<div class="row">
-				<div class="col-sm col-sm-4">
+				<div class="col-base col-lg col-lg-4 col-img">
 					<img src="{{ "/assets/logo.png" | relative_url }}" class="img-fluid my-3">
 				</div>
-				<div class="col-sm">
+				<div class="col-lg">
 					<p>
-						Ruffle is a Flash Player emulator that is written in Rust and compiled down to Wasm to run inside
+						Ruffle is a Flash Player emulator that is written in Rust and compiled down to Wasm to run
+						inside
 						all modern browsers safely and efficiently. Leveraging the safety of the modern browser sandbox,
-						we can avoid all the security pitfalls that Flash had a reputation for, letting us confidently put
+						we can avoid all the security pitfalls that Flash had a reputation for, letting us confidently
+						put
 						Flash back on the web - where it belongs.
 					</p>
 					<p>
@@ -103,66 +105,73 @@ title: Ruffle
 				</div>
 			</div>
 			<div class="row demo">
-				<div class="col-sm col-sm-4">
-					<img src="{{ "/assets/demo-placeholder-1.png" | relative_url }}" alt="Demo 1" class="d-block mx-auto text-center" style="height:28vh">
+				<div class="col-base col-lg col-lg-4">
+					<img src="{{ "/assets/demo-placeholder-1.png" | relative_url }}" alt="Demo 1"
+						class="d-block mx-auto text-center" style="height:28vh">
 				</div>
-				<div class="col-sm col-sm-4">
-					<img src="{{ "/assets/demo-placeholder-2.png" | relative_url }}" alt="Demo 2" class="d-block mx-auto text-center" style="height:28vh">
+				<div class="col-base col-lg col-lg-4">
+					<img src="{{ "/assets/demo-placeholder-2.png" | relative_url }}" alt="Demo 2"
+						class="d-block mx-auto text-center" style="height:28vh">
 				</div>
-				<div class="col-sm col-sm-4">
-					<img src="{{ "/assets/demo-placeholder-3.png" | relative_url }}" alt="Demo 3" class="d-block mx-auto text-center" style="height:28vh">
+				<div class="col-base col-lg col-lg-4">
+					<img src="{{ "/assets/demo-placeholder-3.png" | relative_url }}" alt="Demo 3"
+						class="d-block mx-auto text-center" style="height:28vh">
 				</div>
 			</div>
 		</section>
 		<section class="section content">
 			<h2 id="usage">Usage</h2>
 			<div class="row">
-				<div class="col-sm col-sm-3">
+				<div class="col-base col-sm col-sm-3">
 					<img src="{{ "/assets/undraw_design_components.svg" | relative_url }}" class="img-fluid">
 				</div>
-				<div class="col-sm col-sm-9">
+				<div class="col-base col-lg col-lg-9">
 					<h3>Installing on a website you own</h3>
 					<p>
-						Download the 'standalone' version of Ruffle from <a href="#" onclick="return false">here</a>, and include the following JavaScript on any page with
-					Flash content:
-					{% capture javascript_installation %}<script src="path/to/ruffle/ruffle.js"></script>{% endcapture %}
+						Download the 'standalone' version of Ruffle from <a href="#" onclick="return false">here</a>,
+						and include the following JavaScript on any page with
+						Flash content:
+						{% capture javascript_installation %}<script src="path/to/ruffle/ruffle.js"></script>{% endcapture %}
 					<pre>{{ javascript_installation |  xml_escape }}</pre>
 					</p>
 					<p>
-					You'll need to make sure your web server is configured to serve <code>.wasm</code> files correctly,
-					so please visit
-					<a href="https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#configure-wasm-mime-type">our wiki</a>
-					if you need help with that.
+						You'll need to make sure your web server is configured to serve <code>.wasm</code> files
+						correctly,
+						so please visit
+						<a href="https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#configure-wasm-mime-type">our
+							wiki</a>
+						if you need help with that.
 					</p>
-				</div>				
+				</div>
 			</div>
 			<div class="row mt-2">
-				<div class="col-sm col-sm-6">
+				<div class="col-base col-lg col-lg-6">
 					<h3>Installing the browser extension</h3>
 					<p>
 						If you visit websites that have Flash content but aren't using Ruffle, or are using an older
 						version of Ruffle and you want to ensure you're using the latest and greatest, then our browser
 						extension is the perfect thing for you!
-						<ul>
-							<li>Chrome: <a href="#" onclick="return false">download from the Chrome Web Store</a></li>
-							<li>Firefox: <a href="#" onclick="return false">download from Firefox Add-ons</a></li>
-							<li>Safari: <a href="#" onclick="return false">download and install manually</a></li>
-							<li>Edge: <a href="#" onclick="return false">download and install manually</a></li>
-						</ul>
+					<ul>
+						<li>Chrome: <a href="#" onclick="return false">download from the Chrome Web Store</a></li>
+						<li>Firefox: <a href="#" onclick="return false">download from Firefox Add-ons</a></li>
+						<li>Safari: <a href="#" onclick="return false">download and install manually</a></li>
+						<li>Edge: <a href="#" onclick="return false">download and install manually</a></li>
+					</ul>
 					</p>
 				</div>
-				<div class="col-sm col-sm-6">
+				<div class="col-base col-lg col-lg-6">
 					<h3>Installing the desktop application</h3>
 					<p>
 						If you want to run Flash content on your computer without a browser in-between, we have native
 						applications that will take full advantage of your GPU and system resources to get those extra
 						frames when playing the original Meat Boy.
-						<ul>
-							<li>Windows x64: <a href="#" onclick="return false">download ruffle.exe</a></li>
-							<li>macOS: <a href="#" onclick="return false">download ruffle</a></li>
-							<li>linux: <a href="#" onclick="return false">download ruffle</a></li>
-							<li>Alternatively: install <a href="https://rustup.rs/" open="_blank">rustup</a> and run <code>cargo install ruffle</code></li>
-						</ul>
+					<ul>
+						<li>Windows x64: <a href="#" onclick="return false">download ruffle.exe</a></li>
+						<li>macOS: <a href="#" onclick="return false">download ruffle</a></li>
+						<li>linux: <a href="#" onclick="return false">download ruffle</a></li>
+						<li>Alternatively: install <a href="https://rustup.rs/" open="_blank">rustup</a> and run
+							<code>cargo install ruffle</code></li>
+					</ul>
 					</p>
 				</div>
 			</div>
@@ -170,38 +179,26 @@ title: Ruffle
 		<section class="section content">
 			<h2 id="releases">Releases</h2>
 			<div class="row">
-				<div class="col-sm col-sm-2">
+				<div class="col-base col-sm col-sm-2">
 					<img src="{{ "/assets/undraw_relaunch_day.svg" | relative_url }}" class="img-fluid">
 				</div>
-				<div class="col-sm col-sm-10">
-					<table class="table table-responsive w-100">
+				<div class="col-base col-lg col-lg-10">
+					<table class="table table-responsive-lg table-dark downloads">
 						<thead>
 							<tr>
 								<th>Version</th>
-								<th>Release notes</th>
-								<th>Download</th>
+								<th>Date</th>
+								<th>Downloads</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>1.0.0</td>
+								<td>nightly-2020-10-28</td>
 								<td>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-									incididunt ut labore
-									et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-									laboris nisi ut
-									aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation
-									ullamco laboris nisi ut
-									aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-									velit esse
-									cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud
-									exercitation ullamco laboris nisi ut
-									aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-									velit esse
-									cillum dolore eu fugiat nulla pariatur.
+									2020-10-28
 								</td>
 								<td>
-									<ul>
+									<ul class="row">
 										<li>
 											<a
 												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-10-28/ruffle_nightly_2020_10_28_extension.zip">Extension</a>
@@ -230,6 +227,41 @@ title: Ruffle
 									</ul>
 								</td>
 							</tr>
+							<tr>
+								<td>nightly-2020-11-07</td>
+								<td>
+									2020-11-07
+								</td>
+								<td>
+									<ul class="row">
+										<li>
+											<a
+												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-11-07/ruffle_nightly_2020-11-07_extension.zip">Extension</a>
+										</li>
+										<li>
+											<a
+												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-11-07/ruffle_nightly_2020-11-07_firefox.xpi">Firefox</a>
+										</li>
+										<li>
+											<a
+												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-11-07/ruffle_nightly_2020-11-07_linux.tar.gz">Linux</a>
+										</li>
+										<li>
+											<a
+												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-11-07/ruffle_nightly_2020-11-07_mac.tar.gz">Mac</a>
+										</li>
+										<li>
+											<a
+												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-11-07/ruffle_nightly_2020-11-07_windows.zip">Windows</a>
+										</li>
+										<li>
+											<a
+												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-11-07/ruffle_nightly_2020-11-07_selfhosted.zip">Self
+												hosted</a>
+										</li>
+									</ul>
+								</td>
+							</tr>
 						</tbody>
 					</table>
 				</div>
@@ -238,16 +270,16 @@ title: Ruffle
 		<section class="section content">
 			<h2 id="compatibility">Compatibility</h2>
 			<div class="row">
-				<div class="col-sm col-sm-3">
+				<div class="col-base col-sm col-sm-3">
 					<img src="{{ "/assets/undraw_progressive_app.svg" | relative_url }}" class="img-fluid">
 				</div>
-				<div class="col-sm">
+				<div class="col-base col-lg">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
 					et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 					aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 					cillum dolore eu fugiat nulla pariatur.
 				</div>
-				<div class="col-sm">
+				<div class="col-base col-lg">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
 					et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 					aliquip ex ea commodo consequat.
@@ -257,94 +289,115 @@ title: Ruffle
 		<section class="section content">
 			<h2 id="get-involved">Get involved</h2>
 			<div class="row">
-				<div class="col-sm col-sm-2">
+				<div class="col-base col-sm col-sm-2">
 					<img src="{{ "/assets/undraw_launch_day.svg" | relative_url }}" class="img-fluid">
 				</div>
-				<div class="col-sm">
+				<div class="col-base col-lg">
 					<h3>How to help the project</h3>
 					<p>
-						We are entirely an open source project and do this for the sake of preserving history,and we are not
-						a large team at that. We absolutely welcome and request your help if you are willing to provide it.
+						We are entirely an open source project and do this for the sake of preserving history,and we are
+						not
+						a large team at that. We absolutely welcome and request your help if you are willing to provide
+						it.
 						There are 4 main ways to help this project, and we will be extremely grateful for any.
 					</p>
 
+				</div>
+				<div class="col-base col-lg">
 					<h3>Contributing code</h3>
 					<p>
 						There are two main codebases in two languages: The actual player in Rust, and the web interface
 						& browser UI in JavaScript. If you have any experience in either area and would like to assist,
 						please feel free to read our
-						<a href="https://github.com/ruffle-rs/ruffle/blob/master/CONTRIBUTING.md" target="_blank">contribution guidelines</a>,
-						<a href="https://github.com/ruffle-rs/ruffle/issues" target="_blank">search for some issues to tackle</a>,
+						<a href="https://github.com/ruffle-rs/ruffle/blob/master/CONTRIBUTING.md"
+							target="_blank">contribution guidelines</a>,
+						<a href="https://github.com/ruffle-rs/ruffle/issues" target="_blank">search for some issues to
+							tackle</a>,
 						and
 						<a href="https://discord.gg/J8hgCQN" target="_blank">join our discord</a> to ask questions!
 					</p>
-
-					<h3>Testing content</h3>
-					<p>
-						Arguably more important than contributing code, is testing Ruffle out. Go install Ruffle and try out
-						your favourite games and anomations. Look for any difference from the official Flash Player, and
-						report your findings to us. If you find any bugs, changes of behaviour, performance issues or
-						any visual differences then please report those to 
-						<a href="https://github.com/ruffle-rs/ruffle/issues" target="_blank">our bug tracker</a>.
-						If it runs flawlessly, come 
-						<a href="https://discord.gg/J8hgCQN" target="_blank">share the good news on our Discord</a>!
-					</p>
-
-					<h3>Sponsor the project</h3>
-					<p>
-						If you are able and willing to, we welcome any financial support to help us fund the project going
-						forwards. With your help, we can afford to spend more time dedicated to Ruffle, and pay for expenses
-						such as build servers and hosting.
-						We accept donations and sponsorships through Open Source Collective 501(c)(6). For more information,
-						or to view the options available for sponsoring the project, please visit
-						<a href="https://opencollective.com/ruffle" target="_blank">our Open Collective page</a>.
-					</p>
-
-					<h3>Spread the word!</h3>
-					<p>
-						Is your favourite flash based site shutting down? Let them know they can add one javascript file
-						and keep it running!
-						Feeling nostalgic for some old flash games? Go play some on Newgrounds with ruffle installed, and
-						tell your friends about it!
-						Maybe you're a streamer and looking for some silly content? There's literally decades worth, now
-						unlocked and accessible once more.
-					</p>					
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm">
-					<h3>Diamond Sponsors</h3>
+				<div class="col-base col-lg">
+					<h3>Testing content</h3>
+					<p>
+						Arguably more important than contributing code, is testing Ruffle out. Go install Ruffle and
+						try out
+						your favourite games and anomations. Look for any difference from the official Flash Player,
+						and
+						report your findings to us. If you find any bugs, changes of behaviour, performance issues
+						or
+						any visual differences then please report those to
+						<a href="https://github.com/ruffle-rs/ruffle/issues" target="_blank">our bug tracker</a>.
+						If it runs flawlessly, come
+						<a href="https://discord.gg/J8hgCQN" target="_blank">share the good news on our Discord</a>!
+					</p>
+				</div>
+				<div class="col-base col-lg">
+					<h3>Sponsor the project</h3>
+					<p>
+						If you are able and willing to, we welcome any financial support to help us fund the project
+						going
+						forwards. With your help, we can afford to spend more time dedicated to Ruffle, and pay for
+						expenses
+						such as build servers and hosting.
+						We accept donations and sponsorships through Open Source Collective 501(c)(6). For more
+						information,
+						or to view the options available for sponsoring the project, please visit
+						<a href="https://opencollective.com/ruffle" target="_blank">our Open Collective page</a>.
+					</p>
+				</div>
+				<div class="col-base col-lg">
+					<h3>Spread the word!</h3>
+					<p>
+						Is your favourite flash based site shutting down? Let them know they can add one javascript
+						file
+						and keep it running!
+						Feeling nostalgic for some old flash games? Go play some on Newgrounds with ruffle
+						installed, and
+						tell your friends about it!
+						Maybe you're a streamer and looking for some silly content? There's literally decades worth,
+						now
+						unlocked and accessible once more.
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-base col-lg">
+					<h3>💎 Diamond Sponsors</h3>
 					<p>
 						We'd like to thank all of our sponsors, who help make this project possible.
 						Below are our Diamond level sponsors, without whom we would not be here. Thank you.
-						<ul class="sponsors">
-							<li>
-								<a href="https://www.newgrounds.com/" target="_blank" rel="nofollow">
-									<img src="{{ "/assets/sponsors/newgrounds.png" | relative_url }}" class="img-fluid">
-								</a>
-							</li>
-							<li>
-								<a href="https://www.cpmstar.com/" target="_blank" rel="nofollow">
-									<img src="{{ "/assets/sponsors/cpmstar.png" | relative_url }}" class="img-fluid">
-								</a>
-							</li>
-							<li>
-								<a href="https://deepnight.net/" target="_blank" rel="nofollow">
-									<img src="{{ "/assets/sponsors/deepnight.png" | relative_url }}" class="img-fluid">
-								</a>
-							</li>
-							<li>
-								<a href="https://www.crazygames.com/" target="_blank" rel="nofollow">
-									<img src="{{ "/assets/sponsors/crazygames.png" | relative_url }}" class="img-fluid">
-								</a>
-							</li>
-							<li>
-								<a href="https://www.coolmathgames.com/" target="_blank" rel="nofollow">
-									<img src="{{ "/assets/sponsors/coolmathgames.png" | relative_url }}" class="img-fluid">
-								</a>
-							</li>
-						</ul>
-						Want to join them? <a href="https://opencollective.com/ruffle" target="_blank">Sponsor Ruffle today!</a>
+					<ul class="sponsors">
+						<li>
+							<a href="https://www.newgrounds.com/" target="_blank" rel="nofollow">
+								<img src="{{ "/assets/sponsors/newgrounds.png" | relative_url }}" class="img-fluid">
+							</a>
+						</li>
+						<li>
+							<a href="https://www.cpmstar.com/" target="_blank" rel="nofollow">
+								<img src="{{ "/assets/sponsors/cpmstar.png" | relative_url }}" class="img-fluid">
+							</a>
+						</li>
+						<li>
+							<a href="https://deepnight.net/" target="_blank" rel="nofollow">
+								<img src="{{ "/assets/sponsors/deepnight.png" | relative_url }}" class="img-fluid">
+							</a>
+						</li>
+						<li>
+							<a href="https://www.crazygames.com/" target="_blank" rel="nofollow">
+								<img src="{{ "/assets/sponsors/crazygames.png" | relative_url }}" class="img-fluid">
+							</a>
+						</li>
+						<li>
+							<a href="https://www.coolmathgames.com/" target="_blank" rel="nofollow">
+								<img src="{{ "/assets/sponsors/coolmathgames.png" | relative_url }}" class="img-fluid">
+							</a>
+						</li>
+					</ul>
+					Want to join them? <a href="https://opencollective.com/ruffle" target="_blank">Sponsor Ruffle
+						today!</a>
 					</p>
 				</div>
 			</div>
