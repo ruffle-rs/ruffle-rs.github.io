@@ -81,18 +81,18 @@ title: Ruffle
 				</div>
 				<div class="col-base col-lg">
 					<p>
-						Ruffle is a Flash Player emulator that is written in Rust and compiled down to Wasm to run
-						inside
-						all modern browsers safely and efficiently. Leveraging the safety of the modern browser sandbox,
-						we can avoid all the security pitfalls that Flash had a reputation for, letting us confidently
-						put
-						Flash back on the web - where it belongs.
+						Ruffle is a Flash Player emulator written in Rust. Ruffleuns natively on all modern operating
+						systems as a standalone application, and on all modern browsers through the use of WebAssembly.
+						Leveraging the safety of the modern browser sandbox and the memory safety guarantees of Rust,
+						we can confidently avoid all the security pitfalls that Flash had a reputation for.
+						Ruffle puts Flash back on the web, where it belongs - including iOS and Android!
 					</p>
 					<p>
-						Designed to be easy to use and install, users or website owners may install Ruffle and existing
-						flash content will "just work", with no extra configuration required. Ruffle will detect all
-						existing Flash content on a website and automatically "polyfill" it into a Ruffle player,
-						allowing seamless and transparent upgrading of websites that still rely on Flash content.
+						Designed to be easy to use and install, users or website owners may install the web version
+						of Ruffle and existing flash content will "just work", with no extra configuration required.
+						Ruffle will detect all existing Flash content on a website and automatically "polyfill"
+						it into a Ruffle player, allowing seamless and transparent upgrading of websites that still
+						rely on Flash content.
 					</p>
 					<p>
 						Ruffle is entirely an open source project and maintained by volunteers. We're all passionate
@@ -104,6 +104,7 @@ title: Ruffle
 					</p>
 				</div>
 			</div>
+
 			<div class="row demo">
 				<div class="col-base col-lg col-lg-4">
 					<img src="{{ "/assets/demo-placeholder-1.png" | relative_url }}" alt="Demo 1"
@@ -131,16 +132,23 @@ title: Ruffle
 						Download the 'standalone' version of Ruffle from <a href="#" onclick="return false">here</a>,
 						and include the following JavaScript on any page with
 						Flash content:
-						{% capture javascript_installation %}<script src="path/to/ruffle/ruffle.js"></script>{% endcapture %}
-					<pre>{{ javascript_installation |  xml_escape }}</pre>
+						{% highlight html %}<script src="path/to/ruffle/ruffle.js"></script>{% endhighlight %}
 					</p>
 					<p>
 						You'll need to make sure your web server is configured to serve <code>.wasm</code> files
 						correctly,
 						so please visit
-						<a href="https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#configure-wasm-mime-type">our
-							wiki</a>
+						<a href="https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#configure-wasm-mime-type" target="_blank">
+							our wiki
+						</a>
 						if you need help with that.
+					</p>
+					<p>
+						For advance usage, consult
+							<a href="https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#javascript-api" target="_blank">
+							our documentation
+						</a>
+						for our JavasSript API and installation options.
 					</p>
 				</div>
 			</div>
@@ -148,8 +156,8 @@ title: Ruffle
 				<div class="col-base col-lg col-lg-6">
 					<h3>Installing the browser extension</h3>
 					<p>
-						If you visit websites that have Flash content but aren't using Ruffle, or are using an older
-						version of Ruffle and you want to ensure you're using the latest and greatest, then our browser
+						If you visit websites that have Flash content but aren't using Ruffle, or may using an older
+						version of Ruffle but you want to ensure you're using the latest and greatest, then our browser
 						extension is the perfect thing for you!
 					<ul>
 						<li>Chrome: <a href="#" onclick="return false">download from the Chrome Web Store</a></li>
@@ -165,13 +173,19 @@ title: Ruffle
 						If you want to run Flash content on your computer without a browser in-between, we have native
 						applications that will take full advantage of your GPU and system resources to get those extra
 						frames when playing the original Meat Boy.
-					<ul>
-						<li>Windows x64: <a href="#" onclick="return false">download ruffle.exe</a></li>
-						<li>macOS: <a href="#" onclick="return false">download ruffle</a></li>
-						<li>linux: <a href="#" onclick="return false">download ruffle</a></li>
-						<li>Alternatively: install <a href="https://rustup.rs/" open="_blank">rustup</a> and run
-							<code>cargo install ruffle</code></li>
-					</ul>
+					</p>
+					<p>
+						Currently this is just a command line application, but we intend to develop a GUI for it soon
+						for ease of use.
+					</p>
+					<p>
+						<ul>
+							<li>Windows x64: <a href="#" onclick="return false">download ruffle.exe</a></li>
+							<li>macOS: <a href="#" onclick="return false">download ruffle</a></li>
+							<li>linux: <a href="#" onclick="return false">download ruffle</a></li>
+							<li>Alternatively: install <a href="https://rustup.rs/" target="_blank">rustup</a> and run
+								<code>cargo install ruffle</code></li>
+						</ul>
 					</p>
 				</div>
 			</div>
@@ -188,7 +202,9 @@ title: Ruffle
 							<tr>
 								<th>Version</th>
 								<th>Date</th>
-								<th>Downloads</th>
+								<th>Desktop</th>
+								<th>Browser Extension</th>
+								<th>Website</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -201,14 +217,6 @@ title: Ruffle
 									<ul class="row">
 										<li>
 											<a
-												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-10-28/ruffle_nightly_2020_10_28_extension.zip">Extension</a>
-										</li>
-										<li>
-											<a
-												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-10-28/ruffle_nightly_2020_10_28_firefox.xpi">Firefox</a>
-										</li>
-										<li>
-											<a
 												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-10-28/ruffle_nightly_2020_10_28_linux.tar.gz">Linux</a>
 										</li>
 										<li>
@@ -219,6 +227,22 @@ title: Ruffle
 											<a
 												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-10-28/ruffle_nightly_2020_10_28_windows.zip">Windows</a>
 										</li>
+									</ul>
+								</td>
+								<td>
+									<ul class="row">
+										<li>
+											<a
+												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-10-28/ruffle_nightly_2020_10_28_extension.zip">Extension</a>
+										</li>
+										<li>
+											<a
+												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-10-28/ruffle_nightly_2020_10_28_firefox.xpi">Firefox</a>
+										</li>
+									</ul>
+								</td>
+								<td>
+									<ul class="row">
 										<li>
 											<a
 												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-10-28/ruffle_nightly_2020_10_28_selfhosted.zip">Self
@@ -236,14 +260,6 @@ title: Ruffle
 									<ul class="row">
 										<li>
 											<a
-												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-11-07/ruffle_nightly_2020-11-07_extension.zip">Extension</a>
-										</li>
-										<li>
-											<a
-												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-11-07/ruffle_nightly_2020-11-07_firefox.xpi">Firefox</a>
-										</li>
-										<li>
-											<a
 												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-11-07/ruffle_nightly_2020-11-07_linux.tar.gz">Linux</a>
 										</li>
 										<li>
@@ -254,6 +270,22 @@ title: Ruffle
 											<a
 												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-11-07/ruffle_nightly_2020-11-07_windows.zip">Windows</a>
 										</li>
+									</ul>
+								</td>
+								<td>
+									<ul class="row">
+										<li>
+											<a
+												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-11-07/ruffle_nightly_2020-11-07_extension.zip">Extension</a>
+										</li>
+										<li>
+											<a
+												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-11-07/ruffle_nightly_2020-11-07_firefox.xpi">Firefox</a>
+										</li>
+									</ul>
+								</td>
+								<td>
+									<ul class="row">
 										<li>
 											<a
 												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-11-07/ruffle_nightly_2020-11-07_selfhosted.zip">Self
@@ -273,16 +305,115 @@ title: Ruffle
 				<div class="col-base col-sm col-sm-3">
 					<img src="{{ "/assets/undraw_progressive_app.svg" | relative_url }}" class="img-fluid">
 				</div>
+				
 				<div class="col-base col-lg">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-					et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-					aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur.
-				</div>
-				<div class="col-base col-lg">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-					et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-					aliquip ex ea commodo consequat.
+					<h3>ActionScript</h3>
+					<p>
+						ActionScript is the language which Flash uses to make interactive content.
+						It is primarily split into two groups:
+						"AVM 1" (ActionScript 1 &amp; 2)
+						and
+						"AVM 2" (ActionScript 3).
+					</p>
+
+					<h4>AVM 1</h4>
+					<p>
+						AVM 1 is ActionScript 1 and ActionScript 2.
+						All movies made before Flash Player 9 (June 2006) will be made with AVM 1,
+						and it remained supported &amp; available to authors until the release of
+						Flash Professional CC (2013).
+					</p>
+
+					<p>
+						For in-depth details, please follow our
+						<a href="https://github.com/ruffle-rs/ruffle/issues/310" target="_blank">
+							AVM 1 tracking issue on github.
+						</a>
+					</p>
+					<p>
+						ActionScript 1 Language
+						<div style="
+							width: 100%;
+							height: 1em;
+							border: 1px solid;
+							background: linear-gradient(to right, rgb(255, 173, 51) 20%, black 20%);
+						">
+						</div>
+					</p>
+
+					<p>
+						ActionScript 2 Language
+						<div style="
+							width: 100%;
+							height: 1em;
+							border: 1px solid;
+							background: linear-gradient(to right, rgb(255, 173, 51) 20%, black 20%);
+						">
+						</div>
+					</p>
+
+					<p>
+						ActionScript 1 &amp; 2 API
+						<div style="
+							width: 100%;
+							height: 1em;
+							border: 1px solid;
+							background: linear-gradient(to right, rgb(255, 173, 51) 20%, black 20%);
+						">
+					</p>
+
+					<p>
+						ActionScript 2 API
+						<div style="
+							width: 100%;
+							height: 1em;
+							border: 1px solid;
+							background: linear-gradient(to right, rgb(255, 173, 51) 20%, black 20%);
+						">
+					</p>
+
+					<h4>AVM 2</h4>
+					<p>
+						AVM2 is ActionScript 3, which was introduced with Flash Player 9 (June 2006).
+						After the release of Flash Professional CC (2013), authors are required to use
+						ActionScript 3 - making any movie made after that date very likely to fall under
+						this category.
+					</p>
+
+					<p>
+						Ruffle is still working on the foundational support for AVM 2, and does not yet
+						support any content that requires it. A warning will be placed in the log when
+						you attempt to play AVM 2 content, for this reason. We do plan on supporting this
+						soon!
+					</p>
+
+					<p>
+						For in-depth details, please follow our
+						<a href="https://github.com/ruffle-rs/ruffle/issues/1368" target="_blank">
+							AVM 1 tracking issue on github.
+						</a>
+					</p>
+
+					<p>
+						ActionScript 3 Language
+						<div style="
+							width: 100%;
+							height: 1em;
+							border: 1px solid;
+							background: linear-gradient(to right, rgb(255, 173, 51) 20%, black 20%);
+						">
+						</div>
+					</p>
+
+					<p>
+						ActionScript 3 API
+						<div style="
+							width: 100%;
+							height: 1em;
+							border: 1px solid;
+							background: linear-gradient(to right, rgb(255, 173, 51) 20%, black 20%);
+						">
+						</div>
 				</div>
 			</div>
 		</section>
@@ -293,21 +424,20 @@ title: Ruffle
 					<img src="{{ "/assets/undraw_launch_day.svg" | relative_url }}" class="img-fluid">
 				</div>
 				<div class="col-base col-lg">
-					<h3>How to help the project</h3>
+					<h3>♥️ How to help the project</h3>
 					<p>
-						We are entirely an open source project and do this for the sake of preserving history,and we are
-						not
-						a large team at that. We absolutely welcome and request your help if you are willing to provide
-						it.
-						There are 4 main ways to help this project, and we will be extremely grateful for any.
+						We are entirely an open source project and do this for the sake of preserving history,
+						and we are not a large team at that.
+						We absolutely welcome and request your help if you are willing to provide it.
+						There are 4 main ways to help this project, and we will be extremely grateful for any provided.
 					</p>
 
 				</div>
 				<div class="col-base col-lg">
-					<h3>Contributing code</h3>
+					<h3>🖥️ Contributing code</h3>
 					<p>
 						There are two main codebases in two languages: The actual player in Rust, and the web interface
-						& browser UI in JavaScript. If you have any experience in either area and would like to assist,
+						&amo; browser UI in JavaScript. If you have any experience in either area and would like to assist,
 						please feel free to read our
 						<a href="https://github.com/ruffle-rs/ruffle/blob/master/CONTRIBUTING.md"
 							target="_blank">contribution guidelines</a>,
@@ -320,22 +450,20 @@ title: Ruffle
 			</div>
 			<div class="row">
 				<div class="col-base col-lg">
-					<h3>Testing content</h3>
+					<h3>🕹️ Testing content</h3>
 					<p>
-						Arguably more important than contributing code, is testing Ruffle out. Go install Ruffle and
-						try out
-						your favourite games and anomations. Look for any difference from the official Flash Player,
-						and
-						report your findings to us. If you find any bugs, changes of behaviour, performance issues
-						or
-						any visual differences then please report those to
+						Arguably more important than contributing code, is testing Ruffle out.
+						Go install Ruffle and try out your favourite games and anomations.
+						Look for any difference from the official Flash Player, and report your findings to us.
+						If you find any bugs, changes of behaviour, performance issues or any visual differences then
+						please report those to
 						<a href="https://github.com/ruffle-rs/ruffle/issues" target="_blank">our bug tracker</a>.
 						If it runs flawlessly, come
 						<a href="https://discord.gg/J8hgCQN" target="_blank">share the good news on our Discord</a>!
 					</p>
 				</div>
 				<div class="col-base col-lg">
-					<h3>Sponsor the project</h3>
+					<h3>💲 Sponsor the project</h3>
 					<p>
 						If you are able and willing to, we welcome any financial support to help us fund the project
 						going
@@ -349,7 +477,7 @@ title: Ruffle
 					</p>
 				</div>
 				<div class="col-base col-lg">
-					<h3>Spread the word!</h3>
+					<h3>💬 Spread the word!</h3>
 					<p>
 						Is your favourite flash based site shutting down? Let them know they can add one javascript
 						file
