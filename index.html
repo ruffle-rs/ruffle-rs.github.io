@@ -209,92 +209,94 @@ title: Ruffle
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>nightly-2020-10-28</td>
-								<td>
-									2020-10-28
-								</td>
-								<td>
-									<ul class="row">
-										<li>
-											<a
-												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-10-28/ruffle_nightly_2020_10_28_linux.tar.gz">Linux</a>
-										</li>
-										<li>
-											<a
-												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-10-28/ruffle_nightly_2020_10_28_mac.tar.gz">Mac</a>
-										</li>
-										<li>
-											<a
-												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-10-28/ruffle_nightly_2020_10_28_windows.zip">Windows</a>
-										</li>
-									</ul>
-								</td>
-								<td>
-									<ul class="row">
-										<li>
-											<a
-												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-10-28/ruffle_nightly_2020_10_28_extension.zip">Extension</a>
-										</li>
-										<li>
-											<a
-												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-10-28/ruffle_nightly_2020_10_28_firefox.xpi">Firefox</a>
-										</li>
-									</ul>
-								</td>
-								<td>
-									<ul class="row">
-										<li>
-											<a
-												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-10-28/ruffle_nightly_2020_10_28_selfhosted.zip">Self
-												hosted</a>
-										</li>
-									</ul>
-								</td>
-							</tr>
-							<tr>
-								<td>nightly-2020-11-07</td>
-								<td>
-									2020-11-07
-								</td>
-								<td>
-									<ul class="row">
-										<li>
-											<a
-												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-11-07/ruffle_nightly_2020-11-07_linux.tar.gz">Linux</a>
-										</li>
-										<li>
-											<a
-												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-11-07/ruffle_nightly_2020-11-07_mac.tar.gz">Mac</a>
-										</li>
-										<li>
-											<a
-												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-11-07/ruffle_nightly_2020-11-07_windows.zip">Windows</a>
-										</li>
-									</ul>
-								</td>
-								<td>
-									<ul class="row">
-										<li>
-											<a
-												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-11-07/ruffle_nightly_2020-11-07_extension.zip">Extension</a>
-										</li>
-										<li>
-											<a
-												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-11-07/ruffle_nightly_2020-11-07_firefox.xpi">Firefox</a>
-										</li>
-									</ul>
-								</td>
-								<td>
-									<ul class="row">
-										<li>
-											<a
-												href="https://github.com/ruffle-rs/ruffle/releases/download/nightly-2020-11-07/ruffle_nightly_2020-11-07_selfhosted.zip">Self
-												hosted</a>
-										</li>
-									</ul>
-								</td>
-							</tr>
+
+							{% for release in site.github.releases %}
+								<tr>
+									<td>{{ release.name }}</td>
+									<td>{{ release.published_at | date: "%Y-%m-%d" }}</td>
+									<td>
+										<ul class="row">
+											{% assign found = false %}
+											{% for asset in release.assets %}
+												{% if asset.name contains "_linux" %}
+													<li><a href="{{ asset.browser_download_url}}" target="_blank">Linux</a></li>
+													{% assign found = true %}
+													{% break %}
+												{% endif %}
+											{% endfor %}
+											{% if found == false %}
+												<li style="text-decoration: line-through">Linux</li>
+											{% endif %}
+
+											{% assign found = false %}
+											{% for asset in release.assets %}
+												{% if asset.name contains "_mac" %}
+													<li><a href="{{ asset.browser_download_url}}" target="_blank">Mac OS</a></li>
+													{% assign found = true %}
+													{% break %}
+												{% endif %}
+											{% endfor %}
+											{% if found == false %}
+												<li style="text-decoration: line-through">Mac OS</li>
+											{% endif %}
+
+											{% assign found = false %}
+											{% for asset in release.assets %}
+												{% if asset.name contains "_windows" %}
+													<li><a href="{{ asset.browser_download_url}}" target="_blank">Windows</a></li>
+													{% assign found = true %}
+													{% break %}
+												{% endif %}
+											{% endfor %}
+											{% if found == false %}
+												<li style="text-decoration: line-through">Windows</li>
+											{% endif %}
+										</ul>
+									</td>
+									<td>
+										<ul class="row">
+											{% assign found = false %}
+											{% for asset in release.assets %}
+												{% if asset.name contains "_firefox" %}
+													<li><a href="{{ asset.browser_download_url}}" target="_blank">Firefox</a></li>
+													{% assign found = true %}
+													{% break %}
+												{% endif %}
+											{% endfor %}
+											{% if found == false %}
+												<li style="text-decoration: line-through">Firefox</li>
+											{% endif %}
+
+											{% assign found = false %}
+											{% for asset in release.assets %}
+												{% if asset.name contains "_extension" %}
+													<li><a href="{{ asset.browser_download_url}}" target="_blank">Chrome / Edge / Safari</a></li>
+													{% assign found = true %}
+													{% break %}
+												{% endif %}
+											{% endfor %}
+											{% if found == false %}
+												<li style="text-decoration: line-through">Chrome / Edge / Safari</li>
+											{% endif %}
+										</ul>
+									</td>
+									<td>
+										<ul class="row">
+										{% assign found = false %}
+											{% for asset in release.assets %}
+												{% if asset.name contains "_selfhosted" %}
+													<li><a href="{{ asset.browser_download_url}}" target="_blank">Self Hosted</a></li>
+													{% assign found = true %}
+													{% break %}
+												{% endif %}
+											{% endfor %}
+											{% if found == false %}
+												<li style="text-decoration: line-through">Self Hosted</li>
+											{% endif %}
+										</ul>
+									</td>
+								</tr>
+							{% endfor %}
 						</tbody>
 					</table>
 				</div>
