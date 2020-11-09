@@ -22,6 +22,11 @@ table tr:nth-child(2n) {
   background-color: transparent;
 }
 
+table.table-dark th {
+  color:#454d55;
+  font-weight: 400;
+}
+
 .navbar {
   //background-color: #31497D;
   background-color: transparent;
@@ -97,6 +102,10 @@ table tr:nth-child(2n) {
 
 .section.content table.table ul.row li {
   margin-right:1rem;
+}
+
+.section.content .row {
+  margin-bottom: 1rem;
 }
 
 .section h2 {
@@ -195,6 +204,25 @@ footer ul {
   animation: octocat-wave 560ms ease-in-out
 }
 
+.meter { 
+  height: .5rem;
+  position: relative;
+  background: #1a2743;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.meter span {
+  display: block;
+  height: 100%;
+}
+
+.progress {
+  background-color: #FFAD33;
+  animation: progressBar 3s ease-in-out;
+  animation-fill-mode:both; 
+}
+
 @media screen and (max-width: 800px) {
   footer .social .username {
     display:none;
@@ -225,6 +253,10 @@ footer ul {
 
   .section.splash #logo {
     width: 350px!important;
+  }
+
+  .section.content .row {
+    margin-bottom: 0;
   }
 
   footer .description {
@@ -282,4 +314,9 @@ footer ul {
   .github-corner .octo-arm {
       animation: octocat-wave 560ms ease-in-out
   }
+}
+
+@keyframes progressBar {
+  0% { width: 0; }
+  100% { width: 100%; }
 }

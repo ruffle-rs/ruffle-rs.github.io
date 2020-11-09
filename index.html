@@ -81,7 +81,7 @@ title: Ruffle
 				</div>
 				<div class="col-base col-lg">
 					<p>
-						Ruffle is a Flash Player emulator written in Rust. Ruffleuns natively on all modern operating
+						Ruffle is a Flash Player emulator written in Rust. Ruffle runs natively on all modern operating
 						systems as a standalone application, and on all modern browsers through the use of WebAssembly.
 						Leveraging the safety of the modern browser sandbox and the memory safety guarantees of Rust,
 						we can confidently avoid all the security pitfalls that Flash had a reputation for.
@@ -138,14 +138,15 @@ title: Ruffle
 						You'll need to make sure your web server is configured to serve <code>.wasm</code> files
 						correctly,
 						so please visit
-						<a href="https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#configure-wasm-mime-type" target="_blank">
+						<a href="https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#configure-wasm-mime-type"
+							target="_blank">
 							our wiki
 						</a>
 						if you need help with that.
 					</p>
 					<p>
 						For advance usage, consult
-							<a href="https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#javascript-api" target="_blank">
+						<a href="https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#javascript-api" target="_blank">
 							our documentation
 						</a>
 						for our JavasSript API and installation options.
@@ -179,13 +180,13 @@ title: Ruffle
 						for ease of use.
 					</p>
 					<p>
-						<ul>
-							<li>Windows x64: <a href="#" onclick="return false">download ruffle.exe</a></li>
-							<li>macOS: <a href="#" onclick="return false">download ruffle</a></li>
-							<li>linux: <a href="#" onclick="return false">download ruffle</a></li>
-							<li>Alternatively: install <a href="https://rustup.rs/" target="_blank">rustup</a> and run
-								<code>cargo install ruffle</code></li>
-						</ul>
+					<ul>
+						<li>Windows x64: <a href="#" onclick="return false">download ruffle.exe</a></li>
+						<li>macOS: <a href="#" onclick="return false">download ruffle</a></li>
+						<li>linux: <a href="#" onclick="return false">download ruffle</a></li>
+						<li>Alternatively: install <a href="https://rustup.rs/" target="_blank">rustup</a> and run
+							<code>cargo install ruffle</code></li>
+					</ul>
 					</p>
 				</div>
 			</div>
@@ -305,7 +306,7 @@ title: Ruffle
 				<div class="col-base col-sm col-sm-3">
 					<img src="{{ "/assets/undraw_progressive_app.svg" | relative_url }}" class="img-fluid">
 				</div>
-				
+
 				<div class="col-base col-lg">
 					<h3>ActionScript</h3>
 					<p>
@@ -315,7 +316,10 @@ title: Ruffle
 						and
 						"AVM 2" (ActionScript 3).
 					</p>
-
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-base col-lg">
 					<h4>AVM 1</h4>
 					<p>
 						AVM 1 is ActionScript 1 and ActionScript 2.
@@ -326,52 +330,39 @@ title: Ruffle
 
 					<p>
 						For in-depth details, please follow our
-						<a href="https://github.com/ruffle-rs/ruffle/issues/310" target="_blank">
+						<a href="https://github.com/ruffle-rs/ruffle/issues/310" target="_blank" rel="nofollow">
 							AVM 1 tracking issue on github.
 						</a>
 					</p>
 					<p>
-						ActionScript 1 Language
-						<div style="
-							width: 100%;
-							height: 1em;
-							border: 1px solid;
-							background: linear-gradient(to right, rgb(255, 173, 51) 20%, black 20%);
-						">
-						</div>
+					<h5>ActionScript 1 Language <code>20%</code></h5>
+					<div class="meter" title="20%">
+						<span style="width:20%;"><span class="progress"></span></span>
+					</div>
 					</p>
 
 					<p>
-						ActionScript 2 Language
-						<div style="
-							width: 100%;
-							height: 1em;
-							border: 1px solid;
-							background: linear-gradient(to right, rgb(255, 173, 51) 20%, black 20%);
-						">
-						</div>
+					<h5>ActionScript 2 Language <code>50%</code></h5>
+					<div class="meter" title="50%">
+						<span style="width:50%;"><span class="progress"></span></span>
+					</div>
 					</p>
 
 					<p>
-						ActionScript 1 &amp; 2 API
-						<div style="
-							width: 100%;
-							height: 1em;
-							border: 1px solid;
-							background: linear-gradient(to right, rgb(255, 173, 51) 20%, black 20%);
-						">
+					<h5>ActionScript 1 API <code>10%</code></h5>
+					<div class="meter" title="10%">
+						<span style="width:10%;"><span class="progress"></span></span>
+					</div>
 					</p>
 
 					<p>
-						ActionScript 2 API
-						<div style="
-							width: 100%;
-							height: 1em;
-							border: 1px solid;
-							background: linear-gradient(to right, rgb(255, 173, 51) 20%, black 20%);
-						">
+					<h5>ActionScript 2 API <code>78%</code></h5>
+					<div class="meter" title="78%">
+						<span style="width:78%;"><span class="progress"></span></span>
+					</div>
 					</p>
-
+				</div>
+				<div class="col-base col-lg">
 					<h4>AVM 2</h4>
 					<p>
 						AVM2 is ActionScript 3, which was introduced with Flash Player 9 (June 2006).
@@ -389,31 +380,24 @@ title: Ruffle
 
 					<p>
 						For in-depth details, please follow our
-						<a href="https://github.com/ruffle-rs/ruffle/issues/1368" target="_blank">
-							AVM 1 tracking issue on github.
+						<a href="https://github.com/ruffle-rs/ruffle/issues/1368" target="_blank" rel="nofollow">
+							AVM 2 tracking issue on github.
 						</a>
 					</p>
 
 					<p>
-						ActionScript 3 Language
-						<div style="
-							width: 100%;
-							height: 1em;
-							border: 1px solid;
-							background: linear-gradient(to right, rgb(255, 173, 51) 20%, black 20%);
-						">
-						</div>
+					<h5>ActionScript 3 Language <code>65%</code></h5>
+					<div class="meter" title="65%">
+						<span style="width:65%;"><span class="progress"></span></span>
+					</div>
 					</p>
 
 					<p>
-						ActionScript 3 API
-						<div style="
-							width: 100%;
-							height: 1em;
-							border: 1px solid;
-							background: linear-gradient(to right, rgb(255, 173, 51) 20%, black 20%);
-						">
-						</div>
+					<h5>ActionScript 3 API <code>20%</code></h5>
+					<div class="meter" title="20%">
+						<span style="width:20%;"><span class="progress"></span></span>
+					</div>
+					</p>
 				</div>
 			</div>
 		</section>
@@ -437,7 +421,8 @@ title: Ruffle
 					<h3>🖥️ Contributing code</h3>
 					<p>
 						There are two main codebases in two languages: The actual player in Rust, and the web interface
-						&amo; browser UI in JavaScript. If you have any experience in either area and would like to assist,
+						&amo; browser UI in JavaScript. If you have any experience in either area and would like to
+						assist,
 						please feel free to read our
 						<a href="https://github.com/ruffle-rs/ruffle/blob/master/CONTRIBUTING.md"
 							target="_blank">contribution guidelines</a>,
@@ -524,8 +509,9 @@ title: Ruffle
 							</a>
 						</li>
 					</ul>
-					<h4 class="text-center">Want to join them? <a href="https://opencollective.com/ruffle" target="_blank">Sponsor Ruffle
-						today!</a></h4>
+					<h4 class="text-center">Want to join them? <a href="https://opencollective.com/ruffle"
+							target="_blank">Sponsor Ruffle
+							today!</a></h4>
 					</p>
 				</div>
 			</div>
