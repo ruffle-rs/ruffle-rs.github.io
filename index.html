@@ -212,7 +212,11 @@ title: Ruffle
 							{% assign prerelease = site.github.releases | where_exp:"item", "item.prerelease == true" %}
 							{% for release in prerelease limit: 3 %}
 								<tr>
-									<td>{{ release.name }}<code>{{release.prerelease}}</code></td>
+									<td>{{ release.name }}
+										{% if release.prerelease %}
+										<code class="ml-1">preview</code>
+										{% endif %}
+									</td>
 									<td>{{ release.published_at | date: "%Y-%m-%d" }}</td>
 									<td>
 										<ul class="row">
