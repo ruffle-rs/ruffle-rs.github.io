@@ -129,15 +129,13 @@ title: Ruffle
 				<div class="col-base col-lg col-lg-9">
 					<h3>Installing on a website you own</h3>
 					<p>
-						Download the 'standalone' version of Ruffle from <a href="#" onclick="return false">here</a>,
-						and include the following JavaScript on any page with
-						Flash content:
+						Download the 'standalone' version of Ruffle from <a href="#releases">our releases</a>,
+						and include the following JavaScript on any page with Flash content:
 						{% highlight html %}<script src="path/to/ruffle/ruffle.js"></script>{% endhighlight %}
 					</p>
 					<p>
 						You'll need to make sure your web server is configured to serve <code>.wasm</code> files
-						correctly,
-						so please visit
+						correctly, so please visit
 						<a href="https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#configure-wasm-mime-type"
 							target="_blank">
 							our wiki
@@ -160,16 +158,36 @@ title: Ruffle
 						If you visit websites that have Flash content but aren't using Ruffle, or may using an older
 						version of Ruffle but you want to ensure you're using the latest and greatest, then our browser
 						extension is the perfect thing for you!
-					<ul>
-						<li>Chrome: <a href="#" onclick="return false">download from the Chrome Web Store</a></li>
-						<li>Firefox: <a href="#" onclick="return false">download from Firefox Add-ons</a></li>
-						<li>Safari: <a href="#" onclick="return false">download and install manually</a></li>
-						<li>Edge: <a href="#" onclick="return false">download and install manually</a></li>
-					</ul>
 					</p>
+					<p>
+						Until our first release, we currently only ship unsigned browser extensions.
+						To use these, first download the appropriate one for your browser from
+						<a href="#releases">our releases</a>, and then install it manually.
+					</p>
+					<div class="row mt-2">
+						<div class="col-base col-lg col-lg-6">
+						<h4>Chrome</h4>
+						<ul>
+    						<li>Unpack the downloaded zip somewhere.</li>
+    						<li>Navigate to <code>chrome://extensions/</code></li>
+    						<li>Turn on Developer mode in the top right corner.</li>
+    						<li>Click Load unpacked.</li>
+    						<li>Select the folder you unpacked the extension to.</li>
+						</ul>
+					</div>
+					<div class="col-base col-lg col-lg-6">
+						<h4>Firefox</h4>
+						<ul>
+    						<li>Navigate to <code>about:debugging</code>.</li>
+    						<li>Click on This Firefox.</li>
+    						<li>Click Load Temporary Add-on...</li>
+    						<li>Select the .xpi that you downloaded.</li>
+						</ul>
+					</div>
+					</div>
 				</div>
 				<div class="col-base col-lg col-lg-6">
-					<h3>Installing the desktop application</h3>
+					<h3>Using the desktop application</h3>
 					<p>
 						If you want to run Flash content on your computer without a browser in-between, we have native
 						applications that will take full advantage of your GPU and system resources to get those extra
@@ -177,16 +195,15 @@ title: Ruffle
 					</p>
 					<p>
 						Currently this is just a command line application, but we intend to develop a GUI for it soon
-						for ease of use.
+						for ease of use. First, download the appropriate executable for your operating system from
+						<a href="#releases">our releases</a>.
 					</p>
 					<p>
-					<ul>
-						<li>Windows x64: <a href="#" onclick="return false">download ruffle.exe</a></li>
-						<li>macOS: <a href="#" onclick="return false">download ruffle</a></li>
-						<li>linux: <a href="#" onclick="return false">download ruffle</a></li>
-						<li>Alternatively: install <a href="https://rustup.rs/" target="_blank">rustup</a> and run
-							<code>cargo install ruffle</code></li>
-					</ul>
+						To use the executable, simply start it with the path to the swf you wish to play - it may be
+						either a local file, or a URL to a file online.
+						We do provide more advanced options if you wish to control how this file is played.
+						To view the full options available, run
+						<code>ruffle --help</code>.
 					</p>
 				</div>
 			</div>
@@ -277,7 +294,7 @@ title: Ruffle
 
 						<h3>Nightly Builds</h3>
 					{% endif %}
-					
+
 					<p>
 						Ruffle is still in active development and we release nightly development builds every day,
 						as long as some code changed. Whilst we try to keep nightly builds in working order,
