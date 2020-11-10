@@ -236,7 +236,12 @@ title: Ruffle
 							<tbody>
 								{% for release in full_release limit: 5 %}
 									<tr>
-										<td>{{ release.name }}</td>
+										<td>
+											{{ release.name }}
+											{% if release.prerelease %}
+												<code class="ml-1">preview</code>
+											{% endif %}
+										</td>
 										<td>{{ release.published_at | date: "%Y-%m-%d" }}</td>
 										<td>
 											<ul class="row">
@@ -316,7 +321,12 @@ title: Ruffle
 						<tbody>
 							{% for release in prerelease limit: 3 %}
 								<tr>
-									<td>{{ release.name }}</td>
+									<td>
+										{{ release.name }}
+										{% if release.prerelease %}
+											<code class="ml-1">preview</code>
+										{% endif %}
+									</td>
 									<td>{{ release.published_at | date: "%Y-%m-%d" }}</td>
 									<td>
 										<ul class="row">
