@@ -209,88 +209,59 @@ title: Ruffle
 							</tr>
 						</thead>
 						<tbody>
-
-							{% for release in site.github.releases %}
+							{% assign prerelease = site.github.releases | where_exp:"item", "item.prerelease == true" %}
+							{% for release in prerelease limit: 3 %}
 								<tr>
-									<td>{{ release.name }}</td>
+									<td>{{ release.name }}<code>{{release.prerelease}}</code></td>
 									<td>{{ release.published_at | date: "%Y-%m-%d" }}</td>
 									<td>
 										<ul class="row">
-											{% assign found = false %}
-											{% for asset in release.assets %}
-												{% if asset.name contains "_linux" %}
-													<li><a href="{{ asset.browser_download_url}}" target="_blank">Linux</a></li>
-													{% assign found = true %}
-													{% break %}
-												{% endif %}
-											{% endfor %}
-											{% if found == false %}
+											{% assign linux = release.assets | where_exp:"item", "item.name contains '_linux'" | first %}
+											{% if linux != nil %}
+												<li><a href="{{ linux.browser_download_url}}" target="_blank">Linux</a></li>
+											{% else %}
 												<li style="text-decoration: line-through">Linux</li>
 											{% endif %}
 
-											{% assign found = false %}
-											{% for asset in release.assets %}
-												{% if asset.name contains "_mac" %}
-													<li><a href="{{ asset.browser_download_url}}" target="_blank">Mac OS</a></li>
-													{% assign found = true %}
-													{% break %}
-												{% endif %}
-											{% endfor %}
-											{% if found == false %}
+											{% assign macos = release.assets | where_exp:"item", "item.name contains '_mac'" | first %}
+											{% if macos != nil %}
+												<li><a href="{{ macos.browser_download_url}}" target="_blank">Mac OS</a></li>
+											{% else %}
 												<li style="text-decoration: line-through">Mac OS</li>
 											{% endif %}
 
-											{% assign found = false %}
-											{% for asset in release.assets %}
-												{% if asset.name contains "_windows" %}
-													<li><a href="{{ asset.browser_download_url}}" target="_blank">Windows</a></li>
-													{% assign found = true %}
-													{% break %}
-												{% endif %}
-											{% endfor %}
-											{% if found == false %}
+											{% assign windows = release.assets | where_exp:"item", "item.name contains '_windows'" | first %}
+											{% if windows != nil %}
+												<li><a href="{{ windows.browser_download_url}}" target="_blank">Windows</a></li>
+											{% else %}
 												<li style="text-decoration: line-through">Windows</li>
 											{% endif %}
 										</ul>
 									</td>
 									<td>
 										<ul class="row">
-											{% assign found = false %}
-											{% for asset in release.assets %}
-												{% if asset.name contains "_firefox" %}
-													<li><a href="{{ asset.browser_download_url}}" target="_blank">Firefox</a></li>
-													{% assign found = true %}
-													{% break %}
-												{% endif %}
-											{% endfor %}
-											{% if found == false %}
+
+											{% assign firefox = release.assets | where_exp:"item", "item.name contains '_firefox'" | first %}
+											{% if firefox != nil %}
+												<li><a href="{{ firefox.browser_download_url}}" target="_blank">Firefox</a></li>
+											{% else %}
 												<li style="text-decoration: line-through">Firefox</li>
 											{% endif %}
 
-											{% assign found = false %}
-											{% for asset in release.assets %}
-												{% if asset.name contains "_extension" %}
-													<li><a href="{{ asset.browser_download_url}}" target="_blank">Chrome / Edge / Safari</a></li>
-													{% assign found = true %}
-													{% break %}
-												{% endif %}
-											{% endfor %}
-											{% if found == false %}
+											{% assign webkit = release.assets | where_exp:"item", "item.name contains '_extension'" | first %}
+											{% if webkit != nil %}
+												<li><a href="{{ webkit.browser_download_url}}" target="_blank">Chrome / Edge / Safari</a></li>
+											{% else %}
 												<li style="text-decoration: line-through">Chrome / Edge / Safari</li>
-											{% endif %}
+											{% endif %}											
 										</ul>
 									</td>
 									<td>
 										<ul class="row">
-										{% assign found = false %}
-											{% for asset in release.assets %}
-												{% if asset.name contains "_selfhosted" %}
-													<li><a href="{{ asset.browser_download_url}}" target="_blank">Self Hosted</a></li>
-													{% assign found = true %}
-													{% break %}
-												{% endif %}
-											{% endfor %}
-											{% if found == false %}
+											{% assign selfhosted = release.assets | where_exp:"item", "item.name contains '_selfhosted'" | first %}
+											{% if webkit != nil %}
+												<li><a href="{{ selfhosted.browser_download_url}}" target="_blank">Self Hosted</a></li>
+											{% else %}
 												<li style="text-decoration: line-through">Self Hosted</li>
 											{% endif %}
 										</ul>
