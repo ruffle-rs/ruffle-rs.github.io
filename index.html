@@ -134,7 +134,8 @@ title: Ruffle
 					<p>
 						Download the 'standalone' version of Ruffle from <a href="#releases">our releases</a>,
 						and include the following JavaScript on any page with Flash content:
-						{% highlight html %}<script src="path/to/ruffle/ruffle.js"></script>{% endhighlight %}
+						{% capture javascript_installation %}<script src="path/to/ruffle/ruffle.js"></script>{% endcapture %}
+						<pre>{{ javascript_installation |  xml_escape }}</pre>
 					</p>
 					<p>
 						You'll need to make sure your web server is configured to serve <code>.wasm</code> files
