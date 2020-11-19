@@ -11,6 +11,7 @@ repository: ruffle-rs/ruffle
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-github-metadata
   - jekyll-seo-tag
 show_excerpts: true
 
