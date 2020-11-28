@@ -108,6 +108,13 @@ table.table-dark th {
   margin-bottom: 1rem;
 }
 
+.section.not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+
 .section h2 {
   padding-top:10rem;
   margin-left:1rem;
