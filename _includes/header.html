@@ -1,9 +1,34 @@
-<header class="site-header" role="banner">
+<header>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="/#">
+      <img src="{{ "/assets/logo.png" | relative_url }}" height="30" alt="" loading="lazy">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/#what-is-ruffle">What is Ruffle</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#usage">Usage</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#releases">Releases</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#compatibility">Compatibility</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#get-involved">Get involved</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://discord.gg/J8hgCQN" target="_blank">Join Discord</a>
+        </li>
+      </ul>
+    </div>
 
-  <div class="wrapper">
-    {%- assign default_paths = site.pages | map: "path" -%}
-    {%- assign page_paths = site.header_pages | default: default_paths -%}
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}"><img
-        src="{{ "/assets/logo.png" | relative_url }}"></a>
-  </div>
+  </nav>
 </header>
