@@ -140,11 +140,12 @@ title: Ruffle
 						<div class="col-base col-lg col-lg-6">
 						<h4>Chrome</h4>
 						<ul>
-    						<li>Unpack the downloaded zip somewhere.</li>
+						<li>Click the "Chrome / Edge / Safari" link.</li>
+    						<li>Extract the downloaded zip file somewhere.</li>
     						<li>Navigate to <code>chrome://extensions/</code></li>
     						<li>Turn on Developer mode in the top right corner.</li>
     						<li>Click Load unpacked.</li>
-    						<li>Select the folder you unpacked the extension to.</li>
+    						<li>Select the folder you extracted the extension to.</li>
 						</ul>
 					</div>
 					<div class="col-base col-lg col-lg-6">
@@ -168,14 +169,15 @@ title: Ruffle
 						frames when playing the original Meat Boy.
 					</p>
 					<p>
-						Currently this is just a command line application, but we intend to develop a GUI for it soon
+						Currently most options are accessed via the command line, but we intend to develop a GUI soon
 						for ease of use. First, download the appropriate executable for your operating system from
 						<a href="#releases">our releases</a>.
 					</p>
 					<p>
-						To use the executable, simply start it with the path to the swf you wish to play - it may be
-						either a local file, or a URL to a file online.
-						We do provide more advanced options if you wish to control how this file is played.
+						To use Ruffle, simply double-click the executable and select the SWF file you wish to play.
+						Alternatively, type a command such as 
+						<code>ruffle filename.swf</code> or <code>https://example.com/filename.swf</code>.
+						We also provide more advanced options if you wish to control how this file is played.
 						To view the full options available, run
 						<code>ruffle --help</code>.
 					</p>
