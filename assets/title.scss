@@ -171,12 +171,14 @@ footer.site-footer ul {
 }
 
 ul.sponsors, ul.as-seen-on {
-  display:flex;
-  flex-basis: auto;
-  flex-direction: row;
   list-style: none;
   margin-left:0;
   justify-content: space-around;
+  text-align: center;
+}
+
+ul.sponsors li {
+  display: inline-block;
 }
 
 footer .social, footer .description {
