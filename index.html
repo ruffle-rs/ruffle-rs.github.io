@@ -101,7 +101,7 @@ title: Ruffle
 				<div class="col-base col-lg col-lg-9">
 					<h3>Installing on a website you own</h3>
 					<p>
-						Download the 'standalone' version of Ruffle from <a href="#releases">our releases</a>,
+						Download the 'standalone' version of Ruffle from <a href="#downloads">our downloads</a>,
 						and include the following JavaScript on any page with Flash content:
 						{% capture javascript_installation %}<script src="path/to/ruffle/ruffle.js"></script>{% endcapture %}
 						<pre>{{ javascript_installation |  xml_escape }}</pre>
@@ -135,7 +135,7 @@ title: Ruffle
 					<p>
 						Until our first release, we currently only ship a signed browser extension for Firefox. The other extensions are unsigned.
 						To use these, first download the appropriate one for your browser from
-						<a href="#releases">our releases</a>, and then install it manually.
+						<a href="#downloads">our downloads</a>, and then install it manually.
 					</p>
 					<div class="row mt-2">
 						<div class="col-base col-lg col-lg-6">
@@ -179,7 +179,7 @@ title: Ruffle
 					<p>
 						Currently most options are accessed via the command line, but we intend to develop a GUI soon
 						for ease of use. First, download the appropriate executable for your operating system from
-						<a href="#releases">our releases</a>.
+						<a href="#downloads">our downloads</a>.
 					</p>
 					<p>
 						To use Ruffle, simply double-click the executable and select the SWF file you wish to play.
@@ -193,10 +193,11 @@ title: Ruffle
 			</div>
 		</section>
 		<section class="section content">
-			<h2 id="releases">Releases</h2>
+			<div id="releases"></div>
+			<h2 id="downloads">Downloads</h2>
 			<div class="row">
 				<div class="col-base col-sm col-sm-2">
-					<img src="{{ "/assets/undraw_relaunch_day.svg" | relative_url }}" alt="Releases" class="img-fluid">
+					<img src="{{ "/assets/undraw_relaunch_day.svg" | relative_url }}" alt="Downloads" class="img-fluid">
 				</div>
 				<div class="col-base col-lg col-lg-10">
 					{% assign all_releases = site.github.releases | where_exp:"item", "item.draft == false" %}
