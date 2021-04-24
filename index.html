@@ -332,20 +332,20 @@ title: Ruffle
 												<li style="text-decoration: line-through">Mac OS</li>
 											{% endif %}
 
-											<!-- Remove after the 3rd release with the 32 bit build -->
-											{% assign windows = release.assets | where_exp:"item", "item.name contains '_windows'" | first %}
-											{% if windows != nil %}
-												<li><a href="{{ windows.browser_download_url}}" target="_blank">Windows</a></li>
-											{% else %}
-												<li style="text-decoration: line-through">Windows</li>
-											{% endif %}
-											<!-- End Remove -->
-
 											{% assign win64 = release.assets | where_exp:"item", "item.name contains '_win_x64'" | first %}
 											{% if win64 != nil %}
 												<li><a href="{{ windows.browser_download_url}}" target="_blank">Windows (64 Bit)</a></li>
 											{% else %}
+											<!-- Remove after the 3rd release with the 32 bit build -->
+											{% assign windows = release.assets | where_exp:"item", "item.name contains '_windows'" | first %}
+											{% if windows != nil %}
+												<li><a href="{{ windows.browser_download_url}}" target="_blank">Windows (64 Bit)</a></li>
+											{% else %}
+											<!-- End Remove -->
 												<li style="text-decoration: line-through">Windows (64 Bit)</li>
+											<!-- Remove after the 3rd release with the 32 bit build -->
+											{% endif %}
+											<!-- End Remove -->
 											{% endif %}
 
 											{% assign win32 = release.assets | where_exp:"item", "item.name contains '_win_x86'" | first %}
