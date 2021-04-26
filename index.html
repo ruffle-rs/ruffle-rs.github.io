@@ -359,14 +359,14 @@ title: Ruffle
 									<td>
 										<ul class="row">
 
-											{% assign firefox = release.assets | where_exp:"item", "item.name contains '-firefox'" | first %}
+											{% assign firefox = release.assets | where_exp:"item", "item.name contains 'firefox'" | first %}
 											{% if firefox != nil %}
 												<li><a href="{{ firefox.browser_download_url}}" target="_blank">Firefox</a></li>
 											{% else %}
 												<li style="text-decoration: line-through">Firefox</li>
 											{% endif %}
 
-											{% assign webkit = release.assets | where_exp:"item", "item.name contains '-extension.'" | first %}
+											{% assign webkit = release.assets | where_exp:"item", "item.name contains 'extension.'" | first %}
 											{% if webkit != nil %}
 												<li><a href="{{ webkit.browser_download_url}}" target="_blank">Chrome / Edge / Safari</a></li>
 											{% else %}
@@ -376,7 +376,7 @@ title: Ruffle
 									</td>
 									<td>
 										<ul class="row">
-											{% assign selfhosted = release.assets | where_exp:"item", "item.name contains '-selfhosted'" | first %}
+											{% assign selfhosted = release.assets | where_exp:"item", "item.name contains 'selfhosted'" | first %}
 											{% if webkit != nil %}
 												<li><a href="{{ selfhosted.browser_download_url}}" target="_blank">Self Hosted</a></li>
 											{% else %}
