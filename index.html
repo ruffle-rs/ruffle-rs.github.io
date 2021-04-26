@@ -318,32 +318,41 @@ title: Ruffle
 									<td>{{ release.published_at | date: "%Y-%m-%d" }}</td>
 									<td>
 										<ul class="row">
-											{% assign linux = release.assets | where_exp:"item", "item.name contains '-linux'" | first %}
+											{% assign linux = release.assets | where_exp:"item", "item.name contains 'linux'" | first %}
 											{% if linux != nil %}
 												<li><a href="{{ linux.browser_download_url}}" target="_blank">Linux</a></li>
 											{% else %}
 												<li style="text-decoration: line-through">Linux</li>
 											{% endif %}
 
-											{% assign macos = release.assets | where_exp:"item", "item.name contains '-macos'" | first %}
+											{% assign macos = release.assets | where_exp:"item", "item.name contains 'mac'" | first %}
 											{% if macos != nil %}
 												<li><a href="{{ macos.browser_download_url}}" target="_blank">Mac OS</a></li>
 											{% else %}
 												<li style="text-decoration: line-through">Mac OS</li>
 											{% endif %}
 
-											{% assign windows64 = release.assets | where_exp:"item", "item.name contains '-windows-x86_32'" | first %}
-											{% if windows64 != nil %}
-												<li><a href="{{ windows64.browser_download_url}}" target="_blank">Windows (32-bit)</a></li>
+											{% assign windows32 = release.assets | where_exp:"item", "item.name contains '-windows-x86_32'" | first %}
+											{% if windows32 != nil %}
+												<li><a href="{{ windows32.browser_download_url}}" target="_blank">Windows (32-bit)</a></li>
 											{% else %}
 												<li style="text-decoration: line-through">Windows (32-bit)</li>
 											{% endif %}
 
-											{% assign windows32 = release.assets | where_exp:"item", "item.name contains '-windows-x86_64'" | first %}
-											{% if windows32 != nil %}
-												<li><a href="{{ windows32.browser_download_url}}" target="_blank">Windows (64-bit)</a></li>
+											{% assign windows64 = release.assets | where_exp:"item", "item.name contains '-windows-x86_64'" | first %}
+											{% if windows64 != nil %}
+												<li><a href="{{ windows64.browser_download_url}}" target="_blank">Windows (64-bit)</a></li>
 											{% else %}
+											<!-- Remove once there have been 3 full days with 32-bit builds -->
+											{% assign windows = release.assets | where_exp:"item", "item.name contains 'windows.'" | first %}
+											{% if windows != nil %}
+												<li><a href="{{ windows.browser_download_url}}" target="_blank">Windows (64-bit)</a></li>
+											{% else %}
+											<!-- End Remove -->
 												<li style="text-decoration: line-through">Windows (64-bit)</li>
+											<!-- Remove once there have been 3 full days with 32-bit builds -->
+											{% endif %}
+											<!-- End Remove -->
 											{% endif %}
 										</ul>
 									</td>
