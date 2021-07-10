@@ -13,7 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: helaili/jekyll-action@2.2.0
-        env:
-          JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
         with:
+          token: ${{ secrets.JEKYLL_PAT }}
           target_branch: 'gh-pages'
