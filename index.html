@@ -199,6 +199,14 @@ title: Ruffle
 					<img src="{{ "/assets/undraw_relaunch_day.svg" | relative_url }}" alt="Downloads" class="img-fluid">
 				</div>
 				<div class="col-base col-lg col-lg-10">
+					<p>
+						Ruffle is directly available as an extension in Chrome Web Store:
+					</p>
+
+					<a href="https://chrome.google.com/webstore/detail/ruffle/donbcfbmhbcapadipfkeojnmajbakjdc" target="_blank" rel="nofollow">
+						<img src="{{ "/assets/chrome_web_store.png" | relative_url }}" alt="Chrome Web Store" class="img-fluid">
+					</a>
+
 					{% assign all_releases = site.github.releases | where_exp:"item", "item.draft == false" %}
 					{% assign prerelease = all_releases | where_exp:"item", "item.prerelease == true" %}
 					{% assign full_release = all_releases | where_exp:"item", "item.prerelease == false" %}
