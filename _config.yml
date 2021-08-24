@@ -7,7 +7,7 @@ baseurl: "/ruffle-rs.github.io"
 # twitter_username: jekyllrb
 github_username:  ruffle-rs
 github_url: "https://github.com/ruffle-rs/ruffle"
-repository: JmeJuniper/ruffle-rs.github.io
+repository: ruffle-rs/ruffle
 markdown: kramdown
 plugins:
   - jekyll-feed
