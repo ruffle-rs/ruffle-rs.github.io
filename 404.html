@@ -18,21 +18,41 @@ layout: default
 
 <section class="section not-found">
   <div class="container">
-    <h1>404: Page not found</h1>
+    <h1>404 ERROR</h1>
 
-    <p><strong>Unfortunatley, we can't emulate new pages into existance :/</strong></p>
-    <p>However, here are a few links that you might find useful!</p>
-      <ul>
-        <li><a href = "https://ruffle.rs/">Homepage</a></li>
-        <li><a href = "https://ruffle.rs/demo/">Web Demo</a></li>
-        <li><a href = "https://ruffle.rs/#downloads">Downloads</a></li>
-        <li><a href = "https://github.com/ruffle-rs">Github</a></li>
-        <li><a href = "https://discord.com/invite/ruffle">Discord server invite</a></li>
+    <p><strong>Sadly, we can't emulate new pages into existance :/</strong></p>
+    <br>
+    <p>Here are some pages you might be looking for:</p>
+    <ul id = "results">
     </ul>
-    <br>
-    <br>
-    <h3><strong>BETA FEATURE</strong></h3>
-    <p>Here is a possible suggestion for what you were looking for:</p>
-    <p id = "result">Unfortunatley we can't find anything, but this is still a wip so expect this to be updated later!</p>
   </div>
 </section>
+
+<script>
+  // Sets up some variables
+  var path = window.location.pathname; // this will get the path after the url (so if you enter "https://ruffle.rs/example/test.png" into the adress bar, it will return "example/test.png")
+  var results = document.getElementById("results"); // gets the list where we are going to return the results
+  var resultList = []; // sets up an array so we can start storing values
+  
+  // This will detect if the path includes anything like "home" or "discord", then push a link matching it to the array.
+  // There is probably a better way to do this other than a bunch of if statements, but I don't know it :P
+  if (path.includes("home") || path.includes("Home") || path.includes("HOME")) {
+    resultList.push("<a href = 'https://ruffle.rs/'>Home</a>");
+  }
+  if (path.includes("discord") || path.includes("Discord") || path.includes("DISCORD")) {
+    resultList.push("<a href = 'https://discord.gg/ruffle'>Discord Server Invite Link</a>");
+  }
+  if (path.includes("download") || path.includes("Download") || path.includes("DOWNLOAD") || path.includes("extention") || path.includes("Extention") || path.includes("EXTENTION")) {
+    resultList.push("<a href = 'https://ruffle.rs/#downloads'>PC downloads and browser extentions</a>");
+  }
+  
+  // This will put the array of links into the unordered list so that people can see it
+  var item;
+  for (var i = 0; i < resultList.length; i++) {
+    item = null; // just in case anything weird happens with overwriting an element with another element. Don't think it will but you can never be too safe.
+    item = document.createElement("li");
+    item.innerHTML = resultList[i];
+    results.appendChild(item);
+  }
+  
+</script>
