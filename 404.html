@@ -18,22 +18,13 @@ layout: default
 
 <section class="section not-found">
   <div class="container">
-    <h1>404: Page not found</h1>
+    <h1>404 ERROR</h1>
 
-    <p><strong>Unfortunatley, we can't emulate new pages into existance :/</strong></p>
-    <p>However, here are a few links that you might find useful!</p>
-      <ul>
-        <li><a href = "https://ruffle.rs/">Homepage</a></li>
-        <li><a href = "https://ruffle.rs/demo/">Web Demo</a></li>
-        <li><a href = "https://ruffle.rs/#downloads">Downloads</a></li>
-        <li><a href = "https://github.com/ruffle-rs">Github</a></li>
-        <li><a href = "https://discord.com/invite/ruffle">Discord server invite</a></li>
-    </ul>
-    <br>
+    <p><strong>Sadly, we can't emulate new pages into existance :/</strong></p>
     <br>
     <h3><strong>BETA FEATURE</strong></h3>
     <p>Here is a possible suggestion for what you were looking for:</p>
-    <p id = "result">Unfortunatley we can't find anything, but this is still a wip so expect this to be updated later!</p>
+    <p id = "result">Unfortunatley we can't find anything, but this is still a WIP so expect this to be updated later!</p>
   </div>
 </section>
 
@@ -41,5 +32,8 @@ layout: default
   var path = window.location.pathname;
   var result = document.getElementById("result");
   if (path.includes("home") || path.includes("Home") || path.includes("HOME")) {
-    result.innerHTML = "<a href = \"https://ruffle.rs/\">Homepage</a>"
+    result.innerHTML = "<a href = 'https://ruffle.rs/'>Home</a>"
+  } else if (path.includes("discord") || path.includes("Discord") || path.includes("discordLink") || path.includes("discord link") || path.includes("Discord Link") || path.includes("discord Link") || path.includes("Discord link") || path.includes("discordlink") || path.includes("Discordlink") || path.includes("DiscordLink")) {
+    result.innerHTML = "<a href = 'https://ruffle.rs/'>Home</a>"
   }
+</script>
