@@ -40,7 +40,10 @@ layout: default
     resultList.push("<a href = 'https://ruffle.rs/'>Home</a>");
   }
   if (path.includes("discord") || path.includes("Discord") || path.includes("DISCORD")) {
-    resultList.push("<a href = 'https://discord.gg/ruffle'>Discord Server</a>");
+    resultList.push("<a href = 'https://discord.gg/ruffle'>Discord Server Invite Link</a>");
+  }
+  if (path.includes("download") || path.includes("Download") || path.includes("DOWNLOAD") || path.includes("extention") || path.includes("Extention") || path.includes("EXTENTION")) {
+    resultList.push("<a href = 'https://ruffle.rs/#downloads'>PC downloads and browser extentions</a>");
   }
   
   // This will put the array of links into the unordered list so that people can see it
