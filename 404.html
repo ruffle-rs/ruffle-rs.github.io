@@ -36,3 +36,10 @@ layout: default
     <p id = "result">Unfortunatley we can't find anything, but this is still a wip so expect this to be updated later!</p>
   </div>
 </section>
+
+<script>
+  var path = window.location.pathname;
+  var result = document.getElementById("result");
+  if (path.includes("home") || path.includes("Home") || path.includes("HOME")) {
+    result.innerHTML = "<a href = \"https://ruffle.rs/\">Homepage</a>"
+  }
