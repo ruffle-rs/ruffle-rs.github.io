@@ -9,15 +9,6 @@
 		</tr>
 	</thead>
 	<tbody>
-		{% assign all_files = include.releases | map: "assets" | reverse | reverse %}
-		<tr>
-			<td>
-				Latest Available
-				<code class="ml-1">preview</code>
-			</td>
-			<td>n/a</td>
-			{% include release-assets.html assets=all_files %}
-		</tr>
 		{% for release in include.releases limit: include.limit %}
 			<tr>
 				<td>
