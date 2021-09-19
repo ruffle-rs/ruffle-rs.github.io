@@ -79,7 +79,30 @@
 				</td>
 			</tr>
 		{% endfor %}
-		{% assign all_files = include.releases | map: "assets" %}
+		{% assign all_files = include.releases | slice: 0,30 | map: "assets" | reverse %}
+		{% for item in all_files %}
+			{% if item.name contains '-linux' %}
+				{% assign linux = item %}
+			{% endif %}
+			{% if item.name contains '-macos' %}
+				{% assign macos = item %}
+			{% endif %}
+			{% if item.name contains '-windows-x86_32' %}
+				{% assign windows32 = item %}
+			{% endif %}
+			{% if item.name contains '-windows-x86_64' %}
+				{% assign windows64 = item %}
+			{% endif %}
+			{% if item.name contains '-firefox.' %}
+				{% assign firefox = item %}
+			{% endif %}
+			{% if item.name contains '-extension.' %}
+				{% assign webkit = item %}
+			{% endif %}
+			{% if item.name contains '-selfhosted' %}
+				{% assign selfhosted = item %}
+			{% endif %}
+		{% endfor %}
 		<tr>
 			<td>
 				Latest
@@ -88,28 +111,24 @@
 			<td>Unknown</td>
 			<td>
 				<ul class="row">
-					{% assign linux = all_files | where_exp:"item", "item.name contains '-linux'" | first %}
 					{% if linux != nil %}
 						<li><a href="{{ linux.browser_download_url}}" target="_blank">Linux</a></li>
 					{% else %}
 						<li style="text-decoration: line-through">Linux</li>
 					{% endif %}
 
-					{% assign macos = all_files | where_exp:"item", "item.name contains '-macos'" | first %}
 					{% if macos != nil %}
 						<li><a href="{{ macos.browser_download_url}}" target="_blank">Mac OS</a></li>
 					{% else %}
 						<li style="text-decoration: line-through">Mac OS</li>
 					{% endif %}
 
-					{% assign windows32 = all_files | where_exp:"item", "item.name contains '-windows-x86_32'" | first %}
 					{% if windows32 != nil %}
 						<li><a href="{{ windows32.browser_download_url}}" target="_blank">Windows (32-bit)</a></li>
 					{% else %}
 						<li style="text-decoration: line-through">Windows (32-bit)</li>
 					{% endif %}
 
-					{% assign windows64 = all_files | where_exp:"item", "item.name contains '-windows-x86_64'" | first %}
 					{% if windows64 != nil %}
 						<li><a href="{{ windows64.browser_download_url}}" target="_blank">Windows (64-bit)</a></li>
 					{% else %}
@@ -120,14 +139,12 @@
 			<td>
 				<ul class="row">
 
-					{% assign firefox = all_files | where_exp:"item", "item.name contains '-firefox.'" | first %}
 					{% if firefox != nil %}
 						<li><a href="{{ firefox.browser_download_url}}" target="_blank">Firefox</a></li>
 					{% else %}
 						<li style="text-decoration: line-through">Firefox</li>
 					{% endif %}
 
-					{% assign webkit = all_files | where_exp:"item", "item.name contains '-extension.'" | first %}
 					{% if webkit != nil %}
 						<li><a href="{{ webkit.browser_download_url}}" target="_blank">Chrome / Edge / Safari</a></li>
 					{% else %}
@@ -137,7 +154,6 @@
 			</td>
 			<td>
 				<ul class="row">
-					{% assign selfhosted = all_files | where_exp:"item", "item.name contains '-selfhosted'" | first %}
 					{% if selfhosted != nil %}
 						<li><a href="{{ selfhosted.browser_download_url}}" target="_blank">Self Hosted</a></li>
 					{% else %}
