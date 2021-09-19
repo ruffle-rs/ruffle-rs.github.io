@@ -79,7 +79,7 @@
 				</td>
 			</tr>
 		{% endfor %}
-		{% assign all_files = include.releases | map "assets" %}
+		{% assign all_files = include.releases | map: "assets" %}
 		<tr>
 			<td>
 				Latest
