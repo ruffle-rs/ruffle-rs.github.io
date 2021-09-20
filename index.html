@@ -211,10 +211,25 @@ title: Ruffle
 					{% assign prerelease = all_releases | where_exp:"item", "item.prerelease == true" %}
 					{% assign full_release = all_releases | where_exp:"item", "item.prerelease == false" %}
 
+					<h3>Latest Release</h3>
+					<table class="table table-responsive-lg table-dark downloads">
+						<thead>
+							<tr>
+								<th>Desktop</th>
+								<th>Browser Extension</th>
+								<th>Website</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% assign all_files = all_releases | map: "assets" | reverse | reverse %}
+							<tr>
+								{% include release-assets.html assets=all_files %}
+							</tr>
+						</tbody>
+					</table>
+
 					{% if full_release.size > 0 %}
 						{% include releases.html releases=full_release limit=5 %}
-
-						<h3>Nightly Builds</h3>
 					{% endif %}
 
 					<p>
@@ -222,6 +237,7 @@ title: Ruffle
 						as long as some code changed. Whilst we try to keep nightly builds in working order,
 						no guarantees can be made.
 					</p>
+					<h3>Nightly Builds</h3>
 					{% include releases.html releases=prerelease limit=3 %}
 				</div>
 			</div>
