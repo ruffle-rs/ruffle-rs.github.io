@@ -147,11 +147,26 @@ title: Ruffle
 						<li>Turn on Developer mode in the top right corner.</li>
 						<li>Drag and drop the downloaded ZIP file into the page.</li>
 						</ul>
-						<h4>Firefox</h4>
+						<div id="signed_ff_instructions">
+						<h4 id="signed_ff_header">Firefox</h4>
 						<ul>
 						<li>Click the Firefox extension download link.</li>
 						<li>The browser will prompt you to install the extension.</li>
 						</ul>
+						</div>
+					</div>
+					<div class="col-base col-lg col-lg-4" style="display: none;" id="all_ff_instructions">
+						<div id="unsigned_ff_instructions">
+						<h4>Firefox (unsigned)</h4>
+						<ul>
+						<li>Right-click the Firefox (unsigned) download link.</li>
+						<li>Click "Save Link As..."</li>
+						<li>Navigate to <code>about:debugging</code>.</li>
+						<li>Click on This Firefox.</li>
+						<li>Click Load Temporary Add-on...</li>
+						<li>Select the .xpi that you downloaded.</li>
+						</ul>
+						</div>
 					</div>
 					<div class="col-base col-lg col-lg-6">
 						<h4>Safari</h4>
@@ -223,7 +238,7 @@ title: Ruffle
 						<tbody>
 							{% assign all_files = all_releases | map: "assets" | reverse | reverse %}
 							<tr>
-								{% include release-assets.html assets=all_files %}
+								{% include release-assets.html assets=all_files latest=true %}
 							</tr>
 						</tbody>
 					</table>
