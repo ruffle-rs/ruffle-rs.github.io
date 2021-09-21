@@ -8,6 +8,13 @@
     var $headerarrow = $('.header-down-arrow');
     //$nav.hide();
 
+    // show firefox instructions for unsigned builds if there are unsigned builds
+    if ($(".unsigned").length) {
+      $("#all_ff_instructions").show();
+      $("#signed_ff_header").html("Firefox (not unsigned)");
+      $(".col-lg-6").removeClass("col-lg-6").addClass("col-lg-4");
+      $('#signed_ff_instructions').insertAfter('#unsigned_ff_instructions');
+    }
     // fade in .navbar
     $(function () {
       $(window).on('scroll load', function () {
