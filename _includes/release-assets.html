@@ -42,7 +42,7 @@
 			<li style="text-decoration: line-through">Firefox</li>
 		{% endif %}
 		{% if unsigned_firefox != nil and unsigned_firefox.name > signed_firefox.name %}
-			<li class="unsigned"><a href="{{ unsigned_firefox.browser_download_url}}" target="_blank">Firefox (unsigned) - More recent</a></li>
+			<li><a href="{{ unsigned_firefox.browser_download_url}}" target="_blank">Firefox (unsigned) - More recent</a></li>
 		{% endif %}
 		
 		{% else %}
@@ -50,7 +50,7 @@
 		{% if signed_firefox != nil %}
 			<li><a href="{{ signed_firefox.browser_download_url}}" target="_blank">Firefox</a></li>
 		{% elsif unsigned_firefox != nil %}
-			<li class="unsigned"><a href="{{ unsigned_firefox.browser_download_url}}" target="_blank">Firefox (unsigned)</a></li>
+			<li><a href="{{ unsigned_firefox.browser_download_url}}" target="_blank">Firefox (unsigned)</a></li>
 		{% else %}
 			<li style="text-decoration: line-through">Firefox</li>
 		{% endif %}
