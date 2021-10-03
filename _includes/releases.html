@@ -2,7 +2,6 @@
 	<thead>
 		<tr>
 			<th>Version</th>
-			<th>Date</th>
 			<th>Desktop</th>
 			<th>Browser Extension</th>
 			<th>Website</th>
@@ -17,7 +16,6 @@
 						<code class="ml-1">preview</code>
 					{% endif %}
 				</td>
-				<td>{{ release.published_at | date: "%Y-%m-%d" }}</td>
 				{% include release-assets.html assets=release.assets %}
 			</tr>
 		{% endfor %}
