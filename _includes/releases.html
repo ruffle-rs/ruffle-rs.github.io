@@ -2,6 +2,9 @@
 	<thead>
 		<tr>
 			<th>Version</th>
+			{% comment %}
+			With the current code, the releases sent to this table are either all prereleases or all not prereleases
+			{% endcomment %}
 			{% unless include.releases.first.prerelease %}
 			<th>Date</th>
 			{% endunless %}
