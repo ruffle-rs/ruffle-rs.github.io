@@ -31,19 +31,12 @@
 </td>
 <td>
 	<ul class="row">
-		{% assign signed_firefox = include.assets | where_exp:"item", "item.name contains '-firefox.'" | first %}
 		{% assign unsigned_firefox = include.assets | where_exp:"item", "item.name contains '-firefox-unsigned'" | first %}
 
-		{% if signed_firefox != nil %}
-		<li><a href="{{ signed_firefox.browser_download_url}}" target="_blank">Firefox</a></li>
-		{% elsif include.latest != true and unsigned_firefox != nil %}
-		<li><a href="{{ unsigned_firefox.browser_download_url}}" target="_blank">Firefox (unsigned)</a></li>
+		{% if unsigned_firefox != nil %}
+		<li><a href="{{ unsigned_firefox.browser_download_url}}" target="_blank">Firefox</a></li>
 		{% else %}
 		<li style="text-decoration: line-through">Firefox</li>
-		{% endif %}
-
-		{% if include.latest and (signed_firefox == nil or unsigned_firefox != nil and unsigned_firefox.created_at > signed_firefox.created_at) %}
-		<li><a href="{{ unsigned_firefox.browser_download_url}}" target="_blank">Firefox (unsigned) - More recent</a></li>
 		{% endif %}
 
 		{% assign webkit = include.assets | where_exp:"item", "item.name contains '-extension.'" | first %}
