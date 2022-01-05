@@ -133,13 +133,16 @@ title: Ruffle
 						extension is the perfect thing for you!
 					</p>
 					<p>
-						Until our first release, we currently only ship a signed browser extension for Firefox. The other extensions are unsigned.
-						To use these, first download the appropriate one for your browser from
+						The easiest way to install Ruffle on Chromium-based browsers such as Chrome, Edge, Opera, and Brave is through the 
+						<a href="https://chrome.google.com/webstore/detail/ruffle/donbcfbmhbcapadipfkeojnmajbakjdc" target="_blank" rel="nofollow">Chrome Web Store</a>.
+						The easiest way to install Ruffle on Firefox is through 
+						<a href="https://addons.mozilla.org/firefox/addon/ruffle_rs" target="_blank" rel="nofollow">addons.mozilla.org</a>. We also offer unsigned 
+						nightly extensions, which you can use to test the latest new features. To use these, first download the appropriate one for your browser from 
 						<a href="#downloads">our downloads</a>, and then install it manually.
 					</p>
 					<div class="row mt-2">
-						<div class="col-base col-lg col-lg-4">
-						<h4>Chrome</h4>
+						<div class="col-base col-lg col-lg-6">
+						<h4>Chrome (nightly)</h4>
 						<div class="col-base bold-text">These instructions also apply to Chromium-based browsers such as Edge, Opera and Brave.</div>
 						<ul>
 						<li>Click the "Chrome / Edge / Safari" link.</li>
@@ -147,16 +150,9 @@ title: Ruffle
 						<li>Turn on Developer mode in the top right corner.</li>
 						<li>Drag and drop the downloaded ZIP file into the page.</li>
 						</ul>
-					</div>
-					<div class="col-base col-lg col-lg-4">
-						<h4>Firefox (standard)</h4>
+						<h4>Firefox (nightly)</h4>
 						<ul>
-						<li>Click the Firefox extension download link.</li>
-						<li>The browser will prompt you to install the extension.</li>
-						</ul>
-						<h4>Firefox (unsigned)</h4>
-						<ul>
-						<li>Right-click the Firefox (unsigned) download link.</li>
+						<li>Right-click the Firefox download link.</li>
 						<li>Click "Save Link As..."</li>
 						<li>Navigate to <code>about:debugging</code>.</li>
 						<li>Click on This Firefox.</li>
@@ -164,7 +160,7 @@ title: Ruffle
 						<li>Select the .xpi that you downloaded.</li>
 						</ul>
 					</div>
-					<div class="col-base col-lg col-lg-4">
+					<div class="col-base col-lg col-lg-6">
 						<h4>Safari</h4>
 						<ul>
 						<li>Click the "Chrome / Edge / Safari" link.</li>
@@ -222,7 +218,7 @@ title: Ruffle
 					{% assign prerelease = all_releases | where_exp:"item", "item.prerelease == true" %}
 					{% assign full_release = all_releases | where_exp:"item", "item.prerelease == false" %}
 
-					<h3>Latest Release</h3>
+					<h3>Latest Nightly Release</h3>
 					<table class="table table-responsive-lg table-dark downloads">
 						<thead>
 							<tr>
