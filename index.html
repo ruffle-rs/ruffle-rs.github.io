@@ -234,7 +234,7 @@ title: Ruffle
 						<tbody>
 							{% assign all_files = all_releases | map: "assets" | reverse | reverse %}
 							<tr>
-								{% include release-assets.html assets=all_files latest=true %}
+								{% include release-assets.html assets=all_files %}
 							</tr>
 						</tbody>
 					</table>
