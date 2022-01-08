@@ -217,8 +217,10 @@ footer ul {
   animation: octocat-wave 560ms ease-in-out
 }
 
-img .store-badge {
-  margin: 10px;
+a.store-badge {
+  margin: 5px;
+  margin-bottom: 15px;
+  display: inline-block;
 }
 
 .meter { 
