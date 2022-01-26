@@ -101,13 +101,19 @@ title: Ruffle
 				<div class="col-base col-lg col-lg-9">
 					<h3>Installing on a website you own</h3>
 					<p>
-						Download the 'standalone' version of Ruffle from <a href="#downloads">our downloads</a>,
+						Use an official Ruffle CDN, or download the 'standalone' version of Ruffle from <a href="#downloads">our downloads</a>,
 						and include the following JavaScript on any page with Flash content:
 						{% capture javascript_installation %}<script src="path/to/ruffle/ruffle.js"></script>{% endcapture %}
+						{% capture jsdelivr_installation %}<script src="https://cdn.jsdelivr.net/npm/@ruffle-rs/ruffle"></script>{% endcapture %}
+						{% capture unpkg_installation %}<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>{% endcapture %}
+						<pre>{{ unpkg_installation |  xml_escape }}</pre>
+						<p><b><i>OR</i></b></p>
+						<pre>{{ jsdelivr_installation |  xml_escape }}</pre>
+						<p><b><i>OR</i></b></p>
 						<pre>{{ javascript_installation |  xml_escape }}</pre>
 					</p>
 					<p>
-						You'll need to make sure your web server is configured to serve <code>.wasm</code> files
+						If you're using a local installation, you'll need to make sure your web server is configured to serve <code>.wasm</code> files
 						correctly, so please visit
 						<a href="https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#configure-wasm-mime-type"
 							target="_blank">
