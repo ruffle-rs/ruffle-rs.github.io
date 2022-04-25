@@ -58,6 +58,17 @@ table.table-dark th {
   text-align: center;
 }
 
+.section.splash #logo {
+  height: 400px;
+  aspect-ratio: 16 / 9;
+  margin: auto;
+}
+
+.section.splash #logo ruffle-player {
+  width: 100%;
+  height: 100%;
+}
+
 .section.splash p {
   margin: 10vh;
 }
