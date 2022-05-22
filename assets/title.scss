@@ -59,9 +59,10 @@ table.table-dark th {
 }
 
 .section.splash #logo {
-  height: 400px;
+  max-height: 400px;
   aspect-ratio: 16 / 9;
   margin: auto;
+  margin-bottom: -10%;
 }
 
 .section.splash #logo ruffle-player {
@@ -71,6 +72,8 @@ table.table-dark th {
 
 .section.splash p {
   margin: 10vh;
+  z-index: 1;
+  position: relative;
 }
 
 .section.splash ul {
@@ -81,6 +84,8 @@ table.table-dark th {
   list-style-type: none;
   justify-content: center;
   align-items: center;
+  z-index: 1;
+  position: relative;
 }
 
 .section.splash li {
@@ -269,6 +274,9 @@ a.store-badge {
 
   .section.content .row.demo .col-base {
     display: none;
+  }
+  ruffle-player {
+    pointer-events: none;
   }
 }
 
