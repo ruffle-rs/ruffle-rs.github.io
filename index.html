@@ -14,21 +14,23 @@ title: Ruffle
 		{%- include header.html -%}
 
 		<section class="section splash">
-			<canvas id="logo"></canvas>
+			<div id="logo"></div>
+			<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
 			<script type="module">
-				import init, { Player } from "./assets/ruffle.js";
-				async function run() {
-					// Load and initialize WebAssembly module asynchronously.
-					await init();
-					fetch("assets/logo-anim.swf")
-						.then(response => {
-							response.arrayBuffer().then(data => {
-								let logoCanvas = document.getElementById("logo");
-								let player = Player.new(logoCanvas, new Uint8Array(data));
-							})
-						});
-				}
-				run();
+				window.RufflePlayer = window.RufflePlayer || {};
+				window.addEventListener("load", (event) => {
+					const ruffle = window.RufflePlayer.newest();
+					const player = ruffle.createPlayer();
+					const container = document.getElementById("logo");
+					container.appendChild(player);
+					player.load({
+						url: "assets/logo-anim.swf",
+						autoplay: "on",
+						unmuteOverlay: "hidden",
+						backgroundColor: "#37528C",
+						contextMenu: false
+					});
+				});
 			</script>
 			<p>
 				<em>ruffle</em> is a Flash Player emulator built in the Rust programming language.
