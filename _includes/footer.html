@@ -29,7 +29,9 @@
         },
         x: {
           ticks: {
-            maxTicksLimit: 18,
+            maxTicksLimit: (context) => {
+              return context.chart.width > 500 ? 18 : 9;
+            },
             color: "#FFAD33"
           },
           grid: {
@@ -59,7 +61,7 @@
           titleMarginBottom: 0,
           callbacks: {
             title: (t) => {
-              return t[0].formattedValue + " commits the week of " + new Date(t[0].label).toLocaleString(undefined, {
+              return t[0].formattedValue + " commits the week of " + new Date(t[0].label.split("-")).toLocaleString(undefined, {
                 month: "short",
                 day: "numeric"
               });
@@ -102,16 +104,14 @@
     fetch("https://api.github.com/repos/ruffle-rs/ruffle/stats/commit_activity")
       .then(response => response.json())
       .then(data => {
-        Object.values(data).forEach(val => {
-          if (val.total && val.week) {
-            dat.push(val.total);
+        for (let row of data) {
+          if (row.total && row.week) {
+            dat.push(row.total);
             labels.push(
-              new Date(val.week * 1000).toLocaleDateString(
-                undefined, {timeZone: "UTC"}
-              )
+              new Date(row.week * 1000).toISOString().split("T")[0]
             );
           }
-        });
+        }
         createChart(labels, dat);
       });
   });
