@@ -61,7 +61,8 @@
           titleMarginBottom: 0,
           callbacks: {
             title: (t) => {
-              return t[0].formattedValue + " commits the week of " + new Date(t[0].label.split("-")).toLocaleString(undefined, {
+              return t[0].formattedValue + " commits the week of " + new Date(t[0].label).toLocaleString(undefined, {
+                timeZone: '"UTC",
                 month: "short",
                 day: "numeric"
               });
