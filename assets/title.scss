@@ -1,6 +1,11 @@
 ---
 ---
 
+:root {
+  --ruffle-blue: #37528c;
+  --ruffle-orange: #ffad33;
+}
+
 a:visited {
   color: #FC0;
 }
@@ -256,6 +261,12 @@ a.store-badge {
   background-color: #FFAD33;
   animation: progressBar 3s ease-in-out;
   animation-fill-mode:both; 
+}
+
+#weekly-commits {
+  width: 100%;
+  max-width: 1250px;
+  max-height: 300px;
 }
 
 @media screen and (max-width: 800px) {
