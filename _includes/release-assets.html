@@ -41,9 +41,14 @@
 
 		{% assign webkit = include.assets | where_exp:"item", "item.name contains '-extension.'" | first %}
 		{% if webkit != nil %}
-			<li><a href="{{ webkit.browser_download_url}}" target="_blank">Chrome / Edge / Safari</a></li>
+			<li><a href="{{ webkit.browser_download_url}}" target="_blank">Chrome / Edge</a></li>
 		{% else %}
-			<li style="text-decoration: line-through">Chrome / Edge / Safari</li>
+			<li style="text-decoration: line-through">Chrome / Edge</li>
+		{% endif %}
+		{% if macos != nil %}
+			<li><a href="{{ macos.browser_download_url}}" target="_blank">Safari</a></li>
+		{% else %}
+			<li style="text-decoration: line-through">Safari</li>
 		{% endif %}
 	</ul>
 </td>
