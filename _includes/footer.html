@@ -118,6 +118,98 @@
   });
 </script>
 {%- endif -%}
+{%- if page.url == '/avm2.html' -%}
+<script type="text/javascript">
+async function getJSONResponse(url) {
+  return fetch(reportURL)
+    .then(response => response.json())
+    .then(json => {
+      return json
+    });
+}
+async function createProgressBar(section, implementationPoints, maxPoints, stubPenalties, missing, stubs) {
+  const classElement = document.createElement("H3");
+  classElement.textContent = section + "\u2003";
+  const classes = document.getElementById("classes");
+  const classProgressBar = document.createElement("DIV");
+  const greenPercent = (implementationPoints - stubPenalties) / maxPoints * 100;
+  const yellowPercent = stubPenalties / maxPoints * 100;
+  const codeElement = document.createElement("CODE");
+  codeElement.innerText = Math.round(greenPercent) + "% implemented";
+  if (Math.round(yellowPercent) > 0) {
+    codeElement.innerText += ", " + Math.round(yellowPercent) + "% stubbed";
+  }
+  classElement.appendChild(codeElement);
+  classProgressBar.className = "progress-bar";
+  classProgressBar.title = codeElement.innerText;
+  const root = document.querySelector(':root');
+  classProgressBar.style.setProperty('--green-percent', greenPercent + "%");
+  classProgressBar.style.setProperty('--yellow-end-percent', greenPercent + yellowPercent + "%");
+  const missingDetails = document.createElement("DETAILS");
+  const missingSummary = document.createElement("SUMMARY");
+  missingSummary.innerText = "Missing";
+  missingDetails.appendChild(missingSummary);
+  const missingList = document.createElement("UL");
+  missing.forEach(missing => {
+    missingElement = document.createElement("LI");
+    missingElement.innerText = missing;
+    missingList.appendChild(missingElement);
+  });
+  missingDetails.appendChild(missingList);
+  const stubDetails = document.createElement("DETAILS");
+  const stubSummary = document.createElement("SUMMARY");
+  stubSummary.innerText = "Stubbed";
+  stubDetails.appendChild(stubSummary);
+  const stubList = document.createElement("UL");
+  stubs.forEach(stub => {
+    stubElement = document.createElement("LI");
+    stubElement.innerText = stub;
+    stubList.appendChild(stubElement);
+  });
+  stubDetails.appendChild(stubList);
+  classes.appendChild(classElement);
+  classes.appendChild(classProgressBar);
+  if (missing.length > 0) classes.appendChild(missingDetails);
+  if (stubs.length > 0) classes.appendChild(stubDetails);
+}
+async function getImplementationAmounts(responseJSON, section) {
+  let implementationPoints = 0;
+  let maxPoints = 0;
+  let stubPenalties = 0;
+  const missing = [];
+  const stubs = [];
+  if (section === "ActionScript 3 API") {
+    const summaryAmounts = responseJSON["summary"];
+    implementationPoints = summaryAmounts["impl_points"];
+    maxPoints = summaryAmounts["max_points"];
+    stubPenalties = summaryAmounts["stub_penalty"];
+    createProgressBar(section, implementationPoints, maxPoints, stubPenalties, missing, stubs);
+    return;
+  }
+  const allClasses = Object.keys(responseJSON["classes"]);
+  const sectionClasses = section !== "Top Level" ? allClasses.filter(className => className.startsWith(section)) : allClasses.filter(className => !className.includes("."));
+  sectionClasses.forEach(className => {
+    const summaryAmounts = responseJSON["classes"][className]["summary"];
+    implementationPoints += summaryAmounts["impl_points"];
+    maxPoints += summaryAmounts["max_points"];
+    stubPenalties += summaryAmounts["stub_penalty"];
+    if (implementationPoints === 0) missing.push(className);
+    else missing.push(...(responseJSON["classes"][className]["missing"].map(el => className + ": " + el)));
+    stubs.push(...(responseJSON["classes"][className]["stubbed"].map(el => className + ": " + el)))
+  });
+  createProgressBar(section, implementationPoints, maxPoints, stubPenalties, missing, stubs);
+}
+async function getSections(url) {
+  const responseJSON = await getJSONResponse(url);
+  const allClasses = Object.keys(responseJSON["classes"]);
+  const sectionClasses = allClasses.filter(className => className.match(".*\\..*"));
+  const sectionArray = sectionClasses.map(className => className.split(".").slice(0, 2).join("."));
+  const sections = ["ActionScript 3 API", "Top Level", ...new Set(sectionArray)];
+  sections.forEach(section => getImplementationAmounts(responseJSON, section));
+}
+getSections(reportURL);
+</script>
+{%- endif -%}
 <footer class="site-footer h-card">
   <data class="u-url" href="{{ "/" | relative_url }}"></data>
   <ul>
