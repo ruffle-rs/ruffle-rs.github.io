@@ -370,6 +370,19 @@ async function getSections(url) {
   sections.forEach(section => getImplementationAmounts(responseJSON, section));
 }
 getSections(reportURL);
+document.getElementById("btn").onclick = (evt) => {
+  // grab your svg element
+  const svg = document.querySelector("svg");
+  // convert to a valid XML source
+  const as_text = new XMLSerializer().serializeToString(svg);
+  // store in a Blob
+  const blob = new Blob([as_text], { type: "image/svg+xml" });
+  // create an URI pointing to that blob
+  const url = URL.createObjectURL(blob);
+  const win = open(url);
+  // so the Garbage Collector can collect the blob
+  win.onload = (evt) => URL.revokeObjectURL(url);
+};
 </script>
 {%- endif -%}
 <footer class="site-footer h-card">
