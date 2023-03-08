@@ -187,7 +187,7 @@ async function getImplementationAmounts(responseJSON, section) {
     return;
   }
   const allClasses = Object.keys(responseJSON["classes"]);
-  const sectionClasses = section !== "Top Level" ? allClasses.filter(className => className.startsWith(section)) : allClasses.filter(className => !className.includes("."));
+  const sectionClasses = section !== "Top Level" ? allClasses.filter(className => new RegExp(section.replace(".", "\\.") + "(\\.|$)").test(className)) : allClasses.filter(className => !className.includes("."));
   sectionClasses.forEach(className => {
     const summaryAmounts = responseJSON["classes"][className]["summary"];
     implementationPoints += summaryAmounts["impl_points"];
