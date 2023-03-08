@@ -1,6 +1,11 @@
 ---
 ---
 
+:root {
+  --ruffle-blue: #37528c;
+  --ruffle-orange: #ffad33;
+}
+
 a:visited {
   color: #FC0;
 }
@@ -59,9 +64,10 @@ table.table-dark th {
 }
 
 .section.splash #logo {
-  height: 400px;
+  max-height: 400px;
   aspect-ratio: 16 / 9;
   margin: auto;
+  margin-bottom: -10%;
 }
 
 .section.splash #logo ruffle-player {
@@ -71,6 +77,8 @@ table.table-dark th {
 
 .section.splash p {
   margin: 10vh;
+  z-index: 1;
+  position: relative;
 }
 
 .section.splash ul {
@@ -81,6 +89,8 @@ table.table-dark th {
   list-style-type: none;
   justify-content: center;
   align-items: center;
+  z-index: 1;
+  position: relative;
 }
 
 .section.splash li {
@@ -253,6 +263,12 @@ a.store-badge {
   animation-fill-mode:both; 
 }
 
+#weekly-commits {
+  width: 100%;
+  max-width: 1250px;
+  max-height: 300px;
+}
+
 @media screen and (max-width: 800px) {
   footer .social .username {
     display:none;
@@ -269,6 +285,9 @@ a.store-badge {
 
   .section.content .row.demo .col-base {
     display: none;
+  }
+  ruffle-player {
+    pointer-events: none;
   }
 }
 

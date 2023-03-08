@@ -28,7 +28,8 @@ title: Ruffle
 						autoplay: "on",
 						unmuteOverlay: "hidden",
 						backgroundColor: "#37528C",
-						contextMenu: false
+						contextMenu: false,
+						preloader: false
 					});
 				});
 			</script>
@@ -138,45 +139,39 @@ title: Ruffle
 						extension is the perfect thing for you!
 					</p>
 					<p>
-						The easiest way to install Ruffle on Chromium-based browsers such as Chrome, Edge, Opera, and Brave is through the 
+						The easiest way to install Ruffle on Chromium-based browsers such as Chrome, Edge, Opera, and Brave is through the
 						<a href="https://chrome.google.com/webstore/detail/ruffle/donbcfbmhbcapadipfkeojnmajbakjdc" target="_blank" rel="nofollow">Chrome Web Store</a>.
-						The easiest way to install Ruffle on Firefox is through 
-						<a href="https://addons.mozilla.org/firefox/addon/ruffle_rs" target="_blank" rel="nofollow">addons.mozilla.org</a>. We also offer unsigned 
-						nightly extensions, which you can use to test the latest new features. To use these, first download the appropriate one for your browser from 
-						<a href="#downloads">our downloads</a>, and then install it manually.
+						The easiest way to install Ruffle on Firefox is through
+						<a href="https://addons.mozilla.org/firefox/addon/ruffle_rs" target="_blank" rel="nofollow">addons.mozilla.org</a>.
+					</p>
+					<div>
+						<a href="https://chrome.google.com/webstore/detail/ruffle/donbcfbmhbcapadipfkeojnmajbakjdc" target="_blank" rel="nofollow" class="store-badge">
+							<img src="{{ "/assets/chrome_web_store.svg" | relative_url }}" width="200" height="60" alt="Chrome Web Store" class="img-fluid">
+						</a>
+
+						<a href="https://addons.mozilla.org/firefox/addon/ruffle_rs" target="_blank" rel="nofollow" class="store-badge">
+							<img src="{{ "/assets/get-the-addon.svg" | relative_url }}" width="172" height="60" alt="addons.mozilla.org" class="img-fluid">
+						</a>
+					</div>
+					<p>
+						These update whenever new
+						builds release. We also offer unsigned nightly extensions, but most people won't need them. If you do, download the appropriate one for your
+						browser from <a href="#downloads">our downloads</a>, and then install it manually. Instructions for installation of nightly Chrome/Firefox
+						extensions available on <a href="https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#browser-extension" target="_blank" rel="nofollow">
+						our wiki</a>. Safari instructions below.
 					</p>
 					<div class="row mt-2">
-						<div class="col-base col-lg col-lg-6">
-						<h4>Chrome (nightly)</h4>
-						<div class="col-base bold-text">These instructions also apply to Chromium-based browsers such as Edge, Opera and Brave.</div>
-						<ul>
-						<li>Click the "Chrome / Edge / Safari" link.</li>
-						<li>Type <code>chrome://extensions/</code> into Chrome's address bar, then press Enter.</li>
-						<li>Turn on Developer mode in the top right corner.</li>
-						<li>Drag and drop the downloaded ZIP file into the page.</li>
-						</ul>
-						<h4>Firefox (nightly)</h4>
-						<ul>
-						<li>Right-click the Firefox download link.</li>
-						<li>Click "Save Link As..."</li>
-						<li>Navigate to <code>about:debugging</code>.</li>
-						<li>Click on This Firefox.</li>
-						<li>Click Load Temporary Add-on...</li>
-						<li>Select the .xpi that you downloaded.</li>
-						</ul>
-					</div>
-					<div class="col-base col-lg col-lg-6">
+						<div class="col-base col-lg col-lg-12">
 						<h4>Safari</h4>
 						<ul>
-						<li>Click the "Chrome / Edge / Safari" link.</li>
-						<li>Extract the downloaded zip file somewhere.</li>
-						<li>Run <code>xcrun safari-web-extension-converter path/to/unzipped_folder/</code></li>
-						<li>Click "Run on Xcode".</li>
+						<li>Click the "Safari" link.</li>
+						<li>Extract the downloaded tar.gz file somewhere.</li>
+						<li>Open the extracted file and confirm the popup dialog box.</li>
 						<li>Enable <code>Safari > Preferences > Advanced > Show Develop menu in menu bar</code>.</li>
 						<li>Enable <code>Develop > Allow Unsigned Extensions</code>.</li>
 						<li>Enable the extension by checking the box in <code>Safari > Preferences > Extensions</code>.</li>
 						</ul>
-						<div class="bold-text">Note: Converting the extension to be Safari compatible requires Xcode 12+ to be installed. For using the extension Safari 14+ is required</div>
+						<div class="bold-text">Note: Safari 14+ is required</div>
 					</div>
 					</div>
 				</div>
@@ -293,16 +288,16 @@ title: Ruffle
 						</a>
 					</p>
 					<p>
-					<h5>ActionScript 1 &amp; 2 Language <code>85%</code></h5>
-					<div class="meter" title="85%">
-						<span style="width:85%;"><span class="progress"></span></span>
+					<h5>ActionScript 1 &amp; 2 Language <code>90%</code></h5>
+					<div class="meter" title="90%">
+						<span style="width:90%;"><span class="progress"></span></span>
 					</div>
 					</p>
 
 					<p>
-					<h5>ActionScript 1 &amp; 2 API <code>50%</code></h5>
-					<div class="meter" title="50%">
-						<span style="width:50%;"><span class="progress"></span></span>
+					<h5>ActionScript 1 &amp; 2 API <code>73%</code></h5>
+					<div class="meter" title="73%">
+						<span style="width:73%;"><span class="progress"></span></span>
 					</div>
 					</p>
 				</div>
@@ -323,25 +318,30 @@ title: Ruffle
 					</p>
 
 					<p>
-						For in-depth details, please follow our
-						<a href="https://github.com/ruffle-rs/ruffle/issues/1368" target="_blank" rel="nofollow">
-							AVM 2 tracking issue on GitHub.
+						For in-depth details, please see our
+						<a href="avm2.html" target="_blank" rel="nofollow">
+							page outlining full AVM2 implementation details.
 						</a>
 					</p>
 
 					<p>
-					<h5>ActionScript 3 Language <code>10%</code></h5>
-					<div class="meter" title="10%">
-						<span style="width:10%;"><span class="progress"></span></span>
+					<h5>ActionScript 3 Language <code>60%</code></h5>
+					<div class="meter" title="60%">
+						<span style="width:60%;"><span class="progress"></span></span>
 					</div>
 					</p>
 
 					<p>
-					<h5>ActionScript 3 API <code>5%</code></h5>
-					<div class="meter" title="5%">
-						<span style="width:5%;"><span class="progress"></span></span>
+					<h5>ActionScript 3 API <code>50%</code></h5>
+					<div class="meter" title="50%">
+						<span style="width:50%;"><span class="progress"></span></span>
 					</div>
 					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-base col-lg d-flex justify-content-center">
+					<canvas id="weekly-commits"></canvas>
 				</div>
 			</div>
 		</section>
@@ -490,6 +490,16 @@ title: Ruffle
 						<li>
 							<a href="https://movavi.com/" target="_blank" rel="nofollow">
 								<img src="{{ "/assets/sponsors/movavi.svg" | relative_url }}" alt="Movavi" class="img-fluid">
+							</a>
+						</li>
+						<li>
+							<a href="https://www.kongregate.com/" target="_blank" rel="nofollow">
+								<img src="{{ "/assets/sponsors/kongregate.svg" | relative_url }}" alt="Kongregate" class="img-fluid">
+							</a>
+						</li>
+						<li>
+							<a href="https://www.bubbleshooter.net/" target="_blank" rel="nofollow">
+								<img src="{{ "/assets/sponsors/bubble-shooter.png" | relative_url }}" alt="Bubble Shooter" class="img-fluid">
 							</a>
 						</li>
 					</ul>
