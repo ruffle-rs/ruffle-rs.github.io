@@ -6,6 +6,7 @@ To test it locally, you should clone the repository (`git clone https://github.c
 
 Then, navigate to the directory where you cloned the repository and run:
 - `gem install jekyll bundler`
+- `bundle install`
 - `bundle exec jekyll serve`
 
-If you are told `cannot load such file -- webrick`, run `bundle add webrick`. If you are told you are missing gems when bundling, run `bundle install` and then re-run `bundle exec jekyll serve`. If everything worked properly, a copy of the website should be up and running at http://localhost:4000 and any changes you make to the code should appear there.
+If everything worked properly, a copy of the website should be up and running at http://localhost:4000 and any changes you make to the code should appear there. Any time you want to test changes to the website after that, re-run `bundle exec jekyll serve`. If you are told you are missing gems when bundling, re-run `bundle install` and then re-run `bundle exec jekyll serve`.
