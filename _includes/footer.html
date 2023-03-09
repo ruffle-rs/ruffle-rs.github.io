@@ -119,6 +119,7 @@
 </script>
 {%- endif -%}
 {%- if page.url == '/avm2.html' -%}
+<script src="https://d3js.org/d3.v7.min.js"></script>
 <script type="text/javascript">
 async function getJSONResponse(url) {
   return fetch(reportURL)
@@ -199,8 +200,169 @@ async function getImplementationAmounts(responseJSON, section) {
   });
   createProgressBar(section, implementationPoints, maxPoints, stubPenalties, missing, stubs);
 }
+async function makeD3Chart(data) {
+    // convert report to d3-friendly format
+    const report = (function() {
+        const newtree = {name: "", children: []};
+
+        for (let [name, cls] of Object.entries(data.classes)) {
+          if (name === "")
+            name = "(globals)";
+          if (!name.includes("."))
+            name = "toplevel." + name;
+          const parts = name.split(".");
+          let curr = newtree;
+          for (let part of parts) {
+            let found = curr.children.filter(c => c.name === part);
+            if (found.length) {
+              curr = found[0]
+            } else {
+              newNode = {"name": part, children: []}
+              curr.children.push(newNode)
+              curr = newNode
+            }
+          }
+          curr.value = cls.summary.max_points;
+          curr.entries = cls.summary.max_points;
+          curr.good = cls.summary.impl_points;
+          curr.stubbed = cls.summary.stub_penalty;
+        }
+
+        function recurse(node) {
+          if (!node.children) return;
+          for (let child of node.children)
+            recurse(child)
+          if (node.entries === undefined) { node.entries = 0; }
+          if (node.good === undefined) { node.good = 0; }
+          if (node.stubbed === undefined) { node.stubbed = 0; }
+          for (let child of node.children) {
+            node.entries += child.entries;
+            node.good += child.good;
+            node.stubbed += child.stubbed;
+          }
+        }
+
+        recurse(newtree);
+        return newtree;
+    })();
+
+    // https://github.com/observablehq/stdlib/blob/main/src/dom/uid.js
+    let count = 0;
+    function uid(name) {
+      return new Id("O-" + (name == null ? "" : name + "-") + ++count);
+    }
+    function Id(id) {
+      this.id = id;
+      this.href = `#${id}`;
+    }
+    Id.prototype.toString = function() {
+      return "url(" + this.href + ")";
+    };
+
+    const width = 1280;
+    const height = 720;
+
+    const color = function(node) {
+        // tree-depth coloring
+        let a = d3.scaleSequential([8, 0], d3.interpolateMagma)(node.height);
+        // %-based red-green scale
+        let b = d3.interpolateRgb.gamma(1)("#f63538", "#30cc5a")(node.data.good / node.data.entries)
+        return d3.interpolateRgb(a, b)(0.8);
+    }
+
+    // code above is significantly based on https://observablehq.com/@d3/nested-treemap
+    const treemap = data => d3.treemap()
+        .size([width, height])
+        .paddingOuter(3)
+        .paddingTop(19)
+        .paddingInner(1)
+        .round(true)
+      (d3.hierarchy(data)
+          .sum(d => d.value)
+          .sort((a, b) => b.value - a.value))
+
+    const chart = (function(){
+      const root = treemap(report);
+
+      const svg = d3.create("svg")
+          .attr("viewBox", [0, 0, width, height])
+          .style("font", "10px sans-serif");
+
+      const shadow = uid("shadow");
+
+      svg.append("filter")
+          .attr("id", shadow.id)
+        .append("feDropShadow")
+          .attr("flood-opacity", 0.3)
+          .attr("dx", 0)
+          .attr("stdDeviation", 3);
+
+      // build layers, order them correctly (note: d3 docs have a bug, they don't sort)
+      const groups = [...d3.group(root, d => d.height)];
+      groups.sort((a, b) => d3.descending(a[0], b[0]));
+
+      // build the DOM
+      const node = svg.selectAll("g")
+        .data(groups)
+        .join("g")
+          .attr("filter", shadow)
+        .selectAll("g")
+        .data(d => d[1])
+        .join("g")
+          .attr("transform", d => `translate(${d.x0},${d.y0})`);
+
+      // set hover-text
+      node.append("title")
+          .text(d => `${d.ancestors().reverse().map(d => d.data.name).join(".")}\n${d.data.good}/${d.data.entries}`);
+
+      // create colored boxes
+      node.append("rect")
+          .attr("id", d => (d.nodeUid = uid("node")).id)
+          .attr("fill", d => color(d))
+          .attr("width", d => d.x1 - d.x0)
+          .attr("height", d => d.y1 - d.y0);
+
+      // set shadows?
+      node.append("clipPath")
+          .attr("id", d => (d.clipUid = uid("clip")).id)
+        .append("use")
+          .attr("xlink:href", d => d.nodeUid.href);
+
+      let format = function(node) {
+        if (node.good == 0) {
+            return [`${node.good}/${node.entries}`];
+        }
+        let percent = d3.format(".0%")(node.good/node.entries)
+        return [`${node.good}/${node.entries}`, `(${percent})`];
+      }
+
+      // set text
+      node.append("text")
+          .attr("clip-path", d => d.clipUid)
+        .selectAll("tspan")
+        .data(d => [d.data.name, ...format(d.data)])
+        .join("tspan")
+          .attr("fill-opacity", (d, i, nodes) => i === 0 ? null : 0.7)
+          .text(d => d);
+
+      // move text to correct spot
+      node.filter(d => d.children).selectAll("tspan")
+          .attr("dx", 3)
+          .attr("y", 13);
+
+      // move text to correct spot (leaves)
+      node.filter(d => !d.children).selectAll("tspan")
+          .attr("x", 3)
+          .attr("y", (d, i, nodes) => `${1.1 + i * 1.1}em`);
+
+      return svg.node();
+    })();
+
+    document.getElementById("classes").appendChild(chart);
+}
 async function getSections(url) {
   const responseJSON = await getJSONResponse(url);
+  makeD3Chart(responseJSON);
   const allClasses = Object.keys(responseJSON["classes"]);
   const sectionClasses = allClasses.filter(className => className.match(".*\\..*"));
   const sectionArray = sectionClasses.map(className => className.split(".").slice(0, 2).join("."));
@@ -208,6 +370,19 @@ async function getSections(url) {
   sections.forEach(section => getImplementationAmounts(responseJSON, section));
 }
 getSections(reportURL);
+document.getElementById("btn").onclick = (evt) => {
+  // grab your svg element
+  const svg = document.querySelector("svg");
+  // convert to a valid XML source
+  const as_text = new XMLSerializer().serializeToString(svg);
+  // store in a Blob
+  const blob = new Blob([as_text], { type: "image/svg+xml" });
+  // create an URI pointing to that blob
+  const url = URL.createObjectURL(blob);
+  const win = open(url);
+  // so the Garbage Collector can collect the blob
+  win.onload = (evt) => URL.revokeObjectURL(url);
+};
 </script>
 {%- endif -%}
 <footer class="site-footer h-card">
