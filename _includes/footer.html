@@ -128,7 +128,7 @@ async function getJSONResponse(url) {
       return json
     });
 }
-async function createProgressBar(section, implementationPoints, maxPoints, stubPenalties, missing, stubs) {
+function createProgressBar(section, implementationPoints, maxPoints, stubPenalties, missing, stubs) {
   const classElement = document.createElement("H3");
   classElement.textContent = section + "\u2003";
   const classes = document.getElementById("classes");
@@ -173,7 +173,7 @@ async function createProgressBar(section, implementationPoints, maxPoints, stubP
   if (missing.length > 0) classes.appendChild(missingDetails);
   if (stubs.length > 0) classes.appendChild(stubDetails);
 }
-async function getImplementationAmounts(responseJSON, section) {
+function getImplementationAmounts(responseJSON, section) {
   let implementationPoints = 0;
   let maxPoints = 0;
   let stubPenalties = 0;
@@ -200,7 +200,7 @@ async function getImplementationAmounts(responseJSON, section) {
   });
   createProgressBar(section, implementationPoints, maxPoints, stubPenalties, missing, stubs);
 }
-async function makeD3Chart(data) {
+function makeD3Chart(data) {
     // convert report to d3-friendly format
     const report = (function() {
         const newtree = {name: "", children: []};
