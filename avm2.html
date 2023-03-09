@@ -26,11 +26,20 @@ layout: default
   .wrapper {
     max-width: 100%;
   }
+  #classes svg {
+    display: none;
+  }
+  #btn {
+    background-color: var(--ruffle-orange);
+    border-color: var(--ruffle-orange);
+    color: var(--ruffle-blue);
+  }
 </style>
 
 <section class="section content">
   <h1>ActionScript 3 API Implementation</h1>
 
+  <button id="btn">View Implementation Tree</button>
   <div id="classes"></div>
 </section>
 <script>
