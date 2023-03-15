@@ -50,6 +50,7 @@ GEM
     faraday-rack (1.0.0)
     faraday-retry (1.0.3)
     ffi (1.15.5)
+    ffi (1.15.5-x64-mingw-ucrt)
     ffi (1.15.5-x64-mingw32)
     forwardable-extended (2.6.0)
     gemoji (3.0.1)
@@ -233,6 +234,8 @@ GEM
       jekyll-seo-tag (~> 2.1)
     minitest (5.17.0)
     multipart-post (2.1.1)
+    nokogiri (1.14.2-x64-mingw-ucrt)
+      racc (~> 1.4)
     nokogiri (1.14.2-x64-mingw32)
       racc (~> 1.4)
     nokogiri (1.14.2-x86_64-linux)
@@ -275,10 +278,12 @@ GEM
     unf_ext (0.0.8.1)
     unf_ext (0.0.8.1-x64-mingw32)
     unicode-display_width (1.8.0)
+    wdm (0.1.1)
     webrick (1.8.1)
     zeitwerk (2.6.6)
 
 PLATFORMS
+  x64-mingw-ucrt
   x64-mingw32
   x86_64-linux
 
@@ -289,6 +294,7 @@ DEPENDENCIES
   jekyll-seo-tag (~> 2.1)
   jekyll-watch (~> 2.2.1)
   tzinfo-data
+  wdm (~> 0.1.0)
   webrick (~> 1.7)
 
 BUNDLED WITH

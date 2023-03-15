@@ -2,3 +2,18 @@
 ---
 
 @import "minima";
+
+video {
+  max-height: 20rem;
+  max-width: 90vw;
+}
+
+.content video {
+  margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 600px) {
+  .content video {
+    margin-left: 5rem;
+  }
+}
