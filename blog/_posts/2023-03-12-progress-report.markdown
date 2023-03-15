@@ -23,7 +23,7 @@ Thanks to a massive code refactor by @CUB3D, dozens upon dozens of ActionScript 
 - XML support is rapidly improving! ActionScript 3 games tend to use a wide variety of XML methods. As Ruffle gains support for these methods, games are springing to life!
 - Several problems that caused unresponsive buttons and menus have been fixed. Unclickable buttons in ActionScript 3 games are (mostly) a thing of the past!
 - Other major refactors are in progress to improve Ruffle's compatibility with ActionScript 3 frameworks like Haxe.
-- @Aaron1011 is working on **Stage3D support**! Thanks to his work, the gorgeous interstellar strategy game Solarmax 2 is now fully playable in Ruffle! Check out the video below.
+- @Aaron1011 is working on **Stage3D support**! Thanks to his work, the gorgeous interstellar strategy game Solarmax 2 is now fully playable in Ruffle on the desktop player! Check out the video below.
 
 <video muted autoplay controls>
     <source src="/assets/2023-03-12-progress-report/ruffle_solarmax2.mp4" type="video/mp4">
