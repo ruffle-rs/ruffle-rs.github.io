@@ -1,7 +1,7 @@
 {
   "summary": {
-    "max_points": 4396,
-    "impl_points": 2372,
+    "max_points": 4590,
+    "impl_points": 2375,
     "stub_penalty": 97
   },
   "classes": {
@@ -281,11 +281,13 @@
     },
     "RegExp": {
       "summary": {
-        "max_points": 12,
+        "max_points": 14,
         "impl_points": 10,
         "stub_penalty": 0
       },
       "missing": [
+        "exec()",
+        "test()",
         "static length",
         "prototype.toString()"
       ],
@@ -293,11 +295,30 @@
     },
     "String": {
       "summary": {
-        "max_points": 22,
-        "impl_points": 2,
+        "max_points": 42,
+        "impl_points": 3,
         "stub_penalty": 0
       },
       "missing": [
+        "toUpperCase()",
+        "charCodeAt()",
+        "search()",
+        "concat()",
+        "slice()",
+        "match()",
+        "valueOf()",
+        "charAt()",
+        "substr()",
+        "toString()",
+        "toLocaleLowerCase()",
+        "indexOf()",
+        "replace()",
+        "split()",
+        "substring()",
+        "lastIndexOf()",
+        "toLocaleUpperCase()",
+        "localeCompare()",
+        "toLowerCase()",
         "static length",
         "prototype.toUpperCase()",
         "prototype.charCodeAt()",
@@ -612,11 +633,51 @@
     },
     "XMLList": {
       "summary": {
-        "max_points": 42,
+        "max_points": 82,
         "impl_points": 8,
         "stub_penalty": 0
       },
       "missing": [
+        "setNamespace()",
+        "parent()",
+        "child()",
+        "elements()",
+        "setChildren()",
+        "hasComplexContent()",
+        "inScopeNamespaces()",
+        "toJSON()",
+        "toString()",
+        "attributes()",
+        "insertChildBefore()",
+        "removeNamespace()",
+        "children()",
+        "name()",
+        "processingInstructions()",
+        "descendants()",
+        "copy()",
+        "prependChild()",
+        "contains()",
+        "propertyIsEnumerable()",
+        "normalize()",
+        "appendChild()",
+        "hasSimpleContent()",
+        "valueOf()",
+        "addNamespace()",
+        "nodeKind()",
+        "namespace()",
+        "attribute()",
+        "insertChildAfter()",
+        "namespaceDeclarations()",
+        "text()",
+        "childIndex()",
+        "hasOwnProperty()",
+        "toXMLString()",
+        "replace()",
+        "comments()",
+        "setLocalName()",
+        "setName()",
+        "localName()",
+        "length()",
         "static length",
         "prototype.setNamespace()",
         "prototype.child()",
@@ -702,12 +763,14 @@
     },
     "Namespace": {
       "summary": {
-        "max_points": 6,
+        "max_points": 8,
         "impl_points": 1,
         "stub_penalty": 0
       },
       "missing": [
         "prefix",
+        "valueOf()",
+        "toString()",
         "uri",
         "static length",
         "prototype.valueOf()",
@@ -1184,11 +1247,13 @@
     },
     "QName": {
       "summary": {
-        "max_points": 5,
+        "max_points": 7,
         "impl_points": 4,
         "stub_penalty": 0
       },
       "missing": [
+        "valueOf()",
+        "toString()",
         "static length"
       ],
       "stubbed": []
@@ -3525,11 +3590,16 @@
     },
     "Number": {
       "summary": {
-        "max_points": 39,
+        "max_points": 44,
         "impl_points": 11,
         "stub_penalty": 0
       },
       "missing": [
+        "toFixed()",
+        "valueOf()",
+        "toExponential()",
+        "toString()",
+        "toPrecision()",
         "static acos()",
         "static pow()",
         "static tan()",
@@ -4090,11 +4160,13 @@
     },
     "Boolean": {
       "summary": {
-        "max_points": 4,
+        "max_points": 6,
         "impl_points": 3,
         "stub_penalty": 0
       },
       "missing": [
+        "valueOf()",
+        "toString()",
         "static length"
       ],
       "stubbed": []
@@ -4173,15 +4245,60 @@
     },
     "XML": {
       "summary": {
-        "max_points": 47,
+        "max_points": 92,
         "impl_points": 10,
         "stub_penalty": 0
       },
       "missing": [
-        "static ignoreWhitespace",
+        "setNamespace()",
+        "parent()",
+        "child()",
+        "elements()",
+        "setChildren()",
+        "hasComplexContent()",
+        "inScopeNamespaces()",
+        "toJSON()",
+        "toString()",
+        "attributes()",
+        "insertChildBefore()",
+        "removeNamespace()",
+        "children()",
+        "setNotification()",
+        "name()",
+        "processingInstructions()",
+        "notification()",
+        "descendants()",
+        "copy()",
+        "prependChild()",
+        "contains()",
+        "propertyIsEnumerable()",
+        "normalize()",
+        "appendChild()",
+        "hasSimpleContent()",
+        "addNamespace()",
+        "namespace()",
+        "namespaceDeclarations()",
+        "nodeKind()",
+        "attribute()",
+        "insertChildAfter()",
+        "setLocalName()",
+        "text()",
+        "childIndex()",
+        "hasOwnProperty()",
+        "replace()",
+        "setName()",
+        "comments()",
+        "toXMLString()",
+        "valueOf()",
+        "localName()",
+        "length()",
         "static ignoreProcessingInstructions",
+        "static setSettings()",
         "static prettyIndent",
         "static prettyPrinting",
+        "static settings()",
+        "static ignoreWhitespace",
+        "static defaultSettings()",
         "static length",
         "static ignoreComments",
         "prototype.setNamespace()",
@@ -5033,11 +5150,15 @@
     },
     "Object": {
       "summary": {
-        "max_points": 9,
+        "max_points": 12,
         "impl_points": 9,
         "stub_penalty": 0
       },
-      "missing": [],
+      "missing": [
+        "isPrototypeOf()",
+        "hasOwnProperty()",
+        "propertyIsEnumerable()"
+      ],
       "stubbed": []
     },
     "flash.text.TextSnapshot": {
@@ -5070,11 +5191,13 @@
     },
     "Function": {
       "summary": {
-        "max_points": 8,
+        "max_points": 10,
         "impl_points": 5,
         "stub_penalty": 0
       },
       "missing": [
+        "call()",
+        "apply()",
         "static length",
         "prototype.toLocaleString()",
         "prototype.toString()"
@@ -5820,11 +5943,29 @@
     },
     "Array": {
       "summary": {
-        "max_points": 28,
-        "impl_points": 25,
+        "max_points": 48,
+        "impl_points": 27,
         "stub_penalty": 0
       },
       "missing": [
+        "every()",
+        "push()",
+        "unshift()",
+        "shift()",
+        "slice()",
+        "sort()",
+        "map()",
+        "reverse()",
+        "some()",
+        "join()",
+        "indexOf()",
+        "forEach()",
+        "insertAt()",
+        "lastIndexOf()",
+        "filter()",
+        "sortOn()",
+        "pop()",
+        "splice()",
         "static length",
         "prototype.toString()",
         "prototype.toLocaleString()"
@@ -5936,11 +6077,16 @@
     },
     "uint": {
       "summary": {
-        "max_points": 10,
+        "max_points": 15,
         "impl_points": 8,
         "stub_penalty": 0
       },
       "missing": [
+        "toFixed()",
+        "valueOf()",
+        "toExponential()",
+        "toString()",
+        "toPrecision()",
         "static length",
         "prototype.toLocaleString()"
       ],
@@ -6123,11 +6269,52 @@
     },
     "Date": {
       "summary": {
-        "max_points": 64,
+        "max_points": 105,
         "impl_points": 62,
         "stub_penalty": 0
       },
       "missing": [
+        "getDate()",
+        "toTimeString()",
+        "getDay()",
+        "setDate()",
+        "getTime()",
+        "getUTCDate()",
+        "toLocaleTimeString()",
+        "valueOf()",
+        "getTimezoneOffset()",
+        "toLocaleString()",
+        "getMilliseconds()",
+        "setMilliseconds()",
+        "setUTCMonth()",
+        "getUTCDay()",
+        "getSeconds()",
+        "getMonth()",
+        "setUTCSeconds()",
+        "setMonth()",
+        "getUTCSeconds()",
+        "getUTCMonth()",
+        "toUTCString()",
+        "toString()",
+        "setFullYear()",
+        "setUTCMinutes()",
+        "getUTCFullYear()",
+        "getUTCMilliseconds()",
+        "setUTCHours()",
+        "setTime()",
+        "getUTCMinutes()",
+        "toDateString()",
+        "setUTCFullYear()",
+        "setMinutes()",
+        "setUTCMilliseconds()",
+        "setUTCDate()",
+        "getMinutes()",
+        "getHours()",
+        "setHours()",
+        "getFullYear()",
+        "getUTCHours()",
+        "toLocaleDateString()",
+        "setSeconds()",
         "static length",
         "prototype.toJSON()"
       ],
@@ -6339,11 +6526,16 @@
     },
     "int": {
       "summary": {
-        "max_points": 10,
+        "max_points": 15,
         "impl_points": 9,
         "stub_penalty": 0
       },
       "missing": [
+        "toFixed()",
+        "valueOf()",
+        "toExponential()",
+        "toString()",
+        "toPrecision()",
         "prototype.toLocaleString()"
       ],
       "stubbed": []
