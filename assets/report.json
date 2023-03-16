@@ -1,8 +1,8 @@
 {
   "summary": {
     "max_points": 4590,
-    "impl_points": 2375,
-    "stub_penalty": 97
+    "impl_points": 2493,
+    "stub_penalty": 99
   },
   "classes": {
     "flash.events.MouseEvent": {
@@ -282,12 +282,10 @@
     "RegExp": {
       "summary": {
         "max_points": 14,
-        "impl_points": 10,
+        "impl_points": 12,
         "stub_penalty": 0
       },
       "missing": [
-        "exec()",
-        "test()",
         "static length",
         "prototype.toString()"
       ],
@@ -296,29 +294,11 @@
     "String": {
       "summary": {
         "max_points": 42,
-        "impl_points": 3,
+        "impl_points": 21,
         "stub_penalty": 0
       },
       "missing": [
-        "toUpperCase()",
-        "charCodeAt()",
-        "search()",
-        "concat()",
-        "slice()",
-        "match()",
         "valueOf()",
-        "charAt()",
-        "substr()",
-        "toString()",
-        "toLocaleLowerCase()",
-        "indexOf()",
-        "replace()",
-        "split()",
-        "substring()",
-        "lastIndexOf()",
-        "toLocaleUpperCase()",
-        "localeCompare()",
-        "toLowerCase()",
         "static length",
         "prototype.toUpperCase()",
         "prototype.charCodeAt()",
@@ -634,8 +614,8 @@
     "XMLList": {
       "summary": {
         "max_points": 82,
-        "impl_points": 8,
-        "stub_penalty": 0
+        "impl_points": 15,
+        "stub_penalty": 1
       },
       "missing": [
         "setNamespace()",
@@ -646,12 +626,8 @@
         "hasComplexContent()",
         "inScopeNamespaces()",
         "toJSON()",
-        "toString()",
-        "attributes()",
         "insertChildBefore()",
         "removeNamespace()",
-        "children()",
-        "name()",
         "processingInstructions()",
         "descendants()",
         "copy()",
@@ -660,12 +636,10 @@
         "propertyIsEnumerable()",
         "normalize()",
         "appendChild()",
-        "hasSimpleContent()",
         "valueOf()",
         "addNamespace()",
         "nodeKind()",
         "namespace()",
-        "attribute()",
         "insertChildAfter()",
         "namespaceDeclarations()",
         "text()",
@@ -677,7 +651,6 @@
         "setLocalName()",
         "setName()",
         "localName()",
-        "length()",
         "static length",
         "prototype.setNamespace()",
         "prototype.child()",
@@ -713,7 +686,9 @@
         "prototype.toXMLString()",
         "prototype.localName()"
       ],
-      "stubbed": []
+      "stubbed": [
+        "toString()"
+      ]
     },
     "flash.media.Microphone": {
       "summary": {
@@ -1248,12 +1223,10 @@
     "QName": {
       "summary": {
         "max_points": 7,
-        "impl_points": 4,
+        "impl_points": 6,
         "stub_penalty": 0
       },
       "missing": [
-        "valueOf()",
-        "toString()",
         "static length"
       ],
       "stubbed": []
@@ -3591,15 +3564,10 @@
     "Number": {
       "summary": {
         "max_points": 44,
-        "impl_points": 11,
+        "impl_points": 16,
         "stub_penalty": 0
       },
       "missing": [
-        "toFixed()",
-        "valueOf()",
-        "toExponential()",
-        "toString()",
-        "toPrecision()",
         "static acos()",
         "static pow()",
         "static tan()",
@@ -4161,12 +4129,10 @@
     "Boolean": {
       "summary": {
         "max_points": 6,
-        "impl_points": 3,
+        "impl_points": 5,
         "stub_penalty": 0
       },
       "missing": [
-        "valueOf()",
-        "toString()",
         "static length"
       ],
       "stubbed": []
@@ -4246,25 +4212,19 @@
     "XML": {
       "summary": {
         "max_points": 92,
-        "impl_points": 10,
-        "stub_penalty": 0
+        "impl_points": 19,
+        "stub_penalty": 1
       },
       "missing": [
         "setNamespace()",
         "parent()",
-        "child()",
-        "elements()",
         "setChildren()",
         "hasComplexContent()",
         "inScopeNamespaces()",
         "toJSON()",
-        "toString()",
-        "attributes()",
         "insertChildBefore()",
         "removeNamespace()",
-        "children()",
         "setNotification()",
-        "name()",
         "processingInstructions()",
         "notification()",
         "descendants()",
@@ -4279,7 +4239,6 @@
         "namespace()",
         "namespaceDeclarations()",
         "nodeKind()",
-        "attribute()",
         "insertChildAfter()",
         "setLocalName()",
         "text()",
@@ -4288,9 +4247,7 @@
         "replace()",
         "setName()",
         "comments()",
-        "toXMLString()",
         "valueOf()",
-        "localName()",
         "length()",
         "static ignoreProcessingInstructions",
         "static setSettings()",
@@ -4333,7 +4290,9 @@
         "prototype.comments()",
         "prototype.length()"
       ],
-      "stubbed": []
+      "stubbed": [
+        "name()"
+      ]
     },
     "flash.text.engine.TextJustifier": {
       "summary": {
@@ -5151,14 +5110,10 @@
     "Object": {
       "summary": {
         "max_points": 12,
-        "impl_points": 9,
+        "impl_points": 12,
         "stub_penalty": 0
       },
-      "missing": [
-        "isPrototypeOf()",
-        "hasOwnProperty()",
-        "propertyIsEnumerable()"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.text.TextSnapshot": {
@@ -5192,12 +5147,10 @@
     "Function": {
       "summary": {
         "max_points": 10,
-        "impl_points": 5,
+        "impl_points": 7,
         "stub_penalty": 0
       },
       "missing": [
-        "call()",
-        "apply()",
         "static length",
         "prototype.toLocaleString()",
         "prototype.toString()"
@@ -5944,28 +5897,11 @@
     "Array": {
       "summary": {
         "max_points": 48,
-        "impl_points": 27,
+        "impl_points": 44,
         "stub_penalty": 0
       },
       "missing": [
-        "every()",
-        "push()",
-        "unshift()",
-        "shift()",
-        "slice()",
-        "sort()",
-        "map()",
-        "reverse()",
-        "some()",
-        "join()",
-        "indexOf()",
-        "forEach()",
         "insertAt()",
-        "lastIndexOf()",
-        "filter()",
-        "sortOn()",
-        "pop()",
-        "splice()",
         "static length",
         "prototype.toString()",
         "prototype.toLocaleString()"
@@ -6078,15 +6014,10 @@
     "uint": {
       "summary": {
         "max_points": 15,
-        "impl_points": 8,
+        "impl_points": 13,
         "stub_penalty": 0
       },
       "missing": [
-        "toFixed()",
-        "valueOf()",
-        "toExponential()",
-        "toString()",
-        "toPrecision()",
         "static length",
         "prototype.toLocaleString()"
       ],
@@ -6270,51 +6201,10 @@
     "Date": {
       "summary": {
         "max_points": 105,
-        "impl_points": 62,
+        "impl_points": 103,
         "stub_penalty": 0
       },
       "missing": [
-        "getDate()",
-        "toTimeString()",
-        "getDay()",
-        "setDate()",
-        "getTime()",
-        "getUTCDate()",
-        "toLocaleTimeString()",
-        "valueOf()",
-        "getTimezoneOffset()",
-        "toLocaleString()",
-        "getMilliseconds()",
-        "setMilliseconds()",
-        "setUTCMonth()",
-        "getUTCDay()",
-        "getSeconds()",
-        "getMonth()",
-        "setUTCSeconds()",
-        "setMonth()",
-        "getUTCSeconds()",
-        "getUTCMonth()",
-        "toUTCString()",
-        "toString()",
-        "setFullYear()",
-        "setUTCMinutes()",
-        "getUTCFullYear()",
-        "getUTCMilliseconds()",
-        "setUTCHours()",
-        "setTime()",
-        "getUTCMinutes()",
-        "toDateString()",
-        "setUTCFullYear()",
-        "setMinutes()",
-        "setUTCMilliseconds()",
-        "setUTCDate()",
-        "getMinutes()",
-        "getHours()",
-        "setHours()",
-        "getFullYear()",
-        "getUTCHours()",
-        "toLocaleDateString()",
-        "setSeconds()",
         "static length",
         "prototype.toJSON()"
       ],
@@ -6527,15 +6417,10 @@
     "int": {
       "summary": {
         "max_points": 15,
-        "impl_points": 9,
+        "impl_points": 14,
         "stub_penalty": 0
       },
       "missing": [
-        "toFixed()",
-        "valueOf()",
-        "toExponential()",
-        "toString()",
-        "toPrecision()",
         "prototype.toLocaleString()"
       ],
       "stubbed": []
