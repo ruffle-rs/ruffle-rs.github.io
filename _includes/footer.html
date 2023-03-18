@@ -366,7 +366,7 @@ async function getSections(url) {
   const allClasses = Object.keys(responseJSON["classes"]);
   const sectionClasses = allClasses.filter(className => className.match(".*\\..*"));
   const sectionArray = sectionClasses.map(className => className.split(".").slice(0, 2).join("."));
-  const sections = ["ActionScript 3 API", "Top Level", ...new Set(sectionArray)];
+  const sections = ["ActionScript 3 API", "Top Level", ...new Set(sectionArray.sort())];
   sections.forEach(section => getImplementationAmounts(responseJSON, section));
 }
 getSections(reportURL);
