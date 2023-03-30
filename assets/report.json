@@ -1,8 +1,8 @@
 {
   "summary": {
     "max_points": 4564,
-    "impl_points": 2746,
-    "stub_penalty": 172
+    "impl_points": 2870,
+    "stub_penalty": 229
   },
   "classes": {
     "flash.events.MouseEvent": {
@@ -104,13 +104,10 @@
     "flash.media.Video": {
       "summary": {
         "max_points": 8,
-        "impl_points": 3,
+        "impl_points": 6,
         "stub_penalty": 0
       },
       "missing": [
-        "attachNetStream()",
-        "deblocking",
-        "smoothing",
         "attachCamera()",
         "clear()"
       ],
@@ -1984,32 +1981,13 @@
     "flash.net.NetStreamMulticastInfo": {
       "summary": {
         "max_points": 21,
-        "impl_points": 0,
-        "stub_penalty": 0
+        "impl_points": 21,
+        "stub_penalty": 1
       },
-      "missing": [
-        "fragmentsPushedToPeers",
-        "sendDataBytesPerSecond",
-        "receiveControlBytesPerSecond",
-        "bytesRequestedFromPeers",
-        "sendControlBytesPerSecondToServer",
-        "bytesReceivedFromServer",
-        "receiveDataBytesPerSecond",
-        "receiveDataBytesPerSecondFromIPMulticast",
-        "bytesReceivedFromIPMulticast",
-        "toString()",
-        "bytesPushedFromPeers",
-        "fragmentsRequestedByPeers",
-        "fragmentsReceivedFromServer",
-        "fragmentsRequestedFromPeers",
-        "fragmentsReceivedFromIPMulticast",
-        "bytesRequestedByPeers",
-        "receiveDataBytesPerSecondFromServer",
-        "fragmentsPushedFromPeers",
-        "sendControlBytesPerSecond",
-        "bytesPushedToPeers"
-      ],
-      "stubbed": []
+      "missing": [],
+      "stubbed": [
+        "toString()"
+      ]
     },
     "flash.text.FontStyle": {
       "summary": {
@@ -2180,8 +2158,8 @@
     "flash.net.NetConnection": {
       "summary": {
         "max_points": 20,
-        "impl_points": 5,
-        "stub_penalty": 2
+        "impl_points": 6,
+        "stub_penalty": 3
       },
       "missing": [
         "usingTLS",
@@ -2191,7 +2169,6 @@
         "addHeader()",
         "nearNonce",
         "client",
-        "close()",
         "proxyType",
         "connectedProxyType",
         "farNonce",
@@ -2202,7 +2179,8 @@
       ],
       "stubbed": [
         "call()",
-        "connect()"
+        "connect()",
+        "close()"
       ]
     },
     "flash.printing.PrintJobOrientation": {
@@ -2597,10 +2575,16 @@
     "flash.net.NetStream": {
       "summary": {
         "max_points": 63,
-        "impl_points": 0,
-        "stub_penalty": 0
+        "impl_points": 59,
+        "stub_penalty": 50
       },
       "missing": [
+        "decodedFrames",
+        "audioCodec",
+        "videoCodec",
+        "onPeerConnect()"
+      ],
+      "stubbed": [
         "time",
         "videoReliable",
         "audioReliable",
@@ -2608,22 +2592,16 @@
         "inBufferSeek",
         "bufferTimeMax",
         "client",
-        "play()",
         "publish()",
-        "decodedFrames",
-        "bytesTotal",
         "objectEncoding",
         "multicastAvailabilitySendToAll",
         "videoSampleAccess",
-        "audioCodec",
         "multicastFetchPeriod",
         "farID",
         "appendBytes()",
         "multicastWindowDuration",
-        "resume()",
         "step()",
         "maxPauseBufferTime",
-        "togglePause()",
         "backBufferTime",
         "multicastPushNeighborLimit",
         "checkPolicyFile",
@@ -2634,7 +2612,6 @@
         "soundTransform",
         "info",
         "audioSampleAccess",
-        "videoCodec",
         "play2()",
         "dataReliable",
         "currentFPS",
@@ -2642,7 +2619,6 @@
         "dispose()",
         "peerStreams",
         "useHardwareDecoder",
-        "bytesLoaded",
         "liveDelay",
         "bufferLength",
         "appendBytesAction()",
@@ -2651,20 +2627,15 @@
         "nearNonce",
         "backBufferLength",
         "multicastRelayMarginDuration",
-        "onPeerConnect()",
         "send()",
         "multicastInfo",
         "attachAudio()",
         "close()",
         "attachCamera()",
-        "pause()",
         "videoStreamSettings",
         "bufferTime",
-        "static DIRECT_CONNECTIONS",
-        "static resetDRMVouchers()",
-        "static CONNECT_TO_FMS"
-      ],
-      "stubbed": []
+        "static resetDRMVouchers()"
+      ]
     },
     "flash.events.FullScreenEvent": {
       "summary": {
@@ -2678,37 +2649,10 @@
     "flash.net.NetStreamInfo": {
       "summary": {
         "max_points": 27,
-        "impl_points": 0,
+        "impl_points": 27,
         "stub_penalty": 0
       },
-      "missing": [
-        "maxBytesPerSecond",
-        "currentBytesPerSecond",
-        "audioBytesPerSecond",
-        "audioBufferLength",
-        "dataBytesPerSecond",
-        "dataBufferLength",
-        "uri",
-        "audioByteCount",
-        "isLive",
-        "audioLossRate",
-        "dataBufferByteLength",
-        "resourceName",
-        "videoBufferByteLength",
-        "toString()",
-        "metaData",
-        "playbackBytesPerSecond",
-        "droppedFrames",
-        "videoBytesPerSecond",
-        "SRTT",
-        "audioBufferByteLength",
-        "videoBufferLength",
-        "videoLossRate",
-        "byteCount",
-        "dataByteCount",
-        "videoByteCount",
-        "xmpData"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.system.Capabilities": {
@@ -3262,13 +3206,12 @@
     "flash.display.BitmapData": {
       "summary": {
         "max_points": 39,
-        "impl_points": 31,
+        "impl_points": 32,
         "stub_penalty": 3
       },
       "missing": [
         "merge()",
         "pixelDissolve()",
-        "paletteMap()",
         "encode()",
         "copyPixelsToByteArray()",
         "histogram()",
@@ -3918,17 +3861,17 @@
     "flash.ui.Mouse": {
       "summary": {
         "max_points": 8,
-        "impl_points": 5,
-        "stub_penalty": 2
+        "impl_points": 7,
+        "stub_penalty": 4
       },
       "missing": [
-        "static cursor",
-        "static unregisterCursor()",
-        "static registerCursor()"
+        "static cursor"
       ],
       "stubbed": [
+        "static unregisterCursor()",
         "static supportsNativeCursor",
-        "static supportsCursor"
+        "static supportsCursor",
+        "static registerCursor()"
       ]
     },
     "flash.media.AVABRProfileInfo": {
@@ -4080,7 +4023,7 @@
     "XML": {
       "summary": {
         "max_points": 92,
-        "impl_points": 33,
+        "impl_points": 37,
         "stub_penalty": 4
       },
       "missing": [
@@ -4094,7 +4037,6 @@
         "setNotification()",
         "processingInstructions()",
         "notification()",
-        "copy()",
         "prependChild()",
         "contains()",
         "propertyIsEnumerable()",
@@ -4104,7 +4046,6 @@
         "namespaceDeclarations()",
         "insertChildAfter()",
         "setLocalName()",
-        "childIndex()",
         "hasOwnProperty()",
         "replace()",
         "setName()",
@@ -4126,7 +4067,6 @@
         "prototype.insertChildBefore()",
         "prototype.removeNamespace()",
         "prototype.processingInstructions()",
-        "prototype.copy()",
         "prototype.prependChild()",
         "prototype.contains()",
         "prototype.propertyIsEnumerable()",
@@ -4137,7 +4077,6 @@
         "prototype.namespaceDeclarations()",
         "prototype.insertChildAfter()",
         "prototype.setLocalName()",
-        "prototype.childIndex()",
         "prototype.hasOwnProperty()",
         "prototype.replace()",
         "prototype.setName()",
@@ -4710,12 +4649,10 @@
     "flash.display.LoaderInfo": {
       "summary": {
         "max_points": 26,
-        "impl_points": 20,
-        "stub_penalty": 2
+        "impl_points": 22,
+        "stub_penalty": 4
       },
       "missing": [
-        "childAllowsParent",
-        "sameDomain",
         "dispatchEvent()",
         "parentSandboxBridge",
         "childSandboxBridge",
@@ -4723,7 +4660,9 @@
       ],
       "stubbed": [
         "isURLInaccessible",
-        "parentAllowsChild"
+        "childAllowsParent",
+        "parentAllowsChild",
+        "sameDomain"
       ]
     },
     "flash.events.ThrottleEvent": {
@@ -5434,17 +5373,18 @@
     "flash.net.XMLSocket": {
       "summary": {
         "max_points": 6,
-        "impl_points": 0,
-        "stub_penalty": 0
+        "impl_points": 4,
+        "stub_penalty": 3
       },
       "missing": [
-        "send()",
-        "connect()",
-        "close()",
         "timeout",
         "connected"
       ],
-      "stubbed": []
+      "stubbed": [
+        "send()",
+        "connect()",
+        "close()"
+      ]
     },
     "flash.events.TimerEvent": {
       "summary": {
@@ -5493,7 +5433,7 @@
       "summary": {
         "max_points": 19,
         "impl_points": 7,
-        "stub_penalty": 2
+        "stub_penalty": 1
       },
       "missing": [
         "send()",
@@ -5510,8 +5450,7 @@
         "static getRemote()"
       ],
       "stubbed": [
-        "close()",
-        "clear()"
+        "close()"
       ]
     },
     "flash.accessibility.ISearchableText": {
@@ -5973,7 +5912,7 @@
       "summary": {
         "max_points": 41,
         "impl_points": 37,
-        "stub_penalty": 7
+        "stub_penalty": 6
       },
       "missing": [
         "metaData",
@@ -5987,7 +5926,6 @@
         "scaleZ",
         "z",
         "rotationY",
-        "opaqueBackground",
         "rotationX"
       ]
     },
