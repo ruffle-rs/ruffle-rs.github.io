@@ -167,6 +167,65 @@ table.table-dark th {
   border: solid 1px;
 }
 
+.section.content.blog {
+  // max-width: 800px;
+  margin: 0 auto;
+}
+
+.section.content.blog header {
+  padding: 2rem 0;
+}
+
+.section.content.blog header h2 {
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+.section.content.blog header h2 a {
+  font-size: 3rem;
+  text-decoration: none;
+}
+
+.section.content.blog header p.post-meta {
+  margin-bottom: 0;
+}
+
+.section.content.blog header p.post-meta time {
+  font-size: 1rem;
+}
+
+.section.content.blog header p.post-meta time {
+  font-size: 1rem;
+}
+
+.section.content.blog header p.post-meta i {
+  color: #FFAD33;
+}
+
+.section.content.blog section.blog-post-content {
+  padding: 0 1rem;
+  border-left: solid;
+}
+
+.section.content.blog article.blog-post-full h2 {
+  color:#FC0;
+  font-size: 3rem;
+}
+
+.section.content.blog article.blog-post-full section.blog-post-content {
+  border-left: none;
+}
+
+.section.content.blog section.blog-post-content h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top:15px;
+}
+
+.section.content.blog section.blog-post-content video {
+  margin: 2rem;
+}
+
 .header-down-arrow {
   -webkit-animation: 2s 3s ease-out infinite;
           animation: 2s 3s ease-out infinite;
@@ -271,6 +330,12 @@ a.store-badge {
   width: 100%;
   max-width: 1250px;
   max-height: 300px;
+}
+
+.blog {
+  h1 {
+    margin: 4px;
+  }
 }
 
 @media screen and (max-width: 800px) {
