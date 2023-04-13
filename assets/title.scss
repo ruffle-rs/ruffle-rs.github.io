@@ -67,6 +67,10 @@ table.table-dark th {
 .section.splash #logo {
   max-height: 400px;
   aspect-ratio: 16 / 9;
+  @supports not (aspect-ratio: 16 / 9) {
+    width: 100%;
+    height: 56.15vw;
+  }
   margin: auto;
   margin-bottom: -10%;
 }
