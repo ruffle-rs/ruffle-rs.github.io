@@ -67,10 +67,6 @@ table.table-dark th {
 .section.splash #logo {
   max-height: 400px;
   aspect-ratio: 16 / 9;
-  @supports not (aspect-ratio: 16 / 9) {
-    width: 100%;
-    height: 56.15vw;
-  }
   margin: auto;
   margin-bottom: -10%;
 }
@@ -442,4 +438,11 @@ a.store-badge {
 @keyframes progressBar {
   0% { width: 0; }
   100% { width: 100%; }
+}
+
+@supports not (aspect-ratio: 16 / 9) {
+  .section.splash #logo {
+    width: 100%;
+    height: 56.15vw;
+  }
 }
