@@ -4,8 +4,9 @@ description: >-
   Ruffle is a Flash Player emulator written in Rust. Ruffle targets both desktop and the web using WebAssembly.
 image: "/assets/logo.svg"
 baseurl: ""
-#url: "https://ruffle.rs"
+url: "https://ruffle.rs"
 # twitter_username: jekyllrb
+github: [metadata]
 github_username: ruffle-rs
 github_url: "https://github.com/ruffle-rs/ruffle"
 repository: ruffle-rs/ruffle
