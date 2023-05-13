@@ -2,7 +2,6 @@ title: Ruffle
 # email: mwelsh@gmail.com
 description: >-
   Ruffle is a Flash Player emulator written in Rust. Ruffle targets both desktop and the web using WebAssembly.
-image: "/assets/logo.svg"
 baseurl: ""
 url: "https://ruffle.rs"
 # twitter_username: jekyllrb
