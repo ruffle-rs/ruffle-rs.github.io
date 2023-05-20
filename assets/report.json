@@ -1,8 +1,8 @@
 {
   "summary": {
     "max_points": 4564,
-    "impl_points": 2940,
-    "stub_penalty": 234
+    "impl_points": 3020,
+    "stub_penalty": 272
   },
   "classes": {
     "flash.events.MouseEvent": {
@@ -272,23 +272,19 @@
     "RegExp": {
       "summary": {
         "max_points": 14,
-        "impl_points": 13,
+        "impl_points": 14,
         "stub_penalty": 0
       },
-      "missing": [
-        "static length"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "String": {
       "summary": {
         "max_points": 42,
-        "impl_points": 41,
+        "impl_points": 42,
         "stub_penalty": 0
       },
-      "missing": [
-        "static length"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.security.X500DistinguishedName": {
@@ -567,7 +563,7 @@
     "XMLList": {
       "summary": {
         "max_points": 82,
-        "impl_points": 25,
+        "impl_points": 26,
         "stub_penalty": 0
       },
       "missing": [
@@ -599,7 +595,6 @@
         "setLocalName()",
         "setName()",
         "localName()",
-        "static length",
         "prototype.setNamespace()",
         "prototype.parent()",
         "prototype.elements()",
@@ -680,13 +675,12 @@
     "Namespace": {
       "summary": {
         "max_points": 8,
-        "impl_points": 3,
+        "impl_points": 4,
         "stub_penalty": 1
       },
       "missing": [
         "valueOf()",
         "toString()",
-        "static length",
         "prototype.valueOf()",
         "prototype.toString()"
       ],
@@ -739,12 +733,10 @@
     "ReferenceError": {
       "summary": {
         "max_points": 3,
-        "impl_points": 2,
+        "impl_points": 3,
         "stub_penalty": 0
       },
-      "missing": [
-        "static length"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.display3D.textures.Texture": {
@@ -983,12 +975,10 @@
     "DefinitionError": {
       "summary": {
         "max_points": 3,
-        "impl_points": 2,
+        "impl_points": 3,
         "stub_penalty": 0
       },
-      "missing": [
-        "static length"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.media.SoundTransform": {
@@ -1325,12 +1315,10 @@
     "ArgumentError": {
       "summary": {
         "max_points": 3,
-        "impl_points": 2,
+        "impl_points": 3,
         "stub_penalty": 0
       },
-      "missing": [
-        "static length"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.geom.Point": {
@@ -1452,7 +1440,7 @@
     "flash.text.engine.ElementFormat": {
       "summary": {
         "max_points": 21,
-        "impl_points": 0,
+        "impl_points": 1,
         "stub_penalty": 0
       },
       "missing": [
@@ -2300,12 +2288,10 @@
     "SyntaxError": {
       "summary": {
         "max_points": 3,
-        "impl_points": 2,
+        "impl_points": 3,
         "stub_penalty": 0
       },
-      "missing": [
-        "static length"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.display.JointStyle": {
@@ -2626,7 +2612,7 @@
       "summary": {
         "max_points": 37,
         "impl_points": 7,
-        "stub_penalty": 0
+        "stub_penalty": 3
       },
       "missing": [
         "static hasScreenPlayback",
@@ -2660,7 +2646,11 @@
         "static hasAccessibility",
         "static isEmbeddedInAcrobat"
       ],
-      "stubbed": []
+      "stubbed": [
+        "static language",
+        "static os",
+        "static manufacturer"
+      ]
     },
     "flash.text.TextRenderer": {
       "summary": {
@@ -2855,12 +2845,10 @@
     "VerifyError": {
       "summary": {
         "max_points": 3,
-        "impl_points": 2,
+        "impl_points": 3,
         "stub_penalty": 0
       },
-      "missing": [
-        "static length"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.automation.MouseAutomationAction": {
@@ -3016,12 +3004,10 @@
     "SecurityError": {
       "summary": {
         "max_points": 3,
-        "impl_points": 2,
+        "impl_points": 3,
         "stub_penalty": 0
       },
-      "missing": [
-        "static length"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.automation.ActionGenerator": {
@@ -3090,16 +3076,16 @@
     "flash.net.Socket": {
       "summary": {
         "max_points": 36,
-        "impl_points": 0,
-        "stub_penalty": 0
+        "impl_points": 36,
+        "stub_penalty": 32
       },
-      "missing": [
+      "missing": [],
+      "stubbed": [
         "writeBytes()",
         "readBoolean()",
         "readByte()",
         "writeMultiByte()",
         "readMultiByte()",
-        "writeUTF()",
         "writeByte()",
         "writeInt()",
         "readUTF()",
@@ -3125,22 +3111,17 @@
         "readInt()",
         "writeUTFBytes()",
         "close()",
-        "timeout",
-        "endian",
         "writeObject()",
         "readObject()"
-      ],
-      "stubbed": []
+      ]
     },
     "EvalError": {
       "summary": {
         "max_points": 3,
-        "impl_points": 2,
+        "impl_points": 3,
         "stub_penalty": 0
       },
-      "missing": [
-        "static length"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.sensors.Geolocation": {
@@ -3168,7 +3149,7 @@
     "flash.display.BitmapData": {
       "summary": {
         "max_points": 39,
-        "impl_points": 32,
+        "impl_points": 33,
         "stub_penalty": 1
       },
       "missing": [
@@ -3177,8 +3158,7 @@
         "encode()",
         "copyPixelsToByteArray()",
         "histogram()",
-        "setVector()",
-        "compare()"
+        "setVector()"
       ],
       "stubbed": [
         "generateFilterRect()"
@@ -3363,11 +3343,10 @@
     "Number": {
       "summary": {
         "max_points": 18,
-        "impl_points": 16,
+        "impl_points": 17,
         "stub_penalty": 0
       },
       "missing": [
-        "static length",
         "prototype.toLocaleString()"
       ],
       "stubbed": []
@@ -3406,12 +3385,10 @@
     "RangeError": {
       "summary": {
         "max_points": 3,
-        "impl_points": 2,
+        "impl_points": 3,
         "stub_penalty": 0
       },
-      "missing": [
-        "static length"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.display.ActionScriptVersion": {
@@ -3629,25 +3606,23 @@
     "flash.net.URLLoader": {
       "summary": {
         "max_points": 8,
-        "impl_points": 6,
+        "impl_points": 7,
         "stub_penalty": 1
       },
       "missing": [
-        "addEventListener()",
-        "close()"
+        "addEventListener()"
       ],
       "stubbed": [
-        "load()"
+        "close()"
       ]
     },
     "flash.xml.XMLDocument": {
       "summary": {
         "max_points": 9,
-        "impl_points": 3,
+        "impl_points": 4,
         "stub_penalty": 0
       },
       "missing": [
-        "createElement()",
         "createTextNode()",
         "xmlDecl",
         "idMap",
@@ -3885,12 +3860,10 @@
     "Boolean": {
       "summary": {
         "max_points": 6,
-        "impl_points": 5,
+        "impl_points": 6,
         "stub_penalty": 0
       },
-      "missing": [
-        "static length"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.events.GesturePhase": {
@@ -3967,8 +3940,8 @@
     "XML": {
       "summary": {
         "max_points": 92,
-        "impl_points": 37,
-        "stub_penalty": 4
+        "impl_points": 42,
+        "stub_penalty": 5
       },
       "missing": [
         "setNamespace()",
@@ -3984,7 +3957,6 @@
         "prependChild()",
         "contains()",
         "propertyIsEnumerable()",
-        "normalize()",
         "hasSimpleContent()",
         "addNamespace()",
         "namespaceDeclarations()",
@@ -3995,13 +3967,11 @@
         "setName()",
         "comments()",
         "valueOf()",
-        "length()",
         "static ignoreProcessingInstructions",
         "static prettyIndent",
         "static prettyPrinting",
         "static ignoreWhitespace",
         "static defaultSettings()",
-        "static length",
         "static ignoreComments",
         "prototype.setNamespace()",
         "prototype.setChildren()",
@@ -4014,7 +3984,6 @@
         "prototype.prependChild()",
         "prototype.contains()",
         "prototype.propertyIsEnumerable()",
-        "prototype.normalize()",
         "prototype.hasSimpleContent()",
         "prototype.valueOf",
         "prototype.addNamespace()",
@@ -4024,11 +3993,11 @@
         "prototype.hasOwnProperty()",
         "prototype.replace()",
         "prototype.setName()",
-        "prototype.comments()",
-        "prototype.length()"
+        "prototype.comments()"
       ],
       "stubbed": [
         "name()",
+        "normalize()",
         "namespace()",
         "static setSettings()",
         "static settings()"
@@ -4069,7 +4038,7 @@
     "flash.display.MorphShape": {
       "summary": {
         "max_points": 1,
-        "impl_points": 0,
+        "impl_points": 1,
         "stub_penalty": 0
       },
       "missing": [],
@@ -4156,12 +4125,10 @@
     "flash.system": {
       "summary": {
         "max_points": 2,
-        "impl_points": 0,
+        "impl_points": 2,
         "stub_penalty": 0
       },
-      "missing": [
-        "fscommand()"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.net.IDynamicPropertyWriter": {
@@ -4295,11 +4262,10 @@
     "flash.system.ApplicationDomain": {
       "summary": {
         "max_points": 8,
-        "impl_points": 6,
+        "impl_points": 7,
         "stub_penalty": 0
       },
       "missing": [
-        "getQualifiedDefinitionNames()",
         "static MIN_DOMAIN_MEMORY_LENGTH"
       ],
       "stubbed": []
@@ -4388,7 +4354,7 @@
     "flash.text.engine.FontDescription": {
       "summary": {
         "max_points": 11,
-        "impl_points": 0,
+        "impl_points": 1,
         "stub_penalty": 0
       },
       "missing": [
@@ -4740,14 +4706,13 @@
     "flash.text.TextField": {
       "summary": {
         "max_points": 63,
-        "impl_points": 42,
-        "stub_penalty": 5
+        "impl_points": 43,
+        "stub_penalty": 6
       },
       "missing": [
         "caretIndex",
         "getCharIndexAtPoint()",
         "getParagraphLength()",
-        "useRichTextClipboard",
         "insertXMLText()",
         "getTextRuns()",
         "getFirstCharInParagraph()",
@@ -4769,6 +4734,7 @@
       "stubbed": [
         "alwaysShowSelection",
         "mouseWheelEnabled",
+        "useRichTextClipboard",
         "condenseWhite",
         "restrict",
         "styleSheet"
@@ -4847,11 +4813,10 @@
     "Function": {
       "summary": {
         "max_points": 10,
-        "impl_points": 7,
+        "impl_points": 8,
         "stub_penalty": 0
       },
       "missing": [
-        "static length",
         "prototype.toLocaleString()",
         "prototype.toString()"
       ],
@@ -4909,12 +4874,10 @@
     "TypeError": {
       "summary": {
         "max_points": 3,
-        "impl_points": 2,
+        "impl_points": 3,
         "stub_penalty": 0
       },
-      "missing": [
-        "static length"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.filters.GlowFilter": {
@@ -5375,8 +5338,8 @@
     "flash.net.SharedObject": {
       "summary": {
         "max_points": 19,
-        "impl_points": 7,
-        "stub_penalty": 1
+        "impl_points": 8,
+        "stub_penalty": 2
       },
       "missing": [
         "send()",
@@ -5385,7 +5348,6 @@
         "fps",
         "setDirty()",
         "objectEncoding",
-        "setProperty()",
         "static preventBackup",
         "static getDiskUsage()",
         "static deleteAll()",
@@ -5393,7 +5355,8 @@
         "static getRemote()"
       ],
       "stubbed": [
-        "close()"
+        "close()",
+        "setProperty()"
       ]
     },
     "flash.accessibility.ISearchableText": {
@@ -5483,12 +5446,10 @@
     "URIError": {
       "summary": {
         "max_points": 3,
-        "impl_points": 2,
+        "impl_points": 3,
         "stub_penalty": 0
       },
-      "missing": [
-        "static length"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.system.AuthorizedFeatures": {
@@ -5595,12 +5556,11 @@
     "Array": {
       "summary": {
         "max_points": 48,
-        "impl_points": 46,
+        "impl_points": 47,
         "stub_penalty": 0
       },
       "missing": [
-        "insertAt()",
-        "static length"
+        "insertAt()"
       ],
       "stubbed": []
     },
@@ -5616,13 +5576,10 @@
     "flash.display.GraphicsShaderFill": {
       "summary": {
         "max_points": 3,
-        "impl_points": 0,
+        "impl_points": 3,
         "stub_penalty": 0
       },
-      "missing": [
-        "shader",
-        "matrix"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.display3D.Program3D": {
@@ -5663,12 +5620,10 @@
     "flash.printing.PrintJobOptions": {
       "summary": {
         "max_points": 2,
-        "impl_points": 0,
+        "impl_points": 2,
         "stub_penalty": 0
       },
-      "missing": [
-        "printAsBitmap"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.display.Scene": {
@@ -5710,11 +5665,10 @@
     "uint": {
       "summary": {
         "max_points": 15,
-        "impl_points": 13,
+        "impl_points": 14,
         "stub_penalty": 0
       },
       "missing": [
-        "static length",
         "prototype.toLocaleString()"
       ],
       "stubbed": []
@@ -5794,7 +5748,7 @@
     "flash.text.engine.ContentElement": {
       "summary": {
         "max_points": 11,
-        "impl_points": 0,
+        "impl_points": 2,
         "stub_penalty": 0
       },
       "missing": [
@@ -5806,8 +5760,7 @@
         "userData",
         "eventMirror",
         "textBlock",
-        "elementFormat",
-        "static GRAPHIC_ELEMENT"
+        "elementFormat"
       ],
       "stubbed": []
     },
@@ -5895,11 +5848,10 @@
     "Date": {
       "summary": {
         "max_points": 105,
-        "impl_points": 103,
+        "impl_points": 104,
         "stub_penalty": 0
       },
       "missing": [
-        "static length",
         "prototype.toJSON()"
       ],
       "stubbed": []
@@ -5988,12 +5940,11 @@
     "Error": {
       "summary": {
         "max_points": 11,
-        "impl_points": 6,
+        "impl_points": 7,
         "stub_penalty": 0
       },
       "missing": [
         "static throwError()",
-        "static length",
         "static getErrorMessage()",
         "prototype.message",
         "prototype.toString()"
