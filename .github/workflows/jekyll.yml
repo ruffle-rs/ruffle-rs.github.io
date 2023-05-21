@@ -14,5 +14,6 @@ jobs:
       - uses: actions/checkout@v3
       - uses: helaili/jekyll-action@2.5.0
         with:
+          pre_build_commands: git config --global http.version HTTP/1.1
           token: ${{ secrets.JEKYLL_PAT }}
           target_branch: 'gh-pages'
