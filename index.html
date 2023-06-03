@@ -213,6 +213,13 @@ title: Ruffle
 						<img src="{{ "/assets/get-the-addon.svg" | relative_url }}" width="172" height="60" alt="addons.mozilla.org" class="img-fluid">
 					</a>
 
+					<p>
+						Ruffle is also available for the Linux desktop as an Flatpak on Flathub.
+					</p>
+					<a href="https://flathub.org/apps/rs.ruffle.Ruffle">
+						<img width="240" alt="Download on Flathub" src="https://dl.flathub.org/assets/badges/flathub-badge-en.svg"/>
+					</a>
+
 					{% assign all_releases = site.github.releases | where_exp:"item", "item.draft == false" %}
 					{% assign prerelease = all_releases | where_exp:"item", "item.prerelease == true" %}
 					{% assign full_release = all_releases | where_exp:"item", "item.prerelease == false" %}
