@@ -83,7 +83,6 @@ table.table-dark th {
 }
 
 .section.splash ul {
-  background-color: var(--ruffle-blue);
   margin: 0;
   padding: 0;
   max-width: 100%;
@@ -97,6 +96,11 @@ table.table-dark th {
 
 .section.splash li {
   padding: 10px 6vw;
+}
+
+.section.splash ul li a {
+    min-width: 85px;
+    display: inline-block;
 }
 
 .section.content {
@@ -442,6 +446,10 @@ a.store-badge {
 
   .github-corner .octo-arm {
       animation: octocat-wave 560ms ease-in-out
+  }
+
+  .desktop-menu-option {
+      display: none;
   }
 }
 
