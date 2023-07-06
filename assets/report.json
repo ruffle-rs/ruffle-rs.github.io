@@ -1,8 +1,8 @@
 {
   "summary": {
-    "max_points": 4564,
-    "impl_points": 3086,
-    "stub_penalty": 285
+    "max_points": 4560,
+    "impl_points": 3125,
+    "stub_penalty": 300
   },
   "classes": {
     "flash.events.MouseEvent": {
@@ -250,13 +250,10 @@
     "flash.sampler.Sample": {
       "summary": {
         "max_points": 3,
-        "impl_points": 0,
+        "impl_points": 3,
         "stub_penalty": 0
       },
-      "missing": [
-        "stack",
-        "time"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.net.URLLoaderDataFormat": {
@@ -789,13 +786,13 @@
     "flash.display.Stage3D": {
       "summary": {
         "max_points": 7,
-        "impl_points": 6,
-        "stub_penalty": 0
+        "impl_points": 7,
+        "stub_penalty": 1
       },
-      "missing": [
+      "missing": [],
+      "stubbed": [
         "requestContext3DMatchingProfiles()"
-      ],
-      "stubbed": []
+      ]
     },
     "flash.display.ColorCorrectionSupport": {
       "summary": {
@@ -1001,13 +998,10 @@
     "flash.sampler.DeleteObjectSample": {
       "summary": {
         "max_points": 3,
-        "impl_points": 0,
+        "impl_points": 3,
         "stub_penalty": 0
       },
-      "missing": [
-        "id",
-        "size"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.display.GraphicsGradientFill": {
@@ -1498,12 +1492,14 @@
       "summary": {
         "max_points": 3,
         "impl_points": 2,
-        "stub_penalty": 0
+        "stub_penalty": 1
       },
       "missing": [
         "profile()"
       ],
-      "stubbed": []
+      "stubbed": [
+        "showRedrawRegions()"
+      ]
     },
     "flash.events.UncaughtErrorEvent": {
       "summary": {
@@ -1848,16 +1844,12 @@
     "flash.geom.Matrix3D": {
       "summary": {
         "max_points": 32,
-        "impl_points": 23,
+        "impl_points": 27,
         "stub_penalty": 0
       },
       "missing": [
-        "copyRowTo()",
         "pointAt()",
         "interpolateTo()",
-        "copyColumnFrom()",
-        "copyRowFrom()",
-        "prependRotation()",
         "prependScale()",
         "transformVectors()",
         "static interpolate()"
@@ -2176,7 +2168,7 @@
       "summary": {
         "max_points": 25,
         "impl_points": 24,
-        "stub_penalty": 8
+        "stub_penalty": 7
       },
       "missing": [
         "lineShaderStyle()"
@@ -2184,7 +2176,6 @@
       "stubbed": [
         "beginShaderFill()",
         "cubicCurveTo()",
-        "copyFrom()",
         "drawPath()",
         "drawRoundRectComplex()",
         "drawTriangles()",
@@ -2603,23 +2594,20 @@
     "flash.system.Capabilities": {
       "summary": {
         "max_points": 37,
-        "impl_points": 7,
+        "impl_points": 11,
         "stub_penalty": 3
       },
       "missing": [
         "static hasScreenPlayback",
         "static hasIME",
-        "static screenDPI",
         "static hasStreamingAudio",
         "static supports32BitProcesses",
         "static maxLevelIDC",
-        "static screenResolutionY",
         "static hasMultiChannelAudio()",
         "static localFileReadDisable",
         "static cpuArchitecture",
         "static supports64BitProcesses",
         "static _internal",
-        "static pixelAspectRatio",
         "static serverString",
         "static hasAudioEncoder",
         "static hasStreamingVideo",
@@ -2627,7 +2615,6 @@
         "static cpuAddressSize",
         "static hasTLS",
         "static hasMP3",
-        "static screenResolutionX",
         "static hasEmbeddedVideo",
         "static hasVideoEncoder",
         "static hasAudio",
@@ -2709,14 +2696,14 @@
     "flash.display.AVM1Movie": {
       "summary": {
         "max_points": 3,
-        "impl_points": 0,
-        "stub_penalty": 0
+        "impl_points": 3,
+        "stub_penalty": 2
       },
-      "missing": [
+      "missing": [],
+      "stubbed": [
         "addCallback()",
         "call()"
-      ],
-      "stubbed": []
+      ]
     },
     "flash.display.JPEGEncoderOptions": {
       "summary": {
@@ -3144,7 +3131,7 @@
       "summary": {
         "max_points": 39,
         "impl_points": 35,
-        "stub_penalty": 1
+        "stub_penalty": 2
       },
       "missing": [
         "merge()",
@@ -3153,7 +3140,8 @@
         "histogram()"
       ],
       "stubbed": [
-        "generateFilterRect()"
+        "generateFilterRect()",
+        "applyFilter()"
       ]
     },
     "flash.events.IEventDispatcher": {
@@ -3426,16 +3414,10 @@
     "flash.sampler.StackFrame": {
       "summary": {
         "max_points": 6,
-        "impl_points": 0,
+        "impl_points": 6,
         "stub_penalty": 0
       },
-      "missing": [
-        "line",
-        "scriptID",
-        "name",
-        "file",
-        "toString()"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.media.SoundCodec": {
@@ -3650,15 +3632,14 @@
     "flash.display.ShaderJob": {
       "summary": {
         "max_points": 8,
-        "impl_points": 6,
+        "impl_points": 7,
         "stub_penalty": 2
       },
       "missing": [
-        "width",
-        "target"
+        "width"
       ],
       "stubbed": [
-        "shader",
+        "start()",
         "height"
       ]
     },
@@ -3900,10 +3881,13 @@
       "summary": {
         "max_points": 5,
         "impl_points": 5,
-        "stub_penalty": 0
+        "stub_penalty": 2
       },
       "missing": [],
-      "stubbed": []
+      "stubbed": [
+        "registerClassAlias()",
+        "sendToURL()"
+      ]
     },
     "flash.media.VideoCodec": {
       "summary": {
@@ -4108,10 +4092,12 @@
       "summary": {
         "max_points": 2,
         "impl_points": 2,
-        "stub_penalty": 0
+        "stub_penalty": 1
       },
       "missing": [],
-      "stubbed": []
+      "stubbed": [
+        "fscommand()"
+      ]
     },
     "flash.net.IDynamicPropertyWriter": {
       "summary": {
@@ -4538,15 +4524,6 @@
       "summary": {
         "max_points": 6,
         "impl_points": 6,
-        "stub_penalty": 0
-      },
-      "missing": [],
-      "stubbed": []
-    },
-    "flash.display.FocusDirection": {
-      "summary": {
-        "max_points": 4,
-        "impl_points": 4,
         "stub_penalty": 0
       },
       "missing": [],
@@ -5172,29 +5149,30 @@
     "flash.sampler": {
       "summary": {
         "max_points": 18,
-        "impl_points": 0,
-        "stub_penalty": 0
+        "impl_points": 6,
+        "stub_penalty": 5
       },
       "missing": [
         "getMemberNames()",
         "sampleInternalAllocs()",
-        "getSize()",
         "pauseSampling()",
         "getSetterInvocationCount()",
         "getSavedThis()",
-        "getSamples()",
         "getInvocationCount()",
-        "clearSamples()",
         "getGetterInvocationCount()",
         "getLexicalScopes()",
         "getMasterString()",
         "isGetterSetter()",
         "getSampleCount()",
-        "setSamplerCallback()",
+        "setSamplerCallback()"
+      ],
+      "stubbed": [
+        "getSize()",
+        "getSamples()",
+        "clearSamples()",
         "startSampling()",
         "stopSampling()"
-      ],
-      "stubbed": []
+      ]
     },
     "flash.printing.PrintJob": {
       "summary": {
@@ -5336,13 +5314,13 @@
     "": {
       "summary": {
         "max_points": 16,
-        "impl_points": 15,
-        "stub_penalty": 0
+        "impl_points": 16,
+        "stub_penalty": 1
       },
-      "missing": [
+      "missing": [],
+      "stubbed": [
         "isXMLName()"
-      ],
-      "stubbed": []
+      ]
     },
     "flash.net.URLRequest": {
       "summary": {
@@ -5678,16 +5656,10 @@
     "flash.filters.ShaderFilter": {
       "summary": {
         "max_points": 6,
-        "impl_points": 0,
+        "impl_points": 6,
         "stub_penalty": 0
       },
-      "missing": [
-        "topExtension",
-        "bottomExtension",
-        "shader",
-        "leftExtension",
-        "rightExtension"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.ui.KeyboardType": {
@@ -5831,16 +5803,14 @@
     "flash.sampler.NewObjectSample": {
       "summary": {
         "max_points": 5,
-        "impl_points": 0,
-        "stub_penalty": 0
+        "impl_points": 5,
+        "stub_penalty": 2
       },
-      "missing": [
+      "missing": [],
+      "stubbed": [
         "size",
-        "id",
-        "type",
         "object"
-      ],
-      "stubbed": []
+      ]
     },
     "flash.ui.MultitouchInputMode": {
       "summary": {
