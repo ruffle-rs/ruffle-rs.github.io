@@ -1,8 +1,8 @@
 {
   "summary": {
     "max_points": 4560,
-    "impl_points": 3125,
-    "stub_penalty": 300
+    "impl_points": 3170,
+    "stub_penalty": 316
   },
   "classes": {
     "flash.events.MouseEvent": {
@@ -237,14 +237,10 @@
     "flash.globalization.NumberParseResult": {
       "summary": {
         "max_points": 4,
-        "impl_points": 0,
+        "impl_points": 4,
         "stub_penalty": 0
       },
-      "missing": [
-        "value",
-        "startIndex",
-        "endIndex"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.sampler.Sample": {
@@ -1844,14 +1840,13 @@
     "flash.geom.Matrix3D": {
       "summary": {
         "max_points": 32,
-        "impl_points": 27,
+        "impl_points": 28,
         "stub_penalty": 0
       },
       "missing": [
         "pointAt()",
         "interpolateTo()",
         "prependScale()",
-        "transformVectors()",
         "static interpolate()"
       ],
       "stubbed": []
@@ -2204,22 +2199,20 @@
     "flash.globalization.LocaleID": {
       "summary": {
         "max_points": 11,
-        "impl_points": 0,
-        "stub_penalty": 0
+        "impl_points": 11,
+        "stub_penalty": 8
       },
-      "missing": [
+      "missing": [],
+      "stubbed": [
         "getRegion()",
         "lastOperationStatus",
         "getLanguage()",
         "getVariant()",
         "getKeysAndValues()",
-        "name",
         "getScript()",
         "isRightToLeft()",
-        "static determinePreferredLocales()",
-        "static DEFAULT"
-      ],
-      "stubbed": []
+        "static determinePreferredLocales()"
+      ]
     },
     "flash.media.MicrophoneEnhancedOptions": {
       "summary": {
@@ -2512,7 +2505,7 @@
       "summary": {
         "max_points": 63,
         "impl_points": 59,
-        "stub_penalty": 50
+        "stub_penalty": 49
       },
       "missing": [
         "decodedFrames",
@@ -2527,7 +2520,6 @@
         "receiveVideoFPS()",
         "inBufferSeek",
         "bufferTimeMax",
-        "client",
         "publish()",
         "objectEncoding",
         "multicastAvailabilitySendToAll",
@@ -2717,13 +2709,11 @@
     "flash.geom.Utils3D": {
       "summary": {
         "max_points": 4,
-        "impl_points": 0,
+        "impl_points": 3,
         "stub_penalty": 0
       },
       "missing": [
-        "static pointTowards()",
-        "static projectVector()",
-        "static projectVectors()"
+        "static pointTowards()"
       ],
       "stubbed": []
     },
@@ -3481,7 +3471,7 @@
     "flash.ui.GameInputDevice": {
       "summary": {
         "max_points": 11,
-        "impl_points": 0,
+        "impl_points": 1,
         "stub_penalty": 0
       },
       "missing": [
@@ -3548,8 +3538,8 @@
     "flash.globalization.CurrencyFormatter": {
       "summary": {
         "max_points": 22,
-        "impl_points": 2,
-        "stub_penalty": 0
+        "impl_points": 3,
+        "stub_penalty": 1
       },
       "missing": [
         "currencySymbol",
@@ -3565,7 +3555,6 @@
         "currencyISOCode",
         "groupingPattern",
         "decimalSeparator",
-        "format()",
         "groupingSeparator",
         "leadingZero",
         "negativeCurrencyFormat",
@@ -3573,7 +3562,9 @@
         "setCurrency()",
         "static getAvailableLocaleIDNames()"
       ],
-      "stubbed": []
+      "stubbed": [
+        "format()"
+      ]
     },
     "flash.net.URLLoader": {
       "summary": {
@@ -4640,11 +4631,10 @@
     "flash.text.TextField": {
       "summary": {
         "max_points": 63,
-        "impl_points": 44,
+        "impl_points": 47,
         "stub_penalty": 7
       },
       "missing": [
-        "caretIndex",
         "getCharIndexAtPoint()",
         "getParagraphLength()",
         "getTextRuns()",
@@ -4655,8 +4645,6 @@
         "getLineIndexOfChar()",
         "getImageReference()",
         "textInteractionMode",
-        "selectionBeginIndex",
-        "selectionEndIndex",
         "getLineText()",
         "getXMLText()",
         "getRawText()",
@@ -4891,31 +4879,20 @@
     "flash.globalization.NumberFormatter": {
       "summary": {
         "max_points": 20,
-        "impl_points": 0,
-        "stub_penalty": 0
+        "impl_points": 20,
+        "stub_penalty": 8
       },
-      "missing": [
+      "missing": [],
+      "stubbed": [
         "formatNumber()",
-        "requestedLocaleIDName",
         "parseNumber()",
         "actualLocaleIDName",
         "parse()",
-        "digitsType",
-        "useGrouping",
-        "trailingZeros",
-        "negativeSymbol",
         "lastOperationStatus",
         "formatUint()",
-        "groupingPattern",
-        "fractionalDigits",
-        "decimalSeparator",
-        "groupingSeparator",
-        "leadingZero",
         "formatInt()",
-        "negativeNumberFormat",
         "static getAvailableLocaleIDNames()"
-      ],
-      "stubbed": []
+      ]
     },
     "flash.events.Event": {
       "summary": {
@@ -5478,12 +5455,10 @@
       "summary": {
         "max_points": 4,
         "impl_points": 4,
-        "stub_penalty": 1
+        "stub_penalty": 0
       },
       "missing": [],
-      "stubbed": [
-        "pixelSnapping"
-      ]
+      "stubbed": []
     },
     "Array": {
       "summary": {
@@ -5517,13 +5492,13 @@
     "flash.display3D.Program3D": {
       "summary": {
         "max_points": 3,
-        "impl_points": 2,
-        "stub_penalty": 0
+        "impl_points": 3,
+        "stub_penalty": 1
       },
-      "missing": [
+      "missing": [],
+      "stubbed": [
         "dispose()"
-      ],
-      "stubbed": []
+      ]
     },
     "flash.display3D.Context3DTextureFormat": {
       "summary": {
