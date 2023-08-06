@@ -16,6 +16,11 @@ plugins:
   - jekyll-seo-tag
 show_excerpts: true
 
+mastodon:
+  - {instance: "mastodon.gamedev.place", username: "ruffle"}
+twitter_username: "ruffle_rs"
+instagram_username: "ruffle.rs"
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
