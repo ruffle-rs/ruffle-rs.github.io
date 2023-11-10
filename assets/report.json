@@ -1,8 +1,8 @@
 {
   "summary": {
     "max_points": 4560,
-    "impl_points": 3285,
-    "stub_penalty": 279
+    "impl_points": 3379,
+    "stub_penalty": 287
   },
   "classes": {
     "flash.events.MouseEvent": {
@@ -63,21 +63,10 @@
     "flash.text.engine.FontMetrics": {
       "summary": {
         "max_points": 11,
-        "impl_points": 0,
+        "impl_points": 11,
         "stub_penalty": 0
       },
-      "missing": [
-        "strikethroughOffset",
-        "underlineOffset",
-        "superscriptOffset",
-        "superscriptScale",
-        "lineGap",
-        "emBox",
-        "subscriptOffset",
-        "underlineThickness",
-        "strikethroughThickness",
-        "subscriptScale"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.display.JPEGXREncoderOptions": {
@@ -92,15 +81,11 @@
     "flash.text.engine.TextElement": {
       "summary": {
         "max_points": 3,
-        "impl_points": 2,
-        "stub_penalty": 1
+        "impl_points": 3,
+        "stub_penalty": 0
       },
-      "missing": [
-        "replaceText()"
-      ],
-      "stubbed": [
-        "text"
-      ]
+      "missing": [],
+      "stubbed": []
     },
     "flash.media.Video": {
       "summary": {
@@ -374,50 +359,44 @@
     "flash.text.engine.TextLine": {
       "summary": {
         "max_points": 41,
-        "impl_points": 3,
-        "stub_penalty": 0
+        "impl_points": 22,
+        "stub_penalty": 12
       },
       "missing": [
-        "getAtomIndexAtPoint()",
         "getAtomWordBoundaryOnLeft()",
-        "hasGraphicElement",
-        "flushAtomData()",
         "getAtomTextRotation()",
-        "ascent",
         "getAtomTextBlockBeginIndex()",
         "totalAscent",
-        "textBlockBeginIndex",
         "tabIndex",
-        "nextLine",
         "mirrorRegions",
         "getAtomBidiLevel()",
-        "specifiedWidth",
         "tabChildren",
-        "textHeight",
-        "textWidth",
         "contextMenu",
-        "unjustifiedTextWidth",
         "getAtomTextBlockEndIndex()",
         "dump()",
         "tabEnabled",
-        "rawTextLength",
-        "textBlock",
         "getAtomIndexAtCharIndex()",
         "getAtomGraphic()",
-        "getAtomBounds()",
         "totalHeight",
         "focusRect",
         "getAtomCenter()",
         "getMirrorRegion()",
-        "totalDescent",
-        "previousLine",
+        "totalDescent"
+      ],
+      "stubbed": [
+        "getAtomIndexAtPoint()",
+        "hasGraphicElement",
+        "ascent",
+        "textBlockBeginIndex",
+        "textHeight",
+        "textWidth",
+        "unjustifiedTextWidth",
+        "getAtomBounds()",
         "validity",
         "atomCount",
         "getBaselinePosition()",
-        "hasTabs",
         "descent"
-      ],
-      "stubbed": []
+      ]
     },
     "JSON": {
       "summary": {
@@ -554,12 +533,11 @@
     "XMLList": {
       "summary": {
         "max_points": 82,
-        "impl_points": 35,
+        "impl_points": 37,
         "stub_penalty": 0
       },
       "missing": [
         "setNamespace()",
-        "parent()",
         "elements()",
         "setChildren()",
         "inScopeNamespaces()",
@@ -582,7 +560,6 @@
         "setName()",
         "localName()",
         "prototype.setNamespace()",
-        "prototype.parent()",
         "prototype.elements()",
         "prototype.setChildren()",
         "prototype.inScopeNamespaces()",
@@ -681,16 +658,13 @@
     "flash.text.engine.GroupElement": {
       "summary": {
         "max_points": 11,
-        "impl_points": 0,
+        "impl_points": 4,
         "stub_penalty": 0
       },
       "missing": [
         "getElementIndex()",
         "getElementAt()",
         "ungroupElements()",
-        "elementCount",
-        "setElements()",
-        "replaceElements()",
         "splitTextElement()",
         "mergeTextElements()",
         "getElementAtCharIndex()",
@@ -1197,13 +1171,10 @@
     "flash.text.engine.SpaceJustifier": {
       "summary": {
         "max_points": 6,
-        "impl_points": 2,
+        "impl_points": 5,
         "stub_penalty": 0
       },
       "missing": [
-        "optimumSpacing",
-        "minimumSpacing",
-        "maximumSpacing",
         "clone()"
       ],
       "stubbed": []
@@ -1415,43 +1386,23 @@
     "flash.text.engine.ElementFormat": {
       "summary": {
         "max_points": 21,
-        "impl_points": 1,
+        "impl_points": 18,
         "stub_penalty": 0
       },
       "missing": [
-        "fontDescription",
-        "textRotation",
-        "alignmentBaseline",
-        "baselineShift",
         "locked",
-        "color",
-        "breakOpportunity",
         "clone()",
-        "digitWidth",
-        "typographicCase",
-        "dominantBaseline",
-        "trackingLeft",
-        "ligatureLevel",
-        "kerning",
-        "locale",
-        "fontSize",
-        "trackingRight",
-        "getFontMetrics()",
-        "alpha",
-        "digitCase"
+        "getFontMetrics()"
       ],
       "stubbed": []
     },
     "flash.system.ImageDecodingPolicy": {
       "summary": {
         "max_points": 3,
-        "impl_points": 0,
+        "impl_points": 3,
         "stub_penalty": 0
       },
-      "missing": [
-        "static ON_LOAD",
-        "static ON_DEMAND"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.display.StageDisplayState": {
@@ -2076,29 +2027,12 @@
     "flash.net.NetConnection": {
       "summary": {
         "max_points": 20,
-        "impl_points": 7,
-        "stub_penalty": 4
+        "impl_points": 20,
+        "stub_penalty": 1
       },
-      "missing": [
-        "usingTLS",
-        "farID",
-        "uri",
-        "nearID",
-        "nearNonce",
-        "client",
-        "proxyType",
-        "connectedProxyType",
-        "farNonce",
-        "maxPeerConnections",
-        "connected",
-        "protocol",
-        "unconnectedPeerStreams"
-      ],
+      "missing": [],
       "stubbed": [
-        "call()",
-        "addHeader()",
-        "connect()",
-        "close()"
+        "connect()"
       ]
     },
     "flash.printing.PrintJobOrientation": {
@@ -2147,7 +2081,7 @@
       "summary": {
         "max_points": 25,
         "impl_points": 24,
-        "stub_penalty": 4
+        "stub_penalty": 5
       },
       "missing": [
         "lineShaderStyle()"
@@ -2156,6 +2090,7 @@
         "beginShaderFill()",
         "drawPath()",
         "drawRoundRectComplex()",
+        "drawTriangles()",
         "readGraphicsData()"
       ]
     },
@@ -2760,13 +2695,11 @@
       "summary": {
         "max_points": 22,
         "impl_points": 22,
-        "stub_penalty": 5
+        "stub_penalty": 3
       },
       "missing": [],
       "stubbed": [
         "getPrefixForNamespace()",
-        "removeNode()",
-        "cloneNode()",
         "getNamespaceForPrefix()",
         "namespaceURI"
       ]
@@ -3501,11 +3434,10 @@
     "flash.xml.XMLDocument": {
       "summary": {
         "max_points": 9,
-        "impl_points": 4,
+        "impl_points": 5,
         "stub_penalty": 0
       },
       "missing": [
-        "createTextNode()",
         "xmlDecl",
         "idMap",
         "toString()",
@@ -3525,17 +3457,17 @@
     "flash.display.InteractiveObject": {
       "summary": {
         "max_points": 11,
-        "impl_points": 7,
-        "stub_penalty": 2
+        "impl_points": 8,
+        "stub_penalty": 3
       },
       "missing": [
         "requestSoftKeyboard()",
-        "accessibilityImplementation",
         "softKeyboardInputAreaOfInterest",
         "needsSoftKeyboard"
       ],
       "stubbed": [
         "tabIndex",
+        "accessibilityImplementation",
         "focusRect"
       ]
     },
@@ -3601,26 +3533,22 @@
     "flash.text.engine.TextBlock": {
       "summary": {
         "max_points": 25,
-        "impl_points": 11,
-        "stub_penalty": 0
+        "impl_points": 17,
+        "stub_penalty": 1
       },
       "missing": [
         "findNextAtomBoundary()",
-        "recreateTextLine()",
         "findNextWordBoundary()",
         "dump()",
         "findPreviousAtomBoundary()",
-        "createTextLine()",
         "firstInvalidLine",
-        "releaseLines()",
-        "firstLine",
-        "lastLine",
         "releaseLineCreationData()",
         "getTextLineAtCharIndex()",
-        "textLineCreationResult",
         "findPreviousWordBoundary()"
       ],
-      "stubbed": []
+      "stubbed": [
+        "recreateTextLine()"
+      ]
     },
     "flash.ui.GameInputControl": {
       "summary": {
@@ -3781,11 +3709,10 @@
       "summary": {
         "max_points": 5,
         "impl_points": 5,
-        "stub_penalty": 2
+        "stub_penalty": 1
       },
       "missing": [],
       "stubbed": [
-        "registerClassAlias()",
         "sendToURL()"
       ]
     },
@@ -3810,16 +3737,13 @@
     "XML": {
       "summary": {
         "max_points": 92,
-        "impl_points": 68,
-        "stub_penalty": 3
+        "impl_points": 72,
+        "stub_penalty": 4
       },
       "missing": [
         "setNamespace()",
-        "setChildren()",
         "inScopeNamespaces()",
         "removeNamespace()",
-        "setNotification()",
-        "notification()",
         "contains()",
         "propertyIsEnumerable()",
         "addNamespace()",
@@ -3827,7 +3751,6 @@
         "setLocalName()",
         "hasOwnProperty()",
         "prototype.setNamespace()",
-        "prototype.setChildren()",
         "prototype.inScopeNamespaces()",
         "prototype.removeNamespace()",
         "prototype.contains()",
@@ -3840,6 +3763,7 @@
         "prototype.setName()"
       ],
       "stubbed": [
+        "setNotification()",
         "normalize()",
         "namespace()",
         "setName()"
@@ -3848,12 +3772,11 @@
     "flash.text.engine.TextJustifier": {
       "summary": {
         "max_points": 5,
-        "impl_points": 2,
+        "impl_points": 3,
         "stub_penalty": 0
       },
       "missing": [
         "locale",
-        "lineJustification",
         "static getJustifierForLocale()"
       ],
       "stubbed": []
@@ -4185,18 +4108,12 @@
     "flash.text.engine.FontDescription": {
       "summary": {
         "max_points": 11,
-        "impl_points": 1,
+        "impl_points": 7,
         "stub_penalty": 0
       },
       "missing": [
         "locked",
-        "fontName",
-        "fontPosture",
         "clone()",
-        "cffHinting",
-        "renderingMode",
-        "fontLookup",
-        "fontWeight",
         "static isDeviceFontCompatible()",
         "static isFontCompatible()"
       ],
@@ -4723,12 +4640,11 @@
       "summary": {
         "max_points": 7,
         "impl_points": 7,
-        "stub_penalty": 2
+        "stub_penalty": 1
       },
       "missing": [],
       "stubbed": [
-        "static enumerateFonts()",
-        "static registerFont()"
+        "static enumerateFonts()"
       ]
     },
     "flash.display.GraphicsEndFill": {
@@ -5495,15 +5411,13 @@
     "flash.text.engine.ContentElement": {
       "summary": {
         "max_points": 11,
-        "impl_points": 4,
+        "impl_points": 6,
         "stub_penalty": 0
       },
       "missing": [
         "groupElement",
         "textRotation",
-        "text",
         "textBlockBeginIndex",
-        "rawText",
         "eventMirror",
         "textBlock"
       ],
