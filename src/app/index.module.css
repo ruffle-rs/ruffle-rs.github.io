@@ -1,0 +1,58 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heroInner {
+    max-width: rem(500px);
+    margin-left: calc(var(--mantine-spacing-xl) * 3);
+
+    @media (max-width: $mantine-breakpoint-md) {
+        max-width: 100%;
+        margin-left: 0;
+    }
+}
+
+.heroImage {
+    @media (max-width: $mantine-breakpoint-md) {
+        display: none;
+    }
+}
+
+.logo {
+    height: 220px;
+    width: 400px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: calc(var(--mantine-spacing-xl));
+}
+
+.installButton {
+    background-color: var(--ruffle-orange);
+    color: #3c1518;
+}
+
+.otherDownloadsButton {
+    background-color: var(--ruffle-blue-7);
+    color: var(--mantine-color-white);
+    font-weight: lighter;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    /*@media (max-width: $mantine-breakpoint-xs) {*/
+    /*    flex-direction: column;*/
+    /*}*/
+}
