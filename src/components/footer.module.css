@@ -1,0 +1,37 @@
+.footer {
+    margin-top: rem(120px);
+    border-top: rem(1px) solid var(--ruffle-blue-9);
+}
+
+.inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--mantine-spacing-xl);
+    padding-bottom: var(--mantine-spacing-xl);
+
+    @media (max-width: $mantine-breakpoint-xs) {
+        flex-direction: column;
+    }
+}
+
+.logobox {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    flex-grow: 1;
+    font-family: var(--mantine-font-family-headings);
+
+}
+
+.tagline {
+    @media (max-width: $mantine-breakpoint-md) {
+        display: none;
+    }
+}
+
+.links {
+    @media (max-width: $mantine-breakpoint-xs) {
+        margin-top: var(--mantine-spacing-md);
+    }
+}

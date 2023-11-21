@@ -1,0 +1,39 @@
+.header {
+    height: rem(56px);
+    margin-bottom: rem(50px);
+    background-color: var(--mantine-color-body);
+    border-bottom: rem(1px) solid var(--ruffle-blue-9);
+}
+
+.inner {
+    height: rem(56px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link {
+    display: block;
+    line-height: 1;
+    padding: rem(8px) rem(12px);
+    border-radius: var(--mantine-radius-sm);
+    text-decoration: none;
+    font-size: var(--mantine-font-size-sm);
+    font-family: var(--mantine-font-family-headings);
+    font-weight: 500;
+
+    @mixin hover {
+        background-color: var(--ruffle-blue-6);
+    }
+
+    [data-mantine-color-scheme] &[data-active] {
+        background-color: var(--ruffle-blue-9);
+        color: var(--mantine-color-white);
+    }
+}
+
+.burger {
+    --burger-color: var(--ruffle-orange);
+}
+
+
