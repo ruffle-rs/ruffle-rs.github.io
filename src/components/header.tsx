@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Container, Group, Burger, Drawer } from "@mantine/core";
+import { Burger, Container, Drawer, Group } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./header.module.css";
 import Image from "next/image";
@@ -54,6 +54,7 @@ export function Header() {
           opened={opened}
           onClose={close}
           position="top"
+          classNames={{ inner: classes.drawer, overlay: classes.overlay }}
           withCloseButton={false}
         >
           {items}
