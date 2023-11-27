@@ -7,9 +7,7 @@ import { Header } from "@/components/header";
 import { FooterSocial } from "@/components/footer";
 
 export const metadata: Metadata = {
-  // TODO: This is the title we currently use... it's a bit long.
-  title:
-    "Ruffle is a Flash Player emulator written in Rust. Ruffle targets both desktop and the web using WebAssembly.",
+  title: "Ruffle - Flash Emulator",
   description:
     "Ruffle is a Flash Player emulator written in Rust. Ruffle targets both desktop and the web using WebAssembly.",
   icons: [
