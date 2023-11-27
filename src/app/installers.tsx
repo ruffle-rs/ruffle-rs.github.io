@@ -33,28 +33,28 @@ export default function Installers() {
       installers.push({
         icon: IconBrandFirefox,
         name: "Firefox Extension",
-        url: "/",
+        url: "https://addons.mozilla.org/en-US/firefox/addon/ruffle_rs/",
       });
     }
     if (selectors.isEdge) {
       installers.push({
         icon: IconBrandEdge,
         name: "Edge Extension",
-        url: "/",
+        url: "https://microsoftedge.microsoft.com/addons/detail/ruffle/pipjjbgofgieknlpefmcckdmgaaegban",
       });
     }
     if (selectors.isChrome) {
       installers.push({
         icon: IconBrandChrome,
         name: "Chrome Extension",
-        url: "/",
+        url: "https://chrome.google.com/webstore/detail/ruffle-flash-emulator/donbcfbmhbcapadipfkeojnmajbakjdc",
       });
     }
     if (selectors.isSafari) {
       installers.push({
         icon: IconBrandSafari,
         name: "Safari Extension",
-        url: "/",
+        url: "/", // todo
       });
     }
   }
@@ -63,29 +63,29 @@ export default function Installers() {
     installers.push({
       icon: IconBrandWindows,
       name: "Windows Executable",
-      url: "/",
+      url: "/", // todo
     });
   }
   if (selectors.isMacOs) {
     installers.push({
       icon: IconBrandApple,
       name: "Mac Application",
-      url: "/",
+      url: "/", // todo
     });
   }
   if (selectors.isAndroid) {
     installers.push({
       icon: IconBrandAndroid,
       name: "Android App",
-      url: "/",
+      url: "/", // todo
     });
   }
 
-  installers.push({ icon: IconBrowser, name: "Website Package", url: "/" });
+  installers.push({ icon: IconBrowser, name: "Website Package", url: "/" }); // todo
   installers.push({
     icon: IconList,
     name: "Other Downloads",
-    url: "/",
+    url: "/", // todo
     className: classes.otherDownloadsButton,
   });
 
