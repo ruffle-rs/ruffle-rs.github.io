@@ -18,7 +18,7 @@
     padding: rem(8px) rem(12px);
     border-radius: var(--mantine-radius-sm);
     text-decoration: none;
-    font-size: var(--mantine-font-size-sm);
+    font-size: var(--mantine-font-size-md);
     font-family: var(--mantine-font-family-headings);
     font-weight: 500;
 
