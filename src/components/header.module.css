@@ -10,6 +10,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 10001;
+    position: relative;
 }
 
 .link {
@@ -36,4 +38,10 @@
     --burger-color: var(--ruffle-orange);
 }
 
+.drawer {
+    top: rem(56px);
+}
 
+.overlay {
+    top: rem(56px);
+}

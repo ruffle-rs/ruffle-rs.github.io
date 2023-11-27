@@ -1,15 +1,10 @@
 import dynamic from "next/dynamic";
 import classes from "./index.module.css";
 import {
-  Button,
   Container,
-  Grid,
-  GridCol,
-  Group,
   List,
   ListItem,
   rem,
-  Space,
   Text,
   ThemeIcon,
   Title,
