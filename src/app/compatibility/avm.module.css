@@ -1,0 +1,12 @@
+.stub {
+    /* The other bars don't have the edge rounded as they're just one item; make this visually look the same */
+    --progress-radius: 0;
+}
+
+.stubLabel {
+    color: #3c1518;
+}
+
+.avm {
+    justify-content: space-between;
+}

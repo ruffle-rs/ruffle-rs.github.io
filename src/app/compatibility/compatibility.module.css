@@ -1,0 +1,19 @@
+.actionscriptImage {
+    @media (max-width: $mantine-breakpoint-sm) {
+        display: none;
+    }
+}
+
+.actionscriptInfo {
+    max-width: var(--container-size-md);
+
+    @media (max-width: $mantine-breakpoint-sm) {
+        padding: 0;
+    }
+}
+
+.avms {
+    @media (max-width: $mantine-breakpoint-sm) {
+        flex-direction: column;
+    }
+}

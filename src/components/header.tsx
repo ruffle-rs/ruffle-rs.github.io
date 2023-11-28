@@ -12,7 +12,7 @@ const links = [
   { link: "/", label: "What is Ruffle" },
   { link: "/test", label: "Usage" },
   { link: "/downloads", label: "Downloads" },
-  { link: "/test", label: "Compatibility" },
+  { link: "/compatibility", label: "Compatibility" },
   { link: "/test", label: "Get Involved" },
   { link: "/test", label: "Demo" },
   { link: "/test", label: "Join Discord" },
