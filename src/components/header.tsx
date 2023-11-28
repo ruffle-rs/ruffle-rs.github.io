@@ -5,11 +5,13 @@ import { Burger, Container, Drawer, Group } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./header.module.css";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const links = [
   { link: "/", label: "What is Ruffle" },
   { link: "/test", label: "Usage" },
-  { link: "/test", label: "Downloads" },
+  { link: "/downloads", label: "Downloads" },
   { link: "/test", label: "Compatibility" },
   { link: "/test", label: "Get Involved" },
   { link: "/test", label: "Demo" },
@@ -19,22 +21,20 @@ const links = [
 
 export function Header() {
   const [opened, { toggle, close }] = useDisclosure(false);
-  const [active, setActive] = useState(links[0].link);
+  const pathname = usePathname();
 
   const items = links.map((link) => (
-    <a
+    <Link
       key={link.label}
       href={link.link}
       className={classes.link}
-      data-active={active === link.link || undefined}
-      onClick={(event) => {
-        event.preventDefault();
+      data-active={pathname === link.link || undefined}
+      onClick={(_event) => {
         close();
-        setActive(link.link);
       }}
     >
       {link.label}
-    </a>
+    </Link>
   ));
 
   return (
