@@ -61,17 +61,18 @@ export default function Home() {
               }
             >
               <ListItem>
-                <b>Safe to use</b> - Using the guarantees of Rust and WASM, we
-                avoid the security pitfalls Flash was known for.
+                <b className={classes.key}>Safe to use</b> - Using the
+                guarantees of Rust and WASM, we avoid the security pitfalls
+                Flash was known for.
               </ListItem>
               <ListItem>
-                <b>Easy to install</b> - Whether you&apos;re a user or a website
-                owner, we&apos;ve made it as easy as possible to get up and
-                running.
+                <b className={classes.key}>Easy to install</b> - Whether
+                you&apos;re a user or a website owner, we&apos;ve made it as
+                easy as possible to get up and running.
               </ListItem>
               <ListItem>
-                <b>Free and open source</b> - Licensed MIT/Apache 2.0,
-                you&apos;re free to use Ruffle how you please!
+                <b className={classes.key}>Free and open source</b> - Licensed
+                MIT/Apache 2.0, you&apos;re free to use Ruffle how you please!
               </ListItem>
             </List>
 

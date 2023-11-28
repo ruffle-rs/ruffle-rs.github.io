@@ -56,3 +56,8 @@
     /*    flex-direction: column;*/
     /*}*/
 }
+
+.key {
+    font-family: var(--mantine-font-family-headings);
+    font-size: 1.1em;
+}
