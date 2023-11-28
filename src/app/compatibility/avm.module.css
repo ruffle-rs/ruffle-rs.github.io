@@ -8,5 +8,13 @@
 }
 
 .avm {
-    justify-content: space-between;
+    justify-content: center;
+}
+
+.progress {
+    flex: 1;
+}
+
+.progressName {
+    width: rem(125);
 }
