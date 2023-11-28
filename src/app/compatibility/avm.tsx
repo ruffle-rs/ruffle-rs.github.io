@@ -1,21 +1,56 @@
 import classes from "./avm.module.css";
 import {
   Button,
+  Group,
   ProgressLabel,
   ProgressRoot,
   ProgressSection,
+  Space,
   Stack,
   Text,
   Title,
 } from "@mantine/core";
 import Link from "next/link";
 
+interface AvmProgressProps {
+  done: number;
+  stubbed?: number;
+}
+
+interface AvmProgressPropsFull extends AvmProgressProps {
+  name: string;
+  mt?: string;
+}
+
+function AvmProgress(props: AvmProgressPropsFull) {
+  return (
+    <Group align="center" justify="spread-between" mt={props.mt}>
+      <Text size="sm" className={classes.progressName}>
+        {props.name}: {props.done}%
+        {props.stubbed && ` to ${props.done + props.stubbed}%`}
+      </Text>
+      <ProgressRoot size="xl" radius={10} className={classes.progress}>
+        <ProgressSection
+          value={props.done}
+          color="var(--mantine-color-green-9)"
+        ></ProgressSection>
+        {props.stubbed && (
+          <ProgressSection
+            value={props.stubbed}
+            color="ruffle-orange"
+            className={classes.stub}
+          ></ProgressSection>
+        )}
+      </ProgressRoot>
+    </Group>
+  );
+}
+
 interface AvmBlockProps {
   name: string;
   children: React.ReactNode;
-  language_done: number;
-  api_done: number;
-  api_stubbed?: number;
+  language: AvmProgressProps;
+  api: AvmProgressProps;
   info_link: string;
   info_link_target?: string;
 }
@@ -23,50 +58,23 @@ interface AvmBlockProps {
 export function AvmBlock(props: AvmBlockProps) {
   return (
     <Stack className={classes.avm}>
-      <Title order={2}>{props.name}</Title>
+      <Group justify="space-between">
+        <Title order={2}>{props.name}</Title>
+        <Button
+          component={Link}
+          href={props.info_link}
+          target={props.info_link_target}
+          size="compact-md"
+          color="var(--ruffle-blue-7)"
+        >
+          More Info
+        </Button>
+      </Group>
+
       {props.children}
 
-      <ProgressRoot size="xl" radius={10} mt="auto">
-        <ProgressSection
-          value={props.language_done}
-          color="var(--mantine-color-green-9)"
-        >
-          <ProgressLabel>Language: {props.language_done}%</ProgressLabel>
-        </ProgressSection>
-      </ProgressRoot>
-
-      <ProgressRoot size="xl" radius={10}>
-        <ProgressSection
-          value={props.api_done}
-          color="var(--mantine-color-green-9)"
-        >
-          <ProgressLabel>API: {props.api_done}%</ProgressLabel>
-        </ProgressSection>
-        {props.api_stubbed && (
-          <ProgressSection
-            value={props.api_stubbed}
-            color="ruffle-orange"
-            className={classes.stub}
-          >
-            <ProgressLabel
-              className={classes.stubLabel}
-              title={`Stubs: ${props.api_stubbed}%`}
-            >
-              Stubs: {props.api_stubbed}%
-            </ProgressLabel>
-          </ProgressSection>
-        )}
-      </ProgressRoot>
-
-      <Button
-        component={Link}
-        href={props.info_link}
-        target={props.info_link_target}
-        size="compact-md"
-        color="var(--ruffle-blue-7)"
-      >
-        More Info
-      </Button>
+      <AvmProgress name="Language" mt="auto" {...props.language} />
+      <AvmProgress name="API" {...props.api} />
     </Stack>
   );
 }

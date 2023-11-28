@@ -49,14 +49,14 @@ export default function Downloads() {
         <Flex
           align="top"
           justify="space-between"
-          columnGap={25}
+          columnGap={40}
           rowGap={50}
           className={classes.avms}
         >
           <AvmBlock
             name="AVM 1: ActionScript 1 & 2"
-            language_done={95}
-            api_done={75}
+            language={{ done: 95 }}
+            api={{ done: 75 }}
             info_link_target="_blank"
             info_link="https://github.com/ruffle-rs/ruffle/issues/310"
           >
@@ -78,9 +78,8 @@ export default function Downloads() {
 
           <AvmBlock
             name="AVM 2: ActionScript 3"
-            language_done={75}
-            api_done={68}
-            api_stubbed={6}
+            language={{ done: 75 }}
+            api={{ done: 68, stubbed: 6 }}
             info_link="/compatibility" // TODO
           >
             <Text size="sm">
