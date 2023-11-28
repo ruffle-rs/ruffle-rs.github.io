@@ -39,7 +39,7 @@ export default function Downloads() {
               </ListItem>
               <ListItem>
                 The <b>API</b> is the original built-in methods and classes that
-                are available for this API, like the ability to interact with
+                are available for this AVM, like the ability to interact with
                 objects on the stage or make web requests.
               </ListItem>
             </List>
