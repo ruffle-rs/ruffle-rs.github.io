@@ -9,6 +9,10 @@
 
 .avm {
     justify-content: center;
+    max-width: rem(600);
+    @media (max-width: $mantine-breakpoint-sm) {
+        max-width: none;
+    }
 }
 
 .progress {

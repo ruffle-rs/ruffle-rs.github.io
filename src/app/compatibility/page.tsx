@@ -10,7 +10,7 @@ import { IconCheck } from "@tabler/icons-react";
 export default function Downloads() {
   return (
     <Container size="xl" className={classes.container}>
-      <Stack gap="xl">
+      <Stack gap="xl" align="center">
         <Group align="top" wrap="nowrap">
           <Image
             src="/undraw/undraw_split_testing_l1uw.svg"
@@ -71,8 +71,7 @@ export default function Downloads() {
               We believe that most AVM 1 content will work, but we are aware of
               some graphical inaccuracies and smaller bugs here and there.
               Please feel free to report any issues you find that are not
-              present in the original Flash Player! For in-depth details, please
-              follow our AVM 1 tracking issue on GitHub.
+              present in the original Flash Player!
             </Text>
           </AvmBlock>
 
@@ -93,9 +92,7 @@ export default function Downloads() {
               Ruffle now has decent support for AVM 2, and it&apos;s our
               experience that most games will work well enough to be played.
               We&apos;re still rapidly improving in this area though, so bug
-              reports about any broken content are always welcome! For in-depth
-              details, please see our page outlining full AVM2 implementation
-              details.
+              reports about any broken content are always welcome!
             </Text>
           </AvmBlock>
         </Flex>

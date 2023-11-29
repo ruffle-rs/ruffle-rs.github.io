@@ -27,18 +27,19 @@ function AvmProgress(props: AvmProgressPropsFull) {
     <Group align="center" justify="spread-between" mt={props.mt}>
       <Text size="sm" className={classes.progressName}>
         {props.name}: {props.done}%
-        {props.stubbed && ` to ${props.done + props.stubbed}%`}
       </Text>
       <ProgressRoot size="xl" radius={10} className={classes.progress}>
         <ProgressSection
           value={props.done}
           color="var(--mantine-color-green-9)"
+          title={`${props.done}% done`}
         ></ProgressSection>
         {props.stubbed && (
           <ProgressSection
             value={props.stubbed}
             color="ruffle-orange"
             className={classes.stub}
+            title={`${props.stubbed}% partially done`}
           ></ProgressSection>
         )}
       </ProgressRoot>
