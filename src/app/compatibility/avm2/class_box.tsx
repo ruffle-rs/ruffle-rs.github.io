@@ -18,7 +18,7 @@ import {
 } from "@/app/compatibility/avm2/report_utils";
 
 export function ClassBox(props: ClassStatus) {
-  const [opened, { toggle, close }] = useDisclosure(false);
+  const [opened, { toggle }] = useDisclosure(false);
   const pctDone = Math.ceil(
     ((props.summary.impl_points - props.summary.stub_penalty) /
       props.summary.max_points) *

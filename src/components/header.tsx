@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { Burger, Container, Drawer, Group } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./header.module.css";
@@ -29,7 +28,7 @@ export function Header() {
       href={link.link}
       className={classes.link}
       data-active={pathname === link.link || undefined}
-      onClick={(_event) => {
+      onClick={() => {
         close();
       }}
     >

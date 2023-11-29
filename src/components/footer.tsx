@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import {
   IconBrandTwitter,
-  IconBrandYoutube,
   IconBrandInstagram,
   IconBrandGithub,
   IconBrandTiktok,
