@@ -22,4 +22,6 @@
 
 .progressName {
     width: rem(125);
+    font-family: var(--mantine-font-family-headings);
+    font-weight: bold;
 }
