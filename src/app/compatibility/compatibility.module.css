@@ -13,7 +13,13 @@
 }
 
 .avms {
+    width: 100%;
+
     @media (max-width: $mantine-breakpoint-sm) {
         flex-direction: column;
     }
+}
+
+.container {
+    max-width: rem(1250);
 }
