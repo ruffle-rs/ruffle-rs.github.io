@@ -1,27 +1,27 @@
 .stub {
-    /* The other bars don't have the edge rounded as they're just one item; make this visually look the same */
-    --progress-radius: 0;
+  /* The other bars don't have the edge rounded as they're just one item; make this visually look the same */
+  --progress-radius: 0;
 }
 
 .stubLabel {
-    color: #3c1518;
+  color: #3c1518;
 }
 
 .avm {
-    justify-content: center;
-    max-width: rem(600);
-    @media (max-width: $mantine-breakpoint-sm) {
-        max-width: none;
-    }
+  justify-content: center;
+  max-width: rem(600);
+  @media (max-width: $mantine-breakpoint-sm) {
+    max-width: none;
+  }
 }
 
 .progress {
-    flex: 1;
-    background-color: var(--ruffle-blue-1);
+  flex: 1;
+  background-color: var(--ruffle-blue-1);
 }
 
 .progressName {
-    width: rem(125);
-    font-family: var(--mantine-font-family-headings);
-    font-weight: bold;
+  width: rem(125);
+  font-family: var(--mantine-font-family-headings);
+  font-weight: bold;
 }
