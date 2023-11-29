@@ -1,0 +1,34 @@
+.progressImage {
+    @media (max-width: $mantine-breakpoint-sm) {
+        display: none;
+    }
+}
+
+.listContainer {
+    @media (max-width: $mantine-breakpoint-sm) {
+        flex-direction: column;
+    }
+}
+
+.namespace {
+
+}
+
+.class {
+    width: rem(375);
+
+    @media (max-width: $mantine-breakpoint-sm) {
+        width: 100%;
+    }
+}
+
+.showMemberButton {
+    background-color: var(--ruffle-blue-7);
+    margin-top: rem(10);
+}
+
+
+.progressStub {
+    /* The other bars don't have the edge rounded as they're just one item; make this visually look the same */
+    --progress-radius: 0;
+}
