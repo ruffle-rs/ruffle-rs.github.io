@@ -30,12 +30,14 @@ function AvmProgress(props: AvmProgressPropsFull) {
       </Text>
       <ProgressRoot size="xl" radius={10} className={classes.progress}>
         <ProgressSection
+          striped
           value={props.done}
           color="var(--mantine-color-green-9)"
           title={`${props.done}% done`}
         ></ProgressSection>
         {props.stubbed && (
           <ProgressSection
+            striped
             value={props.stubbed}
             color="ruffle-orange"
             className={classes.stub}

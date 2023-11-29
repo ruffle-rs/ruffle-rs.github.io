@@ -14,6 +14,10 @@
 
 }
 
+.progress {
+    background-color: var(--ruffle-blue-1);
+}
+
 .class {
     width: rem(375);
 
