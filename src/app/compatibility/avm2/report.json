@@ -1,0 +1,5481 @@
+{
+  "summary": {
+    "max_points": 4560,
+    "impl_points": 3379,
+    "stub_penalty": 287
+  },
+  "classes": {
+    "flash.events.MouseEvent": {
+      "summary": {
+        "max_points": 35,
+        "impl_points": 35,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.VideoTextureEvent": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": ["codecInfo"],
+      "stubbed": []
+    },
+    "flash.net.drm.VoucherAccessInfo": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "policyID",
+        "authenticationMethod",
+        "domain",
+        "displayName",
+        "deviceGroup"
+      ],
+      "stubbed": []
+    },
+    "flash.utils.Dictionary": {
+      "summary": {
+        "max_points": 2,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": ["prototype.toJSON()"],
+      "stubbed": []
+    },
+    "flash.globalization.DateTimeNameStyle": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.engine.FontMetrics": {
+      "summary": {
+        "max_points": 11,
+        "impl_points": 11,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.JPEGXREncoderOptions": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.engine.TextElement": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.media.Video": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 7,
+        "stub_penalty": 1
+      },
+      "missing": ["attachCamera()"],
+      "stubbed": ["clear()"]
+    },
+    "flash.filters.GradientGlowFilter": {
+      "summary": {
+        "max_points": 13,
+        "impl_points": 13,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.GraphicsBitmapFill": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.FrameLabel": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display3D.Context3D": {
+      "summary": {
+        "max_points": 39,
+        "impl_points": 31,
+        "stub_penalty": 10
+      },
+      "missing": [
+        "setProgramConstantsFromByteArray()",
+        "createVideoTexture()",
+        "dispose()",
+        "totalGPUMemory",
+        "backBufferWidth",
+        "drawToBitmapData()",
+        "backBufferHeight",
+        "static supportsVideoTexture"
+      ],
+      "stubbed": [
+        "profile",
+        "createTexture()",
+        "setRenderToTexture()",
+        "configureBackBuffer()",
+        "setStencilActions()",
+        "maxBackBufferWidth",
+        "maxBackBufferHeight",
+        "setStencilReferenceValue()",
+        "setSamplerStateAt()",
+        "driverInfo"
+      ]
+    },
+    "flash.system.SystemUpdater": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["cancel()", "update()"],
+      "stubbed": []
+    },
+    "flash.events.OutputProgressEvent": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "bytesPending",
+        "bytesTotal",
+        "toString()",
+        "clone()",
+        "static OUTPUT_PROGRESS"
+      ],
+      "stubbed": []
+    },
+    "flash.display.IGraphicsData": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.StageScaleMode": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.PixelSnapping": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.MovieClip": {
+      "summary": {
+        "max_points": 21,
+        "impl_points": 20,
+        "stub_penalty": 0
+      },
+      "missing": ["trackAsMenu"],
+      "stubbed": []
+    },
+    "flash.globalization.NumberParseResult": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.sampler.Sample": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.URLLoaderDataFormat": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "RegExp": {
+      "summary": {
+        "max_points": 14,
+        "impl_points": 14,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "String": {
+      "summary": {
+        "max_points": 42,
+        "impl_points": 42,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.security.X500DistinguishedName": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 8,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.xml.XMLNodeType": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 8,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.DRMReturnVoucherErrorEvent": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.AVPlayStateEvent": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["playState", "static AV_PLAY_STATE"],
+      "stubbed": []
+    },
+    "flash.profiler.Telemetry": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.TextRun": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["beginIndex", "textFormat", "endIndex"],
+      "stubbed": []
+    },
+    "flash.display.TriangleCulling": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.ObjectEncoding": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 1
+      },
+      "missing": [],
+      "stubbed": ["static dynamicPropertyWriter"]
+    },
+    "flash.net.SharedObjectFlushStatus": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.engine.TextLine": {
+      "summary": {
+        "max_points": 41,
+        "impl_points": 22,
+        "stub_penalty": 12
+      },
+      "missing": [
+        "getAtomWordBoundaryOnLeft()",
+        "getAtomTextRotation()",
+        "getAtomTextBlockBeginIndex()",
+        "totalAscent",
+        "tabIndex",
+        "mirrorRegions",
+        "getAtomBidiLevel()",
+        "tabChildren",
+        "contextMenu",
+        "getAtomTextBlockEndIndex()",
+        "dump()",
+        "tabEnabled",
+        "getAtomIndexAtCharIndex()",
+        "getAtomGraphic()",
+        "totalHeight",
+        "focusRect",
+        "getAtomCenter()",
+        "getMirrorRegion()",
+        "totalDescent"
+      ],
+      "stubbed": [
+        "getAtomIndexAtPoint()",
+        "hasGraphicElement",
+        "ascent",
+        "textBlockBeginIndex",
+        "textHeight",
+        "textWidth",
+        "unjustifiedTextWidth",
+        "getAtomBounds()",
+        "validity",
+        "atomCount",
+        "getBaselinePosition()",
+        "descent"
+      ]
+    },
+    "JSON": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.TextEvent": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.ShaderData": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.automation.AutomationAction": {
+      "summary": {
+        "max_points": 2,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["type"],
+      "stubbed": []
+    },
+    "flash.display.IBitmapDrawable": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.AsyncErrorEvent": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.media.StageVideoAvailability": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.GridFitType": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.media.AVABRParameters": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "policy",
+        "startBitsPerSecond",
+        "minBitsPerSecond",
+        "maxBitsPerSecond",
+        "static MODERATE",
+        "static AGGRESSIVE",
+        "static CONSERVATIVE"
+      ],
+      "stubbed": []
+    },
+    "flash.text.engine.DigitWidth": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.Sprite": {
+      "summary": {
+        "max_points": 11,
+        "impl_points": 9,
+        "stub_penalty": 0
+      },
+      "missing": ["startTouchDrag()", "stopTouchDrag()"],
+      "stubbed": []
+    },
+    "flash.system.Worker": {
+      "summary": {
+        "max_points": 12,
+        "impl_points": 2,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "createMessageChannel()",
+        "start()",
+        "setSharedProperty()",
+        "terminate()",
+        "removeEventListener()",
+        "addEventListener()",
+        "state",
+        "getSharedProperty()",
+        "isPrimordial",
+        "static current"
+      ],
+      "stubbed": []
+    },
+    "XMLList": {
+      "summary": {
+        "max_points": 82,
+        "impl_points": 37,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "setNamespace()",
+        "elements()",
+        "setChildren()",
+        "inScopeNamespaces()",
+        "insertChildBefore()",
+        "removeNamespace()",
+        "prependChild()",
+        "contains()",
+        "propertyIsEnumerable()",
+        "normalize()",
+        "appendChild()",
+        "addNamespace()",
+        "nodeKind()",
+        "namespace()",
+        "insertChildAfter()",
+        "namespaceDeclarations()",
+        "childIndex()",
+        "hasOwnProperty()",
+        "replace()",
+        "setLocalName()",
+        "setName()",
+        "localName()",
+        "prototype.setNamespace()",
+        "prototype.elements()",
+        "prototype.setChildren()",
+        "prototype.inScopeNamespaces()",
+        "prototype.insertChildBefore()",
+        "prototype.removeNamespace()",
+        "prototype.prependChild()",
+        "prototype.contains()",
+        "prototype.propertyIsEnumerable()",
+        "prototype.normalize()",
+        "prototype.appendChild()",
+        "prototype.valueOf",
+        "prototype.addNamespace()",
+        "prototype.namespace()",
+        "prototype.namespaceDeclarations()",
+        "prototype.nodeKind()",
+        "prototype.insertChildAfter()",
+        "prototype.setLocalName()",
+        "prototype.childIndex()",
+        "prototype.hasOwnProperty()",
+        "prototype.replace()",
+        "prototype.setName()",
+        "prototype.localName()"
+      ],
+      "stubbed": []
+    },
+    "flash.media.Microphone": {
+      "summary": {
+        "max_points": 24,
+        "impl_points": 24,
+        "stub_penalty": 23
+      },
+      "missing": [],
+      "stubbed": [
+        "setSilenceLevel()",
+        "enableVAD",
+        "noiseSuppressionLevel",
+        "silenceTimeout",
+        "rate",
+        "encodeQuality",
+        "framesPerPacket",
+        "soundTransform",
+        "setUseEchoSuppression()",
+        "setLoopBack()",
+        "gain",
+        "enhancedOptions",
+        "useEchoSuppression",
+        "silenceLevel",
+        "activityLevel",
+        "name",
+        "index",
+        "muted",
+        "codec",
+        "static getMicrophone()",
+        "static names",
+        "static getEnhancedMicrophone()",
+        "static isSupported"
+      ]
+    },
+    "flash.net.drm.LoadVoucherSetting": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "static LOCAL_ONLY",
+        "static FORCE_REFRESH",
+        "static ALLOW_SERVER"
+      ],
+      "stubbed": []
+    },
+    "Namespace": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 5,
+        "stub_penalty": 1
+      },
+      "missing": ["valueOf()", "prototype.valueOf()", "prototype.toString()"],
+      "stubbed": ["prefix"]
+    },
+    "flash.media.SoundChannel": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.engine.GroupElement": {
+      "summary": {
+        "max_points": 11,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "getElementIndex()",
+        "getElementAt()",
+        "ungroupElements()",
+        "splitTextElement()",
+        "mergeTextElements()",
+        "getElementAtCharIndex()",
+        "groupElements()"
+      ],
+      "stubbed": []
+    },
+    "flash.events.DRMMetadataEvent": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["drmMetadata", "timestamp", "static DRM_METADATA"],
+      "stubbed": []
+    },
+    "ReferenceError": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display3D.textures.Texture": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 3
+      },
+      "missing": [],
+      "stubbed": [
+        "uploadFromBitmapData()",
+        "uploadFromByteArray()",
+        "uploadCompressedTextureFromByteArray()"
+      ]
+    },
+    "flash.net.SecureSocket": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "serverCertificateStatus",
+        "connect()",
+        "addBinaryChainBuildingCertificate()",
+        "serverCertificate",
+        "static isSupported"
+      ],
+      "stubbed": []
+    },
+    "flash.media.MicrophoneEnhancedMode": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.drm.DRMPlaybackTimeWindow": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["startDate", "period", "endDate"],
+      "stubbed": []
+    },
+    "flash.display.Stage3D": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 1
+      },
+      "missing": [],
+      "stubbed": ["requestContext3DMatchingProfiles()"]
+    },
+    "flash.display.ColorCorrectionSupport": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.utils.CompressionAlgorithm": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.ui.MouseCursorData": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 3
+      },
+      "missing": [],
+      "stubbed": ["hotSpot", "frameRate", "data"]
+    },
+    "flash.media.AVResult": {
+      "summary": {
+        "max_points": 103,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "result",
+        "static BAD_MANIFEST_SIGNATURE",
+        "static SEGMENT_SKIPPED_ON_FAILURE",
+        "static CANNOT_HANDLE_MAIN_MANIFEST_UPDATE",
+        "static REPLACEMENT_FAILED",
+        "static CRYPTO_ERROR_BUFFER_TOO_SMALL",
+        "static MANIFEST_FILE_UNEXPECTEDLY_CHANGED",
+        "static HTTP_TIME_OUT",
+        "static OPERATION_ABORTED",
+        "static SEEK_FAILED",
+        "static FRAGMENT_READ_ERROR",
+        "static INVALID_WITH_AUDIO_ONLY_FILE",
+        "static INCOMPATIBLE_VERSION",
+        "static AUDIO_ONLY_STREAM_END",
+        "static FILE_STRUCTURE_INVALID",
+        "static RESOURCE_NOT_SPECIFIED",
+        "static LOST_CONNECTION_RECOVERABLE",
+        "static NO_USEABLE_BITRATE_PROFILE",
+        "static INTERNAL_ERROR",
+        "static CODEC_NOT_SUPPORTED",
+        "static CANNOT_LOAD_PLAY_LIST",
+        "static PREVIOUS_STEP_SEEK_IN_PROGRESS",
+        "static UNSUPPORTED_CONFIGURATION",
+        "static CRYPTO_ALGORITHM_NOT_SUPPORTED",
+        "static WAITING_FOR_INIT",
+        "static CRYPTO_ERROR_DIGEST_FINISH",
+        "static UNREPORTED_TIME_DISCONTINUITY_FOUND",
+        "static INVALID_REPLACE_DURATION",
+        "static ID3_PARSE_ERROR",
+        "static COMPONENT_CREATION_FAILURE",
+        "static RANGE_ERROR",
+        "static PERIOD_HOLD",
+        "static CRYPTO_ERROR_CORRUPTED_DATA",
+        "static CONTAINER_NOT_SUPPORTED",
+        "static INCOMPATIBLE_RENDER_MODE",
+        "static FILE_NOT_FOUND",
+        "static SWITCH_TO_ASYMMETRIC_PROFILE",
+        "static ASYNC_OPERATION_IN_PROGRESS",
+        "static CONTENT_LENGTH_MISMATCH",
+        "static BAD_MEDIASAMPLE_FOUND",
+        "static INVALID_PARAMETER",
+        "static PARSE_ERROR",
+        "static CURRENT_PERIOD_EXPIRED",
+        "static POSTROLL_WITH_LIVE_NOT_ALLOWED",
+        "static PROTOCOL_NOT_SUPPORTED",
+        "static FILE_READ_ERROR",
+        "static TIMELINE_TOO_SHORT",
+        "static EOF",
+        "static END_OF_PERIOD",
+        "static OVERFLOW",
+        "static DRM_NOT_AVAILABLE",
+        "static SIZE_UNKNOWN",
+        "static NO_TIMELINE",
+        "static NO_AUDIO_SINK",
+        "static UNSUPPORTED_OPERATION",
+        "static INVALID_OPERATION",
+        "static INVALID_SEEK_TIME",
+        "static DECODER_FAILED",
+        "static UNDERFLOW",
+        "static CANNOT_FAIL_OVER",
+        "static NULL_OPERATION",
+        "static CANNOT_ERASE_TIMELINE",
+        "static NETWORK_DOWN",
+        "static BAD_MEDIA_INTERLEAVING",
+        "static DID_NOT_GET_NEXT_FRAGMENT",
+        "static NO_FIXED_SIZE",
+        "static OUT_OF_MEMORY",
+        "static GENERIC_ERROR",
+        "static IRRECOVERABLE_ERROR",
+        "static DRM_INIT_ERROR",
+        "static CALLED_FROM_WRONG_THREAD",
+        "static LISTENER_NOT_FOUND",
+        "static INVALID_KEY",
+        "static UNSUPPORTED_HLS_VERSION",
+        "static NOT_IMPLEMENTED",
+        "static VIDEO_PROFILE_NOT_SUPPORTED",
+        "static NETWORK_UNAVAILABLE",
+        "static LIVE_WINDOW_MOVED_BACKWARD",
+        "static PERIOD_NOT_LOADED",
+        "static RENDITION_M3U8_ERROR",
+        "static AUDIO_START_ERROR",
+        "static SECURITY_ERROR",
+        "static AUDIO_ONLY_STREAM_START",
+        "static MAIN_MANIFEST_UPDATE_TO_BE_HANDLED",
+        "static NETWORK_ERROR",
+        "static LIVE_HOLD",
+        "static FILE_WRITE_ERROR",
+        "static CRYPTO_ERROR_BAD_CERTIFICATE",
+        "static CRYPTO_ERROR_BAD_PARAMETER",
+        "static ONLY_ALLOWED_IN_PAUSED_STATE",
+        "static RANGE_SPANS_READHEAD",
+        "static DEVICE_OPEN_ERROR",
+        "static KEY_SERVER_NOT_FOUND",
+        "static CRYPTO_ERROR_UNKNOWN",
+        "static SPS_PPS_FOUND_OUTSIDE_AVCC",
+        "static PLAYBACK_NOT_ENABLED",
+        "static CANNOT_SPLIT_TIMELINE",
+        "static PARTIAL_REPLACEMENT",
+        "static CRYPTO_ERROR_DIGEST_UPDATE",
+        "static SUCCESS",
+        "static FILE_OPEN_ERROR",
+        "static KEY_NOT_FOUND"
+      ],
+      "stubbed": []
+    },
+    "flash.geom.Transform": {
+      "summary": {
+        "max_points": 9,
+        "impl_points": 9,
+        "stub_penalty": 4
+      },
+      "missing": [],
+      "stubbed": [
+        "concatenatedColorTransform",
+        "getRelativeMatrix3D()",
+        "matrix3D",
+        "perspectiveProjection"
+      ]
+    },
+    "flash.system.AuthorizedFeaturesLoader": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "loadAuthorizedFeatures()",
+        "loadAuthorizedFeaturesFromData()",
+        "authorizedFeatures"
+      ],
+      "stubbed": []
+    },
+    "DefinitionError": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.media.SoundTransform": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.concurrent.Mutex": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 2,
+        "stub_penalty": 0
+      },
+      "missing": ["lock()", "unlock()", "tryLock()"],
+      "stubbed": []
+    },
+    "flash.sampler.DeleteObjectSample": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.GraphicsGradientFill": {
+      "summary": {
+        "max_points": 9,
+        "impl_points": 9,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.system.WorkerState": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.errors.IllegalOperationError": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.BitmapEncodingColorSpace": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.desktop.ClipboardFormats": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "static URL_FORMAT",
+        "static FILE_LIST_FORMAT",
+        "static BITMAP_FORMAT",
+        "static FILE_PROMISE_LIST_FORMAT"
+      ],
+      "stubbed": []
+    },
+    "flash.utils.Timer": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 8,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.DataEvent": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.automation.KeyboardAutomationAction": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["keyCode", "static KEY_UP", "static KEY_DOWN"],
+      "stubbed": []
+    },
+    "flash.media": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["scanHardware()", "avSendToURL()"],
+      "stubbed": []
+    },
+    "flash.automation.StageCapture": {
+      "summary": {
+        "max_points": 14,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "clipRect",
+        "capturePTS",
+        "fileNameBase",
+        "captureSource",
+        "capture()",
+        "captureBitmapData()",
+        "cancel()",
+        "static CURRENT",
+        "static SCREEN",
+        "static MULTIPLE",
+        "static NEXT",
+        "static STAGE",
+        "static RASTER"
+      ],
+      "stubbed": []
+    },
+    "flash.media.StageVideoAvailabilityReason": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "QName": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.media.AVTagData": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.engine.TextLineCreationResult": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.accessibility.Accessibility": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 2
+      },
+      "missing": [],
+      "stubbed": ["static sendEvent()", "static updateProperties()"]
+    },
+    "flash.media.AVURLStream": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["load()", "cookieHeader"],
+      "stubbed": []
+    },
+    "flash.text.FontType": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.NetGroupReplicationStrategy": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.engine.LigatureLevel": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.engine.SpaceJustifier": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": ["clone()"],
+      "stubbed": []
+    },
+    "flash.media.AVTrackInfo": {
+      "summary": {
+        "max_points": 12,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "description",
+        "autoSelect",
+        "defaultTrack",
+        "pid",
+        "activity",
+        "language",
+        "forced",
+        "dataTrackInfoServiceType",
+        "static DTI_708_CAPTIONS",
+        "static DTI_608_CAPTIONS",
+        "static DTI_WEBVTT_CAPTIONS"
+      ],
+      "stubbed": []
+    },
+    "flash.events.SampleDataEvent": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.EventPhase": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.NetGroup": {
+      "summary": {
+        "max_points": 22,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "receiveMode",
+        "addWantObjects()",
+        "addNeighbor()",
+        "addMemberHint()",
+        "replicationStrategy",
+        "post()",
+        "sendToAllNeighbors()",
+        "removeHaveObjects()",
+        "denyRequestedObject()",
+        "writeRequestedObject()",
+        "localCoverageTo",
+        "removeWantObjects()",
+        "localCoverageFrom",
+        "info",
+        "estimatedMemberCount",
+        "close()",
+        "sendToNearest()",
+        "convertPeerIDToGroupAddress()",
+        "addHaveObjects()",
+        "sendToNeighbor()",
+        "neighborCount"
+      ],
+      "stubbed": []
+    },
+    "flash.display3D.Context3DRenderMode": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "ArgumentError": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.geom.Point": {
+      "summary": {
+        "max_points": 16,
+        "impl_points": 16,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.utils.IExternalizable": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.media.AVTimeline": {
+      "summary": {
+        "max_points": 9,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "virtualDuration",
+        "virtualStartTime",
+        "firstPeriodIndex",
+        "lastSubscribedTagIndex",
+        "complete",
+        "type",
+        "lastPeriodIndex",
+        "firstSubscribedTagIndex"
+      ],
+      "stubbed": []
+    },
+    "flash.display3D.VertexBuffer3D": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 1
+      },
+      "missing": [],
+      "stubbed": ["dispose()"]
+    },
+    "flash.display3D.Context3DClearMask": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.URLVariables": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.errors.MemoryError": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.utils.Endian": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.IGraphicsPath": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.AVPauseAtPeriodEndEvent": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.IMEEvent": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "imeClient",
+        "toString()",
+        "clone()",
+        "static IME_COMPOSITION",
+        "static IME_START_COMPOSITION"
+      ],
+      "stubbed": []
+    },
+    "flash.text.engine.ElementFormat": {
+      "summary": {
+        "max_points": 21,
+        "impl_points": 18,
+        "stub_penalty": 0
+      },
+      "missing": ["locked", "clone()", "getFontMetrics()"],
+      "stubbed": []
+    },
+    "flash.system.ImageDecodingPolicy": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.StageDisplayState": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.ActivityEvent": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": ["static ACTIVITY"],
+      "stubbed": []
+    },
+    "flash.profiler": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 2,
+        "stub_penalty": 1
+      },
+      "missing": ["profile()"],
+      "stubbed": ["showRedrawRegions()"]
+    },
+    "flash.events.UncaughtErrorEvent": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.media.VideoStreamSettings": {
+      "summary": {
+        "max_points": 11,
+        "impl_points": 11,
+        "stub_penalty": 4
+      },
+      "missing": [],
+      "stubbed": [
+        "setQuality()",
+        "setKeyFrameInterval()",
+        "setMode()",
+        "quality"
+      ]
+    },
+    "flash.display.LineScaleMode": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.drm.DRMVoucher": {
+      "summary": {
+        "max_points": 11,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "voucherStartDate",
+        "licenseID",
+        "policyID",
+        "toByteArray()",
+        "offlineLeaseEndDate",
+        "policies",
+        "offlineLeaseStartDate",
+        "serverURL",
+        "playbackTimeWindow",
+        "voucherEndDate"
+      ],
+      "stubbed": []
+    },
+    "flash.media.AVPeriodInfo": {
+      "summary": {
+        "max_points": 11,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "virtualStartTime",
+        "firstCuePointIndex",
+        "targetDuration",
+        "lastSubscribedTagIndex",
+        "userData",
+        "supportsTrickPlay",
+        "duration",
+        "lastCuePointIndex",
+        "firstSubscribedTagIndex",
+        "localStartTime"
+      ],
+      "stubbed": []
+    },
+    "flash.events.StageVideoEvent": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "static RENDER_STATUS_ACCELERATED",
+        "static RENDER_STATUS_UNAVAILABLE",
+        "static RENDER_STATUS_SOFTWARE"
+      ],
+      "stubbed": []
+    },
+    "flash.ui.ContextMenu": {
+      "summary": {
+        "max_points": 9,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": ["link", "clone()", "clipboardMenu", "clipboardItems"],
+      "stubbed": []
+    },
+    "flash.globalization.LastOperationStatus": {
+      "summary": {
+        "max_points": 18,
+        "impl_points": 18,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.engine.DigitCase": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.SecurityErrorEvent": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.ui.KeyLocation": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": ["static D_PAD"],
+      "stubbed": []
+    },
+    "flash.text.engine.TabStop": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.media.SoundMixer": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": ["static useSpeakerphoneForVoice", "static audioPlaybackMode"],
+      "stubbed": []
+    },
+    "flash.events.DRMAuthenticationCompleteEvent": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.system.IMEConversionMode": {
+      "summary": {
+        "max_points": 9,
+        "impl_points": 9,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.NetStreamPlayOptions": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.crypto": {
+      "summary": {
+        "max_points": 2,
+        "impl_points": 2,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.AVStreamSwitchEvent": {
+      "summary": {
+        "max_points": 9,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "bitrate",
+        "time",
+        "switchType",
+        "description",
+        "userData",
+        "static AV_STREAM_SWITCH",
+        "static ABR_SWITCH",
+        "static PERIOD_SWITCH"
+      ],
+      "stubbed": []
+    },
+    "flash.geom.Orientation3D": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.NetStatusEvent": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.filters.DisplacementMapFilter": {
+      "summary": {
+        "max_points": 11,
+        "impl_points": 11,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.system.TouchscreenType": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.engine.FontPosture": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.media.AudioOutputChangeReason": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.accessibility.AccessibilityImplementation": {
+      "summary": {
+        "max_points": 15,
+        "impl_points": 14,
+        "stub_penalty": 0
+      },
+      "missing": ["accDoDefaultAction()"],
+      "stubbed": []
+    },
+    "flash.display3D.Context3DBlendFactor": {
+      "summary": {
+        "max_points": 11,
+        "impl_points": 11,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.SimpleButton": {
+      "summary": {
+        "max_points": 9,
+        "impl_points": 9,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.geom.Rectangle": {
+      "summary": {
+        "max_points": 29,
+        "impl_points": 29,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.trace.Trace": {
+      "summary": {
+        "max_points": 12,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "static METHODS_AND_LINES",
+        "static METHODS",
+        "static FILE",
+        "static setLevel()",
+        "static getLevel()",
+        "static METHODS_AND_LINES_WITH_ARGS",
+        "static LISTENER",
+        "static METHODS_WITH_ARGS",
+        "static getListener()",
+        "static setListener()",
+        "static OFF"
+      ],
+      "stubbed": []
+    },
+    "flash.display3D.Context3DVertexBufferFormat": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.geom.Matrix3D": {
+      "summary": {
+        "max_points": 32,
+        "impl_points": 30,
+        "stub_penalty": 1
+      },
+      "missing": ["interpolateTo()", "static interpolate()"],
+      "stubbed": ["pointAt()"]
+    },
+    "flash.display3D.textures.TextureBase": {
+      "summary": {
+        "max_points": 2,
+        "impl_points": 2,
+        "stub_penalty": 1
+      },
+      "missing": [],
+      "stubbed": ["dispose()"]
+    },
+    "flash.ui.GameInput": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": ["static getDeviceAt()"],
+      "stubbed": []
+    },
+    "flash.errors.ScriptTimeoutError": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.AccelerometerEvent": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 8,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.media.AVCuePoint": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["dictionary", "localTime"],
+      "stubbed": []
+    },
+    "flash.media.H264Level": {
+      "summary": {
+        "max_points": 17,
+        "impl_points": 17,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.NetStreamMulticastInfo": {
+      "summary": {
+        "max_points": 21,
+        "impl_points": 21,
+        "stub_penalty": 1
+      },
+      "missing": [],
+      "stubbed": ["toString()"]
+    },
+    "flash.text.FontStyle": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.media.AudioDeviceManager": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "deviceNames",
+        "selectedDeviceIndex",
+        "static isSupported",
+        "static audioDeviceManager"
+      ],
+      "stubbed": []
+    },
+    "flash.display.AVLoader": {
+      "summary": {
+        "max_points": 2,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["load()"],
+      "stubbed": []
+    },
+    "flash.events.NetFilterEvent": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["clone()", "header", "data", "toString()"],
+      "stubbed": []
+    },
+    "flash.automation.Configuration": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "static deviceConfiguration",
+        "static testAutomationConfiguration"
+      ],
+      "stubbed": []
+    },
+    "flash.display.IDrawCommand": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.LocalConnection": {
+      "summary": {
+        "max_points": 10,
+        "impl_points": 8,
+        "stub_penalty": 5
+      },
+      "missing": ["isPerUser", "static isSupported"],
+      "stubbed": [
+        "send()",
+        "allowInsecureDomain()",
+        "connect()",
+        "close()",
+        "allowDomain()"
+      ]
+    },
+    "flash.display.InterpolationMethod": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.engine.LineJustification": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.URLRequestMethod": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.ui.ContextMenuItem": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display3D.textures.VideoTexture": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "attachNetStream()",
+        "videoHeight",
+        "attachCamera()",
+        "videoWidth"
+      ],
+      "stubbed": []
+    },
+    "flash.events.GameInputEvent": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": ["device"],
+      "stubbed": []
+    },
+    "flash.globalization.NationalDigitsType": {
+      "summary": {
+        "max_points": 33,
+        "impl_points": 33,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.engine.TextBaseline": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 8,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.NetConnection": {
+      "summary": {
+        "max_points": 20,
+        "impl_points": 20,
+        "stub_penalty": 1
+      },
+      "missing": [],
+      "stubbed": ["connect()"]
+    },
+    "flash.printing.PrintJobOrientation": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.engine.Kerning": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.globalization.DateTimeFormatter": {
+      "summary": {
+        "max_points": 15,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "getFirstWeekday()",
+        "getDateStyle()",
+        "getWeekdayNames()",
+        "setDateTimePattern()",
+        "requestedLocaleIDName",
+        "setDateTimeStyles()",
+        "lastOperationStatus",
+        "format()",
+        "actualLocaleIDName",
+        "getMonthNames()",
+        "getTimeStyle()",
+        "formatUTC()",
+        "getDateTimePattern()",
+        "static getAvailableLocaleIDNames()"
+      ],
+      "stubbed": []
+    },
+    "flash.display.Graphics": {
+      "summary": {
+        "max_points": 25,
+        "impl_points": 24,
+        "stub_penalty": 5
+      },
+      "missing": ["lineShaderStyle()"],
+      "stubbed": [
+        "beginShaderFill()",
+        "drawPath()",
+        "drawRoundRectComplex()",
+        "drawTriangles()",
+        "readGraphicsData()"
+      ]
+    },
+    "flash.display.GraphicsStroke": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 8,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.utils.Proxy": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.globalization.LocaleID": {
+      "summary": {
+        "max_points": 11,
+        "impl_points": 11,
+        "stub_penalty": 8
+      },
+      "missing": [],
+      "stubbed": [
+        "getRegion()",
+        "lastOperationStatus",
+        "getLanguage()",
+        "getVariant()",
+        "getKeysAndValues()",
+        "getScript()",
+        "isRightToLeft()",
+        "static determinePreferredLocales()"
+      ]
+    },
+    "flash.media.MicrophoneEnhancedOptions": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": ["autoGain"],
+      "stubbed": []
+    },
+    "flash.display.ColorCorrection": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.URLRequestHeader": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.TouchEvent": {
+      "summary": {
+        "max_points": 33,
+        "impl_points": 33,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.media.SoundLoaderContext": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "SyntaxError": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.JointStyle": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.NetGroupReceiveMode": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.system.SecurityDomain": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 2,
+        "stub_penalty": 0
+      },
+      "missing": ["domainID"],
+      "stubbed": []
+    },
+    "flash.display.NativeMenuItem": {
+      "summary": {
+        "max_points": 2,
+        "impl_points": 2,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.PressAndTapGestureEvent": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 8,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.system.System": {
+      "summary": {
+        "max_points": 16,
+        "impl_points": 5,
+        "stub_penalty": 2
+      },
+      "missing": [
+        "static totalMemoryNumber",
+        "static useCodePage",
+        "static vmVersion",
+        "static exit()",
+        "static resume()",
+        "static privateMemory",
+        "static freeMemory",
+        "static ime",
+        "static processCPUUsage",
+        "static pause()",
+        "static totalMemory"
+      ],
+      "stubbed": [
+        "static pauseForGCIfCollectionImminent()",
+        "static disposeXML()"
+      ]
+    },
+    "flash.text.TextInteractionMode": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.filters.DisplacementMapFilterMode": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.system.WorkerDomain": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 2,
+        "stub_penalty": 0
+      },
+      "missing": ["createWorker()", "listWorkers()", "static current"],
+      "stubbed": []
+    },
+    "flash.events.DRMReturnVoucherCompleteEvent": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.media.AVCaptionStyle": {
+      "summary": {
+        "max_points": 51,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "fillColor",
+        "fontEdge",
+        "backgroundOpacity",
+        "edgeColor",
+        "bottomInset",
+        "fillOpacity",
+        "fontColor",
+        "size",
+        "backgroundColor",
+        "font",
+        "fontOpacity",
+        "static BLACK",
+        "static BRIGHT_MAGENTA",
+        "static DEPRESSED",
+        "static PROPORTIONAL_WITHOUT_SERIFS",
+        "static SMALL_CAPITALS",
+        "static MEDIUM",
+        "static DARK_BLUE",
+        "static BRIGHT_YELLOW",
+        "static NONE",
+        "static DARK_RED",
+        "static SMALL",
+        "static BRIGHT_GREEN",
+        "static DEFAULT",
+        "static MONOSPACED_WITHOUT_SERIFS",
+        "static MAGENTA",
+        "static BRIGHT_CYAN",
+        "static RED",
+        "static CURSIVE",
+        "static GRAY",
+        "static PROPORTIONAL_WITH_SERIFS",
+        "static CASUAL",
+        "static YELLOW",
+        "static DARK_MAGENTA",
+        "static UNIFORM",
+        "static MONOSPACE_WITH_SERIFS",
+        "static BRIGHT_BLUE",
+        "static BRIGHT_WHITE",
+        "static DARK_YELLOW",
+        "static BRIGHT_RED",
+        "static RAISED",
+        "static RIGHT_DROP_SHADOW",
+        "static LARGE",
+        "static DARK_GREEN",
+        "static BLUE",
+        "static DARK_CYAN",
+        "static GREEN",
+        "static WHITE",
+        "static LEFT_DROP_SHADOW",
+        "static CYAN"
+      ],
+      "stubbed": []
+    },
+    "flash.utils.IDataOutput": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.PNGEncoderOptions": {
+      "summary": {
+        "max_points": 2,
+        "impl_points": 2,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.media.AudioDecoder": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display3D.textures.CubeTexture": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 3
+      },
+      "missing": [],
+      "stubbed": [
+        "uploadFromBitmapData()",
+        "uploadFromByteArray()",
+        "uploadCompressedTextureFromByteArray()"
+      ]
+    },
+    "flash.net.FileReferenceList": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 1
+      },
+      "missing": [],
+      "stubbed": ["browse()"]
+    },
+    "flash.net.NetStream": {
+      "summary": {
+        "max_points": 63,
+        "impl_points": 59,
+        "stub_penalty": 47
+      },
+      "missing": [
+        "decodedFrames",
+        "audioCodec",
+        "videoCodec",
+        "onPeerConnect()"
+      ],
+      "stubbed": [
+        "videoReliable",
+        "audioReliable",
+        "receiveVideoFPS()",
+        "inBufferSeek",
+        "bufferTimeMax",
+        "publish()",
+        "objectEncoding",
+        "multicastAvailabilitySendToAll",
+        "videoSampleAccess",
+        "multicastFetchPeriod",
+        "farID",
+        "appendBytes()",
+        "multicastWindowDuration",
+        "step()",
+        "maxPauseBufferTime",
+        "backBufferTime",
+        "multicastPushNeighborLimit",
+        "checkPolicyFile",
+        "attach()",
+        "receiveVideo()",
+        "receiveAudio()",
+        "useJitterBuffer",
+        "soundTransform",
+        "info",
+        "audioSampleAccess",
+        "play2()",
+        "dataReliable",
+        "currentFPS",
+        "farNonce",
+        "dispose()",
+        "peerStreams",
+        "useHardwareDecoder",
+        "liveDelay",
+        "bufferLength",
+        "appendBytesAction()",
+        "multicastAvailabilityUpdatePeriod",
+        "nearNonce",
+        "backBufferLength",
+        "multicastRelayMarginDuration",
+        "send()",
+        "multicastInfo",
+        "attachAudio()",
+        "close()",
+        "attachCamera()",
+        "videoStreamSettings",
+        "bufferTime",
+        "static resetDRMVouchers()"
+      ]
+    },
+    "flash.events.FullScreenEvent": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.NetStreamInfo": {
+      "summary": {
+        "max_points": 27,
+        "impl_points": 27,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.system.Capabilities": {
+      "summary": {
+        "max_points": 37,
+        "impl_points": 11,
+        "stub_penalty": 3
+      },
+      "missing": [
+        "static hasScreenPlayback",
+        "static hasIME",
+        "static hasStreamingAudio",
+        "static supports32BitProcesses",
+        "static maxLevelIDC",
+        "static hasMultiChannelAudio()",
+        "static localFileReadDisable",
+        "static cpuArchitecture",
+        "static supports64BitProcesses",
+        "static _internal",
+        "static serverString",
+        "static hasAudioEncoder",
+        "static hasStreamingVideo",
+        "static touchscreenType",
+        "static cpuAddressSize",
+        "static hasTLS",
+        "static hasMP3",
+        "static hasEmbeddedVideo",
+        "static hasVideoEncoder",
+        "static hasAudio",
+        "static screenColor",
+        "static hasPrinting",
+        "static hasScreenBroadcast",
+        "static avHardwareDisable",
+        "static hasAccessibility",
+        "static isEmbeddedInAcrobat"
+      ],
+      "stubbed": ["static language", "static os", "static manufacturer"]
+    },
+    "flash.text.TextRenderer": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 4,
+        "stub_penalty": 3
+      },
+      "missing": ["static antiAliasType"],
+      "stubbed": [
+        "static maxLevel",
+        "static setAdvancedAntiAliasingTable()",
+        "static displayMode"
+      ]
+    },
+    "flash.events.GestureEvent": {
+      "summary": {
+        "max_points": 13,
+        "impl_points": 12,
+        "stub_penalty": 0
+      },
+      "missing": ["updateAfterEvent()"],
+      "stubbed": []
+    },
+    "flash.external.ExternalInterface": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 5,
+        "stub_penalty": 1
+      },
+      "missing": ["static marshallExceptions"],
+      "stubbed": ["static objectID"]
+    },
+    "flash.system.ApplicationInstaller": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "install()",
+        "isInstalled",
+        "static iconDigest()",
+        "static stringsDigest()"
+      ],
+      "stubbed": []
+    },
+    "flash.display.GraphicsPath": {
+      "summary": {
+        "max_points": 10,
+        "impl_points": 10,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.AVM1Movie": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 2
+      },
+      "missing": [],
+      "stubbed": ["addCallback()", "call()"]
+    },
+    "flash.display.JPEGEncoderOptions": {
+      "summary": {
+        "max_points": 2,
+        "impl_points": 2,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.geom.Utils3D": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": ["static pointTowards()"],
+      "stubbed": []
+    },
+    "flash.media.AVSegmentedSource": {
+      "summary": {
+        "max_points": 51,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "loadWithBackgroundManifest()",
+        "setSubscribedTags()",
+        "setHoldAt()",
+        "setSubscribedTagsForBackgroundManifest()",
+        "getPerceivedBandwidth()",
+        "getPeriodInfo()",
+        "getTrackInfo()",
+        "cookieHeader",
+        "selectTrackString()",
+        "getABRProfileCount()",
+        "getSubscribedTagForBackgroundManifest()",
+        "getABRProfileInfoAtIndex()",
+        "getTimelineSubscribedTag()",
+        "getSubscribedTag()",
+        "clearPauseAtPeriodEnd()",
+        "releaseManifest()",
+        "masterUpdateInterval",
+        "insertByLocalTime()",
+        "getTrackCount()",
+        "setABRParameters()",
+        "selectTrack()",
+        "load()",
+        "getTimelineSubscribedTagForBackgroundManifest()",
+        "setPauseAtPeriodEnd()",
+        "insertByVirtualTime()",
+        "getPeriodInfoWithTagsAcrossIndexes()",
+        "getTimeline()",
+        "networkingParams",
+        "removeByLocalTime()",
+        "removeByVirtualTimeWithReplacement()",
+        "loadManifest()",
+        "getBackgroundTimeline()",
+        "getBackgroundPeriodInfo()",
+        "setBandwidth()",
+        "useRedirectedUrl",
+        "setCuePointTags()",
+        "removeByVirtualTime()",
+        "getCuePoint()",
+        "addCustomHeader()",
+        "getMediaPreferredStartTime()",
+        "static DATA",
+        "static AUDIO_DESCRIPTION",
+        "static AUDIO",
+        "static VIDEO_DESCRIPTION",
+        "static VIDEO",
+        "static HLS",
+        "static AUDIO_PID",
+        "static DATA_DESCRIPTION",
+        "static AUDIO_LANGUAGE",
+        "static DASH"
+      ],
+      "stubbed": []
+    },
+    "flash.text.TextFormatDisplay": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.xml.XMLNode": {
+      "summary": {
+        "max_points": 22,
+        "impl_points": 22,
+        "stub_penalty": 3
+      },
+      "missing": [],
+      "stubbed": [
+        "getPrefixForNamespace()",
+        "getNamespaceForPrefix()",
+        "namespaceURI"
+      ]
+    },
+    "VerifyError": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.automation.MouseAutomationAction": {
+      "summary": {
+        "max_points": 12,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "stageX",
+        "stageY",
+        "delta",
+        "static MOUSE_UP",
+        "static MIDDLE_MOUSE_UP",
+        "static RIGHT_MOUSE_UP",
+        "static MOUSE_DOWN",
+        "static MIDDLE_MOUSE_DOWN",
+        "static RIGHT_MOUSE_DOWN",
+        "static MOUSE_MOVE",
+        "static MOUSE_WHEEL"
+      ],
+      "stubbed": []
+    },
+    "flash.text.engine.JustificationStyle": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.NetGroupInfo": {
+      "summary": {
+        "max_points": 10,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "objectReplicationReceiveBytesPerSecond",
+        "objectReplicationSendBytesPerSecond",
+        "postingReceiveControlBytesPerSecond",
+        "routingSendBytesPerSecond",
+        "postingReceiveDataBytesPerSecond",
+        "postingSendControlBytesPerSecond",
+        "routingReceiveBytesPerSecond",
+        "toString()",
+        "postingSendDataBytesPerSecond"
+      ],
+      "stubbed": []
+    },
+    "flash.display.BlendMode": {
+      "summary": {
+        "max_points": 16,
+        "impl_points": 16,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.StageVideoAvailabilityEvent": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.filters.BitmapFilter": {
+      "summary": {
+        "max_points": 2,
+        "impl_points": 2,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.filters.BevelFilter": {
+      "summary": {
+        "max_points": 14,
+        "impl_points": 14,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display3D.Context3DBufferUsage": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.TextExtent": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.security.CertificateStatus": {
+      "summary": {
+        "max_points": 10,
+        "impl_points": 10,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.DRMLicenseRequestEvent": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.StaticText": {
+      "summary": {
+        "max_points": 2,
+        "impl_points": 2,
+        "stub_penalty": 1
+      },
+      "missing": [],
+      "stubbed": ["text"]
+    },
+    "flash.media.AVNetworkingParams": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.NetGroupSendMode": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "SecurityError": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.automation.ActionGenerator": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["generateAction()", "generateActions()"],
+      "stubbed": []
+    },
+    "flash.display3D.Context3DProgramType": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.AVHTTPStatusEvent": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.AVDictionaryDataEvent": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.DRMDeviceGroupEvent": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "clone()",
+        "toString()",
+        "deviceGroup",
+        "static ADD_TO_DEVICE_GROUP_COMPLETE",
+        "static REMOVE_FROM_DEVICE_GROUP_COMPLETE"
+      ],
+      "stubbed": []
+    },
+    "flash.events.NetDataEvent": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.Socket": {
+      "summary": {
+        "max_points": 36,
+        "impl_points": 36,
+        "stub_penalty": 1
+      },
+      "missing": [],
+      "stubbed": ["bytesPending"]
+    },
+    "EvalError": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.sensors.Geolocation": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "muted",
+        "setRequestedUpdateInterval()",
+        "static isSupported"
+      ],
+      "stubbed": []
+    },
+    "flash.display.GraphicsPathWinding": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.BitmapData": {
+      "summary": {
+        "max_points": 39,
+        "impl_points": 37,
+        "stub_penalty": 2
+      },
+      "missing": ["encode()", "histogram()"],
+      "stubbed": ["generateFilterRect()", "applyFilter()"]
+    },
+    "flash.events.IEventDispatcher": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.CapsStyle": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.NetMonitor": {
+      "summary": {
+        "max_points": 2,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["listStreams()"],
+      "stubbed": []
+    },
+    "flash.net.NetStreamPlayTransitions": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "static RESUME",
+        "static SWITCH",
+        "static APPEND",
+        "static SWAP",
+        "static RESET",
+        "static APPEND_AND_WAIT",
+        "static STOP"
+      ],
+      "stubbed": []
+    },
+    "flash.events.VideoEvent": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.AVManifestLoadEvent": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "result",
+        "handle",
+        "duration",
+        "userData",
+        "static AV_MANIFEST_LOAD"
+      ],
+      "stubbed": []
+    },
+    "flash.geom.PerspectiveProjection": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 4
+      },
+      "missing": [],
+      "stubbed": [
+        "focalLength",
+        "projectionCenter",
+        "fieldOfView",
+        "toMatrix3D()"
+      ]
+    },
+    "flash.text.TextLineMetrics": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.ui.ContextMenuBuiltInItems": {
+      "summary": {
+        "max_points": 10,
+        "impl_points": 10,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.automation.StageCaptureEvent": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "clone()",
+        "pts",
+        "url",
+        "toString()",
+        "checksum",
+        "static CAPTURE"
+      ],
+      "stubbed": []
+    },
+    "flash.geom.Matrix": {
+      "summary": {
+        "max_points": 25,
+        "impl_points": 25,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "Class": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.media.StageVideo": {
+      "summary": {
+        "max_points": 11,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "attachNetStream()",
+        "videoHeight",
+        "attachCamera()",
+        "attachAVStream()",
+        "viewPort",
+        "videoWidth",
+        "colorSpaces",
+        "pan",
+        "zoom",
+        "depth"
+      ],
+      "stubbed": []
+    },
+    "flash.text.engine.CFFHinting": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.ui.MouseCursor": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "Number": {
+      "summary": {
+        "max_points": 18,
+        "impl_points": 18,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.ShaderPrecision": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.ContextMenuEvent": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 8,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.system.ApplicationInstallerMode": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "static INSTALL_ONLY",
+        "static SHORTCUTS_ONLY",
+        "static INSTALL_WITH_SHORTCUTS"
+      ],
+      "stubbed": []
+    },
+    "RangeError": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.ActionScriptVersion": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display3D.Context3DProfile": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.engine.GraphicElement": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["elementWidth", "graphic", "elementHeight"],
+      "stubbed": []
+    },
+    "flash.desktop.ClipboardTransferMode": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.sampler.StackFrame": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.media.SoundCodec": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.filters.ConvolutionFilter": {
+      "summary": {
+        "max_points": 11,
+        "impl_points": 11,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.security.X509Certificate": {
+      "summary": {
+        "max_points": 14,
+        "impl_points": 14,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.DRMAuthenticationErrorEvent": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.NetStreamAppendBytesAction": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "static RESET_BEGIN",
+        "static RESET_SEEK",
+        "static END_SEQUENCE"
+      ],
+      "stubbed": []
+    },
+    "flash.display.SpreadMethod": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.ui.GameInputDevice": {
+      "summary": {
+        "max_points": 11,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "getCachedSamples()",
+        "enabled",
+        "getControlAt()",
+        "stopCachingSamples()",
+        "startCachingSamples()",
+        "sampleInterval",
+        "name",
+        "id",
+        "numControls",
+        "static MAX_BUFFER_SIZE"
+      ],
+      "stubbed": []
+    },
+    "flash.concurrent.Condition": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 2,
+        "stub_penalty": 0
+      },
+      "missing": ["notifyAll()", "notify()", "mutex", "wait()"],
+      "stubbed": []
+    },
+    "flash.display.ShaderParameter": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.IOErrorEvent": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "static NETWORK_ERROR",
+        "static DISK_ERROR",
+        "static VERIFY_ERROR"
+      ],
+      "stubbed": []
+    },
+    "Math": {
+      "summary": {
+        "max_points": 27,
+        "impl_points": 27,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.globalization.CurrencyFormatter": {
+      "summary": {
+        "max_points": 22,
+        "impl_points": 3,
+        "stub_penalty": 1
+      },
+      "missing": [
+        "currencySymbol",
+        "requestedLocaleIDName",
+        "actualLocaleIDName",
+        "parse()",
+        "digitsType",
+        "useGrouping",
+        "formattingWithCurrencySymbolIsSafe()",
+        "trailingZeros",
+        "negativeSymbol",
+        "lastOperationStatus",
+        "currencyISOCode",
+        "groupingPattern",
+        "decimalSeparator",
+        "groupingSeparator",
+        "leadingZero",
+        "negativeCurrencyFormat",
+        "positiveCurrencyFormat",
+        "setCurrency()",
+        "static getAvailableLocaleIDNames()"
+      ],
+      "stubbed": ["format()"]
+    },
+    "flash.net.URLLoader": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 7,
+        "stub_penalty": 1
+      },
+      "missing": ["addEventListener()"],
+      "stubbed": ["close()"]
+    },
+    "flash.xml.XMLDocument": {
+      "summary": {
+        "max_points": 9,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": ["xmlDecl", "idMap", "toString()", "docTypeDecl"],
+      "stubbed": []
+    },
+    "flash.accessibility.ISimpleTextSelection": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.InteractiveObject": {
+      "summary": {
+        "max_points": 11,
+        "impl_points": 8,
+        "stub_penalty": 3
+      },
+      "missing": [
+        "requestSoftKeyboard()",
+        "softKeyboardInputAreaOfInterest",
+        "needsSoftKeyboard"
+      ],
+      "stubbed": ["tabIndex", "accessibilityImplementation", "focusRect"]
+    },
+    "flash.display.ShaderJob": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 7,
+        "stub_penalty": 2
+      },
+      "missing": ["width"],
+      "stubbed": ["start()", "height"]
+    },
+    "flash.geom.Vector3D": {
+      "summary": {
+        "max_points": 28,
+        "impl_points": 28,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.filters.DropShadowFilter": {
+      "summary": {
+        "max_points": 13,
+        "impl_points": 13,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.engine.TypographicCase": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 8,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.TextFormatAlign": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.filters.BitmapFilterType": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.engine.TextBlock": {
+      "summary": {
+        "max_points": 25,
+        "impl_points": 17,
+        "stub_penalty": 1
+      },
+      "missing": [
+        "findNextAtomBoundary()",
+        "findNextWordBoundary()",
+        "dump()",
+        "findPreviousAtomBoundary()",
+        "firstInvalidLine",
+        "releaseLineCreationData()",
+        "getTextLineAtCharIndex()",
+        "findPreviousWordBoundary()"
+      ],
+      "stubbed": ["recreateTextLine()"]
+    },
+    "flash.ui.GameInputControl": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["minValue", "maxValue", "device", "id", "value"],
+      "stubbed": []
+    },
+    "flash.text.engine.TextLineValidity": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.ui.Mouse": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 7,
+        "stub_penalty": 4
+      },
+      "missing": ["static cursor"],
+      "stubbed": [
+        "static supportsNativeCursor",
+        "static registerCursor()",
+        "static unregisterCursor()",
+        "static supportsCursor"
+      ]
+    },
+    "flash.media.AVABRProfileInfo": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["width", "bitsPerSecond", "height"],
+      "stubbed": []
+    },
+    "flash.system.MessageChannel": {
+      "summary": {
+        "max_points": 9,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "send()",
+        "close()",
+        "receive()",
+        "removeEventListener()",
+        "addEventListener()",
+        "messageAvailable",
+        "state",
+        "toString()"
+      ],
+      "stubbed": []
+    },
+    "flash.media.AVURLLoader": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "addEventListener()",
+        "load()",
+        "cookieHeader",
+        "close()",
+        "stream"
+      ],
+      "stubbed": []
+    },
+    "flash.events.AudioOutputChangeEvent": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.FileFilter": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "Boolean": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.GesturePhase": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.CSMSettings": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.ui.Multitouch": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 2,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "static supportsGestureEvents",
+        "static supportedGestures",
+        "static maxTouchPoints",
+        "static mapTouchToMouse",
+        "static supportsTouchEvents"
+      ],
+      "stubbed": []
+    },
+    "flash.geom.ColorTransform": {
+      "summary": {
+        "max_points": 12,
+        "impl_points": 12,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 1
+      },
+      "missing": [],
+      "stubbed": ["sendToURL()"]
+    },
+    "flash.media.VideoCodec": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.SWFVersion": {
+      "summary": {
+        "max_points": 13,
+        "impl_points": 13,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "XML": {
+      "summary": {
+        "max_points": 92,
+        "impl_points": 72,
+        "stub_penalty": 4
+      },
+      "missing": [
+        "setNamespace()",
+        "inScopeNamespaces()",
+        "removeNamespace()",
+        "contains()",
+        "propertyIsEnumerable()",
+        "addNamespace()",
+        "namespaceDeclarations()",
+        "setLocalName()",
+        "hasOwnProperty()",
+        "prototype.setNamespace()",
+        "prototype.inScopeNamespaces()",
+        "prototype.removeNamespace()",
+        "prototype.contains()",
+        "prototype.propertyIsEnumerable()",
+        "prototype.valueOf",
+        "prototype.addNamespace()",
+        "prototype.namespaceDeclarations()",
+        "prototype.setLocalName()",
+        "prototype.hasOwnProperty()",
+        "prototype.setName()"
+      ],
+      "stubbed": [
+        "setNotification()",
+        "normalize()",
+        "namespace()",
+        "setName()"
+      ]
+    },
+    "flash.text.engine.TextJustifier": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": ["locale", "static getJustifierForLocale()"],
+      "stubbed": []
+    },
+    "flash.display3D.Context3DCompareMode": {
+      "summary": {
+        "max_points": 9,
+        "impl_points": 9,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.errors.StackOverflowError": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.MorphShape": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.HTTPStatusEvent": {
+      "summary": {
+        "max_points": 9,
+        "impl_points": 9,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.AntiAliasType": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.FileReference": {
+      "summary": {
+        "max_points": 14,
+        "impl_points": 14,
+        "stub_penalty": 5
+      },
+      "missing": [],
+      "stubbed": ["download()", "load()", "save()", "upload()", "cancel()"]
+    },
+    "flash.debugger": {
+      "summary": {
+        "max_points": 2,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["enterDebugger()"],
+      "stubbed": []
+    },
+    "flash.ui.ContextMenuClipboardItems": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["clear", "copy", "selectAll", "cut", "paste", "clone()"],
+      "stubbed": []
+    },
+    "flash.display.StageAlign": {
+      "summary": {
+        "max_points": 9,
+        "impl_points": 9,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.engine.RenderingMode": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.system": {
+      "summary": {
+        "max_points": 2,
+        "impl_points": 2,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.IDynamicPropertyWriter": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.ShaderEvent": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.DRMDeviceGroupErrorEvent": {
+      "summary": {
+        "max_points": 9,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "deviceGroup",
+        "subErrorID",
+        "systemUpdateNeeded",
+        "drmUpdateNeeded",
+        "toString()",
+        "clone()",
+        "static REMOVE_FROM_DEVICE_GROUP_ERROR",
+        "static ADD_TO_DEVICE_GROUP_ERROR"
+      ],
+      "stubbed": []
+    },
+    "flash.display.GraphicsTrianglePath": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.drm.DRMManager": {
+      "summary": {
+        "max_points": 13,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "resetDRMVouchers()",
+        "loadPreviewVoucher()",
+        "addToDeviceGroup()",
+        "returnVoucher()",
+        "authenticate()",
+        "setAuthenticationToken()",
+        "removeFromDeviceGroup()",
+        "storeVoucher()",
+        "loadVoucher()",
+        "static isSupported",
+        "static networkIdleTimeout",
+        "static getDRMManager()"
+      ],
+      "stubbed": []
+    },
+    "flash.ui.Keyboard": {
+      "summary": {
+        "max_points": 284,
+        "impl_points": 284,
+        "stub_penalty": 4
+      },
+      "missing": [],
+      "stubbed": [
+        "static physicalKeyboardType",
+        "static capsLock",
+        "static numLock",
+        "static hasVirtualKeyboard"
+      ]
+    },
+    "flash.display.GraphicsPathCommand": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 8,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.ShaderInput": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.ThrottleType": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.drm.DRMDeviceGroup": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["authenticationMethod", "domain", "name", "serverURL"],
+      "stubbed": []
+    },
+    "flash.system.ApplicationDomain": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 8,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display3D.textures.RectangleTexture": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.TextFieldAutoSize": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.sensors.Accelerometer": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "muted",
+        "setRequestedUpdateInterval()",
+        "static isSupported"
+      ],
+      "stubbed": []
+    },
+    "flash.system.LoaderContext": {
+      "summary": {
+        "max_points": 9,
+        "impl_points": 9,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.errors.IOError": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.IDynamicPropertyOutput": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.GeolocationEvent": {
+      "summary": {
+        "max_points": 12,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "toString()",
+        "heading",
+        "horizontalAccuracy",
+        "longitude",
+        "timestamp",
+        "clone()",
+        "altitude",
+        "speed",
+        "latitude",
+        "verticalAccuracy",
+        "static UPDATE"
+      ],
+      "stubbed": []
+    },
+    "flash.text.engine.FontDescription": {
+      "summary": {
+        "max_points": 11,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "locked",
+        "clone()",
+        "static isDeviceFontCompatible()",
+        "static isFontCompatible()"
+      ],
+      "stubbed": []
+    },
+    "flash.text.StyleSheet": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 6
+      },
+      "missing": [],
+      "stubbed": [
+        "styleNames",
+        "setStyle()",
+        "transform()",
+        "getStyle()",
+        "parseCSS()",
+        "clear()"
+      ]
+    },
+    "flash.display3D.Context3DTriangleFace": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.AVLoadInfoEvent": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["loadInfo", "static AV_LOAD_INFO"],
+      "stubbed": []
+    },
+    "flash.media.H264Profile": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.URLStream": {
+      "summary": {
+        "max_points": 25,
+        "impl_points": 20,
+        "stub_penalty": 1
+      },
+      "missing": [
+        "length",
+        "connected",
+        "diskCacheEnabled",
+        "stop()",
+        "position"
+      ],
+      "stubbed": ["objectEncoding"]
+    },
+    "flash.events.StatusEvent": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.engine.EastAsianJustifier": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "clone()",
+        "composeTrailingIdeographicSpaces",
+        "justificationStyle"
+      ],
+      "stubbed": []
+    },
+    "flash.text.ime.CompositionAttributeRange": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["relativeStart", "selected", "converted", "relativeEnd"],
+      "stubbed": []
+    },
+    "flash.system.SecurityPanel": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 8,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.system.IME": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 7,
+        "stub_penalty": 6
+      },
+      "missing": ["static isSupported"],
+      "stubbed": [
+        "static compositionSelectionChanged()",
+        "static enabled",
+        "static compositionAbandoned()",
+        "static conversionMode",
+        "static doConversion()",
+        "static setCompositionString()"
+      ]
+    },
+    "flash.media.AVStream": {
+      "summary": {
+        "max_points": 33,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "time",
+        "rewind()",
+        "volume",
+        "playState",
+        "play()",
+        "currentFPS",
+        "fastForward()",
+        "dispose()",
+        "frameTime",
+        "seekToLivePoint()",
+        "setPlaySpeed()",
+        "decoderType",
+        "bufferLength",
+        "useHardwareDecoder",
+        "seekToLocalTime()",
+        "clientLivePoint",
+        "seek()",
+        "captionStyle",
+        "backBufferLength",
+        "renderType",
+        "resume()",
+        "step()",
+        "seekToKeyFrame()",
+        "droppedFrames",
+        "captionsEnabled",
+        "pause()",
+        "backBufferTime",
+        "bufferTime",
+        "initialBufferTime",
+        "static UNDEFINED",
+        "static SOFTWARE",
+        "static HARDWARE"
+      ],
+      "stubbed": []
+    },
+    "flash.display.LoaderInfo": {
+      "summary": {
+        "max_points": 26,
+        "impl_points": 22,
+        "stub_penalty": 4
+      },
+      "missing": [
+        "dispatchEvent()",
+        "parentSandboxBridge",
+        "childSandboxBridge",
+        "static getLoaderInfoByDefinition()"
+      ],
+      "stubbed": [
+        "isURLInaccessible",
+        "childAllowsParent",
+        "parentAllowsChild",
+        "sameDomain"
+      ]
+    },
+    "flash.events.ThrottleEvent": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.TransformGestureEvent": {
+      "summary": {
+        "max_points": 14,
+        "impl_points": 13,
+        "stub_penalty": 0
+      },
+      "missing": ["static GESTURE_DIRECTIONAL_TAP"],
+      "stubbed": []
+    },
+    "flash.media.Camera": {
+      "summary": {
+        "max_points": 28,
+        "impl_points": 26,
+        "stub_penalty": 25
+      },
+      "missing": ["position", "setCursor()"],
+      "stubbed": [
+        "width",
+        "keyFrameInterval",
+        "loopback",
+        "motionTimeout",
+        "setQuality()",
+        "setKeyFrameInterval()",
+        "height",
+        "setMode()",
+        "drawToBitmapData()",
+        "copyToByteArray()",
+        "setMotionLevel()",
+        "setLoopback()",
+        "fps",
+        "currentFPS",
+        "activityLevel",
+        "bandwidth",
+        "motionLevel",
+        "name",
+        "index",
+        "muted",
+        "quality",
+        "copyToVector()",
+        "static names",
+        "static getCamera()",
+        "static isSupported"
+      ]
+    },
+    "flash.utils": {
+      "summary": {
+        "max_points": 12,
+        "impl_points": 12,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.ime.IIMEClient": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.engine.FontWeight": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.globalization.CurrencyParseResult": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.Shader": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 1
+      },
+      "missing": [],
+      "stubbed": ["precisionHint"]
+    },
+    "flash.text.TextField": {
+      "summary": {
+        "max_points": 63,
+        "impl_points": 47,
+        "stub_penalty": 7
+      },
+      "missing": [
+        "getCharIndexAtPoint()",
+        "getParagraphLength()",
+        "getTextRuns()",
+        "getFirstCharInParagraph()",
+        "getLineOffset()",
+        "selectedText",
+        "getCharBoundaries()",
+        "getLineIndexOfChar()",
+        "getImageReference()",
+        "textInteractionMode",
+        "getLineText()",
+        "getXMLText()",
+        "getRawText()",
+        "getLineIndexAtPoint()",
+        "getLineLength()",
+        "static isFontCompatible()"
+      ],
+      "stubbed": [
+        "alwaysShowSelection",
+        "mouseWheelEnabled",
+        "useRichTextClipboard",
+        "insertXMLText()",
+        "condenseWhite",
+        "restrict",
+        "styleSheet"
+      ]
+    },
+    "flash.text.engine.FontLookup": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.filters.BlurFilter": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.DisplayObjectContainer": {
+      "summary": {
+        "max_points": 20,
+        "impl_points": 19,
+        "stub_penalty": 3
+      },
+      "missing": ["textSnapshot"],
+      "stubbed": [
+        "getObjectsUnderPoint()",
+        "areInaccessibleObjectsUnderPoint()",
+        "tabChildren"
+      ]
+    },
+    "Object": {
+      "summary": {
+        "max_points": 12,
+        "impl_points": 12,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.TextSnapshot": {
+      "summary": {
+        "max_points": 10,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "setSelectColor()",
+        "setSelected()",
+        "charCount",
+        "findText()",
+        "getSelected()",
+        "hitTestTextNearPos()",
+        "getText()",
+        "getSelectedText()",
+        "getTextRunInfo()"
+      ],
+      "stubbed": []
+    },
+    "flash.filters.BitmapFilterQuality": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "Function": {
+      "summary": {
+        "max_points": 10,
+        "impl_points": 8,
+        "stub_penalty": 0
+      },
+      "missing": ["prototype.toLocaleString()", "prototype.toString()"],
+      "stubbed": []
+    },
+    "flash.text.engine.BreakOpportunity": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.Responder": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.media.H264VideoStreamSettings": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["setProfileLevel()", "profile", "codec", "level"],
+      "stubbed": []
+    },
+    "flash.media.ID3Info": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "songName",
+        "album",
+        "year",
+        "artist",
+        "comment",
+        "genre",
+        "track"
+      ],
+      "stubbed": []
+    },
+    "TypeError": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.filters.GlowFilter": {
+      "summary": {
+        "max_points": 10,
+        "impl_points": 10,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.globalization.CollatorMode": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display3D.Context3DStencilAction": {
+      "summary": {
+        "max_points": 9,
+        "impl_points": 9,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.TextFormat": {
+      "summary": {
+        "max_points": 20,
+        "impl_points": 20,
+        "stub_penalty": 1
+      },
+      "missing": [],
+      "stubbed": ["display"]
+    },
+    "flash.display.Loader": {
+      "summary": {
+        "max_points": 14,
+        "impl_points": 14,
+        "stub_penalty": 3
+      },
+      "missing": [],
+      "stubbed": ["close()", "unload()", "unloadAndStop()"]
+    },
+    "flash.text.Font": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 1
+      },
+      "missing": [],
+      "stubbed": ["static enumerateFonts()"]
+    },
+    "flash.display.GraphicsEndFill": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.globalization.NumberFormatter": {
+      "summary": {
+        "max_points": 20,
+        "impl_points": 20,
+        "stub_penalty": 8
+      },
+      "missing": [],
+      "stubbed": [
+        "formatNumber()",
+        "parseNumber()",
+        "actualLocaleIDName",
+        "parse()",
+        "lastOperationStatus",
+        "formatUint()",
+        "formatInt()",
+        "static getAvailableLocaleIDNames()"
+      ]
+    },
+    "flash.events.Event": {
+      "summary": {
+        "max_points": 57,
+        "impl_points": 57,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.KeyboardEvent": {
+      "summary": {
+        "max_points": 12,
+        "impl_points": 11,
+        "stub_penalty": 0
+      },
+      "missing": ["toString()"],
+      "stubbed": []
+    },
+    "flash.globalization.DateTimeStyle": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.ShaderParameterType": {
+      "summary": {
+        "max_points": 16,
+        "impl_points": 16,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.engine.TextRotation": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.Shape": {
+      "summary": {
+        "max_points": 2,
+        "impl_points": 2,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.errors.EOFError": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display3D.Context3DWrapMode": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.globalization.DateTimeNameContext": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.media.Sound": {
+      "summary": {
+        "max_points": 14,
+        "impl_points": 13,
+        "stub_penalty": 8
+      },
+      "missing": ["id3"],
+      "stubbed": [
+        "load()",
+        "extract()",
+        "close()",
+        "bytesLoaded",
+        "url",
+        "isURLInaccessible",
+        "isBuffering",
+        "loadPCMFromByteArray()"
+      ]
+    },
+    "flash.system.MessageChannelState": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.SoftKeyboardEvent": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 8,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.GroupSpecifier": {
+      "summary": {
+        "max_points": 23,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "postingEnabled",
+        "peerToPeerDisabled",
+        "serverChannelEnabled",
+        "addBootstrapPeer()",
+        "routingEnabled",
+        "makeUnique()",
+        "groupspecWithoutAuthorizations()",
+        "toString()",
+        "multicastEnabled",
+        "setPublishPassword()",
+        "addIPMulticastAddress()",
+        "groupspecWithAuthorizations()",
+        "ipMulticastMemberUpdatesEnabled",
+        "minGroupspecVersion",
+        "authorizations()",
+        "objectReplicationEnabled",
+        "setPostingPassword()",
+        "static encodePublishAuthorization()",
+        "static encodeBootstrapPeerIDSpec()",
+        "static maxSupportedGroupspecVersion",
+        "static encodeIPMulticastAddressSpec()",
+        "static encodePostingAuthorization()"
+      ],
+      "stubbed": []
+    },
+    "flash.accessibility.AccessibilityProperties": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.DRMErrorEvent": {
+      "summary": {
+        "max_points": 9,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "contentData",
+        "subErrorID",
+        "systemUpdateNeeded",
+        "drmUpdateNeeded",
+        "toString()",
+        "clone()",
+        "static DRM_ERROR",
+        "static DRM_LOAD_DEVICEID_ERROR"
+      ],
+      "stubbed": []
+    },
+    "flash.events.DRMAuthenticateEvent": {
+      "summary": {
+        "max_points": 12,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "urlPrompt",
+        "authenticationType",
+        "passwordPrompt",
+        "netstream",
+        "clone()",
+        "usernamePrompt",
+        "header",
+        "toString()",
+        "static AUTHENTICATION_TYPE_DRM",
+        "static AUTHENTICATION_TYPE_PROXY",
+        "static DRM_AUTHENTICATE"
+      ],
+      "stubbed": []
+    },
+    "flash.filters.GradientBevelFilter": {
+      "summary": {
+        "max_points": 13,
+        "impl_points": 13,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.utils.IDataInput": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.IGraphicsStroke": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.sampler": {
+      "summary": {
+        "max_points": 18,
+        "impl_points": 6,
+        "stub_penalty": 5
+      },
+      "missing": [
+        "getMemberNames()",
+        "sampleInternalAllocs()",
+        "pauseSampling()",
+        "getSetterInvocationCount()",
+        "getSavedThis()",
+        "getInvocationCount()",
+        "getGetterInvocationCount()",
+        "getLexicalScopes()",
+        "getMasterString()",
+        "isGetterSetter()",
+        "getSampleCount()",
+        "setSamplerCallback()"
+      ],
+      "stubbed": [
+        "getSize()",
+        "getSamples()",
+        "clearSamples()",
+        "startSampling()",
+        "stopSampling()"
+      ]
+    },
+    "flash.printing.PrintJob": {
+      "summary": {
+        "max_points": 10,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "start()",
+        "send()",
+        "addPage()",
+        "paperHeight",
+        "paperWidth",
+        "pageHeight",
+        "pageWidth",
+        "orientation",
+        "static isSupported"
+      ],
+      "stubbed": []
+    },
+    "flash.system.Security": {
+      "summary": {
+        "max_points": 14,
+        "impl_points": 11,
+        "stub_penalty": 4
+      },
+      "missing": [
+        "static pageDomain",
+        "static exactSettings",
+        "static disableAVM1Loading"
+      ],
+      "stubbed": [
+        "static allowInsecureDomain()",
+        "static loadPolicyFile()",
+        "static showSettings()",
+        "static allowDomain()"
+      ]
+    },
+    "flash.net.XMLSocket": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.TimerEvent": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": ["toString()"],
+      "stubbed": []
+    },
+    "flash.utils.ByteArray": {
+      "summary": {
+        "max_points": 43,
+        "impl_points": 40,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "atomicCompareAndSwapLength()",
+        "atomicCompareAndSwapIntAt()",
+        "shareable"
+      ],
+      "stubbed": []
+    },
+    "flash.text.TextDisplayMode": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.SyncEvent": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.SharedObject": {
+      "summary": {
+        "max_points": 19,
+        "impl_points": 8,
+        "stub_penalty": 1
+      },
+      "missing": [
+        "send()",
+        "connect()",
+        "client",
+        "fps",
+        "setDirty()",
+        "objectEncoding",
+        "static preventBackup",
+        "static getDiskUsage()",
+        "static deleteAll()",
+        "static defaultObjectEncoding",
+        "static getRemote()"
+      ],
+      "stubbed": ["close()"]
+    },
+    "flash.accessibility.ISearchableText": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.filters.ColorMatrixFilter": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "": {
+      "summary": {
+        "max_points": 16,
+        "impl_points": 16,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.URLRequest": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": ["useRedirectedURL()"],
+      "stubbed": []
+    },
+    "flash.events.EventDispatcher": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.errors.DRMManagerError": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["subErrorID", "toString()"],
+      "stubbed": []
+    },
+    "flash.net.drm.AuthenticationMethod": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["static USERNAME_AND_PASSWORD", "static ANONYMOUS"],
+      "stubbed": []
+    },
+    "flash.events.UncaughtErrorEvents": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "URIError": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.system.AuthorizedFeatures": {
+      "summary": {
+        "max_points": 8,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "createApplicationInstaller()",
+        "enableDiskCache()",
+        "enableMediaPlayerHLSPlayback()",
+        "enableHLSPlayback()",
+        "enableAVLoader()",
+        "enableAVURLLoader()",
+        "enableAVURLStream()"
+      ],
+      "stubbed": []
+    },
+    "flash.text.TextFieldType": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.desktop.Clipboard": {
+      "summary": {
+        "max_points": 9,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "getData()",
+        "hasFormat()",
+        "clearData()",
+        "setData()",
+        "formats",
+        "setDataHandler()",
+        "clear()",
+        "static generalClipboard"
+      ],
+      "stubbed": []
+    },
+    "flash.display.Stage": {
+      "summary": {
+        "max_points": 73,
+        "impl_points": 43,
+        "stub_penalty": 5
+      },
+      "missing": [
+        "height",
+        "textSnapshot",
+        "dispatchEvent()",
+        "colorCorrection",
+        "z",
+        "rotationY",
+        "addChildAt()",
+        "tabChildren",
+        "stageVideos",
+        "isFocusInaccessible()",
+        "colorCorrectionSupport",
+        "swapChildrenAt()",
+        "willTrigger()",
+        "displayContextInfo",
+        "width",
+        "rotationZ",
+        "removeChildAt()",
+        "setChildIndex()",
+        "scaleZ",
+        "hasEventListener()",
+        "constructor",
+        "softKeyboardRect",
+        "numChildren",
+        "wmodeGPU",
+        "addChild()",
+        "accessibilityImplementation",
+        "addEventListener()",
+        "rotationX",
+        "mouseChildren",
+        "mouseLock"
+      ],
+      "stubbed": [
+        "allowsFullScreenInteractive",
+        "fullScreenWidth",
+        "allowsFullScreen",
+        "fullScreenSourceRect",
+        "fullScreenHeight"
+      ]
+    },
+    "flash.display.Bitmap": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "Array": {
+      "summary": {
+        "max_points": 48,
+        "impl_points": 48,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.TextColorType": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.GraphicsShaderFill": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display3D.Program3D": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 1
+      },
+      "missing": [],
+      "stubbed": ["dispose()"]
+    },
+    "flash.display3D.Context3DTextureFormat": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.drm.DRMContentData": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "authenticationMethod",
+        "licenseID",
+        "domain",
+        "serverURL",
+        "getVoucherAccessInfo()"
+      ],
+      "stubbed": []
+    },
+    "flash.printing.PrintJobOptions": {
+      "summary": {
+        "max_points": 2,
+        "impl_points": 2,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.Scene": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.system.SystemUpdaterType": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.FocusEvent": {
+      "summary": {
+        "max_points": 11,
+        "impl_points": 11,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display3D.Context3DTextureFilter": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "uint": {
+      "summary": {
+        "max_points": 15,
+        "impl_points": 15,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.SoftKeyboardTrigger": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.net.NetGroupSendResult": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display3D.Context3DMipFilter": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.ErrorEvent": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "UninitializedError": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.filters.ShaderFilter": {
+      "summary": {
+        "max_points": 6,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.ui.KeyboardType": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.engine.ContentElement": {
+      "summary": {
+        "max_points": 11,
+        "impl_points": 6,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "groupElement",
+        "textRotation",
+        "textBlockBeginIndex",
+        "eventMirror",
+        "textBlock"
+      ],
+      "stubbed": []
+    },
+    "flash.media.AVInsertionResult": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["periodIndex", "insertedBeforeReadHead"],
+      "stubbed": []
+    },
+    "flash.events.DRMStatusEvent": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "contentData",
+        "voucher",
+        "isLocal",
+        "toString()",
+        "clone()",
+        "static DRM_STATUS"
+      ],
+      "stubbed": []
+    },
+    "flash.text.engine.TabAlignment": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.DisplayObject": {
+      "summary": {
+        "max_points": 41,
+        "impl_points": 38,
+        "stub_penalty": 6
+      },
+      "missing": ["metaData", "globalToLocal3D()", "local3DToGlobal()"],
+      "stubbed": [
+        "rotationZ",
+        "scale9Grid",
+        "scaleZ",
+        "z",
+        "rotationY",
+        "rotationX"
+      ]
+    },
+    "flash.events.NetMonitorEvent": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "netStream",
+        "toString()",
+        "clone()",
+        "static NET_STREAM_CREATE"
+      ],
+      "stubbed": []
+    },
+    "flash.media.VideoStatus": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "Date": {
+      "summary": {
+        "max_points": 105,
+        "impl_points": 104,
+        "stub_penalty": 0
+      },
+      "missing": ["prototype.toJSON()"],
+      "stubbed": []
+    },
+    "flash.errors.InvalidSWFError": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.system.JPEGLoaderContext": {
+      "summary": {
+        "max_points": 2,
+        "impl_points": 2,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.sampler.NewObjectSample": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 2
+      },
+      "missing": [],
+      "stubbed": ["size", "object"]
+    },
+    "flash.ui.MultitouchInputMode": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.media.AVSource": {
+      "summary": {
+        "max_points": 2,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": ["dispose()"],
+      "stubbed": []
+    },
+    "flash.display.IGraphicsFill": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display3D.IndexBuffer3D": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 4,
+        "stub_penalty": 1
+      },
+      "missing": [],
+      "stubbed": ["dispose()"]
+    },
+    "flash.display.GraphicsSolidFill": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "Error": {
+      "summary": {
+        "max_points": 11,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "static throwError()",
+        "static getErrorMessage()",
+        "prototype.message",
+        "prototype.toString()"
+      ],
+      "stubbed": []
+    },
+    "flash.display.GradientType": {
+      "summary": {
+        "max_points": 3,
+        "impl_points": 3,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.events.AVStatusEvent": {
+      "summary": {
+        "max_points": 21,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "result",
+        "description",
+        "notificationType",
+        "static DIMENSION_CHANGE",
+        "static LOAD_COMPLETE",
+        "static PLAY_STATE",
+        "static STEP_COMPLETE",
+        "static TRICKPLAY_ENDED",
+        "static BACKGROUND_MANIFEST_ERROR",
+        "static BUFFER_STATE",
+        "static STREAM_SWITCH",
+        "static ERROR",
+        "static DECODER_TYPE",
+        "static WARNING",
+        "static MANIFEST_UPDATE",
+        "static INSERTION_COMPLETE",
+        "static BACKGROUND_MANIFEST_WARNING",
+        "static SEEK_COMPLETE",
+        "static RENDER_TYPE",
+        "static AV_STATUS"
+      ],
+      "stubbed": []
+    },
+    "flash.globalization.StringTools": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "actualLocaleIDName",
+        "toUpperCase()",
+        "lastOperationStatus",
+        "requestedLocaleIDName",
+        "toLowerCase()",
+        "static getAvailableLocaleIDNames()"
+      ],
+      "stubbed": []
+    },
+    "flash.display.BitmapDataChannel": {
+      "summary": {
+        "max_points": 5,
+        "impl_points": 5,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.display.StageQuality": {
+      "summary": {
+        "max_points": 9,
+        "impl_points": 9,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.media.AVPlayState": {
+      "summary": {
+        "max_points": 11,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "state",
+        "static READY",
+        "static BUFFERING",
+        "static SUSPENDED",
+        "static TRICK_PLAY",
+        "static UNINITIALIZED",
+        "static EOF",
+        "static UNRECOVERABLE_ERROR",
+        "static PAUSED",
+        "static PLAYING"
+      ],
+      "stubbed": []
+    },
+    "flash.display.NativeMenu": {
+      "summary": {
+        "max_points": 1,
+        "impl_points": 1,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "int": {
+      "summary": {
+        "max_points": 15,
+        "impl_points": 15,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    },
+    "flash.text.engine.TextLineMirrorRegion": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "element",
+        "textLine",
+        "nextRegion",
+        "previousRegion",
+        "bounds",
+        "mirror"
+      ],
+      "stubbed": []
+    },
+    "flash.net.drm.AddToDeviceGroupSetting": {
+      "summary": {
+        "max_points": 4,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "static LOCAL_ONLY",
+        "static FORCE_REFRESH",
+        "static ALLOW_SERVER"
+      ],
+      "stubbed": []
+    },
+    "flash.globalization.Collator": {
+      "summary": {
+        "max_points": 13,
+        "impl_points": 0,
+        "stub_penalty": 0
+      },
+      "missing": [
+        "ignoreCase",
+        "compare()",
+        "equals()",
+        "lastOperationStatus",
+        "numericComparison",
+        "ignoreCharacterWidth",
+        "requestedLocaleIDName",
+        "actualLocaleIDName",
+        "ignoreDiacritics",
+        "ignoreSymbols",
+        "ignoreKanaType",
+        "static getAvailableLocaleIDNames()"
+      ],
+      "stubbed": []
+    },
+    "flash.events.ProgressEvent": {
+      "summary": {
+        "max_points": 7,
+        "impl_points": 7,
+        "stub_penalty": 0
+      },
+      "missing": [],
+      "stubbed": []
+    }
+  }
+}

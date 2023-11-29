@@ -79,7 +79,7 @@ export default function Downloads() {
             name="AVM 2: ActionScript 3"
             language={{ done: 75 }}
             api={{ done: 68, stubbed: 6 }}
-            info_link="/compatibility" // TODO
+            info_link="/compatibility/avm2"
           >
             <Text size="sm">
               AVM 2 was introduced with Flash Player 9 (June 2006), to replace
