@@ -1,38 +1,36 @@
 .progressImage {
-    @media (max-width: $mantine-breakpoint-sm) {
-        display: none;
-    }
+  @media (max-width: $mantine-breakpoint-sm) {
+    display: none;
+  }
 }
 
 .listContainer {
-    @media (max-width: $mantine-breakpoint-sm) {
-        flex-direction: column;
-    }
+  @media (max-width: $mantine-breakpoint-sm) {
+    flex-direction: column;
+  }
 }
 
 .namespace {
-
 }
 
 .progress {
-    background-color: var(--ruffle-blue-1);
+  background-color: var(--ruffle-blue-1);
 }
 
 .class {
-    width: rem(375);
+  width: rem(375);
 
-    @media (max-width: $mantine-breakpoint-sm) {
-        width: 100%;
-    }
+  @media (max-width: $mantine-breakpoint-sm) {
+    width: 100%;
+  }
 }
 
 .showMemberButton {
-    background-color: var(--ruffle-blue-7);
-    margin-top: rem(10);
+  background-color: var(--ruffle-blue-7);
+  margin-top: rem(10);
 }
 
-
 .progressStub {
-    /* The other bars don't have the edge rounded as they're just one item; make this visually look the same */
-    --progress-radius: 0;
+  /* The other bars don't have the edge rounded as they're just one item; make this visually look the same */
+  --progress-radius: 0;
 }
