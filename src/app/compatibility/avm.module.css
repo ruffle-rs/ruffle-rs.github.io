@@ -17,6 +17,7 @@
 
 .progress {
     flex: 1;
+    background-color: var(--ruffle-blue-1);
 }
 
 .progressName {

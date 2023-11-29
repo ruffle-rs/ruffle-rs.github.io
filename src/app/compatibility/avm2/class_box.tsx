@@ -30,14 +30,16 @@ export function ClassBox(props: ClassStatus) {
   return (
     <Card bg="var(--ruffle-blue-9)" className={classes.class}>
       <Title order={4}>{props.name || "(Package level)"}</Title>
-      <ProgressRoot size="xl" radius={10}>
+      <ProgressRoot size="xl" radius={10} className={classes.progress}>
         <ProgressSection
+          striped
           value={pctDone}
           color="var(--mantine-color-green-9)"
           title={`${pctDone}% done`}
         ></ProgressSection>
         {pctStub > 0 && (
           <ProgressSection
+            striped
             value={pctStub}
             color="ruffle-orange"
             className={classes.progressStub}
