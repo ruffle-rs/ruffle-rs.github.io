@@ -96,7 +96,7 @@ Object.entries(report.classes).map(([itemName, classInfo]) => {
     return;
   }
 
-  if (!byNamespace.hasOwnProperty(namespace)) {
+  if (!Object.prototype.hasOwnProperty.call(byNamespace, namespace)) {
     byNamespace[namespace] = {
       name: namespace,
       summary: { max_points: 0, impl_points: 0, stub_penalty: 0 },
@@ -128,12 +128,12 @@ Object.entries(report.classes).map(([itemName, classInfo]) => {
 
 // Sort the result by namespace
 byNamespace = Object.fromEntries(
-  Object.entries(byNamespace).sort(([a, _a], [b, _b]) => a.localeCompare(b)),
+  Object.entries(byNamespace).sort(([a], [b]) => a.localeCompare(b)),
 );
 
 for (const name in byNamespace) {
-  let info = byNamespace[name];
+  const info = byNamespace[name];
   info.classes = Object.fromEntries(
-    Object.entries(info.classes).sort(([a, _a], [b, _b]) => a.localeCompare(b)),
+    Object.entries(info.classes).sort(([a], [b]) => a.localeCompare(b)),
   );
 }

@@ -2,10 +2,8 @@ import classes from "./avm.module.css";
 import {
   Button,
   Group,
-  ProgressLabel,
   ProgressRoot,
   ProgressSection,
-  Space,
   Stack,
   Text,
   Title,

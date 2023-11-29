@@ -13,7 +13,7 @@ import {
   TablerIconsProps,
 } from "@tabler/icons-react";
 import React from "react";
-import { BrowserTypes, OsTypes, useDeviceSelectors } from "react-device-detect";
+import { useDeviceSelectors } from "react-device-detect";
 import classes from "./index.module.css";
 import { Button, Group } from "@mantine/core";
 
@@ -25,7 +25,7 @@ interface Installer {
 }
 
 export default function Installers() {
-  const [selectors, data] = useDeviceSelectors(window.navigator.userAgent);
+  const [selectors] = useDeviceSelectors(window.navigator.userAgent);
   const installers: Installer[] = [];
 
   if (selectors.isDesktop) {

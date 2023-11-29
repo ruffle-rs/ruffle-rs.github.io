@@ -4,8 +4,7 @@ import { AvmBlock } from "@/app/compatibility/avm";
 import Image from "next/image";
 import React from "react";
 import { Title } from "@mantine/core";
-import { List, ListItem, rem, ThemeIcon } from "@mantine/core";
-import { IconCheck } from "@tabler/icons-react";
+import { List, ListItem } from "@mantine/core";
 
 export default function Downloads() {
   return (
