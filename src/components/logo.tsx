@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Script from "next/script";
 
 declare global {
   interface Window {
@@ -34,9 +35,13 @@ export default class InteractiveLogo extends React.Component<LogoProps> {
     this.container = React.createRef();
   }
 
-  componentDidMount() {
+  private load() {
+    if (this.player) {
+      // Already loaded.
+      return;
+    }
+
     this.player = (window.RufflePlayer as PublicAPI)?.newest()?.createPlayer();
-    // current is guaranteed to be set before this callback
 
     if (this.player) {
       this.container.current!.appendChild(this.player);
@@ -55,12 +60,24 @@ export default class InteractiveLogo extends React.Component<LogoProps> {
     }
   }
 
+  componentDidMount() {
+    this.load();
+  }
+
   componentWillUnmount() {
     this.player?.remove();
     this.player = null;
   }
 
   render() {
-    return <div ref={this.container} className={this.props.className} />;
+    return (
+      <>
+        <Script
+          src="https://unpkg.com/@ruffle-rs/ruffle"
+          onReady={() => this.load()}
+        />
+        <div ref={this.container} className={this.props.className} />
+      </>
+    );
   }
 }
