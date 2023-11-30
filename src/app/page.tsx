@@ -14,7 +14,6 @@ import { IconCheck } from "@tabler/icons-react";
 import React from "react";
 
 const InteractiveLogo = dynamic(() => import("../components/logo"), {
-  loading: () => <p>Loading...</p>,
   ssr: false,
 });
 

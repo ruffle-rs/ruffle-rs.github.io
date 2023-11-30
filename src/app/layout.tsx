@@ -31,8 +31,6 @@ export default function RootLayout({
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
         />
-        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-        <script src="https://unpkg.com/@ruffle-rs/ruffle" />
       </head>
       <body>
         <MantineProvider theme={theme} cssVariablesResolver={cssResolver}>
