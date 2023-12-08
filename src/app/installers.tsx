@@ -57,6 +57,14 @@ export default function Installers() {
         url: "/", // todo
       });
     }
+  } else if (selectors.isAndroid) {
+    if (selectors.isFirefox) {
+      installers.push({
+        icon: IconBrandFirefox,
+        name: "Firefox Extension",
+        url: "https://addons.mozilla.org/en-US/android/addon/ruffle_rs/",
+      });
+    }
   }
 
   if (selectors.isWindows) {
