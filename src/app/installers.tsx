@@ -16,6 +16,7 @@ import React from "react";
 import { useDeviceSelectors } from "react-device-detect";
 import classes from "./index.module.css";
 import { Button, Group } from "@mantine/core";
+import Link from "next/link";
 
 interface Installer {
   icon: (props: TablerIconsProps) => React.JSX.Element;
@@ -105,6 +106,9 @@ export default function Installers() {
           size="md"
           className={installer.className ?? classes.installButton}
           key={installer.name}
+          component={Link}
+          href={installer.url}
+          target="_blank"
         >
           <installer.icon />
           {installer.name}
