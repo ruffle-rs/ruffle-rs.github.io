@@ -8,11 +8,12 @@ import { Button, Group } from "@mantine/core";
 import Link from "next/link";
 import { allLinks, CurrentDevice, GithubRelease } from "@/app/downloads/config";
 
-interface Installer {
+interface RecommendedDownload {
   icon: (props: TablerIconsProps) => React.JSX.Element;
   name: string;
   url: string;
   className?: string;
+  target?: string;
 }
 
 export default function Installers({
@@ -21,7 +22,7 @@ export default function Installers({
   release: GithubRelease | null;
 }) {
   const [selectors] = useDeviceSelectors(window.navigator.userAgent);
-  const recommended: Installer[] = [];
+  const recommended: RecommendedDownload[] = [];
   const currentDevice: CurrentDevice = {
     windows: selectors.isWindows,
     mac: selectors.isMacOs,
@@ -43,6 +44,7 @@ export default function Installers({
         recommended.push({
           icon: link.icon,
           name: link.longName,
+          target: "_blank",
           url,
         });
       }
@@ -58,18 +60,18 @@ export default function Installers({
 
   return (
     <Group mt={30} className={classes.buttons} grow preventGrowOverflow={false}>
-      {recommended.map((installer) => (
+      {recommended.map((download) => (
         <Button
           radius="xl"
           size="md"
-          className={installer.className ?? classes.installButton}
-          key={installer.name}
+          className={download.className ?? classes.installButton}
+          key={download.name}
           component={Link}
-          href={installer.url}
-          target="_blank"
+          href={download.url}
+          target={download.target}
         >
-          <installer.icon />
-          {installer.name}
+          <download.icon />
+          {download.name}
         </Button>
       ))}
     </Group>
