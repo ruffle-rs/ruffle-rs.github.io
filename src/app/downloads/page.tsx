@@ -17,15 +17,15 @@ import Link from "next/link";
 import {
   desktopLinks,
   GithubRelease,
+  githubReleasesUrl,
+  maxNightlies,
   ReleaseDownloads,
+  repository,
 } from "@/app/downloads/config";
 
 // Number of seconds to cache `fetch()` (ie octokit) responses.
 // Doesn't really matter for static generation but... maybe one day we'll switch to SSR
 export const revalidate = 1800;
-const repository = { owner: "ruffle-rs", repo: "ruffle" };
-const maxNightlies = 5;
-const githubReleasesUrl = `https://github.com/${repository.owner}/${repository.repo}/releases`;
 
 function createGithubAuth() {
   if (process.env.GITHUB_TOKEN) {

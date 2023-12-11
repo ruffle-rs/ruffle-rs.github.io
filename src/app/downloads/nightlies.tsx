@@ -21,6 +21,7 @@ import {
   DownloadLink,
   extensionLinks,
   GithubRelease,
+  githubReleasesUrl,
   webLinks,
 } from "@/app/downloads/config";
 
@@ -114,11 +115,20 @@ function NightlyCompactBox(release: GithubRelease) {
 export function NightlyList({ nightlies }: { nightlies: GithubRelease[] }) {
   return (
     <Stack>
-      <Title>Latest Nightly Releases</Title>
+      <Title>Nightly Releases</Title>
       <Text>
         If none of the above are suitable for you, you can manually download the
         latest Nightly release. These are automatically built every day
-        (approximately midnight UTC), unless there are no changes on that day.
+        (approximately midnight UTC), unless there are no changes on that day.{" "}
+        Older nightly releases are available on{" "}
+        <Link
+          href={githubReleasesUrl}
+          className={classes.moreNightlies}
+          target="_blank"
+        >
+          Github
+        </Link>
+        .
       </Text>
       <Table
         horizontalSpacing="md"
