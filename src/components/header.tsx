@@ -9,13 +9,13 @@ import { usePathname } from "next/navigation";
 
 const links = [
   { link: "/", label: "What is Ruffle" },
-  { link: "/test", label: "Usage" },
   { link: "/downloads", label: "Downloads" },
   { link: "/compatibility", label: "Compatibility" },
   { link: "/test", label: "Get Involved" },
-  { link: "/test", label: "Demo" },
-  { link: "/test", label: "Join Discord" },
-  { link: "/test", label: "Blog" },
+  { link: "/demo", label: "Demo" },
+  { link: "/blog", label: "Blog" },
+  { link: "https://discord.gg/ruffle", label: "Discord" },
+  { link: "https://github.com/ruffle-rs/ruffle/", label: "Github" },
 ];
 
 export function Header() {
