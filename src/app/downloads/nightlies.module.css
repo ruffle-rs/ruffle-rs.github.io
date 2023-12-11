@@ -17,16 +17,19 @@
 
 .name,
 .nameAsHeader {
-  font-size: var(--mantine-font-size-md);
-
   &:link,
   &:visited {
     color: var(--mantine-color-white);
   }
 }
 
+.name {
+  font-size: var(--mantine-font-size-md);
+}
+
 .nameAsHeader {
-  font-size: var(--mantine-font-size-lg);
+  font-size: var(--mantine-font-size-xl);
+  margin-top: var(--mantine-spacing-lg);
 }
 
 .header {
