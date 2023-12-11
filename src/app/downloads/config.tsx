@@ -10,6 +10,12 @@ import {
 } from "@tabler/icons-react";
 import React from "react";
 
+export const repository = { owner: "ruffle-rs", repo: "ruffle" };
+
+export const maxNightlies = 5;
+
+export const githubReleasesUrl = `https://github.com/${repository.owner}/${repository.repo}/releases`;
+
 export interface GithubRelease {
   id: number;
   name: string;
