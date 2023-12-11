@@ -1,4 +1,4 @@
-import { Group, Text, Title } from "@mantine/core";
+import { Group, Stack, Text, Title } from "@mantine/core";
 import classes from "./extensions.module.css";
 import React from "react";
 import Image from "next/image";
@@ -44,7 +44,7 @@ function ExtensionBadge(info: Extension) {
 
 export function ExtensionList() {
   return (
-    <>
+    <Stack>
       <Title className={classes.title}>Browser Extension</Title>
       <Text>
         If you visit websites that have Flash content but aren't using Ruffle,
@@ -57,6 +57,6 @@ export function ExtensionList() {
           <ExtensionBadge key={i} {...extension} />
         ))}
       </Group>
-    </>
+    </Stack>
   );
 }
