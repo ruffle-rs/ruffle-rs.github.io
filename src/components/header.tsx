@@ -14,8 +14,12 @@ const links = [
   { link: "/test", label: "Get Involved" },
   { link: "/demo", label: "Demo" },
   { link: "/blog", label: "Blog" },
-  { link: "https://discord.gg/ruffle", label: "Discord" },
-  { link: "https://github.com/ruffle-rs/ruffle/", label: "Github" },
+  { link: "https://discord.gg/ruffle", label: "Discord", target: "_blank" },
+  {
+    link: "https://github.com/ruffle-rs/ruffle/",
+    label: "Github",
+    target: "_blank",
+  },
 ];
 
 export function Header() {
@@ -26,6 +30,7 @@ export function Header() {
     <Link
       key={link.label}
       href={link.link}
+      target={link.target}
       className={classes.link}
       data-active={pathname === link.link || undefined}
       onClick={() => {
