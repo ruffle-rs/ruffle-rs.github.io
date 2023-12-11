@@ -46,17 +46,19 @@ function DownloadLink({
       title={url ? "" : "Unavailable"}
     >
       <link.icon />
-      {link.name}
+      {link.shortName}
     </Button>
   );
 }
 
 function NightlyRow(release: GithubRelease) {
+  // The nightly prefix is a bit superfluous here
+  const name = release.name.replace(/^Nightly /, "");
   return (
     <TableTr>
       <TableTd>
         <Link href={release.url} className={classes.name} target="_blank">
-          {release.name}
+          {name}
         </Link>
       </TableTd>
       <TableTd>
