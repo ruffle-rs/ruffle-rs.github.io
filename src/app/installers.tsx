@@ -1,22 +1,12 @@
 "use client";
 
-import {
-  IconBrandAndroid,
-  IconBrandApple,
-  IconBrandChrome,
-  IconBrandEdge,
-  IconBrandFirefox,
-  IconBrandSafari,
-  IconBrandWindows,
-  IconBrowser,
-  IconList,
-  TablerIconsProps,
-} from "@tabler/icons-react";
+import { IconList, TablerIconsProps } from "@tabler/icons-react";
 import React from "react";
 import { useDeviceSelectors } from "react-device-detect";
 import classes from "./index.module.css";
 import { Button, Group } from "@mantine/core";
 import Link from "next/link";
+import { allLinks, CurrentDevice, GithubRelease } from "@/app/downloads/config";
 
 interface Installer {
   icon: (props: TablerIconsProps) => React.JSX.Element;
@@ -25,82 +15,50 @@ interface Installer {
   className?: string;
 }
 
-export default function Installers() {
+export default function Installers({
+  release,
+}: {
+  release: GithubRelease | null;
+}) {
   const [selectors] = useDeviceSelectors(window.navigator.userAgent);
-  const installers: Installer[] = [];
+  const recommended: Installer[] = [];
+  const currentDevice: CurrentDevice = {
+    windows: selectors.isWindows,
+    mac: selectors.isMacOs,
+    android: selectors.isAndroid,
+    linux: selectors.osName.toLowerCase() == "linux", // https://github.com/duskload/react-device-detect/issues/200
+    ios: selectors.isIOS,
+    firefox: selectors.isFirefox,
+    chrome: selectors.isChrome,
+    edge: selectors.isEdge,
+    safari: selectors.isSafari,
+    desktop: selectors.isDesktop,
+    mobile: selectors.isMobile,
+  };
 
-  if (selectors.isDesktop) {
-    if (selectors.isFirefox) {
-      installers.push({
-        icon: IconBrandFirefox,
-        name: "Firefox Extension",
-        url: "https://addons.mozilla.org/en-US/firefox/addon/ruffle_rs/",
-      });
-    }
-    if (selectors.isEdge) {
-      installers.push({
-        icon: IconBrandEdge,
-        name: "Edge Extension",
-        url: "https://microsoftedge.microsoft.com/addons/detail/ruffle/pipjjbgofgieknlpefmcckdmgaaegban",
-      });
-    }
-    if (selectors.isChrome) {
-      installers.push({
-        icon: IconBrandChrome,
-        name: "Chrome Extension",
-        url: "https://chrome.google.com/webstore/detail/ruffle-flash-emulator/donbcfbmhbcapadipfkeojnmajbakjdc",
-      });
-    }
-    if (selectors.isSafari) {
-      installers.push({
-        icon: IconBrandSafari,
-        name: "Safari Extension",
-        url: "/", // todo
-      });
-    }
-  } else if (selectors.isAndroid) {
-    if (selectors.isFirefox) {
-      installers.push({
-        icon: IconBrandFirefox,
-        name: "Firefox Extension",
-        url: "https://addons.mozilla.org/en-US/android/addon/ruffle_rs/",
-      });
+  for (const link of allLinks) {
+    if (link.isDeviceRelevant(currentDevice)) {
+      const url = link.recommendedUrl || release?.downloads[link.key];
+      if (url) {
+        recommended.push({
+          icon: link.icon,
+          name: link.longName,
+          url,
+        });
+      }
     }
   }
 
-  if (selectors.isWindows) {
-    installers.push({
-      icon: IconBrandWindows,
-      name: "Windows Executable",
-      url: "/", // todo
-    });
-  }
-  if (selectors.isMacOs) {
-    installers.push({
-      icon: IconBrandApple,
-      name: "Mac Application",
-      url: "/", // todo
-    });
-  }
-  if (selectors.isAndroid) {
-    installers.push({
-      icon: IconBrandAndroid,
-      name: "Android App",
-      url: "/", // todo
-    });
-  }
-
-  installers.push({ icon: IconBrowser, name: "Website Package", url: "/" }); // todo
-  installers.push({
+  recommended.push({
     icon: IconList,
     name: "Other Downloads",
-    url: "/", // todo
+    url: "/downloads",
     className: classes.otherDownloadsButton,
   });
 
   return (
     <Group mt={30} className={classes.buttons} grow preventGrowOverflow={false}>
-      {installers.map((installer) => (
+      {recommended.map((installer) => (
         <Button
           radius="xl"
           size="md"

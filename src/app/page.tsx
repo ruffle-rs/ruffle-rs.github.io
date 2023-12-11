@@ -12,17 +12,20 @@ import {
 import Image from "next/image";
 import { IconCheck } from "@tabler/icons-react";
 import React from "react";
+import { getLatestReleases } from "@/app/downloads/github";
 
 const InteractiveLogo = dynamic(() => import("../components/logo"), {
   ssr: false,
 });
 
 const Installers = dynamic(() => import("./installers"), {
-  loading: () => <p>Loading...</p>,
   ssr: false,
 });
 
-export default function Home() {
+export default async function Home() {
+  const releases = await getLatestReleases();
+  const latest = releases.length > 0 ? releases[0] : null;
+
   return (
     <Container size="xl" className={classes.container}>
       <InteractiveLogo className={classes.logo} />
@@ -75,7 +78,7 @@ export default function Home() {
               </ListItem>
             </List>
 
-            <Installers />
+            <Installers release={latest} />
           </div>
         </div>
       </Container>
