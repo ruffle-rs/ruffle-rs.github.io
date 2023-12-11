@@ -44,13 +44,15 @@ export function Header() {
   return (
     <header className={classes.header}>
       <Container size="md" className={classes.inner}>
-        <Image
-          src="/logo.svg"
-          alt="Ruffle Logo"
-          height={30}
-          width={91}
-          priority
-        />
+        <Link href="/">
+          <Image
+            src="/logo.svg"
+            alt="Ruffle Logo"
+            height={30}
+            width={91}
+            priority
+          />
+        </Link>
         <Group gap={5} visibleFrom="md">
           {items}
         </Group>{" "}
