@@ -46,7 +46,7 @@ export default function Page() {
           />
           <Stack className={classes.actionscriptInfo}>
             <Title className={classes.title}>ActionScript 3 API Progress</Title>
-            <Text size="sm">
+            <Text>
               ActionScript 3 contains many different methods and classes - not
               all of which is ultimately <i>useful</i> to every application. The
               majority of content only uses a small portion of the available
@@ -54,12 +54,12 @@ export default function Page() {
               the entirely of AVM 2, we may have enough for that content to run
               completely fine.
             </Text>
-            <Text size="sm">
+            <Text>
               On this page, we list every single ActionScript 3 API that exists
               but Ruffle does not yet 100% implement. We classify items into
               three different stages:
             </Text>
-            <List size="sm" spacing="sm">
+            <List spacing="sm">
               <ListItem icon={<IconDone />}>
                 <b>Implemented</b> items are marked as &quot;Done&quot;, and we
                 believe they are fully functional. For brevity, we do not list
