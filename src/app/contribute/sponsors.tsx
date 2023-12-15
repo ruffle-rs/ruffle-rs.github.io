@@ -1,4 +1,4 @@
-import { Group, Stack, Text, Title } from "@mantine/core";
+import { Card, Group, Stack, Text, Title } from "@mantine/core";
 import classes from "./sponsors.module.css";
 import React from "react";
 import Link from "next/link";
@@ -95,15 +95,22 @@ const sponsors: Sponsor[] = [
 
 function Sponsor(sponsor: Sponsor) {
   return (
-    <Link href={sponsor.url} target="_blank">
-      <Image
-        src={sponsor.logo}
-        alt={sponsor.name}
-        width={200}
-        height={200}
-        className={classes.logo}
-      />
-    </Link>
+    <Card className={classes.card} radius="lg">
+      <Stack align="center">
+        <Link href={sponsor.url} target="_blank">
+          <Image
+            src={sponsor.logo}
+            alt={sponsor.name}
+            width={200}
+            height={200}
+            className={classes.logo}
+          />
+        </Link>
+        <Link href={sponsor.url} target="_blank" className={classes.link}>
+          {sponsor.name}
+        </Link>
+      </Stack>
+    </Card>
   );
 }
 
@@ -116,7 +123,7 @@ export function SponsorList() {
         possible. Below are our Diamond level sponsors, without whom we would
         not be here. Thank you.
       </Text>
-      <Group justify="center">
+      <Group justify="center" gap="sm">
         {sponsors.map((sponsor, index) => (
           <Sponsor key={index} {...sponsor} />
         ))}
