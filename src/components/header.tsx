@@ -11,7 +11,7 @@ const links = [
   { link: "/", label: "What is Ruffle" },
   { link: "/downloads", label: "Downloads" },
   { link: "/compatibility", label: "Compatibility" },
-  { link: "/test", label: "Get Involved" },
+  { link: "/contribute", label: "Get Involved" },
   { link: "/demo", label: "Demo" },
   { link: "/blog", label: "Blog" },
   { link: "https://discord.gg/ruffle", label: "Discord", target: "_blank" },

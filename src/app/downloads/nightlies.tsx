@@ -137,6 +137,7 @@ export function NightlyList({ nightlies }: { nightlies: GithubRelease[] }) {
         verticalSpacing="md"
         borderColor="var(--ruffle-blue-7)"
         visibleFrom="sm"
+        withColumnBorders
       >
         <TableThead className={classes.header}>
           <TableTr>
