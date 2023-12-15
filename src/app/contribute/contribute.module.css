@@ -1,0 +1,8 @@
+.contributeSection {
+  margin-top: var(--mantine-spacing-xl);
+
+  max-width: 49%;
+  @media (max-width: $mantine-breakpoint-md) {
+    max-width: none;
+  }
+}

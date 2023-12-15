@@ -1,0 +1,7 @@
+.list {
+  margin-top: var(--mantine-spacing-xl);
+}
+
+.logo {
+  object-fit: contain;
+}
