@@ -10,7 +10,7 @@
 
 .link:link,
 .link:visited {
-  color: #3c1518;
+  color: black;
   font-weight: bold;
   text-decoration: none;
   font-family: var(--mantine-font-family-headings);
