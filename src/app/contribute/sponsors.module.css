@@ -2,6 +2,21 @@
   margin-top: var(--mantine-spacing-xl);
 }
 
+.card {
+  width: 230px;
+  height: 275px;
+  background-color: var(--ruffle-blue-3);
+}
+
+.link:link,
+.link:visited {
+  color: #3c1518;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: var(--mantine-font-family-headings);
+  font-size: var(--mantine-font-size-lg);
+}
+
 .logo {
   object-fit: contain;
 }
