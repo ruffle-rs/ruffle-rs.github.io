@@ -1,7 +1,6 @@
 import {
   IconBrandApple,
   IconBrandChrome,
-  IconBrandDebian,
   IconBrandEdge,
   IconBrandFirefox,
   IconBrandJavascript,
@@ -10,6 +9,7 @@ import {
   TablerIconsProps,
 } from "@tabler/icons-react";
 import React from "react";
+import { IconBrandLinux } from "@/components/icons";
 
 export const repository = { owner: "ruffle-rs", repo: "ruffle" };
 
@@ -134,7 +134,7 @@ export const desktopLinks: DownloadLink[] = [
     key: "linux",
     shortName: "Linux",
     longName: "Linux Executable",
-    icon: IconBrandDebian,
+    icon: IconBrandLinux,
     isRecommended: true,
     isDeviceRelevant: (device) => device.desktop && device.linux,
   },
