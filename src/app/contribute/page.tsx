@@ -157,6 +157,7 @@ export default function Page() {
           alt="Person thanking you"
           width={185}
           height={200}
+          className={classes.image}
         />
         <Stack className={classes.actionscriptInfo}>
           <Title className={classes.title}>Get Involved</Title>
