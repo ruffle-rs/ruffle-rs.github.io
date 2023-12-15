@@ -6,6 +6,10 @@
   width: 230px;
   height: 275px;
   background-color: var(--ruffle-blue-4);
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    width: 90%;
+  }
 }
 
 .link:link,
