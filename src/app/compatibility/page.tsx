@@ -5,8 +5,18 @@ import Image from "next/image";
 import React from "react";
 import { Title } from "@mantine/core";
 import { List, ListItem } from "@mantine/core";
+import { WeeklyContributions } from "@/app/compatibility/weekly_contributions";
+import { getWeeklyContributions } from "@/app/downloads/github";
 
-export default function Downloads() {
+export default async function Downloads() {
+  const contributions = await getWeeklyContributions();
+  const data = contributions.data.map((item) => {
+    return {
+      week: new Date(item.week * 1000).toISOString().split("T")[0],
+      Commits: item.total,
+    };
+  });
+
   return (
     <Container size="xl" className={classes.container}>
       <Stack gap="xl" align="center">
@@ -95,6 +105,11 @@ export default function Downloads() {
             </Text>
           </AvmBlock>
         </Flex>
+
+        <Stack w="100%" align="center">
+          <Title order={2}>Weekly Contributions</Title>
+          <WeeklyContributions data={data} />
+        </Stack>
       </Stack>
     </Container>
   );
