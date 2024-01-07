@@ -1,5 +1,5 @@
 import { PostMetadata } from "@/app/blog/utils";
-import { Group, Stack, Text } from "@mantine/core";
+import { Group, Stack, Text, Title } from "@mantine/core";
 import classes from "@/app/blog/post.module.css";
 import Link from "next/link";
 import Markdown from "react-markdown";
@@ -30,9 +30,13 @@ export function BlogPost({ metadata, type }: BlogPostProps) {
   const url = `/blog/${metadata.year}/${metadata.month}/${metadata.date}/${metadata.slug}`;
   return (
     <Stack gap={0} className={classes.postInfo}>
-      <Link href={url} className={classes.title}>
-        {metadata.title}
-      </Link>
+      {type == "full" ? (
+        <Title className={classes.title}>{metadata.title}</Title>
+      ) : (
+        <Link href={url} className={classes.title}>
+          {metadata.title}
+        </Link>
+      )}
       <Group wrap="nowrap" gap="xs" className={classes.info}>
         <Group gap="xs" wrap="nowrap">
           <Text size="sm">{metadata.author}</Text>
