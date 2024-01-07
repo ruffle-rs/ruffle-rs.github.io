@@ -15,6 +15,11 @@ export const metadata: Metadata = {
     { url: "/favicon-64.png", sizes: "64x64" },
     { url: "/favicon-180.png", sizes: "180x180" },
   ],
+  alternates: {
+    types: {
+      "application/atom+xml": [{ url: "/feed.xml", title: "Ruffle Blog" }],
+    },
+  },
 };
 
 export default function RootLayout({
