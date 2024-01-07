@@ -1,8 +1,8 @@
 {
   "summary": {
     "max_points": 4560,
-    "impl_points": 3379,
-    "stub_penalty": 287
+    "impl_points": 3394,
+    "stub_penalty": 289
   },
   "classes": {
     "flash.events.MouseEvent": {
@@ -338,7 +338,7 @@
       "summary": {
         "max_points": 41,
         "impl_points": 22,
-        "stub_penalty": 12
+        "stub_penalty": 10
       },
       "missing": [
         "getAtomWordBoundaryOnLeft()",
@@ -366,8 +366,6 @@
         "hasGraphicElement",
         "ascent",
         "textBlockBeginIndex",
-        "textHeight",
-        "textWidth",
         "unjustifiedTextWidth",
         "getAtomBounds()",
         "validity",
@@ -625,14 +623,11 @@
     "flash.text.engine.GroupElement": {
       "summary": {
         "max_points": 11,
-        "impl_points": 4,
+        "impl_points": 7,
         "stub_penalty": 0
       },
       "missing": [
-        "getElementIndex()",
-        "getElementAt()",
         "ungroupElements()",
-        "splitTextElement()",
         "mergeTextElements()",
         "getElementAtCharIndex()",
         "groupElements()"
@@ -1448,11 +1443,11 @@
     "flash.ui.ContextMenu": {
       "summary": {
         "max_points": 9,
-        "impl_points": 5,
-        "stub_penalty": 0
+        "impl_points": 7,
+        "stub_penalty": 1
       },
-      "missing": ["link", "clone()", "clipboardMenu", "clipboardItems"],
-      "stubbed": []
+      "missing": ["link", "clone()"],
+      "stubbed": ["static isSupported"]
     },
     "flash.globalization.LastOperationStatus": {
       "summary": {
@@ -1619,10 +1614,10 @@
     "flash.accessibility.AccessibilityImplementation": {
       "summary": {
         "max_points": 15,
-        "impl_points": 14,
+        "impl_points": 15,
         "stub_penalty": 0
       },
-      "missing": ["accDoDefaultAction()"],
+      "missing": [],
       "stubbed": []
     },
     "flash.display3D.Context3DBlendFactor": {
@@ -1963,7 +1958,7 @@
       "summary": {
         "max_points": 25,
         "impl_points": 24,
-        "stub_penalty": 5
+        "stub_penalty": 6
       },
       "missing": ["lineShaderStyle()"],
       "stubbed": [
@@ -1971,6 +1966,7 @@
         "drawPath()",
         "drawRoundRectComplex()",
         "drawTriangles()",
+        "drawGraphicsData()",
         "readGraphicsData()"
       ]
     },
@@ -3637,10 +3633,10 @@
     "flash.ui.ContextMenuClipboardItems": {
       "summary": {
         "max_points": 7,
-        "impl_points": 0,
+        "impl_points": 7,
         "stub_penalty": 0
       },
-      "missing": ["clear", "copy", "selectAll", "cut", "paste", "clone()"],
+      "missing": [],
       "stubbed": []
     },
     "flash.display.StageAlign": {
@@ -3878,16 +3874,11 @@
     "flash.text.engine.FontDescription": {
       "summary": {
         "max_points": 11,
-        "impl_points": 7,
-        "stub_penalty": 0
+        "impl_points": 8,
+        "stub_penalty": 1
       },
-      "missing": [
-        "locked",
-        "clone()",
-        "static isDeviceFontCompatible()",
-        "static isFontCompatible()"
-      ],
-      "stubbed": []
+      "missing": ["locked", "clone()", "static isDeviceFontCompatible()"],
+      "stubbed": ["static isFontCompatible()"]
     },
     "flash.text.StyleSheet": {
       "summary": {
@@ -4681,14 +4672,10 @@
     "flash.system.Security": {
       "summary": {
         "max_points": 14,
-        "impl_points": 11,
+        "impl_points": 12,
         "stub_penalty": 4
       },
-      "missing": [
-        "static pageDomain",
-        "static exactSettings",
-        "static disableAVM1Loading"
-      ],
+      "missing": ["static exactSettings", "static disableAVM1Loading"],
       "stubbed": [
         "static allowInsecureDomain()",
         "static loadPolicyFile()",
@@ -4718,14 +4705,14 @@
       "summary": {
         "max_points": 43,
         "impl_points": 40,
-        "stub_penalty": 0
+        "stub_penalty": 1
       },
       "missing": [
         "atomicCompareAndSwapLength()",
         "atomicCompareAndSwapIntAt()",
         "shareable"
       ],
-      "stubbed": []
+      "stubbed": ["writeObject()"]
     },
     "flash.text.TextDisplayMode": {
       "summary": {
