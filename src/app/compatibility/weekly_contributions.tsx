@@ -1,6 +1,7 @@
 "use client";
 import { BarChart } from "@mantine/charts";
 import { Paper, Text } from "@mantine/core";
+import classes from "./weekly_contributions.module.css";
 
 interface DataPoint {
   week: string;
@@ -41,6 +42,7 @@ export function WeeklyContributions({ data }: { data: DataPoint[] }) {
           <ChartTooltip label={label} payload={payload} />
         ),
       }}
+      className={classes.chart}
     />
   );
 }
