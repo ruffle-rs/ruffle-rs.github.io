@@ -13,7 +13,7 @@
     "@mantine/core": "7.4.0",
     "@mantine/hooks": "7.4.0",
     "@next/bundle-analyzer": "^14.0.1",
-    "@tabler/icons-react": "^2.40.0",
+    "@tabler/icons-react": "^2.45.0",
     "next": "14.0.3",
     "react": "^18",
     "react-device-detect": "^2.2.3",
