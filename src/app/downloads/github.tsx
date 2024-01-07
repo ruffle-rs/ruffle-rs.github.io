@@ -8,6 +8,7 @@ import {
   repository,
 } from "@/app/downloads/config";
 import { Octokit } from "octokit";
+import { RestEndpointMethodTypes } from "@octokit/plugin-rest-endpoint-methods";
 
 function createGithubAuth() {
   if (process.env.GITHUB_TOKEN) {
@@ -50,4 +51,11 @@ export async function getLatestReleases(): Promise<GithubRelease[]> {
     console.warn("Couldn't get github releases", error);
     return [];
   }
+}
+
+export async function getWeeklyContributions(): Promise<
+  RestEndpointMethodTypes["repos"]["getCommitActivityStats"]["response"]
+> {
+  const octokit = new Octokit({ authStrategy: createGithubAuth });
+  return octokit.rest.repos.getCommitActivityStats(repository);
 }
