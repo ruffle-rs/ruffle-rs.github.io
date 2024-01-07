@@ -18,6 +18,7 @@ import {
   IconStub,
   NamespaceStatus,
 } from "@/app/compatibility/avm2/report_utils";
+import Link from "next/link";
 
 function NamespaceBox(props: NamespaceStatus) {
   return (
@@ -76,6 +77,13 @@ export default function Page() {
                 trying to use them will give an error.
               </ListItem>
             </List>
+            <Text>
+              You can also visualize the progress{" "}
+              <Link href="/compatibility/avm2/tree.svg" target="_blank">
+                as a tree graph
+              </Link>
+              .
+            </Text>
           </Stack>
         </Group>
 
