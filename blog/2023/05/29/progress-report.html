@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#37528C">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#37528C"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Ruffle News - May 2023 | Ruffle</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Ruffle News - May 2023" />
+<meta name="author" content="nosamu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="We have some exciting Ruffle developments to share today! Big improvements in ActionScript 3! More fan-favorite games are finally playable again! Bloons Tower Defense 4 Happy Wheels Demo (Note: low framerate; performance is not optimized yet) Kingdom Rush Dead Zed 2 Many graphics drawing methods have been implemented and fixed! These games are working now: VVVVVV Demo William and Sly 2 Sweet Drmzzz Fault Line (requires the Ruffle browser extension) XML support is progressing nicely! Thanks to the great work of @evilpie, these games have become playable in Ruffle: PaintWorld Army of Ages Tilt Headless Zombie 2 @Aaron1011’s work on Stage3D continues! Many of the newer Fancy Pants games are now playable: The Fancy Pants Adventures: World 4 series: Part 1, Part 2 The Cutie Pants Adventures Note: Because Stage3D is graphically intensive, only the Ruffle desktop app can currently run these games well. ActionScript 2 support is improving too! @Toad06 has implemented some additional XML methods, making Mission in Snowdriftland playable in Ruffle! You can check it out on the Flashpoint testing site (forgive the goofy URL). The Ruffle desktop app finally has a user inteface! Thanks to the efforts of @mike and @Dinnerbone, the desktop app now has a menu bar and context menu! You can also open SWF files by dragging them into the Ruffle window. Ruffle now has a built-in save manager! Thanks to the work of @danielhjacobs, web builds of Ruffle allow you to back up and restore your progress for any game. Just right-click =&gt; Open Save Manager! We’re looking for help localizing Ruffle to other languages! If you’d like to help translate Ruffle into your language, please join our new CrowdIn project. Ruffle finally supports copying and pasting text! Thanks to the efforts of myself and @Toad06, editable text boxes in Ruffle now support cutting, copying and pasting. You can also press Ctrl-A to select all. Check out the demo below, where I create, copy and paste a level code in Super Mario Flash! We have more awesome things coming up! Tonight’s Ruffle build will feature some major desktop interface improvements from @Dinnerbone! @kmeisthax is working on FLV support! Soon Ruffle will support Flash content with external video files. You can follow his progress here. @uqers is working on mixed AVM support! This will resolve crashes in ActionScript 2 games encrypted with MochiCrypt, along with other games and applications that mix ActionScript 2 and 3. You can follow his progress here. @Michiel is working on a fix for unclickable buttons in many AS2 games, such as Electricman 2 and Super Soldier. You can follow his progress here." />
+<meta property="og:description" content="We have some exciting Ruffle developments to share today! Big improvements in ActionScript 3! More fan-favorite games are finally playable again! Bloons Tower Defense 4 Happy Wheels Demo (Note: low framerate; performance is not optimized yet) Kingdom Rush Dead Zed 2 Many graphics drawing methods have been implemented and fixed! These games are working now: VVVVVV Demo William and Sly 2 Sweet Drmzzz Fault Line (requires the Ruffle browser extension) XML support is progressing nicely! Thanks to the great work of @evilpie, these games have become playable in Ruffle: PaintWorld Army of Ages Tilt Headless Zombie 2 @Aaron1011’s work on Stage3D continues! Many of the newer Fancy Pants games are now playable: The Fancy Pants Adventures: World 4 series: Part 1, Part 2 The Cutie Pants Adventures Note: Because Stage3D is graphically intensive, only the Ruffle desktop app can currently run these games well. ActionScript 2 support is improving too! @Toad06 has implemented some additional XML methods, making Mission in Snowdriftland playable in Ruffle! You can check it out on the Flashpoint testing site (forgive the goofy URL). The Ruffle desktop app finally has a user inteface! Thanks to the efforts of @mike and @Dinnerbone, the desktop app now has a menu bar and context menu! You can also open SWF files by dragging them into the Ruffle window. Ruffle now has a built-in save manager! Thanks to the work of @danielhjacobs, web builds of Ruffle allow you to back up and restore your progress for any game. Just right-click =&gt; Open Save Manager! We’re looking for help localizing Ruffle to other languages! If you’d like to help translate Ruffle into your language, please join our new CrowdIn project. Ruffle finally supports copying and pasting text! Thanks to the efforts of myself and @Toad06, editable text boxes in Ruffle now support cutting, copying and pasting. You can also press Ctrl-A to select all. Check out the demo below, where I create, copy and paste a level code in Super Mario Flash! We have more awesome things coming up! Tonight’s Ruffle build will feature some major desktop interface improvements from @Dinnerbone! @kmeisthax is working on FLV support! Soon Ruffle will support Flash content with external video files. You can follow his progress here. @uqers is working on mixed AVM support! This will resolve crashes in ActionScript 2 games encrypted with MochiCrypt, along with other games and applications that mix ActionScript 2 and 3. You can follow his progress here. @Michiel is working on a fix for unclickable buttons in many AS2 games, such as Electricman 2 and Super Soldier. You can follow his progress here." />
+<link rel="canonical" href="https://ruffle.rs/blog/2023/05/29/progress-report.html" />
+<meta property="og:url" content="https://ruffle.rs/blog/2023/05/29/progress-report.html" />
+<meta property="og:site_name" content="Ruffle" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-05-29T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Ruffle News - May 2023" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"nosamu"},"dateModified":"2023-05-29T00:00:00+00:00","datePublished":"2023-05-29T00:00:00+00:00","description":"We have some exciting Ruffle developments to share today! Big improvements in ActionScript 3! More fan-favorite games are finally playable again! Bloons Tower Defense 4 Happy Wheels Demo (Note: low framerate; performance is not optimized yet) Kingdom Rush Dead Zed 2 Many graphics drawing methods have been implemented and fixed! These games are working now: VVVVVV Demo William and Sly 2 Sweet Drmzzz Fault Line (requires the Ruffle browser extension) XML support is progressing nicely! Thanks to the great work of @evilpie, these games have become playable in Ruffle: PaintWorld Army of Ages Tilt Headless Zombie 2 @Aaron1011’s work on Stage3D continues! Many of the newer Fancy Pants games are now playable: The Fancy Pants Adventures: World 4 series: Part 1, Part 2 The Cutie Pants Adventures Note: Because Stage3D is graphically intensive, only the Ruffle desktop app can currently run these games well. ActionScript 2 support is improving too! @Toad06 has implemented some additional XML methods, making Mission in Snowdriftland playable in Ruffle! You can check it out on the Flashpoint testing site (forgive the goofy URL). The Ruffle desktop app finally has a user inteface! Thanks to the efforts of @mike and @Dinnerbone, the desktop app now has a menu bar and context menu! You can also open SWF files by dragging them into the Ruffle window. Ruffle now has a built-in save manager! Thanks to the work of @danielhjacobs, web builds of Ruffle allow you to back up and restore your progress for any game. Just right-click =&gt; Open Save Manager! We’re looking for help localizing Ruffle to other languages! If you’d like to help translate Ruffle into your language, please join our new CrowdIn project. Ruffle finally supports copying and pasting text! Thanks to the efforts of myself and @Toad06, editable text boxes in Ruffle now support cutting, copying and pasting. You can also press Ctrl-A to select all. Check out the demo below, where I create, copy and paste a level code in Super Mario Flash! We have more awesome things coming up! Tonight’s Ruffle build will feature some major desktop interface improvements from @Dinnerbone! @kmeisthax is working on FLV support! Soon Ruffle will support Flash content with external video files. You can follow his progress here. @uqers is working on mixed AVM support! This will resolve crashes in ActionScript 2 games encrypted with MochiCrypt, along with other games and applications that mix ActionScript 2 and 3. You can follow his progress here. @Michiel is working on a fix for unclickable buttons in many AS2 games, such as Electricman 2 and Super Soldier. You can follow his progress here.","headline":"Ruffle News - May 2023","mainEntityOfPage":{"@type":"WebPage","@id":"https://ruffle.rs/blog/2023/05/29/progress-report.html"},"url":"https://ruffle.rs/blog/2023/05/29/progress-report.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/title.css">
+  <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
+  <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
+  <link rel="icon" href="/assets/favicon-64.png" sizes="64x64">
+  <link rel="icon" href="/assets/favicon-180.png" sizes="180x180"><link type="application/atom+xml" rel="alternate" href="https://ruffle.rs/feed.xml" title="Ruffle" /></head>
+<body><header>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="/#">
+      <img src="/assets/logo.svg" height="30" alt="Ruffle" loading="lazy">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/#what-is-ruffle">What is Ruffle</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#usage">Usage</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#downloads">Downloads</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#compatibility">Compatibility</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#get-involved">Get involved</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://ruffle.rs/demo/">Demo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://discord.gg/ruffle" target="_blank">Join Discord</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/">Blog</a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+</header>
+<main class="page-content" aria-label="Content">
+      <section class="section content primary blog">
+  <article class="blog-post blog-post-full" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header>
+      <h2 class="post-title p-name" itemprop="name headline">Ruffle News - May 2023</h2>
+      <p class="post-meta">
+        <time class="dt-published" datetime="2023-05-29T00:00:00+00:00" itemprop="datePublished">May 29, 2023
+        </time><i aria-hidden="true">•</i> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">nosamu</span></span></p>
+    </header>
+
+    <section class="blog-post-content e-content" itemprop="articleBody">
+      <p><strong>We have some exciting Ruffle developments to share today!</strong></p>
+
+<h3 id="big-improvements-in-actionscript-3">Big improvements in ActionScript 3!</h3>
+
+<p>More fan-favorite games are finally playable again!</p>
+<ul>
+  <li><a href="https://www.kongregate.com/games/Ninjakiwi/bloons-tower-defense-4"><em>Bloons Tower Defense 4</em></a></li>
+  <li><a href="https://www.newgrounds.com/portal/view/547504/format/flash?emulate=flash"><em>Happy Wheels Demo</em></a> (Note: low framerate; performance is not optimized yet)</li>
+  <li><a href="http://www.kongregate.com/games/Ironhidegames/kingdom-rush"><em>Kingdom Rush</em></a></li>
+  <li><a href="https://www.newgrounds.com/portal/view/634358?emulate=flash"><em>Dead Zed 2</em></a></li>
+</ul>
+
+<p>Many graphics drawing methods have been implemented and fixed! These games are working now:</p>
+<ul>
+  <li><a href="https://www.newgrounds.com/portal/view/524398/format/flash?emulate=flash"><em>VVVVVV Demo</em></a></li>
+  <li><a href="https://www.newgrounds.com/portal/view/586756/format/flash?emulate=flash"><em>William and Sly 2</em></a></li>
+  <li><a href="https://www.newgrounds.com/portal/view/651709"><em>Sweet Drmzzz</em></a></li>
+  <li><a href="http://www.notdoppler.com/faultline.php"><em>Fault Line</em></a> (requires the Ruffle browser extension)</li>
+</ul>
+
+<p><img src="/assets/2023-05-progress-report/WilliamAndSly.png" style="max-height: 300px" />
+<img src="/assets/2023-05-progress-report/BloonsTD4.png" style="max-height: 300px" />
+<img src="/assets/2023-05-progress-report/KingdomRush.png" style="max-height: 300px" /></p>
+
+<p>XML support is progressing nicely! Thanks to the great work of <a href="https://github.com/evilpie">@evilpie</a>, these games have become playable in Ruffle:</p>
+<ul>
+  <li><a href="https://www.newgrounds.com/portal/view/607069/format/flash?emulate=flash"><em>PaintWorld</em></a></li>
+  <li><a href="https://www.gameflare.com/online-game/army-of-ages/"><em>Army of Ages</em></a></li>
+  <li><a href="https://www.newgrounds.com/portal/view/486700/format/flash?emulate=flash"><em>Tilt</em></a></li>
+  <li><a href="https://www.newgrounds.com/portal/view/651073?emulate=flash"><em>Headless Zombie 2</em></a></li>
+</ul>
+
+<p><a href="https://github.com/Aaron1011/">@Aaron1011</a>’s work on Stage3D continues! Many of the newer Fancy Pants games are now playable:</p>
+<ul>
+  <li><em>The Fancy Pants Adventures: World 4</em> series: <a href="https://www.newgrounds.com/portal/view/750785">Part 1</a>, <a href="https://www.newgrounds.com/portal/view/752737">Part 2</a></li>
+  <li><a href="https://www.kongregate.com/games/DrNeroCF/the-cutie-pants-adventures-world-1"><em>The Cutie Pants Adventures</em></a></li>
+</ul>
+
+<p>Note: Because Stage3D is graphically intensive, only the Ruffle desktop app can currently run these games well.</p>
+
+<h3 id="actionscript-2-support-is-improving-too">ActionScript 2 support is improving too!</h3>
+<p><a href="https://github.com/Toad06/">@Toad06</a> has implemented some additional XML methods, making <em>Mission in Snowdriftland</em> playable in Ruffle! You can check it out on the <a href="https://ooooooooo.ooo/static/?7d01dea2-d54f-f04a-bd84-49477152fabb">Flashpoint testing site</a> (forgive the goofy URL).</p>
+
+<p><img src="/assets/2023-05-progress-report/MissionInSnowdriftland.png" style="max-height: 350px" /></p>
+
+<h3 id="the-ruffle-desktop-app-finally-has-a-user-inteface">The Ruffle desktop app finally has a user inteface!</h3>
+<p>Thanks to the efforts of <a href="https://github.com/Herschel/">@mike</a> and <a href="https://github.com/Dinnerbone/">@Dinnerbone</a>, the desktop app now has a menu bar and context menu! You can also open SWF files by dragging them into the Ruffle window.</p>
+
+<p><img src="/assets/2023-05-progress-report/RuffleDesktopGUI.png" /></p>
+
+<h3 id="ruffle-now-has-a-built-in-save-manager">Ruffle now has a built-in save manager!</h3>
+<p>Thanks to the work of <a href="https://github.com/danielhjacobs/">@danielhjacobs</a>, web builds of Ruffle allow you to back up and restore your progress for any game. Just right-click =&gt; Open Save Manager!</p>
+
+<p><img src="/assets/2023-05-progress-report/SaveManager.png" /></p>
+
+<h3 id="were-looking-for-help-localizing-ruffle-to-other-languages">We’re looking for help localizing Ruffle to other languages!</h3>
+<p>If you’d like to help translate Ruffle into your language, please <a href="https://crowdin.com/project/ruffle">join our new CrowdIn project</a>.</p>
+
+<h3 id="ruffle-finally-supports-copying-and-pasting-text">Ruffle finally supports copying and pasting text!</h3>
+<p>Thanks to the efforts of <a href="https://github.com/n0samu/">myself</a> and <a href="https://github.com/Toad06/">@Toad06</a>, editable text boxes in Ruffle now support cutting, copying and pasting. You can also press Ctrl-A to select all. Check out the demo below, where I create, copy and paste a level code in <em>Super Mario Flash</em>!</p>
+
+<video muted="" autoplay="" controls="">
+    <source src="/assets/2023-05-progress-report/SuperMarioFlashCopyPasteDemo.mp4" type="video/mp4" />
+</video>
+
+<h3 id="we-have-more-awesome-things-coming-up">We have more awesome things coming up!</h3>
+<ul>
+  <li>
+    <p>Tonight’s Ruffle build will feature some major <strong>desktop interface improvements</strong> from <a href="https://github.com/Dinnerbone/">@Dinnerbone</a>!</p>
+
+    <p><img src="/assets/2023-05-progress-report/DesktopGUIAdvancedOpen.png" style="max-height: 500px" /></p>
+  </li>
+  <li><a href="https://github.com/kmeisthax/">@kmeisthax</a> is working on <strong>FLV support!</strong> Soon Ruffle will support Flash content with external video files. <a href="https://github.com/ruffle-rs/ruffle/pull/10756">You can follow his progress here</a>.</li>
+  <li><a href="https://github.com/Lord-McSweeney/">@uqers</a> is working on <strong>mixed AVM support!</strong> This will resolve crashes in ActionScript 2 games encrypted with MochiCrypt, along with other games and applications that mix ActionScript 2 and 3. <a href="https://github.com/ruffle-rs/ruffle/pull/11005">You can follow his progress here</a>.</li>
+  <li><a href="https://github.com/michiel2005">@Michiel</a> is working on a fix for unclickable buttons in many AS2 games, such as <a href="https://www.newgrounds.com/portal/view/363447">Electricman 2</a> and <a href="https://www.newgrounds.com/portal/view/284305">Super Soldier</a>. <a href="https://github.com/ruffle-rs/ruffle/pull/10862">You can follow his progress here</a>.</li>
+</ul>
+
+    </div><a class="u-url" href="/blog/2023/05/29/progress-report.html" hidden></a>
+  </article>
+</section>
+  </main><script src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js"></script><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+  <ul>
+    <li>
+      <a class="navbar-brand" href="#">
+        <img src="/assets/logo.svg" width="91" height="auto" alt="Ruffle" loading="lazy">
+      </a>
+    </li>
+    <li class="social"><ul class="social-media-list"><li><a rel="me" href="https://github.com/ruffle-rs"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg><span class="username">ruffle-rs</span></a></li><li><a rel="me" href="https://instagram.com/ruffle.rs"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#instagram"></use></svg><span class="username">ruffle.rs</span></a></li><li><a rel="me" href="https://mastodon.gamedev.place/@ruffle"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#mastodon"></use></svg><span class="username">ruffle</span></a></li><li><a rel="me" href="https://www.twitter.com/ruffle_rs"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg><span class="username">ruffle_rs</span></a></li></ul>
+</li>
+    <li class="description">
+      <p>Ruffle is a Flash Player emulator written in Rust. Ruffle targets both desktop and the web using WebAssembly.</p>
+    </li>
+    </div>
+  </ul>
+</footer>
+<script>
+    $(document).ready(function () {
+    var $nav = $('.navbar');
+    // fade in .navbar
+    $(function () {
+      $(window).on('scroll load', function () {
+        // set distance user needs to scroll before we start fadeIn
+        if ($(this).scrollTop() > window.innerHeight / 8) {
+          $nav.addClass("active");
+        } else {
+          $nav.removeClass("active");
+        }
+      });
+    });
+  });
+  </script>
+
+</body>
+
+</html>

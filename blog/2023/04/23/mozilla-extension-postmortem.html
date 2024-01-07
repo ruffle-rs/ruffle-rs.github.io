@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#37528C">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#37528C"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>A post-mortem of Ruffle’s removal from addons.mozilla.org | Ruffle</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="A post-mortem of Ruffle’s removal from addons.mozilla.org" />
+<meta name="author" content="kmeisthax" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="On December 11th, 2022, our extension submissions to Firefox’s extension repository, addons.mozilla.org (abbreviated as A.M.O), got stuck in review. This was shortly followed up with a far scarier notice a few days later on the 14th:" />
+<meta property="og:description" content="On December 11th, 2022, our extension submissions to Firefox’s extension repository, addons.mozilla.org (abbreviated as A.M.O), got stuck in review. This was shortly followed up with a far scarier notice a few days later on the 14th:" />
+<link rel="canonical" href="https://ruffle.rs/blog/2023/04/23/mozilla-extension-postmortem.html" />
+<meta property="og:url" content="https://ruffle.rs/blog/2023/04/23/mozilla-extension-postmortem.html" />
+<meta property="og:site_name" content="Ruffle" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-04-23T08:07:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="A post-mortem of Ruffle’s removal from addons.mozilla.org" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"kmeisthax"},"dateModified":"2023-04-23T08:07:00+00:00","datePublished":"2023-04-23T08:07:00+00:00","description":"On December 11th, 2022, our extension submissions to Firefox’s extension repository, addons.mozilla.org (abbreviated as A.M.O), got stuck in review. This was shortly followed up with a far scarier notice a few days later on the 14th:","headline":"A post-mortem of Ruffle’s removal from addons.mozilla.org","mainEntityOfPage":{"@type":"WebPage","@id":"https://ruffle.rs/blog/2023/04/23/mozilla-extension-postmortem.html"},"url":"https://ruffle.rs/blog/2023/04/23/mozilla-extension-postmortem.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/title.css">
+  <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
+  <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
+  <link rel="icon" href="/assets/favicon-64.png" sizes="64x64">
+  <link rel="icon" href="/assets/favicon-180.png" sizes="180x180"><link type="application/atom+xml" rel="alternate" href="https://ruffle.rs/feed.xml" title="Ruffle" /></head>
+<body><header>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="/#">
+      <img src="/assets/logo.svg" height="30" alt="Ruffle" loading="lazy">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/#what-is-ruffle">What is Ruffle</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#usage">Usage</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#downloads">Downloads</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#compatibility">Compatibility</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#get-involved">Get involved</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://ruffle.rs/demo/">Demo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://discord.gg/ruffle" target="_blank">Join Discord</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/">Blog</a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+</header>
+<main class="page-content" aria-label="Content">
+      <section class="section content primary blog">
+  <article class="blog-post blog-post-full" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header>
+      <h2 class="post-title p-name" itemprop="name headline">A post-mortem of Ruffle&#39;s removal from addons.mozilla.org</h2>
+      <p class="post-meta">
+        <time class="dt-published" datetime="2023-04-23T08:07:00+00:00" itemprop="datePublished">Apr 23, 2023
+        </time><i aria-hidden="true">•</i> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">kmeisthax</span></span></p>
+    </header>
+
+    <section class="blog-post-content e-content" itemprop="articleBody">
+      <p>On December 11th, 2022, our extension submissions to Firefox’s extension repository, addons.mozilla.org (abbreviated as A.M.O), got stuck in review. This was shortly followed up with a far scarier notice a few days later on the 14th:</p>
+
+<blockquote>
+  <p>Ruffle will be disabled on addons.mozilla.org</p>
+</blockquote>
+
+<blockquote>
+  <p>Due to issues discovered during the review process, one or more versions of your add-on Ruffle will be disabled on addons.mozilla.org in 14 day(s).</p>
+</blockquote>
+
+<p>What followed was a list of every prior submitted version of Ruffle, and a statement requesting corresponding source code. Following this, Ruffle would be unavailable for Firefox users for two months, and we spent an additional month and a half improving our CI processes to support source code review requirements for Mozilla. This is now behind us, but it is important to know why it happened.</p>
+
+<h1 id="the-initial-response">The initial response</h1>
+
+<p>Our first attempt to satisfy the requirement was very naive: Mike uploads the source repository for the latest submitted version of Ruffle, version 0.1.0.685. He also includes build instructions. What followed was a game of ping-pong between Ruffle’s maintainers and Mozilla’s extension review team. The first reviewer skipped the <code class="language-plaintext highlighter-rouge">cd web</code> step and got an error. The second reviewer was able to correctly launch the build system, but hadn’t installed a JVM. Our ActionScript 3 support requires Java, as we wrote significant portions of our AS3 builtins in ActionScript itself, which needs to be compiled by a Java binary. However, we’d failed to mention that in our build system documentation. <a href="https://github.com/ruffle-rs/ruffle/pull/8959">Oops.</a></p>
+
+<p>At this point, Ruffle has already been removed from addons.mozilla.org, and <a href="https://github.com/ruffle-rs/ruffle/issues/8799#issuecomment-1368047327">people noticed</a>. divinity76 suggested having Mozilla build Ruffle using Docker, because we could have the <code class="language-plaintext highlighter-rouge">Dockerfile</code> install all necessary prerequisites - it’d be harder to screw up. This was <a href="https://github.com/ruffle-rs/ruffle/pull/9066">merged in</a> on January 7th.</p>
+
+<p>I continued pressing on with reviewer ping-pong on Mike’s behalf. 0.1.0.685 was already rejected at this point, which meant that I had to submit 0.1.0.712, along with corrected build instructions. This time, the reviewer failed to install rustc instead of the JVM. Since the Dockerfile was part of 0.1.0.712, I suggested using that. The reviewer correctly built Ruffle with the Dockerfile, but the submission was rejected anyway because the compiled source code did not match the XPI we submitted.</p>
+
+<h1 id="diffing-intensifies">Diffing intensifies</h1>
+
+<p>Mozilla sent over the version of the extension that they built. My first instinct was to diff all the files in both XPIs. This turns up three major categories of differences:</p>
+
+<ul>
+  <li>Version data embedded in various JavaScript files is wrong.</li>
+  <li>The manifest file is missing the extension ID.</li>
+  <li>The WASM files themselves are different by about four bytes. Because Webpack names the files by hash, this causes knock-on differences with file names elsewhere.</li>
+</ul>
+
+<p>For my own sanity, I only considered differences “up to ZIP isomorphism.” The packaging format used for Firefox extensions, XPI, is a renamed ZIP file with specific contents. This is a common pattern - APK, CRX, EPUB, DOCX, and even Adobe Animate’s own XFL format are PKZIP bitstreams with additional constraints. Problem is, ZIP files can have dates in them, and the order in which files are stored will be determined by how the operating system and filesystem enumerate directories. All of which would fail a repro check if Mozilla wanted bit-identical XPIs.</p>
+
+<p>The first two problems were caused by various build system scripts relying on environment data that is only available during the nightly build process. Said scripts were changed to instead get that information from a version seal file, if available. The nightly build process would also generate special source ZIPs with this version seal present. A <a href="https://github.com/ruffle-rs/ruffle/pull/9244">few</a> <a href="https://github.com/ruffle-rs/ruffle/pull/9344">rounds</a> <a href="https://github.com/ruffle-rs/ruffle/pull/9353">of</a> <a href="https://github.com/ruffle-rs/ruffle/pull/9570">back and</a> <a href="https://github.com/ruffle-rs/ruffle/pull/9633">forth</a> with GitHub Actions and this reproducibility hole was filled.</p>
+
+<p>The WASM files would be more complicated. When building my laptop running Ubuntu, I would only get the four bytes difference in WASM if I built with my clock set ahead by several days. It was two entries in a dispatch table that has been reordered, and this table only existed in <em>one</em> of the two WASM files. We’d recently added a “dual-WASM” mode that enabled better optimizations for newer browsers. Discussions in maintainer chat considered either disabling dual-WASM (divinity76 was busy <a href="https://github.com/ruffle-rs/ruffle/pull/9121#issuecomment-1396261394">adding it to the Dockerfile</a>) or writing some complicated “WASM sorter” to ensure the table was ordered correctly.</p>
+
+<p>It turned out that this difference was a fluke. Another test build done on February 2nd was identical across multiple runs. I submitted 0.1.0.742 the next day.</p>
+
+<h1 id="reproducible-means-reproducible">Reproducible means reproducible!</h1>
+
+<p>Mozilla took more than a week to review this submission. The first time they looked for the XPI in the wrong place. The second time they caught actually obfuscated code in our extension script:</p>
+
+<blockquote>
+  <p>Your add-on contains minified, concatenated or otherwise machine-generated code. (boilerplate response omitted)</p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>web/packages/extension/src/content.ts <a href="https://github.com/ruffle-rs/ruffle/pull/9588/files#diff-61744725fdd3172f6802244512c95dca65e7e70a722af0e99224d65d46759d3c">line 145-147</a></li>
+  </ul>
+</blockquote>
+
+<p>The intent of this code was to load parts of our extension’s plugin polyfill as early as possible. However, this had been implemented by manually compiling one of our source files and copying the output back into the content script. Not only was this code causing us to fail review, it was also very old. This was fixed by <a href="https://github.com/ruffle-rs/ruffle/pull/9588">implementing a proper build step for this</a>, ensuring that the code would no longer be obfuscated and also remain up to date.</p>
+
+<p>I submitted 0.1.0.758 on February 20th, 2023, and then submitted 0.1.0.760 two days later by accident.</p>
+
+<p>It’s important to remember that during all of this, we’re still using the nightly release workflow to submit the extension. This is designed to run every night, but we don’t actually want it to do that, since Mozilla no longer approves extension builds that quickly. To deal with this, I’m manually enabling and disabling certain GitHub Actions secrets relating to extension submission so that the build process skips Firefox submission when I don’t want it to submit.</p>
+
+<p>Furthermore, we don’t actually have the ability to automate extension source code upload - I have to jump in after submission to upload the source code and the build instructions. This causes a problem when I submit two versions by accident. I submit the correct code for 0.1.0.758, and then get an e-mail a few days later complaining that 0.1.0.760 is missing source code, because Mozilla will (rightly) not let you ‘queue up’ multiple submissions.</p>
+
+<p>0.1.0.760 is approved on February 23rd, marking Ruffle’s return to addons.mozilla.org.</p>
+
+<h1 id="ci">CI</h1>
+
+<p>While users can now use Ruffle again, we still need our fully automated upload pipeline. Having a maintainer fiddle with our Secrets configuration and upload two files to our addons.mozilla.org account every time we want to release is annoying and error-prone.</p>
+
+<p>Problem is, our extension submission relies on <code class="language-plaintext highlighter-rouge">sign-addon</code>, a deprecated Mozilla library for submitting addons. This uses version 4 of the addons.mozilla.org API; source code upload is part of version 5. I wrote a PR <a href="https://github.com/ruffle-rs/ruffle/pull/9752">to upload source after the fact</a> using API version 5 after the version 4 base upload completes. I get an actually helpful comment from diox, an addons.mozilla.org maintainer, explaining that <code class="language-plaintext highlighter-rouge">web-ext</code> will eventually be getting everything we need. In the meantime I merge in the PR.</p>
+
+<p>And <a href="https://github.com/ruffle-rs/ruffle/pull/9982">another</a>, and <a href="https://github.com/ruffle-rs/ruffle/pull/10260">another</a>, and <a href="https://github.com/ruffle-rs/ruffle/pull/10276">another</a>, and <a href="https://github.com/ruffle-rs/ruffle/pull/10351">another</a>. While I probably could have avoided some of these excess PRs with an A.M.O. test environment, or separate credentials for testing, I don’t have a good test environment for GitHub Actions itself. And this is part of our normal nightly release workflow, which isn’t idempotent and will fail if I run it more than once a day. We also can’t stack submissions on A.M.O, so I’m stuck with a week-long edit-test-debug cycle.</p>
+
+<p>This doesn’t particularly <em>matter</em> since Ruffle users are getting updates again, but our first fully-automated submission with source code is 0.1.0.798 on March 24th.</p>
+
+<p>After I submitted 0.1.0.760 a month ago, I suggested a weekly release cycle for Firefox in maintainer chat, based on Mozilla approving releases once every six days. So the last thing to do is to actually move Firefox to a separate weekly release workflow, so I don’t have to manually turn it on and off every Friday. Furthermore, since it’s a separate workflow that doesn’t create Git tags, I can trigger it as many times as I like for debugging. 0.1.0.807 is submitted using the new process… but for some reason addons.mozilla.org times out and I have to upload manually.</p>
+
+<p>The next weekly, 0.1.0.813, uploads automatically. The process was so smooth I literally forgot to check if it succeeded - I only noticed after seeing the approval the next Thursday. Firefox is fixed.</p>
+
+<h1 id="context">Context</h1>
+
+<p>It’s tempting to read into this and get angry at Mozilla, but we also have to look at this from their perspective. Extension review is necessary to keep extensions from turning into data theft and ad-jacking operations, and average users should only be running properly reviewed extensions. We also made several mistakes during our response process that delayed our return to addons.mozilla.org. And the process resulted in genuine problems with our code being found and fixed.</p>
+
+<p>However, we are not the only extension that had problems with Mozilla recently. Unwanted YouTube channel blocker BlockTube <a href="https://github.com/amitbl/blocktube/issues/281">was removed for the same reasons we were</a>, but with the added bonus of having to explain to extension review that they need <code class="language-plaintext highlighter-rouge">eval()</code> to load user-provided blocking JS. Web accessibility auditing extension WAVE <a href="https://discourse.mozilla.org/t/add-on-review-questions/82754/119">also got flagged for source code</a>, with confusing and irrelevant instruction being provided to them. While Mozilla has <a href="https://extensionworkshop.com/documentation/publish/source-code-submission/">plainly documented</a> their source code submission requirement since at least 2019 (as far back as the Wayback Machine shows), their review staff is still struggling with the source code they are given.</p>
+
+<p>My hope is that this postmortem will at least serve as a guide for other extension developers trying to pass reproducibility checks when A.M.O reviewers ask for them.</p>
+
+    </div><a class="u-url" href="/blog/2023/04/23/mozilla-extension-postmortem.html" hidden></a>
+  </article>
+</section>
+  </main><script src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js"></script><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+  <ul>
+    <li>
+      <a class="navbar-brand" href="#">
+        <img src="/assets/logo.svg" width="91" height="auto" alt="Ruffle" loading="lazy">
+      </a>
+    </li>
+    <li class="social"><ul class="social-media-list"><li><a rel="me" href="https://github.com/ruffle-rs"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg><span class="username">ruffle-rs</span></a></li><li><a rel="me" href="https://instagram.com/ruffle.rs"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#instagram"></use></svg><span class="username">ruffle.rs</span></a></li><li><a rel="me" href="https://mastodon.gamedev.place/@ruffle"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#mastodon"></use></svg><span class="username">ruffle</span></a></li><li><a rel="me" href="https://www.twitter.com/ruffle_rs"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg><span class="username">ruffle_rs</span></a></li></ul>
+</li>
+    <li class="description">
+      <p>Ruffle is a Flash Player emulator written in Rust. Ruffle targets both desktop and the web using WebAssembly.</p>
+    </li>
+    </div>
+  </ul>
+</footer>
+<script>
+    $(document).ready(function () {
+    var $nav = $('.navbar');
+    // fade in .navbar
+    $(function () {
+      $(window).on('scroll load', function () {
+        // set distance user needs to scroll before we start fadeIn
+        if ($(this).scrollTop() > window.innerHeight / 8) {
+          $nav.addClass("active");
+        } else {
+          $nav.removeClass("active");
+        }
+      });
+    });
+  });
+  </script>
+
+</body>
+
+</html>

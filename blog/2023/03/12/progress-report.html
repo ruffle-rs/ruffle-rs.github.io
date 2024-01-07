@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#37528C">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#37528C"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>First post, progress report! | Ruffle</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="First post, progress report!" />
+<meta name="author" content="nosamu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Get ready for the biggest Ruffle announcement yet! And the first one on the blog! Huge improvements to Ruffle’s AVM1 engine accuracy! Thanks to a massive code refactor by @CUB3D, dozens upon dozens of ActionScript 2 games have been fixed! Here are just a few of them: Chibi Knight Xeno Tactic 2 Trojan War Frontline Defense Bubble Bobble: The Revival Cube Colossus Chronotron The Powerpuff Girls: Attack of the Puppybots Extreme Pamplona Incredible progress in AVM2 (ActionScript 3) support! Our website now has a page listing exactly what ActionScript 3 APIs we have implemented, making it easy to follow our progress. It will be frequently updated! XML support is rapidly improving! ActionScript 3 games tend to use a wide variety of XML methods. As Ruffle gains support for these methods, games are springing to life! Several problems that caused unresponsive buttons and menus have been fixed. Unclickable buttons in ActionScript 3 games are (mostly) a thing of the past! Other major refactors are in progress to improve Ruffle’s compatibility with ActionScript 3 frameworks like Haxe. @Aaron1011 is working on Stage3D support! Thanks to his work, the gorgeous interstellar strategy game Solarmax 2 is now fully playable in Ruffle on the desktop player! Check out the video below. Many of the fan-favorite Flipline games are now playable! Check them out: Papa’s Burgeria Jacksmith Papa’s Cheeseria (requires the Ruffle Chrome extension) Papa’s Bakeria (requires the Ruffle Chrome extension) Here are just a few more of the many ActionScript 3 games that are playable today in Ruffle! Canabalt Bloons Tower Defense 3 Diggy Wooden Path 2 Fracuum Dino Run: Marathon of Doom Last but not least, support for mobile devices is improving in a big way! Text input boxes are finally supported on mobile devices! Tapping on a text box within Flash content now brings up the soft keyboard, so you can type into it without using a bluetooth keyboard or other workarounds. The context menu finally works on iOS! It is activated by a long-press on the screen. To stop this behavior if needed, simply tap the “Hide this menu” option. We have even more improvements coming very soon! The latest releases now have dynamic audio buffering, making audio playback in the most demanding content much smoother! (Thanks to @szőlő) A bug that causes some AVM2 games’ intro sounds to repeat over and over will soon be fixed. (Thanks to @Aaron1011) @Dinnerbone is working on improving drawing accuracy for thin/hairline strokes and scaled objects. You can follow his progress here." />
+<meta property="og:description" content="Get ready for the biggest Ruffle announcement yet! And the first one on the blog! Huge improvements to Ruffle’s AVM1 engine accuracy! Thanks to a massive code refactor by @CUB3D, dozens upon dozens of ActionScript 2 games have been fixed! Here are just a few of them: Chibi Knight Xeno Tactic 2 Trojan War Frontline Defense Bubble Bobble: The Revival Cube Colossus Chronotron The Powerpuff Girls: Attack of the Puppybots Extreme Pamplona Incredible progress in AVM2 (ActionScript 3) support! Our website now has a page listing exactly what ActionScript 3 APIs we have implemented, making it easy to follow our progress. It will be frequently updated! XML support is rapidly improving! ActionScript 3 games tend to use a wide variety of XML methods. As Ruffle gains support for these methods, games are springing to life! Several problems that caused unresponsive buttons and menus have been fixed. Unclickable buttons in ActionScript 3 games are (mostly) a thing of the past! Other major refactors are in progress to improve Ruffle’s compatibility with ActionScript 3 frameworks like Haxe. @Aaron1011 is working on Stage3D support! Thanks to his work, the gorgeous interstellar strategy game Solarmax 2 is now fully playable in Ruffle on the desktop player! Check out the video below. Many of the fan-favorite Flipline games are now playable! Check them out: Papa’s Burgeria Jacksmith Papa’s Cheeseria (requires the Ruffle Chrome extension) Papa’s Bakeria (requires the Ruffle Chrome extension) Here are just a few more of the many ActionScript 3 games that are playable today in Ruffle! Canabalt Bloons Tower Defense 3 Diggy Wooden Path 2 Fracuum Dino Run: Marathon of Doom Last but not least, support for mobile devices is improving in a big way! Text input boxes are finally supported on mobile devices! Tapping on a text box within Flash content now brings up the soft keyboard, so you can type into it without using a bluetooth keyboard or other workarounds. The context menu finally works on iOS! It is activated by a long-press on the screen. To stop this behavior if needed, simply tap the “Hide this menu” option. We have even more improvements coming very soon! The latest releases now have dynamic audio buffering, making audio playback in the most demanding content much smoother! (Thanks to @szőlő) A bug that causes some AVM2 games’ intro sounds to repeat over and over will soon be fixed. (Thanks to @Aaron1011) @Dinnerbone is working on improving drawing accuracy for thin/hairline strokes and scaled objects. You can follow his progress here." />
+<link rel="canonical" href="https://ruffle.rs/blog/2023/03/12/progress-report.html" />
+<meta property="og:url" content="https://ruffle.rs/blog/2023/03/12/progress-report.html" />
+<meta property="og:site_name" content="Ruffle" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-03-12T00:23:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="First post, progress report!" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"nosamu"},"dateModified":"2023-03-12T00:23:00+00:00","datePublished":"2023-03-12T00:23:00+00:00","description":"Get ready for the biggest Ruffle announcement yet! And the first one on the blog! Huge improvements to Ruffle’s AVM1 engine accuracy! Thanks to a massive code refactor by @CUB3D, dozens upon dozens of ActionScript 2 games have been fixed! Here are just a few of them: Chibi Knight Xeno Tactic 2 Trojan War Frontline Defense Bubble Bobble: The Revival Cube Colossus Chronotron The Powerpuff Girls: Attack of the Puppybots Extreme Pamplona Incredible progress in AVM2 (ActionScript 3) support! Our website now has a page listing exactly what ActionScript 3 APIs we have implemented, making it easy to follow our progress. It will be frequently updated! XML support is rapidly improving! ActionScript 3 games tend to use a wide variety of XML methods. As Ruffle gains support for these methods, games are springing to life! Several problems that caused unresponsive buttons and menus have been fixed. Unclickable buttons in ActionScript 3 games are (mostly) a thing of the past! Other major refactors are in progress to improve Ruffle’s compatibility with ActionScript 3 frameworks like Haxe. @Aaron1011 is working on Stage3D support! Thanks to his work, the gorgeous interstellar strategy game Solarmax 2 is now fully playable in Ruffle on the desktop player! Check out the video below. Many of the fan-favorite Flipline games are now playable! Check them out: Papa’s Burgeria Jacksmith Papa’s Cheeseria (requires the Ruffle Chrome extension) Papa’s Bakeria (requires the Ruffle Chrome extension) Here are just a few more of the many ActionScript 3 games that are playable today in Ruffle! Canabalt Bloons Tower Defense 3 Diggy Wooden Path 2 Fracuum Dino Run: Marathon of Doom Last but not least, support for mobile devices is improving in a big way! Text input boxes are finally supported on mobile devices! Tapping on a text box within Flash content now brings up the soft keyboard, so you can type into it without using a bluetooth keyboard or other workarounds. The context menu finally works on iOS! It is activated by a long-press on the screen. To stop this behavior if needed, simply tap the “Hide this menu” option. We have even more improvements coming very soon! The latest releases now have dynamic audio buffering, making audio playback in the most demanding content much smoother! (Thanks to @szőlő) A bug that causes some AVM2 games’ intro sounds to repeat over and over will soon be fixed. (Thanks to @Aaron1011) @Dinnerbone is working on improving drawing accuracy for thin/hairline strokes and scaled objects. You can follow his progress here.","headline":"First post, progress report!","mainEntityOfPage":{"@type":"WebPage","@id":"https://ruffle.rs/blog/2023/03/12/progress-report.html"},"url":"https://ruffle.rs/blog/2023/03/12/progress-report.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/title.css">
+  <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
+  <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
+  <link rel="icon" href="/assets/favicon-64.png" sizes="64x64">
+  <link rel="icon" href="/assets/favicon-180.png" sizes="180x180"><link type="application/atom+xml" rel="alternate" href="https://ruffle.rs/feed.xml" title="Ruffle" /></head>
+<body><header>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="/#">
+      <img src="/assets/logo.svg" height="30" alt="Ruffle" loading="lazy">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/#what-is-ruffle">What is Ruffle</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#usage">Usage</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#downloads">Downloads</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#compatibility">Compatibility</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#get-involved">Get involved</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://ruffle.rs/demo/">Demo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://discord.gg/ruffle" target="_blank">Join Discord</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/">Blog</a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+</header>
+<main class="page-content" aria-label="Content">
+      <section class="section content primary blog">
+  <article class="blog-post blog-post-full" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header>
+      <h2 class="post-title p-name" itemprop="name headline">First post, progress report!</h2>
+      <p class="post-meta">
+        <time class="dt-published" datetime="2023-03-12T00:23:00+00:00" itemprop="datePublished">Mar 12, 2023
+        </time><i aria-hidden="true">•</i> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">nosamu</span></span></p>
+    </header>
+
+    <section class="blog-post-content e-content" itemprop="articleBody">
+      <p>Get ready for the biggest Ruffle announcement yet! And the first one on the blog!</p>
+
+<h3 id="huge-improvements-to-ruffles-avm1-engine-accuracy">Huge improvements to Ruffle’s AVM1 engine accuracy!</h3>
+<p>Thanks to a massive code refactor by <a href="https://github.com/CUB3D/">@CUB3D</a>, dozens upon dozens of ActionScript 2 games have been fixed! Here are just a few of them:</p>
+<ul>
+  <li><a href="https://www.newgrounds.com/portal/view/526470">Chibi Knight</a></li>
+  <li><a href="https://www.newgrounds.com/portal/view/438241/format/flash?emulate=flash">Xeno Tactic 2</a></li>
+  <li><a href="https://www.newgrounds.com/portal/view/604949/format/flash?emulate=flash">Trojan War</a></li>
+  <li><a href="https://www.kongregate.com/games/kazama_bee/frontline-defense-first-assault">Frontline Defense</a></li>
+  <li><a href="https://flasharch.com/en/archive/play/084db17094dc7452f01da0905d7eb516">Bubble Bobble: The Revival</a></li>
+  <li><a href="https://www.newgrounds.com/portal/view/507205/format/flash?emulate=flash">Cube Colossus</a></li>
+  <li><a href="https://www.kongregate.com/games/Scarybug/chronotron">Chronotron</a></li>
+  <li><a href="https://flasharch.com/en/archive/play/b93354279e9788b849f83ef78f52cbbb">The Powerpuff Girls: Attack of the Puppybots</a></li>
+  <li><a href="https://flasharch.com/en/archive/play/e36aac73914ec8672218317e000615d7">Extreme Pamplona</a></li>
+</ul>
+
+<h3 id="incredible-progress-in-avm2-actionscript-3-support">Incredible progress in AVM2 (ActionScript 3) support!</h3>
+<ul>
+  <li>Our website now has <a href="https://ruffle.rs/avm2.html">a page listing exactly what ActionScript 3 APIs we have implemented</a>, making it easy to follow our progress. It will be frequently updated!</li>
+  <li>XML support is rapidly improving! ActionScript 3 games tend to use a wide variety of XML methods. As Ruffle gains support for these methods, games are springing to life!</li>
+  <li>Several problems that caused unresponsive buttons and menus have been fixed. Unclickable buttons in ActionScript 3 games are (mostly) a thing of the past!</li>
+  <li>Other major refactors are in progress to improve Ruffle’s compatibility with ActionScript 3 frameworks like Haxe.</li>
+  <li><a href="https://github.com/Aaron1011/">@Aaron1011</a> is working on <strong>Stage3D support</strong>! Thanks to his work, the gorgeous interstellar strategy game Solarmax 2 is now fully playable in Ruffle on the desktop player! Check out the video below.</li>
+</ul>
+
+<video muted="" autoplay="" controls="">
+    <source src="/assets/2023-03-12-progress-report/ruffle_solarmax2.mp4" type="video/mp4" />
+</video>
+
+<p>Many of the fan-favorite <strong>Flipline games are now playable</strong>! Check them out:</p>
+<ul>
+  <li><a href="https://www.kongregate.com/games/FliplineStudios/papas-burgeria">Papa’s Burgeria</a></li>
+  <li><a href="https://www.kongregate.com/games/FliplineStudios/jacksmith">Jacksmith</a></li>
+  <li><a href="https://www.flipline.com/games/papascheeseria/index.html">Papa’s Cheeseria</a> (requires the Ruffle Chrome extension)</li>
+  <li><a href="https://www.flipline.com/games/papasbakeria/index.html">Papa’s Bakeria</a> (requires the Ruffle Chrome extension)</li>
+</ul>
+
+<video muted="" autoplay="" controls="">
+    <source src="/assets/2023-03-12-progress-report/ruffle_burgeria.mp4" type="video/mp4" />
+</video>
+
+<p>Here are just a few more of the many ActionScript 3 games that are playable today in Ruffle!</p>
+<ul>
+  <li><a href="https://www.newgrounds.com/portal/view/510303">Canabalt</a></li>
+  <li><a href="https://www.newgrounds.com/portal/view/463445/format/flash?emulate=flash">Bloons Tower Defense 3</a></li>
+  <li><a href="https://www.kongregate.com/games/Vogd/diggy">Diggy</a></li>
+  <li><a href="https://www.kongregate.com/games/Remivision/wooden-path-2">Wooden Path 2</a></li>
+  <li><a href="https://www.newgrounds.com/portal/view/594354">Fracuum</a></li>
+  <li><a href="https://www.newgrounds.com/portal/view/566176">Dino Run: Marathon of Doom</a></li>
+</ul>
+
+<h3 id="last-but-not-least-support-for-mobile-devices-is-improving-in-a-big-way">Last but not least, support for <strong>mobile devices</strong> is improving in a big way!</h3>
+<ul>
+  <li><strong>Text input boxes</strong> are finally supported on mobile devices! Tapping on a text box within Flash content now brings up the soft keyboard, so you can type into it without using a bluetooth keyboard or other workarounds.</li>
+  <li>The <strong>context menu</strong> finally works on iOS! It is activated by a long-press on the screen. To stop this behavior if needed, simply tap the “Hide this menu” option.</li>
+</ul>
+
+<video muted="" autoplay="" controls="">
+    <source src="/assets/2023-03-12-progress-report/Ruffle_Kongregate_Pizzeria_iPhone.mov" type="video/mp4" />
+</video>
+
+<p><strong>We have even more improvements coming very soon!</strong></p>
+<ul>
+  <li>The latest releases now have <strong>dynamic audio buffering</strong>, making audio playback in the most demanding content much smoother! (Thanks to <a href="https://github.com/torokati44/">@szőlő</a>)</li>
+  <li>A bug that causes some AVM2 games’ intro sounds to repeat over and over will soon be fixed. (Thanks to <a href="https://github.com/Aaron1011/">@Aaron1011</a>)</li>
+  <li><a href="https://github.com/Dinnerbone/">@Dinnerbone</a> is working on improving drawing accuracy for thin/hairline strokes and scaled objects. <a href="https://github.com/ruffle-rs/ruffle/pull/9981">You can follow his progress here</a>.</li>
+</ul>
+
+    </div><a class="u-url" href="/blog/2023/03/12/progress-report.html" hidden></a>
+  </article>
+</section>
+  </main><script src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js"></script><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+  <ul>
+    <li>
+      <a class="navbar-brand" href="#">
+        <img src="/assets/logo.svg" width="91" height="auto" alt="Ruffle" loading="lazy">
+      </a>
+    </li>
+    <li class="social"><ul class="social-media-list"><li><a rel="me" href="https://github.com/ruffle-rs"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg><span class="username">ruffle-rs</span></a></li><li><a rel="me" href="https://instagram.com/ruffle.rs"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#instagram"></use></svg><span class="username">ruffle.rs</span></a></li><li><a rel="me" href="https://mastodon.gamedev.place/@ruffle"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#mastodon"></use></svg><span class="username">ruffle</span></a></li><li><a rel="me" href="https://www.twitter.com/ruffle_rs"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg><span class="username">ruffle_rs</span></a></li></ul>
+</li>
+    <li class="description">
+      <p>Ruffle is a Flash Player emulator written in Rust. Ruffle targets both desktop and the web using WebAssembly.</p>
+    </li>
+    </div>
+  </ul>
+</footer>
+<script>
+    $(document).ready(function () {
+    var $nav = $('.navbar');
+    // fade in .navbar
+    $(function () {
+      $(window).on('scroll load', function () {
+        // set distance user needs to scroll before we start fadeIn
+        if ($(this).scrollTop() > window.innerHeight / 8) {
+          $nav.addClass("active");
+        } else {
+          $nav.removeClass("active");
+        }
+      });
+    });
+  });
+  </script>
+
+</body>
+
+</html>

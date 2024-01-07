@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="https://ruffle.rs/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ruffle.rs/" rel="alternate" type="text/html" /><updated>2024-01-07T02:16:21+00:00</updated><id>https://ruffle.rs/feed.xml</id><title type="html">Ruffle</title><subtitle>Ruffle is a Flash Player emulator written in Rust. Ruffle targets both desktop and the web using WebAssembly.</subtitle><entry><title type="html">Ruffle News - May 2023</title><link href="https://ruffle.rs/blog/2023/05/29/progress-report.html" rel="alternate" type="text/html" title="Ruffle News - May 2023" /><published>2023-05-29T00:00:00+00:00</published><updated>2023-05-29T00:00:00+00:00</updated><id>https://ruffle.rs/blog/2023/05/29/progress-report</id><content type="html" xml:base="https://ruffle.rs/blog/2023/05/29/progress-report.html">&lt;p&gt;&lt;strong&gt;We have some exciting Ruffle developments to share today!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;big-improvements-in-actionscript-3&quot;&gt;Big improvements in ActionScript 3!&lt;/h3&gt;
+
+&lt;p&gt;More fan-favorite games are finally playable again!&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.kongregate.com/games/Ninjakiwi/bloons-tower-defense-4&quot;&gt;&lt;em&gt;Bloons Tower Defense 4&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.newgrounds.com/portal/view/547504/format/flash?emulate=flash&quot;&gt;&lt;em&gt;Happy Wheels Demo&lt;/em&gt;&lt;/a&gt; (Note: low framerate; performance is not optimized yet)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.kongregate.com/games/Ironhidegames/kingdom-rush&quot;&gt;&lt;em&gt;Kingdom Rush&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.newgrounds.com/portal/view/634358?emulate=flash&quot;&gt;&lt;em&gt;Dead Zed 2&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Many graphics drawing methods have been implemented and fixed! These games are working now:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.newgrounds.com/portal/view/524398/format/flash?emulate=flash&quot;&gt;&lt;em&gt;VVVVVV Demo&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.newgrounds.com/portal/view/586756/format/flash?emulate=flash&quot;&gt;&lt;em&gt;William and Sly 2&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.newgrounds.com/portal/view/651709&quot;&gt;&lt;em&gt;Sweet Drmzzz&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.notdoppler.com/faultline.php&quot;&gt;&lt;em&gt;Fault Line&lt;/em&gt;&lt;/a&gt; (requires the Ruffle browser extension)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2023-05-progress-report/WilliamAndSly.png&quot; style=&quot;max-height: 300px&quot; /&gt;
+&lt;img src=&quot;/assets/2023-05-progress-report/BloonsTD4.png&quot; style=&quot;max-height: 300px&quot; /&gt;
+&lt;img src=&quot;/assets/2023-05-progress-report/KingdomRush.png&quot; style=&quot;max-height: 300px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;XML support is progressing nicely! Thanks to the great work of &lt;a href=&quot;https://github.com/evilpie&quot;&gt;@evilpie&lt;/a&gt;, these games have become playable in Ruffle:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.newgrounds.com/portal/view/607069/format/flash?emulate=flash&quot;&gt;&lt;em&gt;PaintWorld&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.gameflare.com/online-game/army-of-ages/&quot;&gt;&lt;em&gt;Army of Ages&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.newgrounds.com/portal/view/486700/format/flash?emulate=flash&quot;&gt;&lt;em&gt;Tilt&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.newgrounds.com/portal/view/651073?emulate=flash&quot;&gt;&lt;em&gt;Headless Zombie 2&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Aaron1011/&quot;&gt;@Aaron1011&lt;/a&gt;’s work on Stage3D continues! Many of the newer Fancy Pants games are now playable:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;The Fancy Pants Adventures: World 4&lt;/em&gt; series: &lt;a href=&quot;https://www.newgrounds.com/portal/view/750785&quot;&gt;Part 1&lt;/a&gt;, &lt;a href=&quot;https://www.newgrounds.com/portal/view/752737&quot;&gt;Part 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.kongregate.com/games/DrNeroCF/the-cutie-pants-adventures-world-1&quot;&gt;&lt;em&gt;The Cutie Pants Adventures&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note: Because Stage3D is graphically intensive, only the Ruffle desktop app can currently run these games well.&lt;/p&gt;
+
+&lt;h3 id=&quot;actionscript-2-support-is-improving-too&quot;&gt;ActionScript 2 support is improving too!&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Toad06/&quot;&gt;@Toad06&lt;/a&gt; has implemented some additional XML methods, making &lt;em&gt;Mission in Snowdriftland&lt;/em&gt; playable in Ruffle! You can check it out on the &lt;a href=&quot;https://ooooooooo.ooo/static/?7d01dea2-d54f-f04a-bd84-49477152fabb&quot;&gt;Flashpoint testing site&lt;/a&gt; (forgive the goofy URL).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2023-05-progress-report/MissionInSnowdriftland.png&quot; style=&quot;max-height: 350px&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;the-ruffle-desktop-app-finally-has-a-user-inteface&quot;&gt;The Ruffle desktop app finally has a user inteface!&lt;/h3&gt;
+&lt;p&gt;Thanks to the efforts of &lt;a href=&quot;https://github.com/Herschel/&quot;&gt;@mike&lt;/a&gt; and &lt;a href=&quot;https://github.com/Dinnerbone/&quot;&gt;@Dinnerbone&lt;/a&gt;, the desktop app now has a menu bar and context menu! You can also open SWF files by dragging them into the Ruffle window.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2023-05-progress-report/RuffleDesktopGUI.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ruffle-now-has-a-built-in-save-manager&quot;&gt;Ruffle now has a built-in save manager!&lt;/h3&gt;
+&lt;p&gt;Thanks to the work of &lt;a href=&quot;https://github.com/danielhjacobs/&quot;&gt;@danielhjacobs&lt;/a&gt;, web builds of Ruffle allow you to back up and restore your progress for any game. Just right-click =&amp;gt; Open Save Manager!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2023-05-progress-report/SaveManager.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;were-looking-for-help-localizing-ruffle-to-other-languages&quot;&gt;We’re looking for help localizing Ruffle to other languages!&lt;/h3&gt;
+&lt;p&gt;If you’d like to help translate Ruffle into your language, please &lt;a href=&quot;https://crowdin.com/project/ruffle&quot;&gt;join our new CrowdIn project&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;ruffle-finally-supports-copying-and-pasting-text&quot;&gt;Ruffle finally supports copying and pasting text!&lt;/h3&gt;
+&lt;p&gt;Thanks to the efforts of &lt;a href=&quot;https://github.com/n0samu/&quot;&gt;myself&lt;/a&gt; and &lt;a href=&quot;https://github.com/Toad06/&quot;&gt;@Toad06&lt;/a&gt;, editable text boxes in Ruffle now support cutting, copying and pasting. You can also press Ctrl-A to select all. Check out the demo below, where I create, copy and paste a level code in &lt;em&gt;Super Mario Flash&lt;/em&gt;!&lt;/p&gt;
+
+&lt;video muted=&quot;&quot; autoplay=&quot;&quot; controls=&quot;&quot;&gt;
+    &lt;source src=&quot;/assets/2023-05-progress-report/SuperMarioFlashCopyPasteDemo.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+
+&lt;h3 id=&quot;we-have-more-awesome-things-coming-up&quot;&gt;We have more awesome things coming up!&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Tonight’s Ruffle build will feature some major &lt;strong&gt;desktop interface improvements&lt;/strong&gt; from &lt;a href=&quot;https://github.com/Dinnerbone/&quot;&gt;@Dinnerbone&lt;/a&gt;!&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/2023-05-progress-report/DesktopGUIAdvancedOpen.png&quot; style=&quot;max-height: 500px&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/kmeisthax/&quot;&gt;@kmeisthax&lt;/a&gt; is working on &lt;strong&gt;FLV support!&lt;/strong&gt; Soon Ruffle will support Flash content with external video files. &lt;a href=&quot;https://github.com/ruffle-rs/ruffle/pull/10756&quot;&gt;You can follow his progress here&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Lord-McSweeney/&quot;&gt;@uqers&lt;/a&gt; is working on &lt;strong&gt;mixed AVM support!&lt;/strong&gt; This will resolve crashes in ActionScript 2 games encrypted with MochiCrypt, along with other games and applications that mix ActionScript 2 and 3. &lt;a href=&quot;https://github.com/ruffle-rs/ruffle/pull/11005&quot;&gt;You can follow his progress here&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/michiel2005&quot;&gt;@Michiel&lt;/a&gt; is working on a fix for unclickable buttons in many AS2 games, such as &lt;a href=&quot;https://www.newgrounds.com/portal/view/363447&quot;&gt;Electricman 2&lt;/a&gt; and &lt;a href=&quot;https://www.newgrounds.com/portal/view/284305&quot;&gt;Super Soldier&lt;/a&gt;. &lt;a href=&quot;https://github.com/ruffle-rs/ruffle/pull/10862&quot;&gt;You can follow his progress here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>nosamu</name></author><category term="blog" /><summary type="html">We have some exciting Ruffle developments to share today! Big improvements in ActionScript 3! More fan-favorite games are finally playable again! Bloons Tower Defense 4 Happy Wheels Demo (Note: low framerate; performance is not optimized yet) Kingdom Rush Dead Zed 2 Many graphics drawing methods have been implemented and fixed! These games are working now: VVVVVV Demo William and Sly 2 Sweet Drmzzz Fault Line (requires the Ruffle browser extension) XML support is progressing nicely! Thanks to the great work of @evilpie, these games have become playable in Ruffle: PaintWorld Army of Ages Tilt Headless Zombie 2 @Aaron1011’s work on Stage3D continues! Many of the newer Fancy Pants games are now playable: The Fancy Pants Adventures: World 4 series: Part 1, Part 2 The Cutie Pants Adventures Note: Because Stage3D is graphically intensive, only the Ruffle desktop app can currently run these games well. ActionScript 2 support is improving too! @Toad06 has implemented some additional XML methods, making Mission in Snowdriftland playable in Ruffle! You can check it out on the Flashpoint testing site (forgive the goofy URL). The Ruffle desktop app finally has a user inteface! Thanks to the efforts of @mike and @Dinnerbone, the desktop app now has a menu bar and context menu! You can also open SWF files by dragging them into the Ruffle window. Ruffle now has a built-in save manager! Thanks to the work of @danielhjacobs, web builds of Ruffle allow you to back up and restore your progress for any game. Just right-click =&amp;gt; Open Save Manager! We’re looking for help localizing Ruffle to other languages! If you’d like to help translate Ruffle into your language, please join our new CrowdIn project. Ruffle finally supports copying and pasting text! Thanks to the efforts of myself and @Toad06, editable text boxes in Ruffle now support cutting, copying and pasting. You can also press Ctrl-A to select all. Check out the demo below, where I create, copy and paste a level code in Super Mario Flash! We have more awesome things coming up! Tonight’s Ruffle build will feature some major desktop interface improvements from @Dinnerbone! @kmeisthax is working on FLV support! Soon Ruffle will support Flash content with external video files. You can follow his progress here. @uqers is working on mixed AVM support! This will resolve crashes in ActionScript 2 games encrypted with MochiCrypt, along with other games and applications that mix ActionScript 2 and 3. You can follow his progress here. @Michiel is working on a fix for unclickable buttons in many AS2 games, such as Electricman 2 and Super Soldier. You can follow his progress here.</summary></entry><entry><title type="html">A post-mortem of Ruffle’s removal from addons.mozilla.org</title><link href="https://ruffle.rs/blog/2023/04/23/mozilla-extension-postmortem.html" rel="alternate" type="text/html" title="A post-mortem of Ruffle’s removal from addons.mozilla.org" /><published>2023-04-23T08:07:00+00:00</published><updated>2023-04-23T08:07:00+00:00</updated><id>https://ruffle.rs/blog/2023/04/23/mozilla-extension-postmortem</id><content type="html" xml:base="https://ruffle.rs/blog/2023/04/23/mozilla-extension-postmortem.html">&lt;p&gt;On December 11th, 2022, our extension submissions to Firefox’s extension repository, addons.mozilla.org (abbreviated as A.M.O), got stuck in review. This was shortly followed up with a far scarier notice a few days later on the 14th:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Ruffle will be disabled on addons.mozilla.org&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Due to issues discovered during the review process, one or more versions of your add-on Ruffle will be disabled on addons.mozilla.org in 14 day(s).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;What followed was a list of every prior submitted version of Ruffle, and a statement requesting corresponding source code. Following this, Ruffle would be unavailable for Firefox users for two months, and we spent an additional month and a half improving our CI processes to support source code review requirements for Mozilla. This is now behind us, but it is important to know why it happened.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-initial-response&quot;&gt;The initial response&lt;/h1&gt;
+
+&lt;p&gt;Our first attempt to satisfy the requirement was very naive: Mike uploads the source repository for the latest submitted version of Ruffle, version 0.1.0.685. He also includes build instructions. What followed was a game of ping-pong between Ruffle’s maintainers and Mozilla’s extension review team. The first reviewer skipped the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd web&lt;/code&gt; step and got an error. The second reviewer was able to correctly launch the build system, but hadn’t installed a JVM. Our ActionScript 3 support requires Java, as we wrote significant portions of our AS3 builtins in ActionScript itself, which needs to be compiled by a Java binary. However, we’d failed to mention that in our build system documentation. &lt;a href=&quot;https://github.com/ruffle-rs/ruffle/pull/8959&quot;&gt;Oops.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;At this point, Ruffle has already been removed from addons.mozilla.org, and &lt;a href=&quot;https://github.com/ruffle-rs/ruffle/issues/8799#issuecomment-1368047327&quot;&gt;people noticed&lt;/a&gt;. divinity76 suggested having Mozilla build Ruffle using Docker, because we could have the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; install all necessary prerequisites - it’d be harder to screw up. This was &lt;a href=&quot;https://github.com/ruffle-rs/ruffle/pull/9066&quot;&gt;merged in&lt;/a&gt; on January 7th.&lt;/p&gt;
+
+&lt;p&gt;I continued pressing on with reviewer ping-pong on Mike’s behalf. 0.1.0.685 was already rejected at this point, which meant that I had to submit 0.1.0.712, along with corrected build instructions. This time, the reviewer failed to install rustc instead of the JVM. Since the Dockerfile was part of 0.1.0.712, I suggested using that. The reviewer correctly built Ruffle with the Dockerfile, but the submission was rejected anyway because the compiled source code did not match the XPI we submitted.&lt;/p&gt;
+
+&lt;h1 id=&quot;diffing-intensifies&quot;&gt;Diffing intensifies&lt;/h1&gt;
+
+&lt;p&gt;Mozilla sent over the version of the extension that they built. My first instinct was to diff all the files in both XPIs. This turns up three major categories of differences:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Version data embedded in various JavaScript files is wrong.&lt;/li&gt;
+  &lt;li&gt;The manifest file is missing the extension ID.&lt;/li&gt;
+  &lt;li&gt;The WASM files themselves are different by about four bytes. Because Webpack names the files by hash, this causes knock-on differences with file names elsewhere.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For my own sanity, I only considered differences “up to ZIP isomorphism.” The packaging format used for Firefox extensions, XPI, is a renamed ZIP file with specific contents. This is a common pattern - APK, CRX, EPUB, DOCX, and even Adobe Animate’s own XFL format are PKZIP bitstreams with additional constraints. Problem is, ZIP files can have dates in them, and the order in which files are stored will be determined by how the operating system and filesystem enumerate directories. All of which would fail a repro check if Mozilla wanted bit-identical XPIs.&lt;/p&gt;
+
+&lt;p&gt;The first two problems were caused by various build system scripts relying on environment data that is only available during the nightly build process. Said scripts were changed to instead get that information from a version seal file, if available. The nightly build process would also generate special source ZIPs with this version seal present. A &lt;a href=&quot;https://github.com/ruffle-rs/ruffle/pull/9244&quot;&gt;few&lt;/a&gt; &lt;a href=&quot;https://github.com/ruffle-rs/ruffle/pull/9344&quot;&gt;rounds&lt;/a&gt; &lt;a href=&quot;https://github.com/ruffle-rs/ruffle/pull/9353&quot;&gt;of&lt;/a&gt; &lt;a href=&quot;https://github.com/ruffle-rs/ruffle/pull/9570&quot;&gt;back and&lt;/a&gt; &lt;a href=&quot;https://github.com/ruffle-rs/ruffle/pull/9633&quot;&gt;forth&lt;/a&gt; with GitHub Actions and this reproducibility hole was filled.&lt;/p&gt;
+
+&lt;p&gt;The WASM files would be more complicated. When building my laptop running Ubuntu, I would only get the four bytes difference in WASM if I built with my clock set ahead by several days. It was two entries in a dispatch table that has been reordered, and this table only existed in &lt;em&gt;one&lt;/em&gt; of the two WASM files. We’d recently added a “dual-WASM” mode that enabled better optimizations for newer browsers. Discussions in maintainer chat considered either disabling dual-WASM (divinity76 was busy &lt;a href=&quot;https://github.com/ruffle-rs/ruffle/pull/9121#issuecomment-1396261394&quot;&gt;adding it to the Dockerfile&lt;/a&gt;) or writing some complicated “WASM sorter” to ensure the table was ordered correctly.&lt;/p&gt;
+
+&lt;p&gt;It turned out that this difference was a fluke. Another test build done on February 2nd was identical across multiple runs. I submitted 0.1.0.742 the next day.&lt;/p&gt;
+
+&lt;h1 id=&quot;reproducible-means-reproducible&quot;&gt;Reproducible means reproducible!&lt;/h1&gt;
+
+&lt;p&gt;Mozilla took more than a week to review this submission. The first time they looked for the XPI in the wrong place. The second time they caught actually obfuscated code in our extension script:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Your add-on contains minified, concatenated or otherwise machine-generated code. (boilerplate response omitted)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;web/packages/extension/src/content.ts &lt;a href=&quot;https://github.com/ruffle-rs/ruffle/pull/9588/files#diff-61744725fdd3172f6802244512c95dca65e7e70a722af0e99224d65d46759d3c&quot;&gt;line 145-147&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The intent of this code was to load parts of our extension’s plugin polyfill as early as possible. However, this had been implemented by manually compiling one of our source files and copying the output back into the content script. Not only was this code causing us to fail review, it was also very old. This was fixed by &lt;a href=&quot;https://github.com/ruffle-rs/ruffle/pull/9588&quot;&gt;implementing a proper build step for this&lt;/a&gt;, ensuring that the code would no longer be obfuscated and also remain up to date.&lt;/p&gt;
+
+&lt;p&gt;I submitted 0.1.0.758 on February 20th, 2023, and then submitted 0.1.0.760 two days later by accident.&lt;/p&gt;
+
+&lt;p&gt;It’s important to remember that during all of this, we’re still using the nightly release workflow to submit the extension. This is designed to run every night, but we don’t actually want it to do that, since Mozilla no longer approves extension builds that quickly. To deal with this, I’m manually enabling and disabling certain GitHub Actions secrets relating to extension submission so that the build process skips Firefox submission when I don’t want it to submit.&lt;/p&gt;
+
+&lt;p&gt;Furthermore, we don’t actually have the ability to automate extension source code upload - I have to jump in after submission to upload the source code and the build instructions. This causes a problem when I submit two versions by accident. I submit the correct code for 0.1.0.758, and then get an e-mail a few days later complaining that 0.1.0.760 is missing source code, because Mozilla will (rightly) not let you ‘queue up’ multiple submissions.&lt;/p&gt;
+
+&lt;p&gt;0.1.0.760 is approved on February 23rd, marking Ruffle’s return to addons.mozilla.org.&lt;/p&gt;
+
+&lt;h1 id=&quot;ci&quot;&gt;CI&lt;/h1&gt;
+
+&lt;p&gt;While users can now use Ruffle again, we still need our fully automated upload pipeline. Having a maintainer fiddle with our Secrets configuration and upload two files to our addons.mozilla.org account every time we want to release is annoying and error-prone.&lt;/p&gt;
+
+&lt;p&gt;Problem is, our extension submission relies on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sign-addon&lt;/code&gt;, a deprecated Mozilla library for submitting addons. This uses version 4 of the addons.mozilla.org API; source code upload is part of version 5. I wrote a PR &lt;a href=&quot;https://github.com/ruffle-rs/ruffle/pull/9752&quot;&gt;to upload source after the fact&lt;/a&gt; using API version 5 after the version 4 base upload completes. I get an actually helpful comment from diox, an addons.mozilla.org maintainer, explaining that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;web-ext&lt;/code&gt; will eventually be getting everything we need. In the meantime I merge in the PR.&lt;/p&gt;
+
+&lt;p&gt;And &lt;a href=&quot;https://github.com/ruffle-rs/ruffle/pull/9982&quot;&gt;another&lt;/a&gt;, and &lt;a href=&quot;https://github.com/ruffle-rs/ruffle/pull/10260&quot;&gt;another&lt;/a&gt;, and &lt;a href=&quot;https://github.com/ruffle-rs/ruffle/pull/10276&quot;&gt;another&lt;/a&gt;, and &lt;a href=&quot;https://github.com/ruffle-rs/ruffle/pull/10351&quot;&gt;another&lt;/a&gt;. While I probably could have avoided some of these excess PRs with an A.M.O. test environment, or separate credentials for testing, I don’t have a good test environment for GitHub Actions itself. And this is part of our normal nightly release workflow, which isn’t idempotent and will fail if I run it more than once a day. We also can’t stack submissions on A.M.O, so I’m stuck with a week-long edit-test-debug cycle.&lt;/p&gt;
+
+&lt;p&gt;This doesn’t particularly &lt;em&gt;matter&lt;/em&gt; since Ruffle users are getting updates again, but our first fully-automated submission with source code is 0.1.0.798 on March 24th.&lt;/p&gt;
+
+&lt;p&gt;After I submitted 0.1.0.760 a month ago, I suggested a weekly release cycle for Firefox in maintainer chat, based on Mozilla approving releases once every six days. So the last thing to do is to actually move Firefox to a separate weekly release workflow, so I don’t have to manually turn it on and off every Friday. Furthermore, since it’s a separate workflow that doesn’t create Git tags, I can trigger it as many times as I like for debugging. 0.1.0.807 is submitted using the new process… but for some reason addons.mozilla.org times out and I have to upload manually.&lt;/p&gt;
+
+&lt;p&gt;The next weekly, 0.1.0.813, uploads automatically. The process was so smooth I literally forgot to check if it succeeded - I only noticed after seeing the approval the next Thursday. Firefox is fixed.&lt;/p&gt;
+
+&lt;h1 id=&quot;context&quot;&gt;Context&lt;/h1&gt;
+
+&lt;p&gt;It’s tempting to read into this and get angry at Mozilla, but we also have to look at this from their perspective. Extension review is necessary to keep extensions from turning into data theft and ad-jacking operations, and average users should only be running properly reviewed extensions. We also made several mistakes during our response process that delayed our return to addons.mozilla.org. And the process resulted in genuine problems with our code being found and fixed.&lt;/p&gt;
+
+&lt;p&gt;However, we are not the only extension that had problems with Mozilla recently. Unwanted YouTube channel blocker BlockTube &lt;a href=&quot;https://github.com/amitbl/blocktube/issues/281&quot;&gt;was removed for the same reasons we were&lt;/a&gt;, but with the added bonus of having to explain to extension review that they need &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;eval()&lt;/code&gt; to load user-provided blocking JS. Web accessibility auditing extension WAVE &lt;a href=&quot;https://discourse.mozilla.org/t/add-on-review-questions/82754/119&quot;&gt;also got flagged for source code&lt;/a&gt;, with confusing and irrelevant instruction being provided to them. While Mozilla has &lt;a href=&quot;https://extensionworkshop.com/documentation/publish/source-code-submission/&quot;&gt;plainly documented&lt;/a&gt; their source code submission requirement since at least 2019 (as far back as the Wayback Machine shows), their review staff is still struggling with the source code they are given.&lt;/p&gt;
+
+&lt;p&gt;My hope is that this postmortem will at least serve as a guide for other extension developers trying to pass reproducibility checks when A.M.O reviewers ask for them.&lt;/p&gt;</content><author><name>kmeisthax</name></author><category term="blog" /><summary type="html">On December 11th, 2022, our extension submissions to Firefox’s extension repository, addons.mozilla.org (abbreviated as A.M.O), got stuck in review. This was shortly followed up with a far scarier notice a few days later on the 14th:</summary></entry><entry><title type="html">First post, progress report!</title><link href="https://ruffle.rs/blog/2023/03/12/progress-report.html" rel="alternate" type="text/html" title="First post, progress report!" /><published>2023-03-12T00:23:00+00:00</published><updated>2023-03-12T00:23:00+00:00</updated><id>https://ruffle.rs/blog/2023/03/12/progress-report</id><content type="html" xml:base="https://ruffle.rs/blog/2023/03/12/progress-report.html">&lt;p&gt;Get ready for the biggest Ruffle announcement yet! And the first one on the blog!&lt;/p&gt;
+
+&lt;h3 id=&quot;huge-improvements-to-ruffles-avm1-engine-accuracy&quot;&gt;Huge improvements to Ruffle’s AVM1 engine accuracy!&lt;/h3&gt;
+&lt;p&gt;Thanks to a massive code refactor by &lt;a href=&quot;https://github.com/CUB3D/&quot;&gt;@CUB3D&lt;/a&gt;, dozens upon dozens of ActionScript 2 games have been fixed! Here are just a few of them:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.newgrounds.com/portal/view/526470&quot;&gt;Chibi Knight&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.newgrounds.com/portal/view/438241/format/flash?emulate=flash&quot;&gt;Xeno Tactic 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.newgrounds.com/portal/view/604949/format/flash?emulate=flash&quot;&gt;Trojan War&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.kongregate.com/games/kazama_bee/frontline-defense-first-assault&quot;&gt;Frontline Defense&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://flasharch.com/en/archive/play/084db17094dc7452f01da0905d7eb516&quot;&gt;Bubble Bobble: The Revival&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.newgrounds.com/portal/view/507205/format/flash?emulate=flash&quot;&gt;Cube Colossus&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.kongregate.com/games/Scarybug/chronotron&quot;&gt;Chronotron&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://flasharch.com/en/archive/play/b93354279e9788b849f83ef78f52cbbb&quot;&gt;The Powerpuff Girls: Attack of the Puppybots&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://flasharch.com/en/archive/play/e36aac73914ec8672218317e000615d7&quot;&gt;Extreme Pamplona&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;incredible-progress-in-avm2-actionscript-3-support&quot;&gt;Incredible progress in AVM2 (ActionScript 3) support!&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Our website now has &lt;a href=&quot;https://ruffle.rs/avm2.html&quot;&gt;a page listing exactly what ActionScript 3 APIs we have implemented&lt;/a&gt;, making it easy to follow our progress. It will be frequently updated!&lt;/li&gt;
+  &lt;li&gt;XML support is rapidly improving! ActionScript 3 games tend to use a wide variety of XML methods. As Ruffle gains support for these methods, games are springing to life!&lt;/li&gt;
+  &lt;li&gt;Several problems that caused unresponsive buttons and menus have been fixed. Unclickable buttons in ActionScript 3 games are (mostly) a thing of the past!&lt;/li&gt;
+  &lt;li&gt;Other major refactors are in progress to improve Ruffle’s compatibility with ActionScript 3 frameworks like Haxe.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Aaron1011/&quot;&gt;@Aaron1011&lt;/a&gt; is working on &lt;strong&gt;Stage3D support&lt;/strong&gt;! Thanks to his work, the gorgeous interstellar strategy game Solarmax 2 is now fully playable in Ruffle on the desktop player! Check out the video below.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;video muted=&quot;&quot; autoplay=&quot;&quot; controls=&quot;&quot;&gt;
+    &lt;source src=&quot;/assets/2023-03-12-progress-report/ruffle_solarmax2.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+
+&lt;p&gt;Many of the fan-favorite &lt;strong&gt;Flipline games are now playable&lt;/strong&gt;! Check them out:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.kongregate.com/games/FliplineStudios/papas-burgeria&quot;&gt;Papa’s Burgeria&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.kongregate.com/games/FliplineStudios/jacksmith&quot;&gt;Jacksmith&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.flipline.com/games/papascheeseria/index.html&quot;&gt;Papa’s Cheeseria&lt;/a&gt; (requires the Ruffle Chrome extension)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.flipline.com/games/papasbakeria/index.html&quot;&gt;Papa’s Bakeria&lt;/a&gt; (requires the Ruffle Chrome extension)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;video muted=&quot;&quot; autoplay=&quot;&quot; controls=&quot;&quot;&gt;
+    &lt;source src=&quot;/assets/2023-03-12-progress-report/ruffle_burgeria.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+
+&lt;p&gt;Here are just a few more of the many ActionScript 3 games that are playable today in Ruffle!&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.newgrounds.com/portal/view/510303&quot;&gt;Canabalt&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.newgrounds.com/portal/view/463445/format/flash?emulate=flash&quot;&gt;Bloons Tower Defense 3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.kongregate.com/games/Vogd/diggy&quot;&gt;Diggy&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.kongregate.com/games/Remivision/wooden-path-2&quot;&gt;Wooden Path 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.newgrounds.com/portal/view/594354&quot;&gt;Fracuum&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.newgrounds.com/portal/view/566176&quot;&gt;Dino Run: Marathon of Doom&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;last-but-not-least-support-for-mobile-devices-is-improving-in-a-big-way&quot;&gt;Last but not least, support for &lt;strong&gt;mobile devices&lt;/strong&gt; is improving in a big way!&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Text input boxes&lt;/strong&gt; are finally supported on mobile devices! Tapping on a text box within Flash content now brings up the soft keyboard, so you can type into it without using a bluetooth keyboard or other workarounds.&lt;/li&gt;
+  &lt;li&gt;The &lt;strong&gt;context menu&lt;/strong&gt; finally works on iOS! It is activated by a long-press on the screen. To stop this behavior if needed, simply tap the “Hide this menu” option.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;video muted=&quot;&quot; autoplay=&quot;&quot; controls=&quot;&quot;&gt;
+    &lt;source src=&quot;/assets/2023-03-12-progress-report/Ruffle_Kongregate_Pizzeria_iPhone.mov&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+
+&lt;p&gt;&lt;strong&gt;We have even more improvements coming very soon!&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;The latest releases now have &lt;strong&gt;dynamic audio buffering&lt;/strong&gt;, making audio playback in the most demanding content much smoother! (Thanks to &lt;a href=&quot;https://github.com/torokati44/&quot;&gt;@szőlő&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;A bug that causes some AVM2 games’ intro sounds to repeat over and over will soon be fixed. (Thanks to &lt;a href=&quot;https://github.com/Aaron1011/&quot;&gt;@Aaron1011&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Dinnerbone/&quot;&gt;@Dinnerbone&lt;/a&gt; is working on improving drawing accuracy for thin/hairline strokes and scaled objects. &lt;a href=&quot;https://github.com/ruffle-rs/ruffle/pull/9981&quot;&gt;You can follow his progress here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>nosamu</name></author><category term="blog" /><summary type="html">Get ready for the biggest Ruffle announcement yet! And the first one on the blog! Huge improvements to Ruffle’s AVM1 engine accuracy! Thanks to a massive code refactor by @CUB3D, dozens upon dozens of ActionScript 2 games have been fixed! Here are just a few of them: Chibi Knight Xeno Tactic 2 Trojan War Frontline Defense Bubble Bobble: The Revival Cube Colossus Chronotron The Powerpuff Girls: Attack of the Puppybots Extreme Pamplona Incredible progress in AVM2 (ActionScript 3) support! Our website now has a page listing exactly what ActionScript 3 APIs we have implemented, making it easy to follow our progress. It will be frequently updated! XML support is rapidly improving! ActionScript 3 games tend to use a wide variety of XML methods. As Ruffle gains support for these methods, games are springing to life! Several problems that caused unresponsive buttons and menus have been fixed. Unclickable buttons in ActionScript 3 games are (mostly) a thing of the past! Other major refactors are in progress to improve Ruffle’s compatibility with ActionScript 3 frameworks like Haxe. @Aaron1011 is working on Stage3D support! Thanks to his work, the gorgeous interstellar strategy game Solarmax 2 is now fully playable in Ruffle on the desktop player! Check out the video below. Many of the fan-favorite Flipline games are now playable! Check them out: Papa’s Burgeria Jacksmith Papa’s Cheeseria (requires the Ruffle Chrome extension) Papa’s Bakeria (requires the Ruffle Chrome extension) Here are just a few more of the many ActionScript 3 games that are playable today in Ruffle! Canabalt Bloons Tower Defense 3 Diggy Wooden Path 2 Fracuum Dino Run: Marathon of Doom Last but not least, support for mobile devices is improving in a big way! Text input boxes are finally supported on mobile devices! Tapping on a text box within Flash content now brings up the soft keyboard, so you can type into it without using a bluetooth keyboard or other workarounds. The context menu finally works on iOS! It is activated by a long-press on the screen. To stop this behavior if needed, simply tap the “Hide this menu” option. We have even more improvements coming very soon! The latest releases now have dynamic audio buffering, making audio playback in the most demanding content much smoother! (Thanks to @szőlő) A bug that causes some AVM2 games’ intro sounds to repeat over and over will soon be fixed. (Thanks to @Aaron1011) @Dinnerbone is working on improving drawing accuracy for thin/hairline strokes and scaled objects. You can follow his progress here.</summary></entry></feed>
