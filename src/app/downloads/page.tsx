@@ -23,7 +23,7 @@ import { getLatestReleases } from "@/app/downloads/github";
 function WebDownload({ latest }: { latest: GithubRelease | null }) {
   return (
     <Stack>
-      <Title>Website Package</Title>
+      <Title id="website-package">Website Package</Title>
       <Text>
         You can install Ruffle onto a website using one single line of code by
         using a CDN, no extra work required! It'll always stay up to date with
