@@ -188,7 +188,7 @@ export const webLinks: DownloadLink[] = [
     longName: "Website Package",
     icon: IconBrandJavascript,
     isRecommended: true,
-    isDeviceRelevant: () => true,
+    isDeviceRelevant: () => false,
   },
 ];
 

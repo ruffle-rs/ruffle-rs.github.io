@@ -1,6 +1,10 @@
 "use client";
 
-import { IconList, TablerIconsProps } from "@tabler/icons-react";
+import {
+  IconBrandJavascript,
+  IconList,
+  TablerIconsProps,
+} from "@tabler/icons-react";
 import React from "react";
 import { useDeviceSelectors } from "react-device-detect";
 import classes from "./index.module.css";
@@ -50,6 +54,12 @@ export default function Installers({
       }
     }
   }
+
+  recommended.push({
+    name: "Website Package",
+    icon: IconBrandJavascript,
+    url: "/downloads#website-package",
+  });
 
   recommended.push({
     icon: IconList,
