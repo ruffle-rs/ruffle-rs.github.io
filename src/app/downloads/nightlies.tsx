@@ -117,7 +117,7 @@ function NightlyCompactBox(release: GithubRelease) {
 export function NightlyList({ nightlies }: { nightlies: GithubRelease[] }) {
   return (
     <Stack>
-      <Title>Nightly Releases</Title>
+      <Title id="nightly-releases">Nightly Releases</Title>
       <Text>
         If none of the above are suitable for you, you can manually download the
         latest Nightly release. These are automatically built every day
