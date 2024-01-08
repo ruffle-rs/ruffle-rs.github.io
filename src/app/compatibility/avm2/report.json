@@ -1,8 +1,8 @@
 {
   "summary": {
     "max_points": 4560,
-    "impl_points": 3394,
-    "stub_penalty": 289
+    "impl_points": 3417,
+    "stub_penalty": 302
   },
   "classes": {
     "flash.events.MouseEvent": {
@@ -122,13 +122,12 @@
     "flash.display3D.Context3D": {
       "summary": {
         "max_points": 39,
-        "impl_points": 31,
+        "impl_points": 32,
         "stub_penalty": 10
       },
       "missing": [
         "setProgramConstantsFromByteArray()",
         "createVideoTexture()",
-        "dispose()",
         "totalGPUMemory",
         "backBufferWidth",
         "drawToBitmapData()",
@@ -136,10 +135,10 @@
         "static supportsVideoTexture"
       ],
       "stubbed": [
-        "profile",
         "createTexture()",
         "setRenderToTexture()",
         "configureBackBuffer()",
+        "dispose()",
         "setStencilActions()",
         "maxBackBufferWidth",
         "maxBackBufferHeight",
@@ -702,10 +701,10 @@
       "summary": {
         "max_points": 7,
         "impl_points": 7,
-        "stub_penalty": 1
+        "stub_penalty": 0
       },
       "missing": [],
-      "stubbed": ["requestContext3DMatchingProfiles()"]
+      "stubbed": []
     },
     "flash.display.ColorCorrectionSupport": {
       "summary": {
@@ -1814,17 +1813,11 @@
     "flash.net.LocalConnection": {
       "summary": {
         "max_points": 10,
-        "impl_points": 8,
-        "stub_penalty": 5
+        "impl_points": 9,
+        "stub_penalty": 3
       },
-      "missing": ["isPerUser", "static isSupported"],
-      "stubbed": [
-        "send()",
-        "allowInsecureDomain()",
-        "connect()",
-        "close()",
-        "allowDomain()"
-      ]
+      "missing": ["isPerUser"],
+      "stubbed": ["send()", "allowInsecureDomain()", "allowDomain()"]
     },
     "flash.display.InterpolationMethod": {
       "summary": {
@@ -1933,26 +1926,22 @@
     "flash.globalization.DateTimeFormatter": {
       "summary": {
         "max_points": 15,
-        "impl_points": 0,
-        "stub_penalty": 0
+        "impl_points": 15,
+        "stub_penalty": 10
       },
-      "missing": [
+      "missing": [],
+      "stubbed": [
         "getFirstWeekday()",
-        "getDateStyle()",
         "getWeekdayNames()",
         "setDateTimePattern()",
-        "requestedLocaleIDName",
         "setDateTimeStyles()",
         "lastOperationStatus",
         "format()",
         "actualLocaleIDName",
         "getMonthNames()",
-        "getTimeStyle()",
         "formatUTC()",
-        "getDateTimePattern()",
         "static getAvailableLocaleIDNames()"
-      ],
-      "stubbed": []
+      ]
     },
     "flash.display.Graphics": {
       "summary": {
@@ -3271,15 +3260,17 @@
     "flash.display.InteractiveObject": {
       "summary": {
         "max_points": 11,
-        "impl_points": 8,
-        "stub_penalty": 3
+        "impl_points": 10,
+        "stub_penalty": 5
       },
-      "missing": [
-        "requestSoftKeyboard()",
+      "missing": ["requestSoftKeyboard()"],
+      "stubbed": [
+        "tabIndex",
+        "accessibilityImplementation",
         "softKeyboardInputAreaOfInterest",
-        "needsSoftKeyboard"
-      ],
-      "stubbed": ["tabIndex", "accessibilityImplementation", "focusRect"]
+        "needsSoftKeyboard",
+        "focusRect"
+      ]
     },
     "flash.display.ShaderJob": {
       "summary": {
@@ -4156,11 +4147,10 @@
     "flash.text.TextField": {
       "summary": {
         "max_points": 63,
-        "impl_points": 47,
-        "stub_penalty": 7
+        "impl_points": 50,
+        "stub_penalty": 10
       },
       "missing": [
-        "getCharIndexAtPoint()",
         "getParagraphLength()",
         "getTextRuns()",
         "getFirstCharInParagraph()",
@@ -4170,20 +4160,21 @@
         "getLineIndexOfChar()",
         "getImageReference()",
         "textInteractionMode",
-        "getLineText()",
         "getXMLText()",
         "getRawText()",
         "getLineIndexAtPoint()",
-        "getLineLength()",
         "static isFontCompatible()"
       ],
       "stubbed": [
+        "getCharIndexAtPoint()",
         "alwaysShowSelection",
         "mouseWheelEnabled",
         "useRichTextClipboard",
         "insertXMLText()",
         "condenseWhite",
         "restrict",
+        "getLineText()",
+        "getLineLength()",
         "styleSheet"
       ]
     },
@@ -4735,8 +4726,8 @@
     "flash.net.SharedObject": {
       "summary": {
         "max_points": 19,
-        "impl_points": 8,
-        "stub_penalty": 1
+        "impl_points": 9,
+        "stub_penalty": 2
       },
       "missing": [
         "send()",
@@ -4744,14 +4735,13 @@
         "client",
         "fps",
         "setDirty()",
-        "objectEncoding",
         "static preventBackup",
         "static getDiskUsage()",
         "static deleteAll()",
         "static defaultObjectEncoding",
         "static getRemote()"
       ],
-      "stubbed": ["close()"]
+      "stubbed": ["close()", "objectEncoding"]
     },
     "flash.accessibility.ISearchableText": {
       "summary": {
