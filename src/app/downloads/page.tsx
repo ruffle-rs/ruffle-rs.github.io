@@ -59,7 +59,7 @@ function WebDownload({ latest }: { latest: GithubRelease | null }) {
 function DesktopDownload({ latest }: { latest: GithubRelease | null }) {
   return (
     <Stack>
-      <Title>Desktop Application</Title>
+      <Title id="desktop-app">Desktop Application</Title>
       <Text>
         If you want to run Flash content on your computer without a browser
         in-between, we have native applications that will take full advantage of

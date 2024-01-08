@@ -45,7 +45,7 @@ function ExtensionBadge(info: Extension) {
 export function ExtensionList() {
   return (
     <Stack>
-      <Title className={classes.title}>Browser Extension</Title>
+      <Title id="extension" className={classes.title}>Browser Extension</Title>
       <Text>
         If you visit websites that have Flash content but aren't using Ruffle,
         or you want to ensure you're using the latest and greatest version of
