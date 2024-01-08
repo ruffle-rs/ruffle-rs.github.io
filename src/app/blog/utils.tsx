@@ -56,7 +56,10 @@ export function getSortedPostsData(): PostMetadata[] {
   const allPostsData = fileNames.map(getPostData);
   // Sort posts by date
   return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
+    if (
+      new Date(Number(a.year), Number(a.month), Number(a.date)) <
+      new Date(Number(b.year), Number(b.month), Number(b.date))
+    ) {
       return 1;
     } else {
       return -1;
