@@ -5,6 +5,7 @@ import Link from "next/link";
 import Markdown from "react-markdown";
 import Image from "next/image";
 import rehypeRaw from "rehype-raw";
+import rehypeSlug from "rehype-slug";
 
 export interface BlogPostProps {
   metadata: PostMetadata;
@@ -51,7 +52,7 @@ export function BlogPost({ metadata, type }: BlogPostProps) {
       <div>
         <Markdown
           className={type == "excerpt" ? classes.excerpt : classes.contents}
-          rehypePlugins={[rehypeRaw]}
+          rehypePlugins={[rehypeRaw, rehypeSlug]}
           components={{
             a(props) {
               return (
