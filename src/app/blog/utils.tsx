@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-const postsDirectory = path.join(process.cwd(), "blog_posts");
+export const postsDirectory = path.join(process.cwd(), "blog_posts");
 
 /**
  * This is the block of settings at the top of each blog post file.
@@ -11,6 +11,8 @@ interface PostInformation {
   title: string;
   author: string;
   icon: string;
+  images?: string[];
+  videos?: string[];
 }
 
 export interface PostPath {

@@ -39,3 +39,4 @@ jobs:
         run: npx --no-install next build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BASE_URL: https://ruffle.rs

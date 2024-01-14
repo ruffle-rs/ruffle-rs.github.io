@@ -15,3 +15,9 @@ For instructions on how to create a PAT, see [Github's documentation](https://do
 The PAT only needs **read only access** to `ruffle-rs/ruffle` (contents and metadata), or to be lazy, pick "Public Repositories (read-only)".
 
 Set the PAT on the `GITHUB_TOKEN` environment variable for `npm run build`/`npm run dev` to pick it up.
+
+## Configure URL
+
+Some parts of the website require absolute URLs, such as opengraph data. It fetches this from the environment variable `BASE_URL`.
+
+In local development you'll probably want to set it to `http://localhost:3000`, and in production we use `https://ruffle.rs`

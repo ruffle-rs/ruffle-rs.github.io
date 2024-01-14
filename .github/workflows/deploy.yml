@@ -75,6 +75,7 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BASE_URL: https://ruffle.rs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
