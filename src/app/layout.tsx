@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   title: "Ruffle - Flash Emulator",
   description:
     "Ruffle is a Flash Player emulator written in Rust. Ruffle targets both desktop and the web using WebAssembly.",
+  applicationName: "Ruffle",
+  creator: "Ruffle Contributors",
   icons: [
     { url: "/favicon-32.png", sizes: "32x32" },
     { url: "/favicon-64.png", sizes: "64x64" },

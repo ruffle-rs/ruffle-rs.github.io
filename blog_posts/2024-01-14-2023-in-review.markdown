@@ -3,6 +3,10 @@ title:  "2023 in review"
 date:   2024-01-14 08:28:00 +0100
 author: Dinnerbone
 icon: /undraw/undraw_new_year_2023_pfnc.svg
+images:
+  - /2024-01-14-2023-in-review/ninja-painter.png
+videos:
+  - /2024-01-14-2023-in-review/transformice.mp4
 ---
 It's been a very busy 2023 for Ruffle, so much so that we didn't find the time to write a new progress report with everything going on! Let's fix that!
 
