@@ -128,7 +128,7 @@ export function NightlyList({ nightlies }: { nightlies: GithubRelease[] }) {
           className={classes.moreNightlies}
           target="_blank"
         >
-          Github
+          GitHub
         </Link>
         .
       </Text>
