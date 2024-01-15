@@ -8,7 +8,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const links = [
-  { link: "/", label: "What is Ruffle" },
+  { link: "/", label: "About Ruffle" },
   { link: "/downloads", label: "Downloads" },
   { link: "/compatibility", label: "Compatibility" },
   { link: "/contribute", label: "Get Involved" },
