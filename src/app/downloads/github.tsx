@@ -48,7 +48,7 @@ export async function getLatestReleases(): Promise<GithubRelease[]> {
     }
     return result;
   } catch (error) {
-    console.warn("Couldn't get github releases", error);
+    console.warn("Couldn't get GitHub releases", error);
     return [];
   }
 }

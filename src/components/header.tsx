@@ -17,7 +17,7 @@ const links = [
   { link: "https://discord.gg/ruffle", label: "Discord", target: "_blank" },
   {
     link: "https://github.com/ruffle-rs/ruffle/",
-    label: "Github",
+    label: "GitHub",
     target: "_blank",
   },
 ];

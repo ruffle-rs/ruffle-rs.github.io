@@ -6,11 +6,11 @@ To run the development server locally, use `npm run dev`. Then open up  [http://
 
 To build it as a static website (as we do in production), use `npm run build`.
 
-## Configure github tokens
+## Configure GitHub tokens
 
-To get the github parts working (Releases & Contribution graph), you'll need to create and assign a github personal access token.
+To get the GitHub parts working (Releases & Contribution graph), you'll need to create and assign a GitHub personal access token.
 
-For instructions on how to create a PAT, see [Github's documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token).
+For instructions on how to create a PAT, see [GitHub's documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token).
 
 The PAT only needs **read only access** to `ruffle-rs/ruffle` (contents and metadata), or to be lazy, pick "Public Repositories (read-only)".
 

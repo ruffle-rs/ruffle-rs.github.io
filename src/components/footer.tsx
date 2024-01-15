@@ -16,7 +16,7 @@ const allSocials = [
   {
     type: IconBrandGithub,
     url: "https://github.com/ruffle-rs",
-    title: "Github",
+    title: "GitHub",
   },
   {
     type: IconBrandTwitter,
