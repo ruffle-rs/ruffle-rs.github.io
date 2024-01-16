@@ -13,13 +13,7 @@ export async function GET() {
     favicon: "https://ruffle.rs/favicon-180.png",
     copyright: `Copyright Ruffle, ${new Date().getFullYear()}`,
     updated:
-      posts.length == 0
-        ? undefined
-        : new Date(
-            Number(posts[0].year),
-            Number(posts[0].month)-1,
-            Number(posts[0].date),
-          ),
+      posts.length == 0 ? undefined : posts[0].date,
     feedLinks: {
       atom: "https://ruffle.rs/feed.xml",
     },
@@ -27,8 +21,8 @@ export async function GET() {
 
   for (const post of posts) {
     feed.addItem({
-      date: new Date(Number(post.year), Number(post.month)-1, Number(post.date)),
-      link: `https://ruffle.rs/blog/${post.year}/${post.month}/${post.date}/${post.slug}`,
+      date: post.date,
+      link: `https://ruffle.rs/blog/${post.year}/${post.month}/${post.day}/${post.slug}`,
       title: post.title,
       description: post.excerpt,
       author: [{ name: post.author }],

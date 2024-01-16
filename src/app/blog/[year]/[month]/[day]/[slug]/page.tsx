@@ -9,7 +9,7 @@ export async function generateMetadata({
   params: PostPath;
 }): Promise<Metadata> {
   const post = getPostData(
-    `${params.year}-${params.month}-${params.date}-${params.slug}.markdown`,
+    `${params.year}-${params.month}-${params.day}-${params.slug}.markdown`,
   );
   const baseUrl = process.env.BASE_URL || "";
   return {
@@ -20,11 +20,7 @@ export async function generateMetadata({
       type: "article",
       title: post.title,
       siteName: "Ruffle",
-      publishedTime: new Date(
-        Number(post.year),
-        Number(post.month),
-        Number(post.date),
-      ).toISOString(),
+      publishedTime: post.date.toISOString(),
       authors: [post.author],
       images: post.images?.map((path) => baseUrl + path),
       videos: post.videos?.map((path) => baseUrl + path),
@@ -34,7 +30,7 @@ export async function generateMetadata({
 
 export default function Page({ params }: { params: PostPath }) {
   const post = getPostData(
-    `${params.year}-${params.month}-${params.date}-${params.slug}.markdown`,
+    `${params.year}-${params.month}-${params.day}-${params.slug}.markdown`,
   );
   return (
     <Container size="xl">

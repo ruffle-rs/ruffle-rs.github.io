@@ -18,11 +18,12 @@ interface PostInformation {
 export interface PostPath {
   year: string;
   month: string;
-  date: string;
+  day: string;
   slug: string;
 }
 
 export interface PostMetadata extends PostInformation, PostPath {
+  date: Date;
   excerpt: string;
   content: string;
 }
@@ -38,17 +39,18 @@ export function getPostData(filename: string): PostMetadata {
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents, { excerpt: true });
 
-  const date = id.slice(0, 10).split("-");
+  const [year, month, day] = id.slice(0, 10).split("-");
   const slug = id.substring(11);
   // Combine the data with the id
   return {
     ...(matterResult.data as PostInformation),
     excerpt: matterResult.excerpt || "",
     content: matterResult.content,
-    year: date[0],
-    month: date[1],
-    date: date[2],
-    slug: slug,
+    year,
+    month,
+    day,
+    date: new Date(Number(year), Number(month) - 1, Number(day)),
+    slug,
   };
 }
 
@@ -58,10 +60,7 @@ export function getSortedPostsData(): PostMetadata[] {
   const allPostsData = fileNames.map(getPostData);
   // Sort posts by date
   return allPostsData.sort((a, b) => {
-    if (
-      new Date(Number(a.year), Number(a.month), Number(a.date)) <
-      new Date(Number(b.year), Number(b.month), Number(b.date))
-    ) {
+    if (a.date < b.date) {
       return 1;
     } else {
       return -1;

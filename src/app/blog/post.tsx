@@ -28,7 +28,7 @@ export function BlogPostAndIcon({ metadata, type }: BlogPostProps) {
 }
 
 export function BlogPost({ metadata, type }: BlogPostProps) {
-  const url = `/blog/${metadata.year}/${metadata.month}/${metadata.date}/${metadata.slug}`;
+  const url = `/blog/${metadata.year}/${metadata.month}/${metadata.day}/${metadata.slug}`;
   return (
     <Stack gap={0} className={classes.postInfo}>
       {type == "full" ? (
@@ -46,7 +46,7 @@ export function BlogPost({ metadata, type }: BlogPostProps) {
           •
         </Text>
         <Text size="sm" c="dimmed">
-          {metadata.year}-{metadata.month}-{metadata.date}
+          {metadata.year}-{metadata.month}-{metadata.day}
         </Text>
       </Group>
       <div>
