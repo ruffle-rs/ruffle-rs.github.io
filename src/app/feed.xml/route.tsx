@@ -17,7 +17,7 @@ export async function GET() {
         ? undefined
         : new Date(
             Number(posts[0].year),
-            Number(posts[0].month),
+            Number(posts[0].month)-1,
             Number(posts[0].date),
           ),
     feedLinks: {
@@ -27,7 +27,7 @@ export async function GET() {
 
   for (const post of posts) {
     feed.addItem({
-      date: new Date(Number(post.year), Number(post.month), Number(post.date)),
+      date: new Date(Number(post.year), Number(post.month)-1, Number(post.date)),
       link: `https://ruffle.rs/blog/${post.year}/${post.month}/${post.date}/${post.slug}`,
       title: post.title,
       description: post.excerpt,
