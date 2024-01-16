@@ -1,4 +1,5 @@
 import { createTokenAuth } from "@octokit/auth-token";
+import { createUnauthenticatedAuth } from "@octokit/auth-unauthenticated";
 import {
   DownloadKey,
   FilenamePatterns,
@@ -14,7 +15,7 @@ function createGithubAuth() {
   if (process.env.GITHUB_TOKEN) {
     return createTokenAuth(process.env.GITHUB_TOKEN);
   } else {
-    return null;
+    return createUnauthenticatedAuth({reason: "Please provide a GitHub Personal Access Token via the GITHUB_TOKEN environment variable."});
   }
 }
 
