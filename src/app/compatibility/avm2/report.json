@@ -1,8 +1,8 @@
 {
   "summary": {
     "max_points": 4560,
-    "impl_points": 3417,
-    "stub_penalty": 302
+    "impl_points": 3440,
+    "stub_penalty": 317
   },
   "classes": {
     "flash.events.MouseEvent": {
@@ -20,7 +20,9 @@
         "impl_points": 4,
         "stub_penalty": 0
       },
-      "missing": ["codecInfo"],
+      "missing": [
+        "codecInfo"
+      ],
       "stubbed": []
     },
     "flash.net.drm.VoucherAccessInfo": {
@@ -44,7 +46,9 @@
         "impl_points": 1,
         "stub_penalty": 0
       },
-      "missing": ["prototype.toJSON()"],
+      "missing": [
+        "prototype.toJSON()"
+      ],
       "stubbed": []
     },
     "flash.globalization.DateTimeNameStyle": {
@@ -89,8 +93,12 @@
         "impl_points": 7,
         "stub_penalty": 1
       },
-      "missing": ["attachCamera()"],
-      "stubbed": ["clear()"]
+      "missing": [
+        "attachCamera()"
+      ],
+      "stubbed": [
+        "clear()"
+      ]
     },
     "flash.filters.GradientGlowFilter": {
       "summary": {
@@ -153,7 +161,10 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["cancel()", "update()"],
+      "missing": [
+        "cancel()",
+        "update()"
+      ],
       "stubbed": []
     },
     "flash.events.OutputProgressEvent": {
@@ -204,7 +215,9 @@
         "impl_points": 20,
         "stub_penalty": 0
       },
-      "missing": ["trackAsMenu"],
+      "missing": [
+        "trackAsMenu"
+      ],
       "stubbed": []
     },
     "flash.globalization.NumberParseResult": {
@@ -285,7 +298,10 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["playState", "static AV_PLAY_STATE"],
+      "missing": [
+        "playState",
+        "static AV_PLAY_STATE"
+      ],
       "stubbed": []
     },
     "flash.profiler.Telemetry": {
@@ -303,7 +319,11 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["beginIndex", "textFormat", "endIndex"],
+      "missing": [
+        "beginIndex",
+        "textFormat",
+        "endIndex"
+      ],
       "stubbed": []
     },
     "flash.display.TriangleCulling": {
@@ -322,7 +342,9 @@
         "stub_penalty": 1
       },
       "missing": [],
-      "stubbed": ["static dynamicPropertyWriter"]
+      "stubbed": [
+        "static dynamicPropertyWriter"
+      ]
     },
     "flash.net.SharedObjectFlushStatus": {
       "summary": {
@@ -406,7 +428,9 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["type"],
+      "missing": [
+        "type"
+      ],
       "stubbed": []
     },
     "flash.display.IBitmapDrawable": {
@@ -477,7 +501,10 @@
         "impl_points": 9,
         "stub_penalty": 0
       },
-      "missing": ["startTouchDrag()", "stopTouchDrag()"],
+      "missing": [
+        "startTouchDrag()",
+        "stopTouchDrag()"
+      ],
       "stubbed": []
     },
     "flash.system.Worker": {
@@ -607,8 +634,14 @@
         "impl_points": 5,
         "stub_penalty": 1
       },
-      "missing": ["valueOf()", "prototype.valueOf()", "prototype.toString()"],
-      "stubbed": ["prefix"]
+      "missing": [
+        "valueOf()",
+        "prototype.valueOf()",
+        "prototype.toString()"
+      ],
+      "stubbed": [
+        "prefix"
+      ]
     },
     "flash.media.SoundChannel": {
       "summary": {
@@ -639,7 +672,11 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["drmMetadata", "timestamp", "static DRM_METADATA"],
+      "missing": [
+        "drmMetadata",
+        "timestamp",
+        "static DRM_METADATA"
+      ],
       "stubbed": []
     },
     "ReferenceError": {
@@ -694,7 +731,11 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["startDate", "period", "endDate"],
+      "missing": [
+        "startDate",
+        "period",
+        "endDate"
+      ],
       "stubbed": []
     },
     "flash.display.Stage3D": {
@@ -731,7 +772,11 @@
         "stub_penalty": 3
       },
       "missing": [],
-      "stubbed": ["hotSpot", "frameRate", "data"]
+      "stubbed": [
+        "hotSpot",
+        "frameRate",
+        "data"
+      ]
     },
     "flash.media.AVResult": {
       "summary": {
@@ -896,7 +941,11 @@
         "impl_points": 2,
         "stub_penalty": 0
       },
-      "missing": ["lock()", "unlock()", "tryLock()"],
+      "missing": [
+        "lock()",
+        "unlock()",
+        "tryLock()"
+      ],
       "stubbed": []
     },
     "flash.sampler.DeleteObjectSample": {
@@ -982,7 +1031,11 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["keyCode", "static KEY_UP", "static KEY_DOWN"],
+      "missing": [
+        "keyCode",
+        "static KEY_UP",
+        "static KEY_DOWN"
+      ],
       "stubbed": []
     },
     "flash.media": {
@@ -991,7 +1044,10 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["scanHardware()", "avSendToURL()"],
+      "missing": [
+        "scanHardware()",
+        "avSendToURL()"
+      ],
       "stubbed": []
     },
     "flash.automation.StageCapture": {
@@ -1060,7 +1116,10 @@
         "stub_penalty": 2
       },
       "missing": [],
-      "stubbed": ["static sendEvent()", "static updateProperties()"]
+      "stubbed": [
+        "static sendEvent()",
+        "static updateProperties()"
+      ]
     },
     "flash.media.AVURLStream": {
       "summary": {
@@ -1068,7 +1127,10 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["load()", "cookieHeader"],
+      "missing": [
+        "load()",
+        "cookieHeader"
+      ],
       "stubbed": []
     },
     "flash.text.FontType": {
@@ -1104,7 +1166,9 @@
         "impl_points": 5,
         "stub_penalty": 0
       },
-      "missing": ["clone()"],
+      "missing": [
+        "clone()"
+      ],
       "stubbed": []
     },
     "flash.media.AVTrackInfo": {
@@ -1238,7 +1302,9 @@
         "stub_penalty": 1
       },
       "missing": [],
-      "stubbed": ["dispose()"]
+      "stubbed": [
+        "dispose()"
+      ]
     },
     "flash.display3D.Context3DClearMask": {
       "summary": {
@@ -1315,7 +1381,11 @@
         "impl_points": 18,
         "stub_penalty": 0
       },
-      "missing": ["locked", "clone()", "getFontMetrics()"],
+      "missing": [
+        "locked",
+        "clone()",
+        "getFontMetrics()"
+      ],
       "stubbed": []
     },
     "flash.system.ImageDecodingPolicy": {
@@ -1342,7 +1412,9 @@
         "impl_points": 4,
         "stub_penalty": 0
       },
-      "missing": ["static ACTIVITY"],
+      "missing": [
+        "static ACTIVITY"
+      ],
       "stubbed": []
     },
     "flash.profiler": {
@@ -1351,8 +1423,12 @@
         "impl_points": 2,
         "stub_penalty": 1
       },
-      "missing": ["profile()"],
-      "stubbed": ["showRedrawRegions()"]
+      "missing": [
+        "profile()"
+      ],
+      "stubbed": [
+        "showRedrawRegions()"
+      ]
     },
     "flash.events.UncaughtErrorEvent": {
       "summary": {
@@ -1445,8 +1521,13 @@
         "impl_points": 7,
         "stub_penalty": 1
       },
-      "missing": ["link", "clone()"],
-      "stubbed": ["static isSupported"]
+      "missing": [
+        "link",
+        "clone()"
+      ],
+      "stubbed": [
+        "static isSupported"
+      ]
     },
     "flash.globalization.LastOperationStatus": {
       "summary": {
@@ -1481,7 +1562,9 @@
         "impl_points": 5,
         "stub_penalty": 0
       },
-      "missing": ["static D_PAD"],
+      "missing": [
+        "static D_PAD"
+      ],
       "stubbed": []
     },
     "flash.text.engine.TabStop": {
@@ -1499,7 +1582,10 @@
         "impl_points": 6,
         "stub_penalty": 0
       },
-      "missing": ["static useSpeakerphoneForVoice", "static audioPlaybackMode"],
+      "missing": [
+        "static useSpeakerphoneForVoice",
+        "static audioPlaybackMode"
+      ],
       "stubbed": []
     },
     "flash.events.DRMAuthenticationCompleteEvent": {
@@ -1682,8 +1768,13 @@
         "impl_points": 30,
         "stub_penalty": 1
       },
-      "missing": ["interpolateTo()", "static interpolate()"],
-      "stubbed": ["pointAt()"]
+      "missing": [
+        "interpolateTo()",
+        "static interpolate()"
+      ],
+      "stubbed": [
+        "pointAt()"
+      ]
     },
     "flash.display3D.textures.TextureBase": {
       "summary": {
@@ -1692,7 +1783,9 @@
         "stub_penalty": 1
       },
       "missing": [],
-      "stubbed": ["dispose()"]
+      "stubbed": [
+        "dispose()"
+      ]
     },
     "flash.ui.GameInput": {
       "summary": {
@@ -1700,7 +1793,9 @@
         "impl_points": 3,
         "stub_penalty": 0
       },
-      "missing": ["static getDeviceAt()"],
+      "missing": [
+        "static getDeviceAt()"
+      ],
       "stubbed": []
     },
     "flash.errors.ScriptTimeoutError": {
@@ -1727,7 +1822,10 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["dictionary", "localTime"],
+      "missing": [
+        "dictionary",
+        "localTime"
+      ],
       "stubbed": []
     },
     "flash.media.H264Level": {
@@ -1746,7 +1844,9 @@
         "stub_penalty": 1
       },
       "missing": [],
-      "stubbed": ["toString()"]
+      "stubbed": [
+        "toString()"
+      ]
     },
     "flash.text.FontStyle": {
       "summary": {
@@ -1777,7 +1877,9 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["load()"],
+      "missing": [
+        "load()"
+      ],
       "stubbed": []
     },
     "flash.events.NetFilterEvent": {
@@ -1786,7 +1888,12 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["clone()", "header", "data", "toString()"],
+      "missing": [
+        "clone()",
+        "header",
+        "data",
+        "toString()"
+      ],
       "stubbed": []
     },
     "flash.automation.Configuration": {
@@ -1816,8 +1923,14 @@
         "impl_points": 9,
         "stub_penalty": 3
       },
-      "missing": ["isPerUser"],
-      "stubbed": ["send()", "allowInsecureDomain()", "allowDomain()"]
+      "missing": [
+        "isPerUser"
+      ],
+      "stubbed": [
+        "send()",
+        "allowInsecureDomain()",
+        "allowDomain()"
+      ]
     },
     "flash.display.InterpolationMethod": {
       "summary": {
@@ -1875,7 +1988,9 @@
         "impl_points": 4,
         "stub_penalty": 0
       },
-      "missing": ["device"],
+      "missing": [
+        "device"
+      ],
       "stubbed": []
     },
     "flash.globalization.NationalDigitsType": {
@@ -1903,7 +2018,9 @@
         "stub_penalty": 1
       },
       "missing": [],
-      "stubbed": ["connect()"]
+      "stubbed": [
+        "connect()"
+      ]
     },
     "flash.printing.PrintJobOrientation": {
       "summary": {
@@ -1949,7 +2066,9 @@
         "impl_points": 24,
         "stub_penalty": 6
       },
-      "missing": ["lineShaderStyle()"],
+      "missing": [
+        "lineShaderStyle()"
+      ],
       "stubbed": [
         "beginShaderFill()",
         "drawPath()",
@@ -2001,7 +2120,9 @@
         "impl_points": 5,
         "stub_penalty": 0
       },
-      "missing": ["autoGain"],
+      "missing": [
+        "autoGain"
+      ],
       "stubbed": []
     },
     "flash.display.ColorCorrection": {
@@ -2073,7 +2194,9 @@
         "impl_points": 2,
         "stub_penalty": 0
       },
-      "missing": ["domainID"],
+      "missing": [
+        "domainID"
+      ],
       "stubbed": []
     },
     "flash.display.NativeMenuItem": {
@@ -2142,7 +2265,11 @@
         "impl_points": 2,
         "stub_penalty": 0
       },
-      "missing": ["createWorker()", "listWorkers()", "static current"],
+      "missing": [
+        "createWorker()",
+        "listWorkers()",
+        "static current"
+      ],
       "stubbed": []
     },
     "flash.events.DRMReturnVoucherCompleteEvent": {
@@ -2261,7 +2388,9 @@
         "stub_penalty": 1
       },
       "missing": [],
-      "stubbed": ["browse()"]
+      "stubbed": [
+        "browse()"
+      ]
     },
     "flash.net.NetStream": {
       "summary": {
@@ -2377,7 +2506,11 @@
         "static hasAccessibility",
         "static isEmbeddedInAcrobat"
       ],
-      "stubbed": ["static language", "static os", "static manufacturer"]
+      "stubbed": [
+        "static language",
+        "static os",
+        "static manufacturer"
+      ]
     },
     "flash.text.TextRenderer": {
       "summary": {
@@ -2385,7 +2518,9 @@
         "impl_points": 4,
         "stub_penalty": 3
       },
-      "missing": ["static antiAliasType"],
+      "missing": [
+        "static antiAliasType"
+      ],
       "stubbed": [
         "static maxLevel",
         "static setAdvancedAntiAliasingTable()",
@@ -2398,7 +2533,9 @@
         "impl_points": 12,
         "stub_penalty": 0
       },
-      "missing": ["updateAfterEvent()"],
+      "missing": [
+        "updateAfterEvent()"
+      ],
       "stubbed": []
     },
     "flash.external.ExternalInterface": {
@@ -2407,8 +2544,12 @@
         "impl_points": 5,
         "stub_penalty": 1
       },
-      "missing": ["static marshallExceptions"],
-      "stubbed": ["static objectID"]
+      "missing": [
+        "static marshallExceptions"
+      ],
+      "stubbed": [
+        "static objectID"
+      ]
     },
     "flash.system.ApplicationInstaller": {
       "summary": {
@@ -2440,7 +2581,10 @@
         "stub_penalty": 2
       },
       "missing": [],
-      "stubbed": ["addCallback()", "call()"]
+      "stubbed": [
+        "addCallback()",
+        "call()"
+      ]
     },
     "flash.display.JPEGEncoderOptions": {
       "summary": {
@@ -2457,7 +2601,9 @@
         "impl_points": 3,
         "stub_penalty": 0
       },
-      "missing": ["static pointTowards()"],
+      "missing": [
+        "static pointTowards()"
+      ],
       "stubbed": []
     },
     "flash.media.AVSegmentedSource": {
@@ -2679,7 +2825,9 @@
         "stub_penalty": 1
       },
       "missing": [],
-      "stubbed": ["text"]
+      "stubbed": [
+        "text"
+      ]
     },
     "flash.media.AVNetworkingParams": {
       "summary": {
@@ -2714,7 +2862,10 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["generateAction()", "generateActions()"],
+      "missing": [
+        "generateAction()",
+        "generateActions()"
+      ],
       "stubbed": []
     },
     "flash.display3D.Context3DProgramType": {
@@ -2775,7 +2926,9 @@
         "stub_penalty": 1
       },
       "missing": [],
-      "stubbed": ["bytesPending"]
+      "stubbed": [
+        "bytesPending"
+      ]
     },
     "EvalError": {
       "summary": {
@@ -2814,8 +2967,14 @@
         "impl_points": 37,
         "stub_penalty": 2
       },
-      "missing": ["encode()", "histogram()"],
-      "stubbed": ["generateFilterRect()", "applyFilter()"]
+      "missing": [
+        "encode()",
+        "histogram()"
+      ],
+      "stubbed": [
+        "generateFilterRect()",
+        "applyFilter()"
+      ]
     },
     "flash.events.IEventDispatcher": {
       "summary": {
@@ -2841,7 +3000,9 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["listStreams()"],
+      "missing": [
+        "listStreams()"
+      ],
       "stubbed": []
     },
     "flash.net.NetStreamPlayTransitions": {
@@ -3059,11 +3220,15 @@
     "flash.text.engine.GraphicElement": {
       "summary": {
         "max_points": 4,
-        "impl_points": 0,
-        "stub_penalty": 0
+        "impl_points": 4,
+        "stub_penalty": 3
       },
-      "missing": ["elementWidth", "graphic", "elementHeight"],
-      "stubbed": []
+      "missing": [],
+      "stubbed": [
+        "elementWidth",
+        "graphic",
+        "elementHeight"
+      ]
     },
     "flash.desktop.ClipboardTransferMode": {
       "summary": {
@@ -3167,7 +3332,12 @@
         "impl_points": 2,
         "stub_penalty": 0
       },
-      "missing": ["notifyAll()", "notify()", "mutex", "wait()"],
+      "missing": [
+        "notifyAll()",
+        "notify()",
+        "mutex",
+        "wait()"
+      ],
       "stubbed": []
     },
     "flash.display.ShaderParameter": {
@@ -3228,7 +3398,9 @@
         "setCurrency()",
         "static getAvailableLocaleIDNames()"
       ],
-      "stubbed": ["format()"]
+      "stubbed": [
+        "format()"
+      ]
     },
     "flash.net.URLLoader": {
       "summary": {
@@ -3236,8 +3408,12 @@
         "impl_points": 7,
         "stub_penalty": 1
       },
-      "missing": ["addEventListener()"],
-      "stubbed": ["close()"]
+      "missing": [
+        "addEventListener()"
+      ],
+      "stubbed": [
+        "close()"
+      ]
     },
     "flash.xml.XMLDocument": {
       "summary": {
@@ -3245,7 +3421,12 @@
         "impl_points": 5,
         "stub_penalty": 0
       },
-      "missing": ["xmlDecl", "idMap", "toString()", "docTypeDecl"],
+      "missing": [
+        "xmlDecl",
+        "idMap",
+        "toString()",
+        "docTypeDecl"
+      ],
       "stubbed": []
     },
     "flash.accessibility.ISimpleTextSelection": {
@@ -3263,7 +3444,9 @@
         "impl_points": 10,
         "stub_penalty": 5
       },
-      "missing": ["requestSoftKeyboard()"],
+      "missing": [
+        "requestSoftKeyboard()"
+      ],
       "stubbed": [
         "tabIndex",
         "accessibilityImplementation",
@@ -3278,8 +3461,13 @@
         "impl_points": 7,
         "stub_penalty": 2
       },
-      "missing": ["width"],
-      "stubbed": ["start()", "height"]
+      "missing": [
+        "width"
+      ],
+      "stubbed": [
+        "start()",
+        "height"
+      ]
     },
     "flash.geom.Vector3D": {
       "summary": {
@@ -3342,7 +3530,9 @@
         "getTextLineAtCharIndex()",
         "findPreviousWordBoundary()"
       ],
-      "stubbed": ["recreateTextLine()"]
+      "stubbed": [
+        "recreateTextLine()"
+      ]
     },
     "flash.ui.GameInputControl": {
       "summary": {
@@ -3350,7 +3540,13 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["minValue", "maxValue", "device", "id", "value"],
+      "missing": [
+        "minValue",
+        "maxValue",
+        "device",
+        "id",
+        "value"
+      ],
       "stubbed": []
     },
     "flash.text.engine.TextLineValidity": {
@@ -3368,7 +3564,9 @@
         "impl_points": 7,
         "stub_penalty": 4
       },
-      "missing": ["static cursor"],
+      "missing": [
+        "static cursor"
+      ],
       "stubbed": [
         "static supportsNativeCursor",
         "static registerCursor()",
@@ -3382,7 +3580,11 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["width", "bitsPerSecond", "height"],
+      "missing": [
+        "width",
+        "bitsPerSecond",
+        "height"
+      ],
       "stubbed": []
     },
     "flash.system.MessageChannel": {
@@ -3494,7 +3696,9 @@
         "stub_penalty": 1
       },
       "missing": [],
-      "stubbed": ["sendToURL()"]
+      "stubbed": [
+        "sendToURL()"
+      ]
     },
     "flash.media.VideoCodec": {
       "summary": {
@@ -3517,7 +3721,7 @@
     "XML": {
       "summary": {
         "max_points": 92,
-        "impl_points": 72,
+        "impl_points": 77,
         "stub_penalty": 4
       },
       "missing": [
@@ -3527,8 +3731,6 @@
         "contains()",
         "propertyIsEnumerable()",
         "addNamespace()",
-        "namespaceDeclarations()",
-        "setLocalName()",
         "hasOwnProperty()",
         "prototype.setNamespace()",
         "prototype.inScopeNamespaces()",
@@ -3537,15 +3739,12 @@
         "prototype.propertyIsEnumerable()",
         "prototype.valueOf",
         "prototype.addNamespace()",
-        "prototype.namespaceDeclarations()",
-        "prototype.setLocalName()",
-        "prototype.hasOwnProperty()",
-        "prototype.setName()"
+        "prototype.hasOwnProperty()"
       ],
       "stubbed": [
         "setNotification()",
-        "normalize()",
         "namespace()",
+        "namespaceDeclarations()",
         "setName()"
       ]
     },
@@ -3555,7 +3754,10 @@
         "impl_points": 3,
         "stub_penalty": 0
       },
-      "missing": ["locale", "static getJustifierForLocale()"],
+      "missing": [
+        "locale",
+        "static getJustifierForLocale()"
+      ],
       "stubbed": []
     },
     "flash.display3D.Context3DCompareMode": {
@@ -3610,7 +3812,13 @@
         "stub_penalty": 5
       },
       "missing": [],
-      "stubbed": ["download()", "load()", "save()", "upload()", "cancel()"]
+      "stubbed": [
+        "download()",
+        "load()",
+        "save()",
+        "upload()",
+        "cancel()"
+      ]
     },
     "flash.debugger": {
       "summary": {
@@ -3618,7 +3826,9 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["enterDebugger()"],
+      "missing": [
+        "enterDebugger()"
+      ],
       "stubbed": []
     },
     "flash.ui.ContextMenuClipboardItems": {
@@ -3771,7 +3981,12 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["authenticationMethod", "domain", "name", "serverURL"],
+      "missing": [
+        "authenticationMethod",
+        "domain",
+        "name",
+        "serverURL"
+      ],
       "stubbed": []
     },
     "flash.system.ApplicationDomain": {
@@ -3804,13 +4019,12 @@
     "flash.sensors.Accelerometer": {
       "summary": {
         "max_points": 4,
-        "impl_points": 0,
+        "impl_points": 2,
         "stub_penalty": 0
       },
       "missing": [
         "muted",
-        "setRequestedUpdateInterval()",
-        "static isSupported"
+        "setRequestedUpdateInterval()"
       ],
       "stubbed": []
     },
@@ -3868,8 +4082,14 @@
         "impl_points": 8,
         "stub_penalty": 1
       },
-      "missing": ["locked", "clone()", "static isDeviceFontCompatible()"],
-      "stubbed": ["static isFontCompatible()"]
+      "missing": [
+        "locked",
+        "clone()",
+        "static isDeviceFontCompatible()"
+      ],
+      "stubbed": [
+        "static isFontCompatible()"
+      ]
     },
     "flash.text.StyleSheet": {
       "summary": {
@@ -3902,7 +4122,10 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["loadInfo", "static AV_LOAD_INFO"],
+      "missing": [
+        "loadInfo",
+        "static AV_LOAD_INFO"
+      ],
       "stubbed": []
     },
     "flash.media.H264Profile": {
@@ -3927,7 +4150,9 @@
         "stop()",
         "position"
       ],
-      "stubbed": ["objectEncoding"]
+      "stubbed": [
+        "objectEncoding"
+      ]
     },
     "flash.events.StatusEvent": {
       "summary": {
@@ -3957,7 +4182,12 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["relativeStart", "selected", "converted", "relativeEnd"],
+      "missing": [
+        "relativeStart",
+        "selected",
+        "converted",
+        "relativeEnd"
+      ],
       "stubbed": []
     },
     "flash.system.SecurityPanel": {
@@ -3975,7 +4205,9 @@
         "impl_points": 7,
         "stub_penalty": 6
       },
-      "missing": ["static isSupported"],
+      "missing": [
+        "static isSupported"
+      ],
       "stubbed": [
         "static compositionSelectionChanged()",
         "static enabled",
@@ -4061,7 +4293,9 @@
         "impl_points": 13,
         "stub_penalty": 0
       },
-      "missing": ["static GESTURE_DIRECTIONAL_TAP"],
+      "missing": [
+        "static GESTURE_DIRECTIONAL_TAP"
+      ],
       "stubbed": []
     },
     "flash.media.Camera": {
@@ -4070,7 +4304,10 @@
         "impl_points": 26,
         "stub_penalty": 25
       },
-      "missing": ["position", "setCursor()"],
+      "missing": [
+        "position",
+        "setCursor()"
+      ],
       "stubbed": [
         "width",
         "keyFrameInterval",
@@ -4142,40 +4379,41 @@
         "stub_penalty": 1
       },
       "missing": [],
-      "stubbed": ["precisionHint"]
+      "stubbed": [
+        "precisionHint"
+      ]
     },
     "flash.text.TextField": {
       "summary": {
         "max_points": 63,
-        "impl_points": 50,
-        "stub_penalty": 10
+        "impl_points": 59,
+        "stub_penalty": 18
       },
       "missing": [
-        "getParagraphLength()",
         "getTextRuns()",
-        "getFirstCharInParagraph()",
-        "getLineOffset()",
         "selectedText",
-        "getCharBoundaries()",
-        "getLineIndexOfChar()",
-        "getImageReference()",
-        "textInteractionMode",
         "getXMLText()",
-        "getRawText()",
-        "getLineIndexAtPoint()",
-        "static isFontCompatible()"
+        "getRawText()"
       ],
       "stubbed": [
         "getCharIndexAtPoint()",
         "alwaysShowSelection",
+        "getParagraphLength()",
         "mouseWheelEnabled",
         "useRichTextClipboard",
         "insertXMLText()",
+        "getFirstCharInParagraph()",
+        "getLineOffset()",
         "condenseWhite",
-        "restrict",
+        "getCharBoundaries()",
+        "getLineIndexOfChar()",
+        "getImageReference()",
+        "textInteractionMode",
         "getLineText()",
+        "getLineIndexAtPoint()",
         "getLineLength()",
-        "styleSheet"
+        "styleSheet",
+        "static isFontCompatible()"
       ]
     },
     "flash.text.engine.FontLookup": {
@@ -4202,7 +4440,9 @@
         "impl_points": 19,
         "stub_penalty": 3
       },
-      "missing": ["textSnapshot"],
+      "missing": [
+        "textSnapshot"
+      ],
       "stubbed": [
         "getObjectsUnderPoint()",
         "areInaccessibleObjectsUnderPoint()",
@@ -4252,7 +4492,10 @@
         "impl_points": 8,
         "stub_penalty": 0
       },
-      "missing": ["prototype.toLocaleString()", "prototype.toString()"],
+      "missing": [
+        "prototype.toLocaleString()",
+        "prototype.toString()"
+      ],
       "stubbed": []
     },
     "flash.text.engine.BreakOpportunity": {
@@ -4279,7 +4522,12 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["setProfileLevel()", "profile", "codec", "level"],
+      "missing": [
+        "setProfileLevel()",
+        "profile",
+        "codec",
+        "level"
+      ],
       "stubbed": []
     },
     "flash.media.ID3Info": {
@@ -4342,16 +4590,24 @@
         "stub_penalty": 1
       },
       "missing": [],
-      "stubbed": ["display"]
+      "stubbed": [
+        "display"
+      ]
     },
     "flash.display.Loader": {
       "summary": {
         "max_points": 14,
         "impl_points": 14,
-        "stub_penalty": 3
+        "stub_penalty": 5
       },
       "missing": [],
-      "stubbed": ["close()", "unload()", "unloadAndStop()"]
+      "stubbed": [
+        "load()",
+        "close()",
+        "unload()",
+        "unloadAndStop()",
+        "loadBytes()"
+      ]
     },
     "flash.text.Font": {
       "summary": {
@@ -4360,7 +4616,9 @@
         "stub_penalty": 1
       },
       "missing": [],
-      "stubbed": ["static enumerateFonts()"]
+      "stubbed": [
+        "static enumerateFonts()"
+      ]
     },
     "flash.display.GraphicsEndFill": {
       "summary": {
@@ -4401,10 +4659,10 @@
     "flash.events.KeyboardEvent": {
       "summary": {
         "max_points": 12,
-        "impl_points": 11,
+        "impl_points": 12,
         "stub_penalty": 0
       },
-      "missing": ["toString()"],
+      "missing": [],
       "stubbed": []
     },
     "flash.globalization.DateTimeStyle": {
@@ -4476,7 +4734,9 @@
         "impl_points": 13,
         "stub_penalty": 8
       },
-      "missing": ["id3"],
+      "missing": [
+        "id3"
+      ],
       "stubbed": [
         "load()",
         "extract()",
@@ -4666,7 +4926,10 @@
         "impl_points": 12,
         "stub_penalty": 4
       },
-      "missing": ["static exactSettings", "static disableAVM1Loading"],
+      "missing": [
+        "static exactSettings",
+        "static disableAVM1Loading"
+      ],
       "stubbed": [
         "static allowInsecureDomain()",
         "static loadPolicyFile()",
@@ -4689,7 +4952,9 @@
         "impl_points": 5,
         "stub_penalty": 0
       },
-      "missing": ["toString()"],
+      "missing": [
+        "toString()"
+      ],
       "stubbed": []
     },
     "flash.utils.ByteArray": {
@@ -4703,7 +4968,9 @@
         "atomicCompareAndSwapIntAt()",
         "shareable"
       ],
-      "stubbed": ["writeObject()"]
+      "stubbed": [
+        "writeObject()"
+      ]
     },
     "flash.text.TextDisplayMode": {
       "summary": {
@@ -4741,7 +5008,10 @@
         "static defaultObjectEncoding",
         "static getRemote()"
       ],
-      "stubbed": ["close()", "objectEncoding"]
+      "stubbed": [
+        "close()",
+        "objectEncoding"
+      ]
     },
     "flash.accessibility.ISearchableText": {
       "summary": {
@@ -4776,7 +5046,9 @@
         "impl_points": 7,
         "stub_penalty": 0
       },
-      "missing": ["useRedirectedURL()"],
+      "missing": [
+        "useRedirectedURL()"
+      ],
       "stubbed": []
     },
     "flash.events.EventDispatcher": {
@@ -4794,7 +5066,10 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["subErrorID", "toString()"],
+      "missing": [
+        "subErrorID",
+        "toString()"
+      ],
       "stubbed": []
     },
     "flash.net.drm.AuthenticationMethod": {
@@ -4803,7 +5078,10 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["static USERNAME_AND_PASSWORD", "static ANONYMOUS"],
+      "missing": [
+        "static USERNAME_AND_PASSWORD",
+        "static ANONYMOUS"
+      ],
       "stubbed": []
     },
     "flash.events.UncaughtErrorEvents": {
@@ -4871,21 +5149,19 @@
     "flash.display.Stage": {
       "summary": {
         "max_points": 73,
-        "impl_points": 43,
-        "stub_penalty": 5
+        "impl_points": 45,
+        "stub_penalty": 7
       },
       "missing": [
         "height",
         "textSnapshot",
         "dispatchEvent()",
-        "colorCorrection",
         "z",
         "rotationY",
         "addChildAt()",
         "tabChildren",
         "stageVideos",
         "isFocusInaccessible()",
-        "colorCorrectionSupport",
         "swapChildrenAt()",
         "willTrigger()",
         "displayContextInfo",
@@ -4908,6 +5184,8 @@
       ],
       "stubbed": [
         "allowsFullScreenInteractive",
+        "colorCorrection",
+        "colorCorrectionSupport",
         "fullScreenWidth",
         "allowsFullScreen",
         "fullScreenSourceRect",
@@ -4957,7 +5235,9 @@
         "stub_penalty": 1
       },
       "missing": [],
-      "stubbed": ["dispose()"]
+      "stubbed": [
+        "dispose()"
+      ]
     },
     "flash.display3D.Context3DTextureFormat": {
       "summary": {
@@ -5121,7 +5401,10 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["periodIndex", "insertedBeforeReadHead"],
+      "missing": [
+        "periodIndex",
+        "insertedBeforeReadHead"
+      ],
       "stubbed": []
     },
     "flash.events.DRMStatusEvent": {
@@ -5155,7 +5438,11 @@
         "impl_points": 38,
         "stub_penalty": 6
       },
-      "missing": ["metaData", "globalToLocal3D()", "local3DToGlobal()"],
+      "missing": [
+        "metaData",
+        "globalToLocal3D()",
+        "local3DToGlobal()"
+      ],
       "stubbed": [
         "rotationZ",
         "scale9Grid",
@@ -5194,7 +5481,9 @@
         "impl_points": 104,
         "stub_penalty": 0
       },
-      "missing": ["prototype.toJSON()"],
+      "missing": [
+        "prototype.toJSON()"
+      ],
       "stubbed": []
     },
     "flash.errors.InvalidSWFError": {
@@ -5222,7 +5511,10 @@
         "stub_penalty": 2
       },
       "missing": [],
-      "stubbed": ["size", "object"]
+      "stubbed": [
+        "size",
+        "object"
+      ]
     },
     "flash.ui.MultitouchInputMode": {
       "summary": {
@@ -5239,7 +5531,9 @@
         "impl_points": 0,
         "stub_penalty": 0
       },
-      "missing": ["dispose()"],
+      "missing": [
+        "dispose()"
+      ],
       "stubbed": []
     },
     "flash.display.IGraphicsFill": {
@@ -5258,7 +5552,9 @@
         "stub_penalty": 1
       },
       "missing": [],
-      "stubbed": ["dispose()"]
+      "stubbed": [
+        "dispose()"
+      ]
     },
     "flash.display.GraphicsSolidFill": {
       "summary": {
