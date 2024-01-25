@@ -1,8 +1,8 @@
 {
   "summary": {
     "max_points": 4560,
-    "impl_points": 3440,
-    "stub_penalty": 317
+    "impl_points": 3467,
+    "stub_penalty": 323
   },
   "classes": {
     "flash.events.MouseEvent": {
@@ -358,8 +358,8 @@
     "flash.text.engine.TextLine": {
       "summary": {
         "max_points": 41,
-        "impl_points": 22,
-        "stub_penalty": 10
+        "impl_points": 23,
+        "stub_penalty": 11
       },
       "missing": [
         "getAtomWordBoundaryOnLeft()",
@@ -374,7 +374,6 @@
         "getAtomTextBlockEndIndex()",
         "dump()",
         "tabEnabled",
-        "getAtomIndexAtCharIndex()",
         "getAtomGraphic()",
         "totalHeight",
         "focusRect",
@@ -388,6 +387,7 @@
         "ascent",
         "textBlockBeginIndex",
         "unjustifiedTextWidth",
+        "getAtomIndexAtCharIndex()",
         "getAtomBounds()",
         "validity",
         "atomCount",
@@ -996,15 +996,10 @@
     "flash.desktop.ClipboardFormats": {
       "summary": {
         "max_points": 8,
-        "impl_points": 4,
+        "impl_points": 8,
         "stub_penalty": 0
       },
-      "missing": [
-        "static URL_FORMAT",
-        "static FILE_LIST_FORMAT",
-        "static BITMAP_FORMAT",
-        "static FILE_PROMISE_LIST_FORMAT"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.utils.Timer": {
@@ -1409,12 +1404,10 @@
     "flash.events.ActivityEvent": {
       "summary": {
         "max_points": 5,
-        "impl_points": 4,
+        "impl_points": 5,
         "stub_penalty": 0
       },
-      "missing": [
-        "static ACTIVITY"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.profiler": {
@@ -1505,14 +1498,10 @@
     "flash.events.StageVideoEvent": {
       "summary": {
         "max_points": 8,
-        "impl_points": 5,
+        "impl_points": 8,
         "stub_penalty": 0
       },
-      "missing": [
-        "static RENDER_STATUS_ACCELERATED",
-        "static RENDER_STATUS_UNAVAILABLE",
-        "static RENDER_STATUS_SOFTWARE"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.ui.ContextMenu": {
@@ -1559,12 +1548,10 @@
     "flash.ui.KeyLocation": {
       "summary": {
         "max_points": 6,
-        "impl_points": 5,
+        "impl_points": 6,
         "stub_penalty": 0
       },
-      "missing": [
-        "static D_PAD"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "flash.text.engine.TabStop": {
@@ -3309,7 +3296,7 @@
     "flash.ui.GameInputDevice": {
       "summary": {
         "max_points": 11,
-        "impl_points": 1,
+        "impl_points": 2,
         "stub_penalty": 0
       },
       "missing": [
@@ -3321,8 +3308,7 @@
         "sampleInterval",
         "name",
         "id",
-        "numControls",
-        "static MAX_BUFFER_SIZE"
+        "numControls"
       ],
       "stubbed": []
     },
@@ -3352,14 +3338,10 @@
     "flash.events.IOErrorEvent": {
       "summary": {
         "max_points": 7,
-        "impl_points": 4,
+        "impl_points": 7,
         "stub_penalty": 0
       },
-      "missing": [
-        "static NETWORK_ERROR",
-        "static DISK_ERROR",
-        "static VERIFY_ERROR"
-      ],
+      "missing": [],
       "stubbed": []
     },
     "Math": {
@@ -3458,15 +3440,12 @@
     "flash.display.ShaderJob": {
       "summary": {
         "max_points": 8,
-        "impl_points": 7,
-        "stub_penalty": 2
+        "impl_points": 8,
+        "stub_penalty": 1
       },
-      "missing": [
-        "width"
-      ],
+      "missing": [],
       "stubbed": [
-        "start()",
-        "height"
+        "start()"
       ]
     },
     "flash.geom.Vector3D": {
@@ -3721,19 +3700,17 @@
     "XML": {
       "summary": {
         "max_points": 92,
-        "impl_points": 77,
-        "stub_penalty": 4
+        "impl_points": 79,
+        "stub_penalty": 5
       },
       "missing": [
         "setNamespace()",
-        "inScopeNamespaces()",
         "removeNamespace()",
         "contains()",
         "propertyIsEnumerable()",
         "addNamespace()",
         "hasOwnProperty()",
         "prototype.setNamespace()",
-        "prototype.inScopeNamespaces()",
         "prototype.removeNamespace()",
         "prototype.contains()",
         "prototype.propertyIsEnumerable()",
@@ -3742,6 +3719,7 @@
         "prototype.hasOwnProperty()"
       ],
       "stubbed": [
+        "inScopeNamespaces()",
         "setNotification()",
         "namespace()",
         "namespaceDeclarations()",
@@ -3809,13 +3787,11 @@
       "summary": {
         "max_points": 14,
         "impl_points": 14,
-        "stub_penalty": 5
+        "stub_penalty": 3
       },
       "missing": [],
       "stubbed": [
         "download()",
-        "load()",
-        "save()",
         "upload()",
         "cancel()"
       ]
@@ -5131,20 +5107,19 @@
     "flash.desktop.Clipboard": {
       "summary": {
         "max_points": 9,
-        "impl_points": 0,
-        "stub_penalty": 0
+        "impl_points": 9,
+        "stub_penalty": 7
       },
-      "missing": [
+      "missing": [],
+      "stubbed": [
         "getData()",
         "hasFormat()",
         "clearData()",
         "setData()",
         "formats",
         "setDataHandler()",
-        "clear()",
-        "static generalClipboard"
-      ],
-      "stubbed": []
+        "clear()"
+      ]
     },
     "flash.display.Stage": {
       "summary": {
@@ -5568,14 +5543,13 @@
     "Error": {
       "summary": {
         "max_points": 11,
-        "impl_points": 7,
+        "impl_points": 8,
         "stub_penalty": 0
       },
       "missing": [
         "static throwError()",
         "static getErrorMessage()",
-        "prototype.message",
-        "prototype.toString()"
+        "prototype.message"
       ],
       "stubbed": []
     },
