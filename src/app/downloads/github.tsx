@@ -83,7 +83,7 @@ export async function fetchReport(): Promise<AVM2Report | undefined> {
       parseSuccessResponseBody: false, // required to access response as stream
     },
   });
-  // After https://github.com/octokit/request.js/pull/602, when parseSuccessResponseBody is false,
-  // the data is a ReadableStream, but the type is set incorrectly. This converts to the proper type.
+  // According to https://github.com/octokit/types.ts/issues/606, when parseSuccessResponseBody is false,
+  // the type is set incorrectly. This converts to the proper type.
   return await new Response(asset.data as unknown as ReadableStream).json();
 }
