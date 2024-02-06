@@ -29,7 +29,7 @@ export async function getLatestReleases(): Promise<GithubRelease[]> {
       ...repository,
     });
     const result = [];
-    let avm2_report_asset_id = 0;
+    let avm2_report_asset_id: number | undefined = undefined;
     for (const release of releases.data) {
       const downloads: ReleaseDownloads = {};
       for (const asset of release.assets) {
@@ -67,15 +67,15 @@ export async function getWeeklyContributions(): Promise<
 }
 export async function fetchReport(): Promise<AVM2Report | undefined> {
   const releases = await getLatestReleases();
-  const latest = releases.find(release => release.avm2_report_asset_id !== 0);
-  if (!latest) {
+  const latest = releases.find(release => release.avm2_report_asset_id !== undefined);
+  if (!latest?.avm2_report_asset_id) {
     return;
   }
   const octokit = new Octokit({ authStrategy: createGithubAuth });
   const asset = await octokit.rest.repos.getReleaseAsset({
     owner: repository.owner,
     repo: repository.repo,
-    asset_id: latest?.avm2_report_asset_id,
+    asset_id: latest.avm2_report_asset_id,
     headers: {
       accept: "application/octet-stream",
     },
