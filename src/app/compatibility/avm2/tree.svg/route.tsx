@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import * as d3 from "d3";
-import report_data from "@/app/compatibility/avm2/report.json";
+import { fetchReport } from "@/app/downloads/github";
 import { JSDOM } from "jsdom";
 
 interface Node {
@@ -29,6 +29,10 @@ class Id {
 
 export async function GET() {
   const { document } = new JSDOM().window;
+  const report_data = await fetchReport();
+  if (!report_data) {
+    return;
+  }
 
   // convert report to d3-friendly format
   const report = (function () {

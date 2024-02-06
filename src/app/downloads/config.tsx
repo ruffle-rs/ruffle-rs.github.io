@@ -23,6 +23,7 @@ export interface GithubRelease {
   prerelease: boolean;
   downloads: ReleaseDownloads;
   url: string;
+  avm2_report_asset_id: number;
 }
 
 export interface ReleaseDownloads {
@@ -197,3 +198,8 @@ export const allLinks: DownloadLink[] = [
   desktopLinks,
   webLinks,
 ].flat();
+
+export interface AVM2Report {
+  summary: object,
+  classes: object,
+}

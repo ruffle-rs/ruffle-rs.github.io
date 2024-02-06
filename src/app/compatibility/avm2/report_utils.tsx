@@ -1,6 +1,6 @@
 import { rem, ThemeIcon } from "@mantine/core";
 import { IconCheck, IconProgress, IconX } from "@tabler/icons-react";
-import report from "@/app/compatibility/avm2/report.json";
+import { fetchReport } from "@/app/downloads/github";
 import React from "react";
 
 export function IconDone() {
@@ -78,62 +78,68 @@ export interface NamespaceStatus {
   classes: { [name: string]: ClassStatus };
 }
 
-export let byNamespace: { [name: string]: NamespaceStatus } = {};
-
-Object.entries(report.classes).map(([itemName, classInfo]) => {
-  const nameSplit = itemName.split(/\.(?=[^.]+$)/);
-  let className = nameSplit[nameSplit.length - 1];
-  let namespace = nameSplit.length == 1 ? "" : nameSplit[0];
-
-  if (nameSplit.length > 1 && /^[a-z]/.test(className)) {
-    // This is actually a package like "flash.net" with its own members, not a class
-    namespace = itemName;
-    className = "";
-  }
-
-  if (classInfo.missing.length == 0 && classInfo.stubbed.length == 0) {
-    // Ignore this
+export async function getReportByNamespace(): Promise<{ [name: string]: NamespaceStatus } | undefined> {
+  let byNamespace: { [name: string]: NamespaceStatus } = {};
+  const report = await fetchReport();
+  if (!report) {
     return;
   }
+  Object.entries(report.classes).map(([itemName, classInfo]) => {
+    const nameSplit = itemName.split(/\.(?=[^.]+$)/);
+    let className = nameSplit[nameSplit.length - 1];
+    let namespace = nameSplit.length == 1 ? "" : nameSplit[0];
 
-  if (!Object.prototype.hasOwnProperty.call(byNamespace, namespace)) {
-    byNamespace[namespace] = {
-      name: namespace,
-      summary: { max_points: 0, impl_points: 0, stub_penalty: 0 },
-      classes: {},
+    if (nameSplit.length > 1 && /^[a-z]/.test(className)) {
+      // This is actually a package like "flash.net" with its own members, not a class
+      namespace = itemName;
+      className = "";
+    }
+
+    if (classInfo.missing.length == 0 && classInfo.stubbed.length == 0) {
+      // Ignore this
+      return;
+    }
+
+    if (!Object.prototype.hasOwnProperty.call(byNamespace, namespace)) {
+      byNamespace[namespace] = {
+        name: namespace,
+        summary: { max_points: 0, impl_points: 0, stub_penalty: 0 },
+        classes: {},
+      };
+    }
+
+    byNamespace[namespace].summary.max_points += classInfo.summary.max_points;
+    byNamespace[namespace].summary.impl_points += classInfo.summary.impl_points;
+    byNamespace[namespace].summary.stub_penalty += classInfo.summary.stub_penalty;
+
+    const items: ItemStatus[] = [];
+
+    for (const item of classInfo.missing) {
+      items.push({ icon: "missing", name: item });
+    }
+    for (const item of classInfo.stubbed) {
+      items.push({ icon: "stub", name: item });
+    }
+
+    items.sort((a, b) => a.name.localeCompare(b.name));
+
+    byNamespace[namespace].classes[className] = {
+      items,
+      name: className,
+      summary: classInfo.summary,
     };
-  }
+  });
 
-  byNamespace[namespace].summary.max_points += classInfo.summary.max_points;
-  byNamespace[namespace].summary.impl_points += classInfo.summary.impl_points;
-  byNamespace[namespace].summary.stub_penalty += classInfo.summary.stub_penalty;
-
-  const items: ItemStatus[] = [];
-
-  for (const item of classInfo.missing) {
-    items.push({ icon: "missing", name: item });
-  }
-  for (const item of classInfo.stubbed) {
-    items.push({ icon: "stub", name: item });
-  }
-
-  items.sort((a, b) => a.name.localeCompare(b.name));
-
-  byNamespace[namespace].classes[className] = {
-    items,
-    name: className,
-    summary: classInfo.summary,
-  };
-});
-
-// Sort the result by namespace
-byNamespace = Object.fromEntries(
-  Object.entries(byNamespace).sort(([a], [b]) => a.localeCompare(b)),
-);
-
-for (const name in byNamespace) {
-  const info = byNamespace[name];
-  info.classes = Object.fromEntries(
-    Object.entries(info.classes).sort(([a], [b]) => a.localeCompare(b)),
+  // Sort the result by namespace
+  byNamespace = Object.fromEntries(
+    Object.entries(byNamespace).sort(([a], [b]) => a.localeCompare(b)),
   );
+
+  for (const name in byNamespace) {
+    const info = byNamespace[name];
+    info.classes = Object.fromEntries(
+      Object.entries(info.classes).sort(([a], [b]) => a.localeCompare(b)),
+    );
+  }
+  return byNamespace;
 }

@@ -12,7 +12,7 @@ import React from "react";
 import classes from "./avm2.module.css";
 import { ClassBox } from "@/app/compatibility/avm2/class_box";
 import {
-  byNamespace,
+  getReportByNamespace,
   IconDone,
   IconMissing,
   IconStub,
@@ -33,7 +33,8 @@ function NamespaceBox(props: NamespaceStatus) {
   );
 }
 
-export default function Page() {
+export default async function Page() {
+  const byNamespace = await getReportByNamespace();
   return (
     <Container size="xl">
       <Stack gap="xl">
@@ -88,9 +89,9 @@ export default function Page() {
         </Group>
 
         <Stack gap="xl" className={classes.listContainer}>
-          {Object.entries(byNamespace).map(([namespace, info]) => (
+          {byNamespace ? Object.entries(byNamespace).map(([namespace, info]) => (
             <NamespaceBox key={namespace} {...info} />
-          ))}
+          )) : ""}
         </Stack>
       </Stack>
     </Container>
