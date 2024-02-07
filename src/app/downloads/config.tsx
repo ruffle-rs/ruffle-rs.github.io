@@ -10,6 +10,7 @@ import {
 } from "@tabler/icons-react";
 import React from "react";
 import { IconBrandLinux } from "@/components/icons";
+import { SummaryStatistics } from "@/app/compatibility/avm2/report_utils";
 
 export const repository = { owner: "ruffle-rs", repo: "ruffle" };
 
@@ -200,6 +201,6 @@ export const allLinks: DownloadLink[] = [
 ].flat();
 
 export interface AVM2Report {
-  summary: object,
+  summary: SummaryStatistics,
   classes: object,
 }

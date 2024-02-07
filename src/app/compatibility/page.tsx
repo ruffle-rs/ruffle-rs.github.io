@@ -6,7 +6,7 @@ import React from "react";
 import { Title } from "@mantine/core";
 import { List, ListItem } from "@mantine/core";
 import { WeeklyContributions } from "@/app/compatibility/weekly_contributions";
-import { getWeeklyContributions } from "@/app/downloads/github";
+import { fetchReport, getWeeklyContributions } from "@/app/downloads/github";
 
 export default async function Downloads() {
   const contributions = await getWeeklyContributions();
@@ -16,6 +16,13 @@ export default async function Downloads() {
       Commits: item.total,
     };
   });
+  const report = await fetchReport();
+  const summary = report ? report.summary : undefined;
+  const maxPoints = summary ? summary.max_points : NaN;
+  const implPoints = summary ? summary.impl_points : NaN;
+  const stubPenalty = summary ? summary.stub_penalty : NaN;
+  const done = Math.round((implPoints - stubPenalty) / maxPoints * 100);
+  const stubbed = Math.round(stubPenalty / maxPoints * 100);
 
   return (
     <Container size="xl" className={classes.container}>
@@ -84,26 +91,28 @@ export default async function Downloads() {
             </Text>
           </AvmBlock>
 
-          <AvmBlock
-            name="AVM 2: ActionScript 3"
-            language={{ done: 75 }}
-            api={{ done: 69, stubbed: 7 }}
-            info_link="/compatibility/avm2"
-          >
-            <Text>
-              AVM 2 was introduced with Flash Player 9 (June 2006), to replace
-              the earlier AVM 1. After the release of Flash Professional CC
-              (2013), authors are required to use ActionScript 3 - making any
-              movie made after that date very likely to fall under this
-              category.
-            </Text>
-            <Text>
-              Ruffle now has decent support for AVM 2, and it&apos;s our
-              experience that most games will work well enough to be played.
-              We&apos;re still rapidly improving in this area though, so bug
-              reports about any broken content are always welcome!
-            </Text>
-          </AvmBlock>
+          {!Number.isNaN(done) && !Number.isNaN(stubbed) && (
+            <AvmBlock
+              name="AVM 2: ActionScript 3"
+              language={{ done: 75 }}
+              api={{ done: done, stubbed: stubbed }}
+              info_link="/compatibility/avm2"
+            >
+              <Text>
+                AVM 2 was introduced with Flash Player 9 (June 2006), to replace
+                the earlier AVM 1. After the release of Flash Professional CC
+                (2013), authors are required to use ActionScript 3 - making any
+                movie made after that date very likely to fall under this
+                category.
+              </Text>
+              <Text>
+                Ruffle now has decent support for AVM 2, and it&apos;s our
+                experience that most games will work well enough to be played.
+                We&apos;re still rapidly improving in this area though, so bug
+                reports about any broken content are always welcome!
+              </Text>
+            </AvmBlock>
+          )}
         </Flex>
 
         <Stack w="100%" align="center">
