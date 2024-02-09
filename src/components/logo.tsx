@@ -2,6 +2,7 @@
 
 import React from "react";
 import Script from "next/script";
+import classes from "../app/index.module.css";
 
 declare global {
   interface Window {
@@ -40,13 +41,7 @@ export default class InteractiveLogo extends React.Component<LogoProps> {
       const staticLogo = document.createElement("IMG") as HTMLImageElement;
       staticLogo.src = "/logo.svg";
       staticLogo.alt = "Ruffle Logo";
-      staticLogo.style.width = "85%";
-      staticLogo.style.height = "auto";
-      staticLogo.style.margin = "0 auto";
-      staticLogo.style.display = "block";
-      staticLogo.style.position = "relative";
-      staticLogo.style.top = "50%";
-      staticLogo.style.transform = "translateY(-50%)";
+      staticLogo.className = classes.staticLogo;
       this.container.current.textContent = "";
       this.container.current.appendChild(staticLogo);
     }
