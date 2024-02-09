@@ -35,6 +35,23 @@ export default class InteractiveLogo extends React.Component<LogoProps> {
     this.container = React.createRef();
   }
 
+  private createStaticLogo() {
+    if (this.container.current) {
+      const staticLogo = document.createElement("IMG") as HTMLImageElement;
+      staticLogo.src = "/logo.svg";
+      staticLogo.alt = "Ruffle Logo";
+      staticLogo.style.width = "85%";
+      staticLogo.style.height = "auto";
+      staticLogo.style.margin = "0 auto";
+      staticLogo.style.display = "block";
+      staticLogo.style.position = "relative";
+      staticLogo.style.top = "50%";
+      staticLogo.style.transform = "translateY(-50%)";
+      this.container.current.textContent = "";
+      this.container.current.appendChild(staticLogo);
+    }
+  }
+
   private load() {
     if (this.player) {
       // Already loaded.
@@ -54,14 +71,14 @@ export default class InteractiveLogo extends React.Component<LogoProps> {
         contextMenu: "off",
         splashScreen: false,
         preferredRenderer: "canvas",
+      }).catch(() => {
+        this.createStaticLogo();
       });
       this.player.style.width = "100%";
       this.player.style.height = "100%";
+    } else {
+      this.createStaticLogo();
     }
-  }
-
-  componentDidMount() {
-    this.load();
   }
 
   componentWillUnmount() {
@@ -75,6 +92,7 @@ export default class InteractiveLogo extends React.Component<LogoProps> {
         <Script
           src="https://unpkg.com/@ruffle-rs/ruffle"
           onReady={() => this.load()}
+          onError={() => this.createStaticLogo()}
         />
         <div ref={this.container} className={this.props.className} />
       </>
