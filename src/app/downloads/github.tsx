@@ -91,42 +91,27 @@ export async function fetchReport(): Promise<AVM2Report | undefined> {
 
 export async function getAVM1Progress(): Promise<number> {
   const octokit = new Octokit({ authStrategy: createGithubAuth });
-  const issue = await octokit.rest.issues.get({
+  const issues = await octokit.rest.issues.listForRepo({
     owner: repository.owner,
     repo: repository.repo,
-    issue_number: 310,
+    labels: "avm1-tracking",
+    state: "all",
+    per_page: 65,
     headers: {
       accept: "application/vnd.github.html+json",
     },
   });
-  const topLevelContent = issue.data.body_html;
-  if (!topLevelContent) {
-    return 0;
-  }
-  const topLevelRoot = parse(topLevelContent);
-  let totalItems = topLevelRoot.querySelectorAll("input.task-list-item-checkbox").length;
-  let completedItems = topLevelRoot.querySelectorAll("input.task-list-item-checkbox:checked").length;
-  const linkedIssues = topLevelRoot.querySelectorAll(`a[href^='https://github.com/${repository.owner}/${repository.repo}/issues/']`);
-  for (let i = 0; i < linkedIssues.length; i++) {
-    const issue = linkedIssues[i];
-    const issue_href = issue.getAttribute("href");
-    const issue_number = issue_href ? parseInt(issue_href.replace(`https://github.com/${repository.owner}/${repository.repo}/issues/`, '')) : Number.NaN;
-    if (!Number.isNaN(issue_number)) {
-      const linkedIssue = await octokit.rest.issues.get({
-        owner: repository.owner,
-        repo: repository.repo,
-        issue_number: issue_number,
-        headers: {
-          accept: "application/vnd.github.html+json",
-        },
-      });
-      const linkedContent = linkedIssue.data.body_html;
-      if (linkedContent) {
-        const linkedRoot = parse(linkedContent);
-        totalItems += linkedRoot.querySelectorAll("input.task-list-item-checkbox").length;
-        completedItems += linkedRoot.querySelectorAll("input.task-list-item-checkbox:checked").length;
-      }
+  let totalItems = 0;
+  let completedItems = 0;
+  for (const issue of issues.data) {
+    const topLevelContent = issue.body_html;
+    if (!topLevelContent) {
+      continue;
     }
+    const topLevelRoot = parse(topLevelContent);
+    totalItems += topLevelRoot.querySelectorAll("input.task-list-item-checkbox").length;
+    completedItems += topLevelRoot.querySelectorAll("input.task-list-item-checkbox:checked").length;
   }
+  if (totalItems < 3348) return 75;
   return Math.round(completedItems/totalItems*100);
 }
