@@ -21,6 +21,10 @@ function createGithubAuth() {
   }
 }
 
+function throwBuildError() {
+  throw new Error("Build failed");
+}
+
 export async function getLatestReleases(): Promise<GithubRelease[]> {
   const octokit = new Octokit({ authStrategy: createGithubAuth });
   try {
@@ -70,6 +74,7 @@ export async function fetchReport(): Promise<AVM2Report | undefined> {
   const releases = await getLatestReleases();
   const latest = releases.find(release => release.avm2_report_asset_id !== undefined);
   if (!latest?.avm2_report_asset_id) {
+    throwBuildError();
     return;
   }
   const octokit = new Octokit({ authStrategy: createGithubAuth });
@@ -112,6 +117,6 @@ export async function getAVM1Progress(): Promise<number> {
     totalItems += topLevelRoot.querySelectorAll("input.task-list-item-checkbox").length;
     completedItems += topLevelRoot.querySelectorAll("input.task-list-item-checkbox:checked").length;
   }
-  if (totalItems < 3348) return 75;
+  if (totalItems < 3348) throwBuildError();
   return Math.round(completedItems/totalItems*100);
 }
