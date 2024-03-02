@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Script from "next/script";
 import classes from "../app/index.module.css";
 
@@ -36,17 +37,6 @@ export default class InteractiveLogo extends React.Component<LogoProps> {
     this.container = React.createRef();
   }
 
-  private createStaticLogo() {
-    if (this.container.current) {
-      const staticLogo = document.createElement("IMG") as HTMLImageElement;
-      staticLogo.src = "/logo.svg";
-      staticLogo.alt = "Ruffle Logo";
-      staticLogo.className = classes.staticLogo;
-      this.container.current.textContent = "";
-      this.container.current.appendChild(staticLogo);
-    }
-  }
-
   private load() {
     if (this.player) {
       // Already loaded.
@@ -57,7 +47,6 @@ export default class InteractiveLogo extends React.Component<LogoProps> {
 
     if (this.player) {
       this.container.current!.appendChild(this.player);
-
       this.player.load({
         url: "/logo-anim.swf",
         autoplay: "on",
@@ -66,14 +55,19 @@ export default class InteractiveLogo extends React.Component<LogoProps> {
         contextMenu: "off",
         splashScreen: false,
         preferredRenderer: "canvas",
+      }).then(() => {
+        this?.container?.current?.querySelector("img")?.classList?.toggle(classes.hidden);
       }).catch(() => {
-        this.createStaticLogo();
+        this.player?.remove();
+        this.player = null;
       });
       this.player.style.width = "100%";
       this.player.style.height = "100%";
-    } else {
-      this.createStaticLogo();
     }
+  }
+
+  componentDidMount() {
+    this.load();
   }
 
   componentWillUnmount() {
@@ -87,9 +81,10 @@ export default class InteractiveLogo extends React.Component<LogoProps> {
         <Script
           src="https://unpkg.com/@ruffle-rs/ruffle"
           onReady={() => this.load()}
-          onError={() => this.createStaticLogo()}
         />
-        <div ref={this.container} className={this.props.className} />
+        <div ref={this.container} className={this.props.className}>
+          <Image src="/logo.svg" alt="Ruffle Logo" className={classes.staticLogo} width="340" height="110" />
+        </div>
       </>
     );
   }
