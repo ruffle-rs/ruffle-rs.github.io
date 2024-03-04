@@ -21,7 +21,7 @@ Thanks to a massive code refactor by [@CUB3D](https://github.com/CUB3D/), dozens
 - [Extreme Pamplona](https://flasharch.com/en/archive/play/e36aac73914ec8672218317e000615d7)
 
 ### Incredible progress in AVM2 (ActionScript 3) support!
-- Our website now has [a page listing exactly what ActionScript 3 APIs we have implemented](https://ruffle.rs/avm2.html), making it easy to follow our progress. It will be frequently updated!
+- Our website now has [a page listing exactly what ActionScript 3 APIs we have implemented](https://ruffle.rs/compatibility/avm2), making it easy to follow our progress. It will be frequently updated!
 - XML support is rapidly improving! ActionScript 3 games tend to use a wide variety of XML methods. As Ruffle gains support for these methods, games are springing to life!
 - Several problems that caused unresponsive buttons and menus have been fixed. Unclickable buttons in ActionScript 3 games are (mostly) a thing of the past!
 - Other major refactors are in progress to improve Ruffle's compatibility with ActionScript 3 frameworks like Haxe.
