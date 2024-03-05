@@ -27,7 +27,11 @@ interface LogoProps {
   className?: string;
 }
 
-export default class InteractiveLogo extends React.Component<LogoProps> {
+interface LogoState {
+  player: RufflePlayer | null;
+}
+
+export default class InteractiveLogo extends React.Component<LogoProps, LogoState> {
   private readonly container: React.RefObject<HTMLDivElement>;
   private player: RufflePlayer | null = null;
 
@@ -35,10 +39,19 @@ export default class InteractiveLogo extends React.Component<LogoProps> {
     super(props);
 
     this.container = React.createRef();
+    this.state = {
+      player: null,
+    };
+  }
+
+  private removeRufflePlayer() {
+    this.player?.remove();
+    this.player = null;
+    this.setState({player: null});
   }
 
   private load() {
-    if (this.player) {
+    if (this.state.player) {
       // Already loaded.
       return;
     }
@@ -47,6 +60,7 @@ export default class InteractiveLogo extends React.Component<LogoProps> {
 
     if (this.player) {
       this.container.current!.appendChild(this.player);
+
       this.player.load({
         url: "/logo-anim.swf",
         autoplay: "on",
@@ -55,14 +69,12 @@ export default class InteractiveLogo extends React.Component<LogoProps> {
         contextMenu: "off",
         splashScreen: false,
         preferredRenderer: "canvas",
-      }).then(() => {
-        this?.container?.current?.querySelector("img")?.classList?.toggle(classes.hidden);
       }).catch(() => {
-        this.player?.remove();
-        this.player = null;
+        this.removeRufflePlayer();
       });
       this.player.style.width = "100%";
       this.player.style.height = "100%";
+      this.setState({player: this.player});
     }
   }
 
@@ -71,8 +83,7 @@ export default class InteractiveLogo extends React.Component<LogoProps> {
   }
 
   componentWillUnmount() {
-    this.player?.remove();
-    this.player = null;
+    this.removeRufflePlayer();
   }
 
   render() {
@@ -83,7 +94,7 @@ export default class InteractiveLogo extends React.Component<LogoProps> {
           onReady={() => this.load()}
         />
         <div ref={this.container} className={this.props.className}>
-          <Image src="/logo.svg" alt="Ruffle Logo" className={classes.staticLogo} width="340" height="110" />
+          <Image src="/logo.svg" alt="Ruffle Logo" className={this.state.player ? classes.hidden : classes.staticLogo} width="340" height="110" />
         </div>
       </>
     );
