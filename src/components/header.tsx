@@ -60,7 +60,7 @@ export function Header() {
           opened={opened}
           onClose={close}
           position="top"
-          classNames={{ inner: classes.drawer, overlay: classes.overlay }}
+          classNames={{ inner: classes.drawer, overlay: classes.overlay, content: classes.content }}
           withCloseButton={false}
         >
           {items}

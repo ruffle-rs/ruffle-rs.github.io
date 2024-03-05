@@ -42,6 +42,10 @@
   top: rem(56px);
 }
 
+.content {
+  height: auto;
+}
+
 .overlay {
   top: rem(56px);
 }
