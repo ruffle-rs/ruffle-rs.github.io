@@ -51,7 +51,7 @@ export default class InteractiveLogo extends React.Component<LogoProps, LogoStat
   }
 
   private load() {
-    if (this.state.player) {
+    if (this.player) {
       // Already loaded.
       return;
     }
