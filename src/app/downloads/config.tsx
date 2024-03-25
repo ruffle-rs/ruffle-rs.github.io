@@ -1,12 +1,12 @@
 import {
+  Icon,
   IconBrandApple,
   IconBrandChrome,
   IconBrandEdge,
   IconBrandFirefox,
   IconBrandJavascript,
   IconBrandSafari,
-  IconBrandWindows,
-  TablerIconsProps,
+  IconBrandWindows
 } from "@tabler/icons-react";
 import React from "react";
 import { IconBrandLinux } from "@/components/icons";
@@ -87,7 +87,7 @@ export interface DownloadLink {
   /**
    * Icon to represent this link
    */
-  icon: (props: TablerIconsProps) => React.JSX.Element;
+  icon: React.ExoticComponent<React.RefAttributes<Icon>>;
 
   /**
    * Whether or not to recommend this link to the given device
