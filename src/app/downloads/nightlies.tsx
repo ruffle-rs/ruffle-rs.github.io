@@ -18,9 +18,9 @@ import Link from "next/link";
 import classes from "./nightlies.module.css";
 import {
   desktopLinks,
-  DownloadLink,
+  type DownloadLink,
   extensionLinks,
-  GithubRelease,
+  type GithubRelease,
   githubReleasesUrl,
   webLinks,
 } from "@/app/downloads/config";
