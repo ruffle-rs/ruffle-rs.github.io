@@ -3,6 +3,7 @@ import { createReactComponent } from "@tabler/icons-react";
 // Source: https://www.svgrepo.com/svg/340565/linux
 // Apache license
 export const IconBrandLinux = createReactComponent(
+  "outline",
   "icon-brand-linux",
   "IconBrandLinux",
   [
