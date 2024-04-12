@@ -2,7 +2,7 @@ import { Container, Group, ActionIcon, rem, Text } from "@mantine/core";
 import Link from "next/link";
 
 import {
-  IconBrandTwitter,
+  IconBrandX,
   IconBrandInstagram,
   IconBrandGithub,
   IconBrandTiktok,
@@ -19,9 +19,9 @@ const allSocials = [
     title: "GitHub",
   },
   {
-    type: IconBrandTwitter,
+    type: IconBrandX,
     url: "https://twitter.com/ruffle_rs",
-    title: "Twitter",
+    title: "X",
   },
   {
     type: IconBrandTiktok,
