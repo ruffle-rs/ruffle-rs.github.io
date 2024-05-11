@@ -54,7 +54,7 @@ export function ClassBox(props: ClassStatus) {
             className={classes.showMemberButton}
             onClick={toggle}
           >
-            Show Missing Members
+            {opened ? "Hide" : "Show"} Missing Members
           </Button>
           <List hidden={!opened}>
             {props.items.map((item, i) => (
