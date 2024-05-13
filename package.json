@@ -36,7 +36,7 @@
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
     "jsdom": "^24.0.0",
-    "octokit": "^3.2.1",
+    "octokit": "^4.0.2",
     "postcss": "^8.4.38",
     "postcss-preset-mantine": "^1.15.0",
     "postcss-simple-vars": "^7.0.1",
