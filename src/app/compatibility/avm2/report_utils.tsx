@@ -143,3 +143,7 @@ export async function getReportByNamespace(): Promise<{ [name: string]: Namespac
   }
   return byNamespace;
 }
+
+export function displayedPercentage(value: number, max: number): number {
+    return value === 0 ? value : Math.max(1, Math.floor(value / max * 100));
+}

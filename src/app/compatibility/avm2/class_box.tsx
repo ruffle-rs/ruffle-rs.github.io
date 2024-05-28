@@ -15,18 +15,19 @@ import React from "react";
 import {
   ClassStatus,
   ProgressIcon,
+  displayedPercentage,
 } from "@/app/compatibility/avm2/report_utils";
 
 export function ClassBox(props: ClassStatus) {
   const [opened, { toggle }] = useDisclosure(false);
-  const pctDone = Math.ceil(
-    ((props.summary.impl_points - props.summary.stub_penalty) /
-      props.summary.max_points) *
-      100,
+  const pctDone = displayedPercentage(
+    props.summary.impl_points - props.summary.stub_penalty,
+    props.summary.max_points,
   );
-  const pctStub = Math.ceil(
-    (props.summary.stub_penalty / props.summary.max_points) * 100,
-  );
+  const pctStub =
+    props.summary.impl_points === props.summary.max_points
+      ? 100 - pctDone
+      : displayedPercentage(props.summary.stub_penalty, props.summary.max_points);
   return (
     <Card bg="var(--ruffle-blue-9)" className={classes.class}>
       <Title order={4}>{props.name || "(Package level)"}</Title>
