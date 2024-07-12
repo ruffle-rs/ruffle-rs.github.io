@@ -97,7 +97,7 @@ export default async function Downloads() {
 
           <AvmBlock
             name="AVM 2: ActionScript 3"
-            language={{ done: 75 }}
+            language={{ done: 90 }}
             api={{ done: avm2ApiDone, stubbed: avm2ApiStubbed }}
             info_link="/compatibility/avm2"
           >
