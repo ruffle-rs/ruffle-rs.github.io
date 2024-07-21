@@ -5,6 +5,8 @@ import {
   DownloadKey,
   FilenamePatterns,
   GithubRelease,
+  maxMajor,
+  maxMinor,
   maxNightlies,
   ReleaseDownloads,
   repository,
@@ -12,6 +14,7 @@ import {
 import { Octokit } from "octokit";
 import { RestEndpointMethodTypes } from "@octokit/plugin-rest-endpoint-methods";
 import { parse } from "node-html-parser";
+import semver from "semver/preload";
 import { components } from "@octokit/openapi-types";
 
 const octokit = new Octokit({ authStrategy: createGithubAuth });
@@ -61,17 +64,44 @@ function mapRelease(release: components["schemas"]["release"]): GithubRelease {
   };
 }
 
-export async function getLatestReleases(): Promise<GithubRelease[]> {
+export async function getLatestRelease(): Promise<GithubRelease> {
+  try {
+    const response = await octokit.rest.repos.getLatestRelease({
+      ...requestCache,
+      ...repository,
+    });
+    return mapRelease(response.data);
+  } catch {
+    // There's no latest release, get the last one.
+  }
+
+  const releases = await octokit.rest.repos.listReleases({
+    per_page: 1,
+    ...requestCache,
+    ...repository,
+  });
+  return mapRelease(releases.data[0]);
+}
+
+export async function getLatestNightlyReleases(): Promise<GithubRelease[]> {
   try {
     const releases = await octokit.rest.repos.listReleases({
-      // Assume there's less regular releases than nightlies.
+      // Assume there's fewer regular releases than nightlies.
       per_page: maxNightlies * 2,
       ...requestCache,
       ...repository,
     });
     const result = [];
     for (const release of releases.data) {
+      if (!release.prerelease) {
+        // Filter out stable releases
+        continue;
+      }
       result.push(mapRelease(release));
+
+      if (result.length >= maxNightlies) {
+        break;
+      }
     }
     return result;
   } catch (error) {
@@ -80,14 +110,89 @@ export async function getLatestReleases(): Promise<GithubRelease[]> {
   }
 }
 
+export async function getLatestStableReleases(): Promise<GithubRelease[]> {
+  let newestMajor = null;
+
+  // Map representing releases from the current major version:
+  //   `major.minor` -> `major.minor.patch`
+  // We want to ignore older patches and show last X minor versions.
+  const currentMajorReleases = new Map();
+
+  // Map representing releases from older major versions.
+  //   `major` -> `major.minor.patch`
+  // We ignore here minor and patch versions, and
+  // gather the newest release per each major.
+  const olderMajors = new Map();
+
+  for (
+    let page = 1;
+    currentMajorReleases.size < maxMinor || olderMajors.size < maxMajor - 1;
+    ++page
+  ) {
+    console.log(`Fetching releases page ${page}`);
+
+    const request = await octokit.rest.repos.listReleases({
+      // 100 per page disables cache as the result is >2MB
+      per_page: 50,
+      page: page,
+      ...requestCache,
+      ...repository,
+    });
+
+    if (request.status != 200 || request.data.length == 0) {
+      break;
+    }
+
+    let shouldFinish = false;
+    for (const data of request.data) {
+      if (data.prerelease) {
+        continue;
+      }
+
+      const release = mapRelease(data);
+
+      const version = release.tag.replace(/^v/, "");
+      const major = semver.major(version);
+      const majorMinor = `${major}.${semver.minor(version)}`;
+
+      if (!newestMajor) {
+        newestMajor = major;
+      }
+
+      if (major === newestMajor) {
+        if (!currentMajorReleases.has(majorMinor)) {
+          currentMajorReleases.set(majorMinor, release);
+        }
+      } else {
+        if (!olderMajors.has(major)) {
+          olderMajors.set(major, release);
+        }
+      }
+
+      if (data.tag_name === "v0.2.0") {
+        // 0.2.0 was our first stable release, stop the search here.
+        shouldFinish = true;
+        break;
+      }
+    }
+
+    if (shouldFinish) {
+      break;
+    }
+  }
+
+  return Array.from(currentMajorReleases.values())
+    .slice(0, maxMinor)
+    .concat(Array.from(olderMajors.values()).slice(0, maxMajor - 1));
+}
+
 export async function getWeeklyContributions(): Promise<
   RestEndpointMethodTypes["repos"]["getCommitActivityStats"]["response"]
 > {
-  const octokit = new Octokit({ authStrategy: createGithubAuth });
   return octokit.rest.repos.getCommitActivityStats(repository);
 }
 export async function fetchReport(): Promise<AVM2Report | undefined> {
-  const releases = await getLatestReleases();
+  const releases = await getLatestNightlyReleases();
   const latest = releases.find(
     (release) => release.avm2_report_asset_id !== undefined,
   );
@@ -95,10 +200,8 @@ export async function fetchReport(): Promise<AVM2Report | undefined> {
     throwBuildError();
     return;
   }
-  const octokit = new Octokit({ authStrategy: createGithubAuth });
   const asset = await octokit.rest.repos.getReleaseAsset({
-    owner: repository.owner,
-    repo: repository.repo,
+    ...repository,
     asset_id: latest.avm2_report_asset_id,
     headers: {
       accept: "application/octet-stream",
@@ -113,10 +216,8 @@ export async function fetchReport(): Promise<AVM2Report | undefined> {
 }
 
 export async function getAVM1Progress(): Promise<number> {
-  const octokit = new Octokit({ authStrategy: createGithubAuth });
   const issues = await octokit.rest.issues.listForRepo({
-    owner: repository.owner,
-    repo: repository.repo,
+    ...repository,
     labels: "avm1-tracking",
     state: "all",
     per_page: 65,

@@ -14,7 +14,7 @@ import {
 import Image from "next/image";
 import { IconCheck } from "@tabler/icons-react";
 import React from "react";
-import { getLatestReleases } from "@/app/downloads/github";
+import { getLatestRelease } from "@/app/downloads/github";
 import { GithubRelease } from "./downloads/config";
 
 const InteractiveLogo = dynamic(() => import("../components/logo"), {
@@ -31,8 +31,7 @@ export default function Home() {
   React.useEffect(() => {
     const fetchReleases = async () => {
       try {
-        const releases = await getLatestReleases();
-        setLatest(releases.length > 0 ? releases[0] : null);
+        setLatest(await getLatestRelease());
       } catch (err) {
         console.warn("Failed to fetch releases", err);
       }
