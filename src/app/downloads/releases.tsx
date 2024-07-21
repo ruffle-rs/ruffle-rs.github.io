@@ -20,8 +20,9 @@ import {
   desktopLinks,
   type DownloadLink,
   extensionLinks,
+  githubNightlyReleasesUrl,
   type GithubRelease,
-  githubReleasesUrl,
+  githubStableReleasesUrl,
   webLinks,
 } from "@/app/downloads/config";
 
@@ -52,8 +53,8 @@ function DownloadLink({
 }
 
 function ReleaseRow(release: GithubRelease) {
-  // The nightly prefix is a bit superfluous here
-  const name = release.name.replace(/^Nightly /, "");
+  // The prefix is a bit superfluous here
+  const name = release.name.replace(/^Nightly /, "").replace(/^Release /, "");
   return (
     <TableTr>
       <TableTd>
@@ -114,20 +115,55 @@ function ReleaseCompactBox(release: GithubRelease) {
   );
 }
 
-export function ReleaseList({ releases }: { releases: GithubRelease[] }) {
+function ReleaseIntro({ nightly }: { nightly: boolean }) {
+  if (!nightly) {
+    return (
+      <>
+        <Title id="releases">Stable Releases</Title>
+        <Text>
+          If none of the above are suitable for you, you can manually download
+          one of the latest stable releases. Older versions are available on{" "}
+          <Link href={githubStableReleasesUrl} target="_blank">
+            GitHub
+          </Link>
+          .
+        </Text>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <Title id="nightly-releases">Nightly Releases</Title>
+        <Text>
+          If you want to try out the latest updates and cutting-edge features,
+          you can download the latest nightly release. These are automatically
+          built every day (approximately midnight UTC, unless there are no
+          changes on that day) and they offer early access to new enhancements,
+          bug fixes, and improvements before they're officially rolled out.
+          Older nightly releases are available on{" "}
+          <Link href={githubNightlyReleasesUrl} target="_blank">
+            GitHub
+          </Link>
+          .
+        </Text>
+      </>
+    );
+  }
+}
+
+export function ReleaseList({
+  releases,
+  nightly,
+}: {
+  releases: GithubRelease[];
+  nightly: boolean;
+}) {
+  if (releases.length == 0) {
+    return <></>;
+  }
   return (
     <Stack>
-      <Title id="nightly-releases">Nightly Releases</Title>
-      <Text>
-        If none of the above are suitable for you, you can manually download the
-        latest Nightly release. These are automatically built every day
-        (approximately midnight UTC), unless there are no changes on that day.{" "}
-        Older nightly releases are available on{" "}
-        <Link href={githubReleasesUrl} target="_blank">
-          GitHub
-        </Link>
-        .
-      </Text>
+      <ReleaseIntro nightly={nightly} />
       <Table
         horizontalSpacing="md"
         verticalSpacing="md"

@@ -18,7 +18,10 @@ import {
   githubReleasesUrl,
   maxNightlies,
 } from "@/app/downloads/config";
-import { getLatestReleases } from "@/app/downloads/github";
+import {
+  getLatestNightlyReleases,
+  getLatestStableReleases,
+} from "@/app/downloads/github";
 
 function WebDownload({ latest }: { latest: GithubRelease | null }) {
   return (
@@ -94,19 +97,21 @@ function DesktopDownload({ latest }: { latest: GithubRelease | null }) {
 }
 
 export default async function Page() {
-  const releases = await getLatestReleases();
-  const latest = releases.length > 0 ? releases[0] : null;
-  const nightlies = releases
+  const stableReleases = await getLatestStableReleases();
+  const nightlies = (await getLatestNightlyReleases())
     .filter((release) => release.prerelease)
     .slice(0, maxNightlies);
+  const latestStable =
+    stableReleases.length > 0 ? stableReleases[0] : nightlies[0];
   return (
     <Container size="xl" className={classes.container}>
       <Stack gap="xl">
         <ExtensionList />
-        <WebDownload latest={latest} />
-        <DesktopDownload latest={latest} />
+        <WebDownload latest={latestStable} />
+        <DesktopDownload latest={latestStable} />
 
-        <ReleaseList releases={nightlies} />
+        <ReleaseList releases={stableReleases} nightly={false} />
+        <ReleaseList releases={nightlies} nightly={true} />
       </Stack>
     </Container>
   );

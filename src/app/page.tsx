@@ -12,7 +12,7 @@ import {
 import Image from "next/image";
 import { IconCheck } from "@tabler/icons-react";
 import React from "react";
-import { getLatestReleases } from "@/app/downloads/github";
+import { getLatestRelease } from "@/app/downloads/github";
 
 const InteractiveLogo = dynamic(() => import("../components/logo"), {
   ssr: false,
@@ -23,9 +23,7 @@ const Installers = dynamic(() => import("./installers"), {
 });
 
 export default async function Home() {
-  const releases = await getLatestReleases();
-  const latest = releases.length > 0 ? releases[0] : null;
-
+  const latest = await getLatestRelease();
   return (
     <Container size="xl" className={classes.container}>
       <InteractiveLogo className={classes.logo} />
