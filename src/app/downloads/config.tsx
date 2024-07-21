@@ -1,5 +1,6 @@
 import {
   Icon,
+  IconBox,
   IconBrandApple,
   IconBrandChrome,
   IconBrandEdge,
@@ -18,6 +19,8 @@ export const maxNightlies = 5;
 
 export const githubReleasesUrl = `https://github.com/${repository.owner}/${repository.repo}/releases`;
 
+export const flathubUrl = "https://flathub.org/apps/rs.ruffle.Ruffle";
+
 export interface GithubRelease {
   id: number;
   name: string;
@@ -32,6 +35,7 @@ export interface ReleaseDownloads {
   windows_32?: string;
   macos?: string;
   linux?: string;
+  flatpak?: string;
 
   firefox?: string;
   chromium?: string;
@@ -41,7 +45,7 @@ export interface ReleaseDownloads {
 
 export type DownloadKey = keyof ReleaseDownloads;
 
-export const FilenamePatterns: Record<DownloadKey, string> = {
+export const FilenamePatterns: Record<DownloadKey, string | null> = {
   windows_64: "-windows-x86_64",
   windows_32: "-windows-x86_32",
   macos: "-macos",
@@ -49,6 +53,7 @@ export const FilenamePatterns: Record<DownloadKey, string> = {
   firefox: "-firefox-unsigned",
   chromium: "-extension.",
   web: "-selfhosted",
+  flatpak: null,
 };
 
 export interface CurrentDevice {
@@ -131,6 +136,15 @@ export const desktopLinks: DownloadLink[] = [
     icon: IconBrandApple,
     isRecommended: true,
     isDeviceRelevant: (device) => device.desktop && device.mac,
+  },
+  {
+    key: "flatpak",
+    shortName: "Flatpak",
+    longName: "Flatpak App",
+    icon: IconBox,
+    isRecommended: true,
+    recommendedUrl: flathubUrl,
+    isDeviceRelevant: (device) => device.linux,
   },
   {
     key: "linux",
