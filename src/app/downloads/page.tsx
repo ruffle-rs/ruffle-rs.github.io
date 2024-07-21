@@ -10,7 +10,7 @@ import {
 import classes from "./downloads.module.css";
 import React from "react";
 import { ExtensionList } from "@/app/downloads/extensions";
-import { NightlyList } from "@/app/downloads/nightlies";
+import { ReleaseList } from "@/app/downloads/releases";
 import Link from "next/link";
 import {
   desktopLinks,
@@ -106,7 +106,7 @@ export default async function Page() {
         <WebDownload latest={latest} />
         <DesktopDownload latest={latest} />
 
-        <NightlyList nightlies={nightlies} />
+        <ReleaseList releases={nightlies} />
       </Stack>
     </Container>
   );
