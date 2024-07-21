@@ -45,7 +45,7 @@ export async function getLatestReleases(): Promise<GithubRelease[]> {
           avm2_report_asset_id = asset.id;
         }
         for (const [key, pattern] of Object.entries(FilenamePatterns)) {
-          if (asset.name.indexOf(pattern) > -1) {
+          if (pattern && asset.name.indexOf(pattern) > -1) {
             downloads[key as DownloadKey] = asset.browser_download_url;
           }
         }

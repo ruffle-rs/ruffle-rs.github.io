@@ -70,7 +70,7 @@ function DesktopDownload({ latest }: { latest: GithubRelease | null }) {
         {desktopLinks
           .filter((link) => link.isRecommended)
           .map((link, index) => {
-            const url = latest ? latest.downloads[link.key] : undefined;
+            const url = link.recommendedUrl || latest?.downloads[link.key];
             return (
               <Button
                 key={index}
