@@ -14,9 +14,12 @@ import { SummaryStatistics } from "@/app/compatibility/avm2/report_utils";
 
 export const repository = { owner: "ruffle-rs", repo: "ruffle" };
 
+export const maxMinor = 3;
+export const maxMajor = 1;
 export const maxNightlies = 5;
 
 export const githubReleasesUrl = `https://github.com/${repository.owner}/${repository.repo}/releases`;
+export const githubStableReleasesUrl = `${githubReleasesUrl}?q=prerelease:false`;
 export const githubNightlyReleasesUrl = `${githubReleasesUrl}?q=prerelease:true`;
 
 export const flathubUrl = "https://flathub.org/apps/rs.ruffle.Ruffle";
