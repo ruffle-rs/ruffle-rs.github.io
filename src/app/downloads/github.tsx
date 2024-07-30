@@ -17,7 +17,10 @@ function createGithubAuth() {
   if (process.env.GITHUB_TOKEN) {
     return createTokenAuth(process.env.GITHUB_TOKEN);
   } else {
-    return createUnauthenticatedAuth({reason: "Please provide a GitHub Personal Access Token via the GITHUB_TOKEN environment variable."});
+    return createUnauthenticatedAuth({
+      reason:
+        "Please provide a GitHub Personal Access Token via the GITHUB_TOKEN environment variable.",
+    });
   }
 }
 
@@ -39,7 +42,7 @@ export async function getLatestReleases(): Promise<GithubRelease[]> {
       const downloads: ReleaseDownloads = {};
       for (const asset of release.assets) {
         if (asset.name === "avm2_report.json") {
-            avm2_report_asset_id = asset.id;
+          avm2_report_asset_id = asset.id;
         }
         for (const [key, pattern] of Object.entries(FilenamePatterns)) {
           if (asset.name.indexOf(pattern) > -1) {
@@ -72,7 +75,9 @@ export async function getWeeklyContributions(): Promise<
 }
 export async function fetchReport(): Promise<AVM2Report | undefined> {
   const releases = await getLatestReleases();
-  const latest = releases.find(release => release.avm2_report_asset_id !== undefined);
+  const latest = releases.find(
+    (release) => release.avm2_report_asset_id !== undefined,
+  );
   if (!latest?.avm2_report_asset_id) {
     throwBuildError();
     return;
@@ -114,9 +119,13 @@ export async function getAVM1Progress(): Promise<number> {
       continue;
     }
     const topLevelRoot = parse(topLevelContent);
-    totalItems += topLevelRoot.querySelectorAll("input.task-list-item-checkbox").length;
-    completedItems += topLevelRoot.querySelectorAll("input.task-list-item-checkbox:checked").length;
+    totalItems += topLevelRoot.querySelectorAll(
+      "input.task-list-item-checkbox",
+    ).length;
+    completedItems += topLevelRoot.querySelectorAll(
+      "input.task-list-item-checkbox:checked",
+    ).length;
   }
   if (totalItems < 3348) throwBuildError();
-  return Math.round(completedItems/totalItems*100);
+  return Math.round((completedItems / totalItems) * 100);
 }

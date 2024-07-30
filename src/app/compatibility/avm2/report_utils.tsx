@@ -78,7 +78,9 @@ export interface NamespaceStatus {
   classes: { [name: string]: ClassStatus };
 }
 
-export async function getReportByNamespace(): Promise<{ [name: string]: NamespaceStatus } | undefined> {
+export async function getReportByNamespace(): Promise<
+  { [name: string]: NamespaceStatus } | undefined
+> {
   let byNamespace: { [name: string]: NamespaceStatus } = {};
   const report = await fetchReport();
   if (!report) {
@@ -110,7 +112,8 @@ export async function getReportByNamespace(): Promise<{ [name: string]: Namespac
 
     byNamespace[namespace].summary.max_points += classInfo.summary.max_points;
     byNamespace[namespace].summary.impl_points += classInfo.summary.impl_points;
-    byNamespace[namespace].summary.stub_penalty += classInfo.summary.stub_penalty;
+    byNamespace[namespace].summary.stub_penalty +=
+      classInfo.summary.stub_penalty;
 
     const items: ItemStatus[] = [];
 
@@ -145,5 +148,5 @@ export async function getReportByNamespace(): Promise<{ [name: string]: Namespac
 }
 
 export function displayedPercentage(value: number, max: number): number {
-    return value === 0 ? value : Math.max(1, Math.floor(value / max * 100));
+  return value === 0 ? value : Math.max(1, Math.floor((value / max) * 100));
 }

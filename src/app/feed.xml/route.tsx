@@ -12,8 +12,7 @@ export async function GET() {
     image: "https://ruffle.rs/favicon-180.png",
     favicon: "https://ruffle.rs/favicon-180.png",
     copyright: `Copyright Ruffle, ${new Date().getFullYear()}`,
-    updated:
-      posts.length == 0 ? undefined : posts[0].date,
+    updated: posts.length == 0 ? undefined : posts[0].date,
     feedLinks: {
       atom: "https://ruffle.rs/feed.xml",
     },

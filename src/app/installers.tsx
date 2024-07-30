@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  Icon,
-  IconBrandJavascript,
-  IconList
-} from "@tabler/icons-react";
+import { Icon, IconBrandJavascript, IconList } from "@tabler/icons-react";
 import React from "react";
 import { useDeviceSelectors } from "react-device-detect";
 import classes from "./index.module.css";

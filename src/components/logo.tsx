@@ -31,7 +31,10 @@ interface LogoState {
   player: RufflePlayer | null;
 }
 
-export default class InteractiveLogo extends React.Component<LogoProps, LogoState> {
+export default class InteractiveLogo extends React.Component<
+  LogoProps,
+  LogoState
+> {
   private readonly container: React.RefObject<HTMLDivElement>;
   private player: RufflePlayer | null = null;
 
@@ -47,7 +50,7 @@ export default class InteractiveLogo extends React.Component<LogoProps, LogoStat
   private removeRufflePlayer() {
     this.player?.remove();
     this.player = null;
-    this.setState({player: null});
+    this.setState({ player: null });
   }
 
   private load() {
@@ -61,20 +64,22 @@ export default class InteractiveLogo extends React.Component<LogoProps, LogoStat
     if (this.player) {
       this.container.current!.appendChild(this.player);
 
-      this.player.load({
-        url: "/logo-anim.swf",
-        autoplay: "on",
-        unmuteOverlay: "hidden",
-        backgroundColor: "#37528C",
-        contextMenu: "off",
-        splashScreen: false,
-        preferredRenderer: "canvas",
-      }).catch(() => {
-        this.removeRufflePlayer();
-      });
+      this.player
+        .load({
+          url: "/logo-anim.swf",
+          autoplay: "on",
+          unmuteOverlay: "hidden",
+          backgroundColor: "#37528C",
+          contextMenu: "off",
+          splashScreen: false,
+          preferredRenderer: "canvas",
+        })
+        .catch(() => {
+          this.removeRufflePlayer();
+        });
       this.player.style.width = "100%";
       this.player.style.height = "100%";
-      this.setState({player: this.player});
+      this.setState({ player: this.player });
     }
   }
 
@@ -94,7 +99,13 @@ export default class InteractiveLogo extends React.Component<LogoProps, LogoStat
           onReady={() => this.load()}
         />
         <div ref={this.container} className={this.props.className}>
-          <Image src="/logo.svg" alt="Ruffle Logo" className={this.state.player ? classes.hidden : classes.staticLogo} width="340" height="110" />
+          <Image
+            src="/logo.svg"
+            alt="Ruffle Logo"
+            className={this.state.player ? classes.hidden : classes.staticLogo}
+            width="340"
+            height="110"
+          />
         </div>
       </>
     );

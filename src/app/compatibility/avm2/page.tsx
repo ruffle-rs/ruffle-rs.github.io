@@ -89,9 +89,11 @@ export default async function Page() {
         </Group>
 
         <Stack gap="xl" className={classes.listContainer}>
-          {byNamespace ? Object.entries(byNamespace).map(([namespace, info]) => (
-            <NamespaceBox key={namespace} {...info} />
-          )) : ""}
+          {byNamespace
+            ? Object.entries(byNamespace).map(([namespace, info]) => (
+                <NamespaceBox key={namespace} {...info} />
+              ))
+            : ""}
         </Stack>
       </Stack>
     </Container>
