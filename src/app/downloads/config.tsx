@@ -6,7 +6,7 @@ import {
   IconBrandFirefox,
   IconBrandJavascript,
   IconBrandSafari,
-  IconBrandWindows
+  IconBrandWindows,
 } from "@tabler/icons-react";
 import React from "react";
 import { IconBrandLinux } from "@/components/icons";
@@ -201,6 +201,6 @@ export const allLinks: DownloadLink[] = [
 ].flat();
 
 export interface AVM2Report {
-  summary: SummaryStatistics,
-  classes: object,
+  summary: SummaryStatistics;
+  classes: object;
 }

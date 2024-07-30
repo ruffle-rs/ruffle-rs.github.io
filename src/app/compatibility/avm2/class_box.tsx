@@ -27,7 +27,10 @@ export function ClassBox(props: ClassStatus) {
   const pctStub =
     props.summary.impl_points === props.summary.max_points
       ? 100 - pctDone
-      : displayedPercentage(props.summary.stub_penalty, props.summary.max_points);
+      : displayedPercentage(
+          props.summary.stub_penalty,
+          props.summary.max_points,
+        );
   return (
     <Card bg="var(--ruffle-blue-9)" className={classes.class}>
       <Title order={4}>{props.name || "(Package level)"}</Title>

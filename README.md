@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project that makes up the [Ruffle websi
 
 ## Developing locally
 
-To run the development server locally, use `npm run dev`. Then open up  [http://localhost:3000](http://localhost:3000) and see the pages live.
+To run the development server locally, use `npm run dev`. Then open up [http://localhost:3000](http://localhost:3000) and see the pages live.
 
 To build it as a static website (as we do in production), use `npm run build`.
 

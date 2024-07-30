@@ -6,7 +6,11 @@ import React from "react";
 import { Title } from "@mantine/core";
 import { List, ListItem } from "@mantine/core";
 import { WeeklyContributions } from "@/app/compatibility/weekly_contributions";
-import { fetchReport, getAVM1Progress, getWeeklyContributions } from "@/app/downloads/github";
+import {
+  fetchReport,
+  getAVM1Progress,
+  getWeeklyContributions,
+} from "@/app/downloads/github";
 
 export default async function Downloads() {
   const contributions = await getWeeklyContributions();
@@ -25,8 +29,10 @@ export default async function Downloads() {
   const maxPoints = summary.max_points;
   const implPoints = summary.impl_points;
   const stubPenalty = summary.stub_penalty;
-  const avm2ApiDone = Math.round((implPoints - stubPenalty) / maxPoints * 100);
-  const avm2ApiStubbed = Math.round(stubPenalty / maxPoints * 100);
+  const avm2ApiDone = Math.round(
+    ((implPoints - stubPenalty) / maxPoints) * 100,
+  );
+  const avm2ApiStubbed = Math.round((stubPenalty / maxPoints) * 100);
 
   return (
     <Container size="xl" className={classes.container}>
