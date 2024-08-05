@@ -5,6 +5,8 @@ import {
   DownloadKey,
   FilenamePatterns,
   GithubRelease,
+  maxMajor,
+  maxMinor,
   maxNightlies,
   ReleaseDownloads,
   repository,
@@ -12,6 +14,15 @@ import {
 import { Octokit } from "octokit";
 import { RestEndpointMethodTypes } from "@octokit/plugin-rest-endpoint-methods";
 import { parse } from "node-html-parser";
+import semver from "semver/preload";
+import { components } from "@octokit/openapi-types";
+
+const octokit = new Octokit({ authStrategy: createGithubAuth });
+
+const requestCache = {
+  // Set cache to 30 min to prevent rate limiting during development
+  request: { next: { revalidate: 1800 } },
+};
 
 function createGithubAuth() {
   if (process.env.GITHUB_TOKEN) {
@@ -28,37 +39,65 @@ function throwBuildError() {
   throw new Error("Build failed");
 }
 
-export async function getLatestReleases(): Promise<GithubRelease[]> {
-  const octokit = new Octokit({ authStrategy: createGithubAuth });
+function mapRelease(release: components["schemas"]["release"]): GithubRelease {
+  const downloads: ReleaseDownloads = {};
+  let avm2_report_asset_id: number | undefined = undefined;
+  for (const asset of release.assets) {
+    if (asset.name === "avm2_report.json") {
+      avm2_report_asset_id = asset.id;
+    }
+    for (const [key, pattern] of Object.entries(FilenamePatterns)) {
+      if (asset.name.indexOf(pattern) > -1) {
+        downloads[key as DownloadKey] = asset.browser_download_url;
+      }
+    }
+  }
+
+  return {
+    id: release.id,
+    name: release.name || release.tag_name,
+    prerelease: release.prerelease,
+    url: release.html_url,
+    tag: release.tag_name,
+    downloads,
+    avm2_report_asset_id,
+  };
+}
+
+export async function getLatestRelease(): Promise<GithubRelease> {
+  try {
+    const response = await octokit.rest.repos.getLatestRelease({
+      ...requestCache,
+      ...repository,
+    });
+    return mapRelease(response.data);
+  } catch {
+    // There's no stable release, get the latest nightly.
+  }
+
+  const releases = await octokit.rest.repos.listReleases({
+    per_page: 1,
+    ...requestCache,
+    ...repository,
+  });
+  return mapRelease(releases.data[0]);
+}
+
+export async function getLatestNightlyReleases(): Promise<GithubRelease[]> {
   try {
     const releases = await octokit.rest.repos.listReleases({
-      per_page: maxNightlies + 2, // more than we need to account for a possible draft release + possible full release
-      request: { next: { revalidate: 1800 } },
+      // We have to take into account possible stable releases here
+      per_page: maxNightlies + 4,
+      ...requestCache,
       ...repository,
     });
     const result = [];
-    let avm2_report_asset_id: number | undefined = undefined;
     for (const release of releases.data) {
-      const downloads: ReleaseDownloads = {};
-      for (const asset of release.assets) {
-        if (asset.name === "avm2_report.json") {
-          avm2_report_asset_id = asset.id;
-        }
-        for (const [key, pattern] of Object.entries(FilenamePatterns)) {
-          if (asset.name.indexOf(pattern) > -1) {
-            downloads[key as DownloadKey] = asset.browser_download_url;
-          }
-        }
+      if (!release.prerelease) {
+        // Filter out stable releases
+        continue;
       }
-
-      result.push({
-        id: release.id,
-        name: release.name || release.tag_name,
-        prerelease: release.prerelease,
-        url: release.html_url,
-        downloads,
-        avm2_report_asset_id,
-      });
+      result.push(mapRelease(release));
     }
     return result;
   } catch (error) {
@@ -67,14 +106,70 @@ export async function getLatestReleases(): Promise<GithubRelease[]> {
   }
 }
 
+export async function getLatestStableReleases(): Promise<GithubRelease[]> {
+  let newestMajor = null;
+
+  // Map representing releases from the current major version:
+  //   `major.minor` -> `major.minor.patch`
+  // We want to ignore older patches and show last X minor versions.
+  const currentMajorReleases = new Map();
+
+  // Map representing releases from older major versions.
+  //   `major` -> `major.minor.patch`
+  // We ignore here minor and patch versions, and
+  // gather the newest release per each major.
+  const olderMajors = new Map();
+
+  for (
+    let page = 1;
+    currentMajorReleases.size < maxMinor || olderMajors.size < maxMajor - 1;
+    ++page
+  ) {
+    const request = await octokit.rest.repos.listReleases({
+      // 100 per page disables cache as the result is >2MB
+      per_page: 80,
+      page: page,
+      ...requestCache,
+      ...repository,
+    });
+    if (request.status != 200 || request.data.length == 0) {
+      break;
+    }
+    for (const data of request.data) {
+      if (data.prerelease) {
+        continue;
+      }
+      const release = mapRelease(data);
+      const version = release.tag.replace(/^v/, "");
+      const major = semver.major(version);
+      const majorMinor = `${major}.${semver.minor(version)}`;
+      if (!newestMajor) {
+        newestMajor = major;
+      }
+      if (major === newestMajor) {
+        if (!currentMajorReleases.has(majorMinor)) {
+          currentMajorReleases.set(majorMinor, release);
+        }
+      } else {
+        if (!olderMajors.has(major)) {
+          olderMajors.set(major, release);
+        }
+      }
+    }
+  }
+
+  return Array.from(currentMajorReleases.values())
+    .slice(0, maxMinor)
+    .concat(Array.from(olderMajors.values()).slice(0, maxMajor - 1));
+}
+
 export async function getWeeklyContributions(): Promise<
   RestEndpointMethodTypes["repos"]["getCommitActivityStats"]["response"]
 > {
-  const octokit = new Octokit({ authStrategy: createGithubAuth });
   return octokit.rest.repos.getCommitActivityStats(repository);
 }
 export async function fetchReport(): Promise<AVM2Report | undefined> {
-  const releases = await getLatestReleases();
+  const releases = await getLatestNightlyReleases();
   const latest = releases.find(
     (release) => release.avm2_report_asset_id !== undefined,
   );
@@ -82,10 +177,8 @@ export async function fetchReport(): Promise<AVM2Report | undefined> {
     throwBuildError();
     return;
   }
-  const octokit = new Octokit({ authStrategy: createGithubAuth });
   const asset = await octokit.rest.repos.getReleaseAsset({
-    owner: repository.owner,
-    repo: repository.repo,
+    ...repository,
     asset_id: latest.avm2_report_asset_id,
     headers: {
       accept: "application/octet-stream",
@@ -100,10 +193,8 @@ export async function fetchReport(): Promise<AVM2Report | undefined> {
 }
 
 export async function getAVM1Progress(): Promise<number> {
-  const octokit = new Octokit({ authStrategy: createGithubAuth });
   const issues = await octokit.rest.issues.listForRepo({
-    owner: repository.owner,
-    repo: repository.repo,
+    ...repository,
     labels: "avm1-tracking",
     state: "all",
     per_page: 65,
