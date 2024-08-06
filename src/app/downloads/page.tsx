@@ -84,7 +84,7 @@ function DesktopDownload({ latest }: { latest: GithubRelease | null }) {
                 title={url ? "" : "Unavailable"}
               >
                 <link.icon />
-                {link.shortName}
+                {link.longName}
               </Button>
             );
           })}
