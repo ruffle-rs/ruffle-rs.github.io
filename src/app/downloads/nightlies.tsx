@@ -33,6 +33,9 @@ function DownloadLink({
   release: GithubRelease;
 }) {
   const url = release.downloads[link.key];
+  if (!url) {
+    return <></>;
+  }
 
   return (
     <Button
