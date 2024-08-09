@@ -15,13 +15,14 @@ import {
 } from "@mantine/core";
 import React from "react";
 import Link from "next/link";
-import classes from "./nightlies.module.css";
+import classes from "./releases.module.css";
 import {
   desktopLinks,
   type DownloadLink,
   extensionLinks,
+  githubNightlyReleasesUrl,
   type GithubRelease,
-  githubReleasesUrl,
+  githubStableReleasesUrl,
   webLinks,
 } from "@/app/downloads/config";
 
@@ -51,9 +52,9 @@ function DownloadLink({
   );
 }
 
-function NightlyRow(release: GithubRelease) {
-  // The nightly prefix is a bit superfluous here
-  const name = release.name.replace(/^Nightly /, "");
+function ReleaseRow(release: GithubRelease) {
+  // The prefix is a bit superfluous here
+  const name = release.name.replace(/^Nightly /, "").replace(/^Release /, "");
   return (
     <TableTr>
       <TableTd>
@@ -86,7 +87,7 @@ function NightlyRow(release: GithubRelease) {
   );
 }
 
-function NightlyCompactBox(release: GithubRelease) {
+function ReleaseCompactBox(release: GithubRelease) {
   return (
     <>
       <Link href={release.url} className={classes.nameAsHeader} target="_blank">
@@ -114,24 +115,55 @@ function NightlyCompactBox(release: GithubRelease) {
   );
 }
 
-export function NightlyList({ nightlies }: { nightlies: GithubRelease[] }) {
+function ReleaseIntro({ nightly }: { nightly: boolean }) {
+  if (!nightly) {
+    return (
+      <>
+        <Title id="releases">Stable Releases</Title>
+        <Text>
+          If none of the above are suitable for you, you can manually download
+          one of the latest stable releases. Older versions are available on{" "}
+          <Link href={githubStableReleasesUrl} target="_blank">
+            GitHub
+          </Link>
+          .
+        </Text>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <Title id="nightly-releases">Nightly Releases</Title>
+        <Text>
+          If you want to try out the latest updates and cutting-edge features,
+          you can download the latest nightly release. These are automatically
+          built every day (approximately midnight UTC, unless there are no
+          changes on that day) and they offer early access to new enhancements,
+          bug fixes, and improvements before they're officially rolled out.
+          Older nightly releases are available on{" "}
+          <Link href={githubNightlyReleasesUrl} target="_blank">
+            GitHub
+          </Link>
+          .
+        </Text>
+      </>
+    );
+  }
+}
+
+export function ReleaseList({
+  releases,
+  nightly,
+}: {
+  releases: GithubRelease[];
+  nightly: boolean;
+}) {
+  if (releases.length == 0) {
+    return <></>;
+  }
   return (
     <Stack>
-      <Title id="nightly-releases">Nightly Releases</Title>
-      <Text>
-        If none of the above are suitable for you, you can manually download the
-        latest Nightly release. These are automatically built every day
-        (approximately midnight UTC), unless there are no changes on that day.{" "}
-        Older nightly releases are available on{" "}
-        <Link
-          href={githubReleasesUrl}
-          className={classes.moreNightlies}
-          target="_blank"
-        >
-          GitHub
-        </Link>
-        .
-      </Text>
+      <ReleaseIntro nightly={nightly} />
       <Table
         horizontalSpacing="md"
         verticalSpacing="md"
@@ -148,16 +180,16 @@ export function NightlyList({ nightlies }: { nightlies: GithubRelease[] }) {
           </TableTr>
         </TableThead>
         <TableTbody className={classes.body}>
-          {nightlies.map((nightly) => (
-            <NightlyRow key={nightly.id} {...nightly} />
+          {releases.map((release) => (
+            <ReleaseRow key={release.id} {...release} />
           ))}
         </TableTbody>
       </Table>
 
       <Stack hiddenFrom="sm">
         {/*Compact mobile view, because a table is far too wide*/}
-        {nightlies.map((nightly) => (
-          <NightlyCompactBox key={nightly.id} {...nightly} />
+        {releases.map((release) => (
+          <ReleaseCompactBox key={release.id} {...release} />
         ))}
       </Stack>
     </Stack>

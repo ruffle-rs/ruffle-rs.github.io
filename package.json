@@ -19,7 +19,8 @@
     "react": "^18",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18",
-    "recharts": "^2.12.7"
+    "recharts": "^2.12.7",
+    "semver": "^7.6.3"
   },
   "devDependencies": {
     "@types/d3": "^7.4.3",
@@ -27,6 +28,7 @@
     "@types/node": "^22",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/semver": "^7.5.8",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
     "d3": "^7.9.0",

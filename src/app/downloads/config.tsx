@@ -14,9 +14,13 @@ import { SummaryStatistics } from "@/app/compatibility/avm2/report_utils";
 
 export const repository = { owner: "ruffle-rs", repo: "ruffle" };
 
+export const maxMinor = 3;
+export const maxMajor = 1;
 export const maxNightlies = 5;
 
 export const githubReleasesUrl = `https://github.com/${repository.owner}/${repository.repo}/releases`;
+export const githubStableReleasesUrl = `${githubReleasesUrl}?q=prerelease:false`;
+export const githubNightlyReleasesUrl = `${githubReleasesUrl}?q=prerelease:true`;
 
 export interface GithubRelease {
   id: number;
@@ -24,6 +28,7 @@ export interface GithubRelease {
   prerelease: boolean;
   downloads: ReleaseDownloads;
   url: string;
+  tag: string;
   avm2_report_asset_id?: number;
 }
 
