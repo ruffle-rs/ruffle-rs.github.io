@@ -20,22 +20,22 @@ Since the last blog post (7 month ago)...
 ---
 
 ### Preparing for a stable release
-Ruffle has been "version 0.1.0" since the [initial commit](https://github.com/ruffle-rs/ruffle/commit/b979ac26a9dad77ca66c3f9171efac4acfa8c19d) over 8 years ago! Suffice it to say, we've come a long, long way since then and we think it's about time we recognise that we're no longer an experimental piece of software, but a legitimate library that's already used by many huge websites - including the Wayback Machine itself!
+Ruffle has been "version 0.1.0" since the [initial commit](https://github.com/ruffle-rs/ruffle/commit/b979ac26a9dad77ca66c3f9171efac4acfa8c19d) over 8 years ago! Suffice it to say, we've come a long, long way since then and we think it's about time we recognise that we're no longer an experimental piece of software, but a legitimate library that's already used by many huge websites - including the Wayback Machine!
 
 @kjarosh and @dinnerbone have been working on preparing things for our very first Stable release, and we'll soon have a plan to perform them regularly after that. With stable releases, we'll also (try to) make more regular blog posts and provide a stable API to all projects that use Ruffle.
 
 Leading up to the stable release, we've also started packaging Ruffle's Desktop Application a little bit better:
-- @dinnerbone has created an installer for Windows, which includes associating Ruffle with Flash files. No auto-updated yet though, sorry!
-- @Doomsdayrs and @kjarosh has made Ruffle available via [Flatpak](https://flathub.org/apps/rs.ruffle.Ruffle) for easy installation on Linux.
+- @dinnerbone has created an installer for Windows, which includes associating Ruffle with Flash files. No auto-updater yet though, sorry!
+- @Doomsdayrs and @kjarosh have made Ruffle available via [Flatpak](https://flathub.org/apps/rs.ruffle.Ruffle) for easy installation on Linux.
 
 ### Text Fields & Fonts
 Text inputs are one of those things that you never really think about until you encounter one that just doesn't *feel right*. Until recently, Ruffle's text input was a terrible example of this; shortcuts barely worked, you couldn't highlight text, scrolling was unlikely and it was just generally *wonky*.
 
-The amazing @kjarosh has been working hard on fixing this, making text inputs closer to Flash and feel just oh so much better. All the way from better rendering, to keyboard shortcuts and relevant context menus - they should just work the way you expect in most cases now!
+The amazing @kjarosh has been working hard on fixing this, making text inputs closer to Flash and feel just oh so much better. All the way from better rendering to keyboard shortcuts and relevant context menus - they should just work the way you expect in most cases now!
 
 [//]: # (todo: video of input box comparison with old and new ruffle)
 
-Similarly, @evilpie and @dinnerbone have further improved font rendering in some cases - such as default Japanese fonts, better kerning, and support for DefineFont4 (a compressed font format that Flash used with Flash's Text Layout Framework). There's likely still issues left to be discovered, but we're pretty happy with where we are today!
+Similarly, @evilpie and @dinnerbone have further improved font rendering in some cases - such as default Japanese fonts, better kerning, and support for DefineFont4 (a compressed font format that Flash used with its Text Layout Framework). There's likely still issues left to be discovered, but we're pretty happy with where we are today!
 
 [//]: # (todo: image comparison of font changes)
 
@@ -51,20 +51,20 @@ This is another one of those areas that just felt annoying when it doesn't work,
 ### Optimisations
 The priority for Ruffle has always been correctness above all else. We implement something, get it right, *make tests*, and then look at how to speed it up. Until recently, we've been firmly in the "get things working" stage. Well, if you look at our progress percentage above - I think you'll see that quite a lot of things work the way they're supposed to these days! That means it's time to visit all the pain points for performance, and oh boy there's been some huge improvements in this area.
 
-@Lord-McSweeney and @adrian17 has implemented a verifier for AVM2, which lets us safely make assumptions about code and optimise based on those. This has unlocked adding an optimiser pass, which greatly speeds up ActionScript 3 content and removes a lot of overhead.
+@Lord-McSweeney and @adrian17 have implemented a verifier for AVM2, which lets us safely make assumptions about code and optimise based on those. This has unlocked adding an optimiser pass, which greatly speeds up ActionScript 3 content and removes a lot of overhead.
 It's still far from Flash Player speeds, but they have a JIT and had decades to make everything as fast as it was. We're getting there, though!
 
 Some other notable optimisations:
-- @adrian17 has implemented dependant strings and interned strings, reducing the amount of memory needed for string operations in ActionScript and speeding up lots of basic text processing.
+- @adrian17 has implemented dependent strings and interned strings, reducing the amount of memory needed for string operations in ActionScript and speeding up lots of basic text processing.
 - @adrian17 has also improved caching in Stage3D content, giving us up to 4x the FPS on some content that uses it.
-- @dinnerbone has optimised general rendering slightly, reducing the amount of times we submit buffers to the GPU per frame.
-- @kjarosh has improved some rounding functions by about 20%, which is used all over the codebase all the time.
+- @dinnerbone has optimised general rendering slightly, reducing the number of times we submit buffers to the GPU per frame.
+- @kjarosh has improved the speed of some rounding functions by about 20%. These functions are used all over the codebase all the time.
 - @moulins has been working on improvements to how Ruffle uses [gc-arena](https://github.com/kyren/gc-arena), which reduces a lot of general overhead to anything that can be garbage collected.
 
 ### Desktop Application
 The desktop application has received a lot of love this year! @dinnerbone has added persistent storage of preferences, which lets you do stuff like changing the rendering backend without needing to use the command line every time you start Ruffle.
 Building on top of this, @sleepycatcoding has added bookmarks and a "recents" menu, giving much needed quality of life to using Ruffle to play content.
-We've also made Ruffle start logging to disk by default, which helps with debugging when something goes wrong.
+We've also made Ruffle save a log file by default, which helps with debugging when something goes wrong.
 
 [//]: # (Bookmarks and preferences screenshots)
 
@@ -74,7 +74,7 @@ Details about this format can be found [in our documentation](https://github.com
 Some other notable changes to desktop:
 - @evilpie has improved spoofing for content that uses ExternalInterface, allowing you to play more content locally that is normally restricted to specific websites.
 - @Aaron1011, @kjarosh, @sleepycatcoding and @crumblingstatue have all improved our Debug UI, making it more powerful with features like editing AVM1 properties live, seeing AVM2 Domains, and the focus order of every object.
-- @torokati44 has added support for H.264 FLV video playback, using Cisco's [OpenH264](https://www.openh264.org/). This downloads the library at runtime to comply with openh264's license, but may be disabled in the Preferences menu.
+- @torokati44 has added support for H.264 FLV video playback, using Cisco's [OpenH264](https://www.openh264.org/). This downloads the library at runtime to comply with openh264's license, and can be disabled in the Preferences menu.
 - @kjarosh has added a View menu, allowing you to change some settings on the fly (such as the scale mode).
 
 [//]: # (Debug UI screenshots - maybe AVM1 editing)
@@ -97,8 +97,8 @@ There's been a lot of improvements to the extension codebase, and some bug fixes
 ### Web Improvements
 There has also been a lot of improvements under the hood here for code quality, and especially preparation for releasing a stable version. There's a few notable highlights though:
 
-- Thanks to contributions from @WumboSpasm, the web general look and feel of the UI on web is much improved.
-- @dinnerbone has put a lot of work into trying to make a JavaScript API that we can stabilise, and also making a `ruffle-core` package that anyone can use as a regular npm dependency, instead of relying on our prebuilt zip packages. It's not released yet, however!
+- Thanks to contributions from @WumboSpasm, the general look and feel of the UI on web is much improved.
+- @dinnerbone has been working on stabilizing our JavaScript API, and also making a `ruffle-core` package that anyone can use as an npm dependency, instead of relying on our prebuilt zip packages. This work is ongoing but should be completed soon!
 - @dinnerbone has improved `ExternalInterface` support, allowing support for games like Club Penguin which interacted with the page heavily.
 
 ### Rendering Improvements
@@ -119,3 +119,5 @@ There have been *so many* changes from so many people, it's hard to list them al
 - @dinnerbone has implemented `LocalConnection` support, which makes Club Penguin work in Ruffle.
 - @evilpie has implemented File Selection APIs used by Scratch, allowing you to download and upload files in content that uses it.
 ... and so so so many bug fixes and miscellaneous improvements!
+
+[//]: # (screenshot of Club Penguin)
