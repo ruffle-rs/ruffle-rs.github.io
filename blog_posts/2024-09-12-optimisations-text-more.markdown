@@ -11,7 +11,7 @@ There's *so many* improvements to Ruffle, that we really can't do it justice wit
 
 As before, let's summarize with some fancy numbers first.
 
-Since the last blog post (7 month ago)...
+Since the last blog post (8 months ago)...
 - ActionScript 3 Language has gone up from 75% to **XXXXX%**!
 - ActionScript 3 API has gone up from 68% to **XXXXX%**!
 - ActionScript 1/2 Language has remained at 95%. We're fairly sure we're feature complete, just some pesky bugs left! 
@@ -29,7 +29,7 @@ Ruffle has been "version 0.1.0" since the [initial commit](https://github.com/ru
 
 Leading up to the stable release, we've also started packaging Ruffle's Desktop Application a little bit better:
 - @dinnerbone has created an installer for Windows, which includes associating Ruffle with Flash files. No auto-updater yet though, sorry!
-- @Doomsdayrs and @kjarosh have made Ruffle available via [Flatpak](https://flathub.org/apps/rs.ruffle.Ruffle) for easy installation on Linux.
+- @Doomsdayrs and @kjarosh have made Ruffle available via [Flatpak](https://flathub.org/apps/rs.ruffle.Ruffle) for easy installation on Linux with automatic updates.
 
 ### Text Fields & Fonts
 Text inputs are one of those things that you never really think about until you encounter one that just doesn't *feel right*. Until recently, Ruffle's text input was a terrible example of this; shortcuts barely worked, you couldn't highlight text, scrolling was unlikely and it was just generally *wonky*.
@@ -80,7 +80,7 @@ Some other notable changes to desktop:
 - @evilpie has improved spoofing for content that uses ExternalInterface, allowing you to play more content locally that is normally restricted to specific websites.
 - @Aaron1011, @kjarosh, @sleepycatcoding and @crumblingstatue have all improved our Debug UI, making it more powerful with features like editing AVM1 properties live, seeing AVM2 Domains, and the focus order of every object.
 - @torokati44 has added support for H.264 FLV video playback, using Cisco's [OpenH264](https://www.openh264.org/). This downloads the library at runtime to comply with openh264's license, and can be disabled in the Preferences menu.
-- @kjarosh has added a View menu, allowing you to change some settings on the fly (such as the scale mode).
+- @kjarosh has added the View menu, allowing you to change some settings on the fly (such as the scale mode).
 
 <video muted autoplay controls>
     <source src="/2024-09-12-optimisations-text-more/edit-avm1-value.mp4" type="video/mp4">
@@ -111,7 +111,7 @@ There has also been a lot of improvements under the hood here for code quality, 
 ### Rendering Improvements
 @Aaron1011 has fixed a bunch of bugs relating to Stage3D, and improved PixelBender support.
 
-@moulins has found and fixed lots of smaller issues with our Filter implementations, and provided better tests for them.
+@moulins has found and fixed lots of smaller issues with our implementation of filter effects, and provided better tests for them.
 
 @kjarosh, @Aaron1011 and @adrian17 have improved the ActionScript `Graphics` API, making content that used it look more correct.
 
@@ -123,6 +123,7 @@ There have been *so many* changes from so many people, it's hard to list them al
 - @Lord-McSweeney has implemented "Loader reuse", which unblocked many online/MMO games which relied on this.
 - @dinnerbone has implemented `LocalConnection` support, which makes Club Penguin work in Ruffle.
 - @evilpie has implemented File Selection APIs used by Scratch, allowing you to download and upload files in content that uses it.
+
 ... and so so so many bug fixes and miscellaneous improvements!
 
 <a href="/2024-09-12-optimisations-text-more/club-penguin.png" target="_blank"><img src="/2024-09-12-optimisations-text-more/club-penguin.png" title="Club Penguin running in Ruffle" alt="Club Penguin running in Ruffle" style="max-height: 300px"></a>
@@ -133,7 +134,7 @@ It's been a crazy few months, and I'm so proud of all the progress we keep makin
 
 As a reminder, Ruffle is a completely open source project and we're always looking for contributions! Some quick ways to help out:
 - Speak another language? [Help translate Ruffle](https://crowdin.com/project/ruffle) to your native language over on Crowdin
-- Got a few bucks spare? [Sponsor the project](https://opencollective.com/ruffle) and help us fund future development
+- Got a few bucks to spare? [Sponsor the project](https://opencollective.com/ruffle) and help us fund future development
 - Like playing games? Try Ruffle on your favourite content and [report any issues](https://github.com/ruffle-rs/ruffle/issues) you find - or maybe check out [the latest annual Flash Forward Jam](https://www.newgrounds.com/bbs/topic/1532035) on Newgrounds!
 - Can you code? Whip out your favourite IDE and [help us improve](https://github.com/ruffle-rs/ruffle/blob/master/CONTRIBUTING.md) - the player is in Rust, everything web is Typescript, and the android app is Kotlin
 - Got a friend? Tell them to help out! :D
