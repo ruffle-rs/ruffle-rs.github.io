@@ -1,10 +1,10 @@
 ---
 title:  "Optimisations, Text Input, Tab Focusing and More!"
-date:   2024-08-27 21:02:00 +0100
+date:   2024-09-12 21:02:00 +0100
 author: Dinnerbone
 icon: /undraw/undraw_setup_analytics_re_foim.svg
 images:
-  - /2024-08-27-optimisations-text-more/club-penguin.png
+  - /2024-09-12-optimisations-text-more/club-penguin.png
 ---
 We really should start making these posts more often, because phew there's a lot that happened in the last 7 months!
 There's *so many* improvements to Ruffle, that we really can't do it justice with an easy summary here. This blog post is going to be a little long, but the highlights are at the top!
@@ -37,7 +37,7 @@ Text inputs are one of those things that you never really think about until you 
 The amazing @kjarosh has been working hard on fixing this, making text inputs closer to Flash and feel just oh so much better. All the way from better rendering to keyboard shortcuts and relevant context menus - they should just work the way you expect in most cases now! And yes, thankfully, this includes selecting text with a mouse - a feature we all take for granted until it doesn't exist.
 
 <video muted autoplay controls>
-    <source src="/2024-08-27-optimisations-text-more/text-selection.mp4" type="video/mp4">
+    <source src="/2024-09-12-optimisations-text-more/text-selection.mp4" type="video/mp4">
 </video>
 
 Similarly, @evilpie and @dinnerbone have further improved font rendering in some cases - such as default Japanese fonts, better kerning, and support for DefineFont4 (a compressed font format that Flash used with its Text Layout Framework). There's likely still issues left to be discovered, but we're pretty happy with where we are today!
@@ -69,8 +69,8 @@ The desktop application has received a lot of love this year! @dinnerbone has ad
 Building on top of this, @sleepycatcoding has added bookmarks and a "recents" menu, giving much needed quality of life to using Ruffle to play content.
 We've also made Ruffle save a log file by default, which helps with debugging when something goes wrong.
 
-<a href="/2024-08-27-optimisations-text-more/bookmarks.png" target="_blank"><img src="/2024-08-27-optimisations-text-more/bookmarks.png" title="A bookmarks menu in Ruffle" alt="A bookmarks menu in Ruffle" style="max-height: 300px"></a>
-<a href="/2024-08-27-optimisations-text-more/preferences.png" target="_blank"><img src="/2024-08-27-optimisations-text-more/preferences.png" title="A preferences menu in Ruffle" alt="A preferences menu in Ruffle" style="max-height: 300px"></a>
+<a href="/2024-09-12-optimisations-text-more/bookmarks.png" target="_blank"><img src="/2024-09-12-optimisations-text-more/bookmarks.png" title="A bookmarks menu in Ruffle" alt="A bookmarks menu in Ruffle" style="max-height: 300px"></a>
+<a href="/2024-09-12-optimisations-text-more/preferences.png" target="_blank"><img src="/2024-09-12-optimisations-text-more/preferences.png" title="A preferences menu in Ruffle" alt="A preferences menu in Ruffle" style="max-height: 300px"></a>
 
 
 We've also introduced a new file format that our desktop application (and soon Android application) supports, called a "Ruffle Bundle". This is a way to package up games and movies that require specific settings to work, or contain so many files that need to be placed in a certain file structure.
@@ -83,7 +83,7 @@ Some other notable changes to desktop:
 - @kjarosh has added a View menu, allowing you to change some settings on the fly (such as the scale mode).
 
 <video muted autoplay controls>
-    <source src="/2024-08-27-optimisations-text-more/edit-avm1-value.mp4" type="video/mp4">
+    <source src="/2024-09-12-optimisations-text-more/edit-avm1-value.mp4" type="video/mp4">
 </video>
 
 ### Android Application
@@ -125,7 +125,7 @@ There have been *so many* changes from so many people, it's hard to list them al
 - @evilpie has implemented File Selection APIs used by Scratch, allowing you to download and upload files in content that uses it.
 ... and so so so many bug fixes and miscellaneous improvements!
 
-<a href="/2024-08-27-optimisations-text-more/club-penguin.png" target="_blank"><img src="/2024-08-27-optimisations-text-more/club-penguin.png" title="Club Penguin running in Ruffle" alt="Club Penguin running in Ruffle" style="max-height: 300px"></a>
+<a href="/2024-09-12-optimisations-text-more/club-penguin.png" target="_blank"><img src="/2024-09-12-optimisations-text-more/club-penguin.png" title="Club Penguin running in Ruffle" alt="Club Penguin running in Ruffle" style="max-height: 300px"></a>
 
 
 ### Thank you all!
