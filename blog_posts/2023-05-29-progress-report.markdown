@@ -8,7 +8,7 @@ We have some exciting Ruffle developments to share today!
 
 ---
 
-### Big improvements in ActionScript 3!
+## Big improvements in ActionScript 3!
 
 More fan-favorite games are finally playable again!
 - [*Bloons Tower Defense 4*](https://www.kongregate.com/games/Ninjakiwi/bloons-tower-defense-4)
@@ -38,32 +38,32 @@ XML support is progressing nicely! Thanks to the great work of [@evilpie](https:
 
 Note: Because Stage3D is graphically intensive, only the Ruffle desktop app can currently run these games well.
 
-### ActionScript 2 support is improving too!
+## ActionScript 2 support is improving too!
 [@Toad06](https://github.com/Toad06/) has implemented some additional XML methods, making *Mission in Snowdriftland* playable in Ruffle! You can check it out on the [Flashpoint testing site](https://ooooooooo.ooo/static/?7d01dea2-d54f-f04a-bd84-49477152fabb) (forgive the goofy URL).
 
 <img src="/2023-05-progress-report/MissionInSnowdriftland.png" style="max-height: 350px">
 
-### The Ruffle desktop app finally has a user inteface!
+## The Ruffle desktop app finally has a user inteface!
 Thanks to the efforts of [@mike](https://github.com/Herschel/) and [@Dinnerbone](https://github.com/Dinnerbone/), the desktop app now has a menu bar and context menu! You can also open SWF files by dragging them into the Ruffle window.
 
 <img src="/2023-05-progress-report/RuffleDesktopGUI.png">
 
-### Ruffle now has a built-in save manager!
+## Ruffle now has a built-in save manager!
 Thanks to the work of [@danielhjacobs](https://github.com/danielhjacobs/), web builds of Ruffle allow you to back up and restore your progress for any game. Just right-click => Open Save Manager!
 
 <img src="/2023-05-progress-report/SaveManager.png">
 
-### We're looking for help localizing Ruffle to other languages!
+## We're looking for help localizing Ruffle to other languages!
 If you'd like to help translate Ruffle into your language, please [join our new CrowdIn project](https://crowdin.com/project/ruffle).
 
-### Ruffle finally supports copying and pasting text!
+## Ruffle finally supports copying and pasting text!
 Thanks to the efforts of [myself](https://github.com/n0samu/) and [@Toad06](https://github.com/Toad06/), editable text boxes in Ruffle now support cutting, copying and pasting. You can also press Ctrl-A to select all. Check out the demo below, where I create, copy and paste a level code in *Super Mario Flash*!
 
 <video muted autoplay controls>
     <source src="/2023-05-progress-report/SuperMarioFlashCopyPasteDemo.mp4" type="video/mp4">
 </video>
 
-### We have more awesome things coming up!
+## We have more awesome things coming up!
 - Tonight's Ruffle build will feature some major **desktop interface improvements** from [@Dinnerbone](https://github.com/Dinnerbone/)!
 
     <img src="/2023-05-progress-report/DesktopGUIAdvancedOpen.png" style="max-height: 500px">

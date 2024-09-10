@@ -7,14 +7,14 @@ icon: /undraw/undraw_feeling_blue_-4-b7q.svg
 
 On December 11th, 2022, our extension submissions to Firefox's extension repository, addons.mozilla.org (abbreviated as A.M.O), got stuck in review. This was shortly followed up with a far scarier notice a few days later on the 14th:
 
->Ruffle will be disabled on addons.mozilla.org  
+>Ruffle will be disabled on addons.mozilla.org
 >Due to issues discovered during the review process, one or more versions of your add-on Ruffle will be disabled on addons.mozilla.org in 14 day(s).
 
 What followed was a list of every prior submitted version of Ruffle, and a statement requesting corresponding source code. Following this, Ruffle would be unavailable for Firefox users for two months, and we spent an additional month and a half improving our CI processes to support source code review requirements for Mozilla. This is now behind us, but it is important to know why it happened.
 
 ---
 
-# The initial response
+## The initial response
 
 Our first attempt to satisfy the requirement was very naive: Mike uploads the source repository for the latest submitted version of Ruffle, version 0.1.0.685. He also includes build instructions. What followed was a game of ping-pong between Ruffle's maintainers and Mozilla's extension review team. The first reviewer skipped the `cd web` step and got an error. The second reviewer was able to correctly launch the build system, but hadn't installed a JVM. Our ActionScript 3 support requires Java, as we wrote significant portions of our AS3 builtins in ActionScript itself, which needs to be compiled by a Java binary. However, we'd failed to mention that in our build system documentation. [Oops.](https://github.com/ruffle-rs/ruffle/pull/8959)
 
@@ -22,7 +22,7 @@ At this point, Ruffle has already been removed from addons.mozilla.org, and [peo
 
 I continued pressing on with reviewer ping-pong on Mike's behalf. 0.1.0.685 was already rejected at this point, which meant that I had to submit 0.1.0.712, along with corrected build instructions. This time, the reviewer failed to install rustc instead of the JVM. Since the Dockerfile was part of 0.1.0.712, I suggested using that. The reviewer correctly built Ruffle with the Dockerfile, but the submission was rejected anyway because the compiled source code did not match the XPI we submitted.
 
-# Diffing intensifies
+## Diffing intensifies
 
 Mozilla sent over the version of the extension that they built. My first instinct was to diff all the files in both XPIs. This turns up three major categories of differences:
 
@@ -38,7 +38,7 @@ The WASM files would be more complicated. When building my laptop running Ubuntu
 
 It turned out that this difference was a fluke. Another test build done on February 2nd was identical across multiple runs. I submitted 0.1.0.742 the next day.
 
-# Reproducible means reproducible!
+## Reproducible means reproducible!
 
 Mozilla took more than a week to review this submission. The first time they looked for the XPI in the wrong place. The second time they caught actually obfuscated code in our extension script:
 
@@ -55,7 +55,7 @@ Furthermore, we don't actually have the ability to automate extension source cod
 
 0.1.0.760 is approved on February 23rd, marking Ruffle's return to addons.mozilla.org.
 
-# CI
+## CI
 
 While users can now use Ruffle again, we still need our fully automated upload pipeline. Having a maintainer fiddle with our Secrets configuration and upload two files to our addons.mozilla.org account every time we want to release is annoying and error-prone.
 
@@ -69,7 +69,7 @@ After I submitted 0.1.0.760 a month ago, I suggested a weekly release cycle for 
 
 The next weekly, 0.1.0.813, uploads automatically. The process was so smooth I literally forgot to check if it succeeded - I only noticed after seeing the approval the next Thursday. Firefox is fixed.
 
-# Context
+## Context
 
 It's tempting to read into this and get angry at Mozilla, but we also have to look at this from their perspective. Extension review is necessary to keep extensions from turning into data theft and ad-jacking operations, and average users should only be running properly reviewed extensions. We also made several mistakes during our response process that delayed our return to addons.mozilla.org. And the process resulted in genuine problems with our code being found and fixed.
 
