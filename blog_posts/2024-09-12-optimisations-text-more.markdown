@@ -6,7 +6,7 @@ icon: /undraw/undraw_setup_analytics_re_foim.svg
 images:
   - /2024-09-12-optimisations-text-more/club-penguin.png
 ---
-We really should start making these posts more often, because phew there's a lot that happened in the last 7 months!
+We really should start making these posts more often, because phew there's a lot that happened in the last 8 months!
 There's *so many* improvements to Ruffle, that we really can't do it justice with an easy summary here. This blog post is going to be a little long, but the highlights are at the top!
 
 As before, let's summarize with some fancy numbers first.
@@ -126,8 +126,6 @@ There have been *so many* changes from so many people, it's hard to list them al
 - @evilpie has implemented File Selection APIs used by Scratch, allowing you to download and upload files in content that uses it.
 
 ... and so so so many bug fixes and miscellaneous improvements!
-
-<a href="/2024-09-12-optimisations-text-more/club-penguin.png" target="_blank"><img src="/2024-09-12-optimisations-text-more/club-penguin.png" title="Club Penguin running in Ruffle" alt="Club Penguin running in Ruffle" style="max-height: 300px"></a>
 
 
 ## Thank you all!
