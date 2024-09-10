@@ -20,7 +20,7 @@ Since the last blog post...
 
 ---
 
-### Display Filters
+## Display Filters
 We've now implemented 7 out of 10 of Flash's filter effects, making content look much more accurate (and lots of text actually legible!)
 
 Along with filter support, we've also implemented `cacheAsBitmap` support - a huge optimisation for games that use it, saving us the need to render the same thing every single frame!
@@ -29,7 +29,7 @@ Along with filter support, we've also implemented `cacheAsBitmap` support - a hu
 
 [The remaining 3 filters](https://github.com/ruffle-rs/ruffle/issues/15) don't seem to be used often, but we welcome anyone who wishes to come help implement them! Support for the existing filters was done by [@Dinnerbone](https://github.com/Dinnerbone) and [@torokati44](https://github.com/torokati44).
 
-### Text improvements
+## Text improvements
 On the topic of rendering, we've been picking and poking at fonts for a while now - and through our combined efforts we're finally starting to see the light at the end of this pixelated and wrongly shaped tunnel.
 
 [@Lord-McSweeney](https://github.com/Lord-McSweeney) has implemented basic Text Layout Framework (TLF) support, which has started to get some more advanced text rendering working.
@@ -45,7 +45,7 @@ With device font support landing, content that didn't embed their own font will 
 <a href="/2024-01-14-2023-in-review/aq.png" target="_blank"><img src="/2024-01-14-2023-in-review/aq.png" title="Adventure Quest, before and after" alt="Adventure Quest, before and after" style="max-height: 300px"></a>
 <a href="/2024-01-14-2023-in-review/spongebob.png" target="_blank"><img src="/2024-01-14-2023-in-review/spongebob.png" title="SpongeBob SquarePants: Plunder Blunder, before and after" alt="SpongeBob SquarePants: Plunder Blunder, before and after device texts" style="max-height: 300px"></a>
 
-### Sockets... even on the web!
+## Sockets... even on the web!
 This has definitely been one of the biggest hurdles to emulating Flash, but the incredible [@sleepycatcoding](https://github.com/sleepycatcoding) came in and made it happen.
 
 Any kind of multiplayer game such as Gaia, Habbo or Club Penguin relied on sockets (TCP sockets, or XML sockets) to function - and nobody was sure if we'd manage to get these working on the web. Modern browsers just don't like that sort of thing!
@@ -57,44 +57,44 @@ On desktop it's now supported out of the box (but will prompt you for permission
     <source src="/2024-01-14-2023-in-review/transformice.mp4" type="video/mp4">
 </video>
 
-### Flash remoting
+## Flash remoting
 In addition to sockets, another common way for online games to work was a protocol called "Flash Remoting", using `NetConnection`.
 This was most notably seen in any game that uses the Armor Games API, and we're happy to say that that now works more or less as expected!
 
-### FLV and video playback
+## FLV and video playback
 This has been a tricky one, but [@kmeisthax](https://github.com/kmeisthax) has been tackling this all year and making amazing progress. Ruffle now supports FLV playback, depending on which codec is required, and [@danielhjacobs](https://github.com/danielhjacobs) has added a workaround for patented codecs on the web by playing them using the browser over the top of the content (or on desktop, just opening the browser).
 
 There's still a lot of progress to be made here, and [@torokati44](https://github.com/torokati44) has a working prototype of decoding H.264 using Cisco's OpenH264 which is very exciting!
 
-### Initial AIR support
+## Initial AIR support
 This was a long time stretch goal that's starting to see reality thanks to [@Aaron1011](https://github.com/Aaron1011)! We now properly version the ActionScript 3 API, and this has been extended to allow AIR-only classes and methods.
 
 We don't have much to show for AIR stuff yet, but the framework to get us here has already helped close off many longstanding compatibility bugs when movies don't expect certain methods or properties to exist for the version of Flash they target.
 
-### Mixed AVM
+## Mixed AVM
 On the topic of longstanding bugs, [@Lord-McSweeney](https://github.com/Lord-McSweeney) has been working on allowing mixed-avm movies to run correctly - these are usually ActionScript 3 games running inside ActionScript 2 containers, or vice versa.
 
 There's still more to do here, but it's already helped unblock lots of content from just mysteriously failing to start!
 
-### Extension improvements
+## Extension improvements
 The extension now uses Manifest V3 (somewhat reluctantly), which enables us to... keep existing. Unfortunately this came with needing to remove the "go to a swf url and play it in the browser" feature, as that's no longer possible with MV3.
 
 However, the upside to this is that we're now [in the Edge store](https://microsoftedge.microsoft.com/addons/detail/ruffle/pipjjbgofgieknlpefmcckdmgaaegban)! Also, thanks to work from [@kmeisthax](https://github.com/kmeisthax) and [@danielhjacobs](https://github.com/danielhjacobs), we're also now available on Firefox for Android! [Check it out!](https://addons.mozilla.org/android/addon/ruffle_rs)
 
 [@WumboSpasm](https://github.com/WumboSpasm) also redesigned the demo player in the extension, which [@danielhjacobs](https://github.com/danielhjacobs) made serve as the replacement for the aforementioned swf-url feature. It looks pretty neat!
 
-### Desktop UI
+## Desktop UI
 Whilst we had a super basic UI introduced in our last blog post, now it's even better! It's still as simple to use as before, but the new Advanced Open menu has many new options you can toggle to change how content plays - plus we've added a host of brand new debug tools that even Flash Player didn't have!
 
 <a href="/2024-01-14-2023-in-review/ui-open-advanced.png" target="_blank"><img src="/2024-01-14-2023-in-review/ui-open-advanced.png" title="Ruffle's Open Advanced menu" alt="Ruffle's Open Advanced menu" style="max-height: 300px"></a>
 <a href="/2024-01-14-2023-in-review/ui-debug.png" target="_blank"><img src="/2024-01-14-2023-in-review/ui-debug.png" title="Ruffle's debug tools" alt="Ruffle's debug tools" style="max-height: 300px"></a>
 
-### New website
-Whilst not Ruffle itself, the website got some much-needed love from [@Dinnerbone](https://github.com/Dinnerbone) with a total redesign. There's a lot more we'd like to do in the future with it, but web development isn't the specialty of any of our regular contributors... help is very much welcome! 
+## New website
+Whilst not Ruffle itself, the website got some much-needed love from [@Dinnerbone](https://github.com/Dinnerbone) with a total redesign. There's a lot more we'd like to do in the future with it, but web development isn't the specialty of any of our regular contributors... help is very much welcome!
 
 We've also pulled in all the improvements to the Extension's demo player, and brought those over to the website too.
 
-### Too many contributions to call out!
+## Too many contributions to call out!
 There's been just so many PRs landing that not everything can take the spotlight here. We'd like to thank every single person who helped shape Ruffle in 2023, and hope that 2024 brings more great progress.
 
 In addition, a big thank you to our sponsors who help keep the project alive. We appreciate you all!

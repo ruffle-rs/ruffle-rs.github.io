@@ -8,7 +8,7 @@ Get ready for the biggest Ruffle announcement yet! And the first one on the blog
 
 ---
 
-### Huge improvements to Ruffle's AVM1 engine accuracy!
+## Huge improvements to Ruffle's AVM1 engine accuracy!
 Thanks to a massive code refactor by [@CUB3D](https://github.com/CUB3D/), dozens upon dozens of ActionScript 2 games have been fixed! Here are just a few of them:
 - [Chibi Knight](https://www.newgrounds.com/portal/view/526470)
 - [Xeno Tactic 2](https://www.newgrounds.com/portal/view/438241/format/flash?emulate=flash)
@@ -20,7 +20,7 @@ Thanks to a massive code refactor by [@CUB3D](https://github.com/CUB3D/), dozens
 - [The Powerpuff Girls: Attack of the Puppybots](https://flasharch.com/en/archive/play/b93354279e9788b849f83ef78f52cbbb)
 - [Extreme Pamplona](https://flasharch.com/en/archive/play/e36aac73914ec8672218317e000615d7)
 
-### Incredible progress in AVM2 (ActionScript 3) support!
+## Incredible progress in AVM2 (ActionScript 3) support!
 - Our website now has [a page listing exactly what ActionScript 3 APIs we have implemented](https://ruffle.rs/compatibility/avm2), making it easy to follow our progress. It will be frequently updated!
 - XML support is rapidly improving! ActionScript 3 games tend to use a wide variety of XML methods. As Ruffle gains support for these methods, games are springing to life!
 - Several problems that caused unresponsive buttons and menus have been fixed. Unclickable buttons in ActionScript 3 games are (mostly) a thing of the past!
@@ -49,7 +49,7 @@ Here are just a few more of the many ActionScript 3 games that are playable toda
 - [Fracuum](https://www.newgrounds.com/portal/view/594354)
 - [Dino Run: Marathon of Doom](https://www.newgrounds.com/portal/view/566176)
 
-### Last but not least, support for **mobile devices** is improving in a big way!
+## Last but not least, support for **mobile devices** is improving in a big way!
 - **Text input boxes** are finally supported on mobile devices! Tapping on a text box within Flash content now brings up the soft keyboard, so you can type into it without using a bluetooth keyboard or other workarounds.
 - The **context menu** finally works on iOS! It is activated by a long-press on the screen. To stop this behavior if needed, simply tap the "Hide this menu" option.
 
