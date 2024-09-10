@@ -108,6 +108,8 @@ There has also been a lot of improvements under the hood here for code quality, 
 - [@dinnerbone](https://github.com/dinnerbone) has been working on stabilizing our JavaScript API, and also making a `ruffle-core` package that anyone can use as an npm dependency, instead of relying on our prebuilt zip packages. This work is ongoing but should be completed soon!
 - [@dinnerbone](https://github.com/dinnerbone) has improved `ExternalInterface` support, allowing support for games like Club Penguin which interacted with the page heavily.
 
+<a href="/2024-09-12-optimisations-text-more/club-penguin.png" target="_blank"><img src="/2024-09-12-optimisations-text-more/club-penguin.png" title="Club Penguin running in Ruffle" alt="Club Penguin running in Ruffle" style="max-height: 300px"></a>
+
 
 ## Rendering Improvements
 [@Aaron1011](https://github.com/Aaron1011) has fixed a bunch of bugs relating to Stage3D, and improved PixelBender support.
