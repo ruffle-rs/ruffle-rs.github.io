@@ -104,9 +104,10 @@ There's been a lot of improvements to the extension codebase, and some bug fixes
 ## Web Improvements
 There has also been a lot of improvements under the hood here for code quality, and especially preparation for releasing a stable version. There's a few notable highlights though:
 
-- Thanks to contributions from @WumboSpasm, the general look and feel of the UI on web is much improved. This includes support for dark mode, which will match the browsers settings.
+- Thanks to contributions from @WumboSpasm, the general look and feel of the UI on web is much improved. This includes support for dark mode, which will match the browsers settings. For some comparison images, check out [the PR](https://github.com/ruffle-rs/ruffle/pull/16793)!
 - @dinnerbone has been working on stabilizing our JavaScript API, and also making a `ruffle-core` package that anyone can use as an npm dependency, instead of relying on our prebuilt zip packages. This work is ongoing but should be completed soon!
 - @dinnerbone has improved `ExternalInterface` support, allowing support for games like Club Penguin which interacted with the page heavily.
+
 
 ## Rendering Improvements
 @Aaron1011 has fixed a bunch of bugs relating to Stage3D, and improved PixelBender support.
