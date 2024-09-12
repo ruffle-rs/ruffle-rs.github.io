@@ -62,7 +62,7 @@ Some other notable optimisations:
 - [@dinnerbone](https://github.com/dinnerbone) has optimised general rendering slightly, reducing the number of times we submit buffers to the GPU per frame.
 - [@kjarosh](https://github.com/kjarosh) has improved the speed of some rounding functions by about 20%. These functions are used all over the codebase all the time.
 - [@moulins](https://github.com/moulins) has been working on improvements to how Ruffle uses [gc-arena](https://github.com/kyren/gc-arena), which reduces a lot of general overhead to anything that can be garbage collected.
-- [@Lord-McSweeney](https://github.com/Lord-McSweeney) has been refactoring our implementation of an ActionScript 3 `class`, simplifying a lot of code and allowing for even more performance improvements.
+- [@Lord-McSweeney](https://github.com/Lord-McSweeney) has been refactoring our implementation of the ActionScript 3 `class` model, simplifying a lot of code and allowing for even more performance improvements.
 
 ## Desktop Application
 The desktop application has received a lot of love this year! [@dinnerbone](https://github.com/dinnerbone) has added persistent storage of preferences, which lets you do stuff like changing the rendering backend without needing to use the command line every time you start Ruffle.
