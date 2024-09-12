@@ -17,7 +17,7 @@ Since the last blog post (8 months ago)...
 - ActionScript 1/2 Language has remained at 95%. We're fairly sure we're feature complete, just some pesky bugs left! 
 - ActionScript 1/2 API has gone up from 75% to **78%**!
 - We've merged **933** pull requests from **53** people! (And 4 bots.)
-- We've closed **1030** issues (and some of them were real issues! Crazy!)
+- We've closed **1031** issues (and some of them were real issues! Crazy!)
 - We've added **435** new automated tests!
 
 ---
@@ -87,7 +87,7 @@ Some other notable changes to desktop:
 </video>
 
 ## Android Application
-For a while now, [@torokati44](https://github.com/torokati44) has been maintaining an unofficial Android application for Ruffle, which was pretty barebones but was already quite popular despite not being released anywhere. We've decided to bring it under the Ruffle umbrella and have officially adopted it as our Android application.
+For a while now, [@torokati44](https://github.com/torokati44) has been maintaining an unofficial [Android application for Ruffle](https://github.com/ruffle-rs/ruffle-android), which was pretty barebones but was already quite popular despite not being released anywhere. We've decided to bring it under the Ruffle umbrella and have officially adopted it as our Android application.
 [@dinnerbone](https://github.com/dinnerbone) has overhauled the codebase and UI for it, giving it support for most Flash content - even online games like Transformice work!
 However, it's still too early for us to feel comfortable publishing it to the Play Store, as there's a lot of UX that needs improving. Help is very much appreciated from any Android developers!
 
