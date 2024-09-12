@@ -12,13 +12,13 @@ There's *so many* improvements to Ruffle, that we really can't do it justice wit
 As before, let's summarize with some fancy numbers first.
 
 Since the last blog post (8 months ago)...
-- ActionScript 3 Language has gone up from 75% to **XXXXX%**!
-- ActionScript 3 API has gone up from 68% to **XXXXX%**!
+- ActionScript 3 Language has gone up from 75% to **90%**!
+- ActionScript 3 API has gone up from 68% to **76%**!
 - ActionScript 1/2 Language has remained at 95%. We're fairly sure we're feature complete, just some pesky bugs left! 
-- ActionScript 1/2 API has gone up from 75% to **XXXXX%**!
-- We've merged **xxxxxxxx** pull requests from **xxxxxxxxxxx** people! (And xxxxxxxxxxx bots.)
-- We've closed **xxxxxxxxx** issues (and some of them were real issues! Crazy!)
-- We've added **xxxxx** new automated tests!
+- ActionScript 1/2 API has gone up from 75% to **78%**!
+- We've merged **933** pull requests from **53** people! (And 4 bots.)
+- We've closed **1030** issues (and some of them were real issues! Crazy!)
+- We've added **435** new automated tests!
 
 ---
 
@@ -66,7 +66,7 @@ Some other notable optimisations:
 
 ## Desktop Application
 The desktop application has received a lot of love this year! [@dinnerbone](https://github.com/dinnerbone) has added persistent storage of preferences, which lets you do stuff like changing the rendering backend without needing to use the command line every time you start Ruffle.
-Building on top of this, [@sleepycatcoding](https://github.com/sleepycatcoding) has added bookmarks and a "recents" menu, giving much needed quality of life to using Ruffle to play content.
+Building on top of this, [@sleepycatcoding](https://github.com/sleepycatcoding) has added bookmarks and a "recently opened files" menu, giving much needed quality of life to using Ruffle to play content.
 We've also made Ruffle save a log file by default, which helps with debugging when something goes wrong.
 
 <a href="/2024-09-12-optimisations-text-more/bookmarks.png" target="_blank"><img src="/2024-09-12-optimisations-text-more/bookmarks.png" title="A bookmarks menu in Ruffle" alt="A bookmarks menu in Ruffle" style="max-height: 300px"></a>
@@ -122,7 +122,7 @@ There has also been a lot of improvements under the hood here for code quality, 
 ## Other improvements
 There have been *so many* changes from so many people, it's hard to list them all. Here's a few notable changes that are worth mentioning but are too hard to categorise:
 - [@sleepycatcoding](https://github.com/sleepycatcoding), [@evilpie](https://github.com/evilpie), [@dinnerbone](https://github.com/dinnerbone), [@adrian17](https://github.com/adrian17) and [@Aaron1011](https://github.com/Aaron1011) have all improved the AVM2 XML API to some degree - we can now handle most advanced uses, which significantly improves support of games that use it.
-- [@kjarosh](https://github.com/kjarosh) has implemented support for right-clicking and middle-clicking in content, implemented mouse wheel events, and improved double-click and triple-click support (especially with text selection)
+- [@kjarosh](https://github.com/kjarosh) has implemented support for right-clicking and middle-clicking in content, implemented mouse wheel events, and improved double-click and triple-click support (especially with text selection).
 - [@Lord-McSweeney](https://github.com/Lord-McSweeney) has implemented "Loader reuse", which unblocked many online/MMO games which relied on this.
 - [@dinnerbone](https://github.com/dinnerbone) has implemented `LocalConnection` support, which makes Club Penguin work in Ruffle.
 - [@evilpie](https://github.com/evilpie) has implemented File Selection APIs used by Scratch, allowing you to download and upload files in content that uses it.
@@ -134,10 +134,10 @@ There have been *so many* changes from so many people, it's hard to list them al
 It's been a crazy few months, and I'm so proud of all the progress we keep making. We couldn't have done it without the entire Ruffle community though - so thank you for everyone who helped out.
 
 As a reminder, Ruffle is a completely open source project and we're always looking for contributions! Some quick ways to help out:
-- Speak another language? [Help translate Ruffle](https://crowdin.com/project/ruffle) to your native language over on Crowdin
-- Got a few bucks to spare? [Sponsor the project](https://opencollective.com/ruffle) and help us fund future development
+- Speak another language? [Help translate Ruffle](https://crowdin.com/project/ruffle) to your native language over on Crowdin.
+- Got a few bucks to spare? [Sponsor the project](https://opencollective.com/ruffle) and help us fund future development.
 - Like playing games? Try Ruffle on your favourite content and [report any issues](https://github.com/ruffle-rs/ruffle/issues) you find - or maybe check out [the latest annual Flash Forward Jam](https://www.newgrounds.com/bbs/topic/1532035) on Newgrounds!
-- Can you code? Whip out your favourite IDE and [help us improve](https://github.com/ruffle-rs/ruffle/blob/master/CONTRIBUTING.md) - the player is in Rust, everything web is Typescript, and the android app is Kotlin
+- Can you code? Whip out your favourite IDE and [help us improve](https://github.com/ruffle-rs/ruffle/blob/master/CONTRIBUTING.md) - the player is in Rust, everything web is Typescript, and the android app is Kotlin.
 - Got a friend? Tell them to help out! :D
 
 Thank you all again, and see you in the next blog post!
