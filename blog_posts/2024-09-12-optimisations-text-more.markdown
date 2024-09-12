@@ -17,7 +17,7 @@ Since the last blog post (8 months ago)...
 - ActionScript 1/2 Language has remained at 95%. We're fairly sure we're feature complete, just some pesky bugs left! 
 - ActionScript 1/2 API has gone up from 75% to **78%**!
 - We've merged **933** pull requests from **53** people! (And 4 bots.)
-- We've closed **1031** issues (and some of them were real issues! Crazy!)
+- We've closed **1031** issues! (and some of them were real issues! Crazy!)
 - We've added **435** new automated tests!
 
 ---
@@ -79,7 +79,7 @@ Details about this format can be found [in our documentation](https://github.com
 Some other notable changes to desktop:
 - [@evilpie](https://github.com/evilpie) has improved spoofing for content that uses ExternalInterface, allowing you to play more content locally that is normally restricted to specific websites.
 - [@Aaron1011](https://github.com/Aaron1011), [@kjarosh](https://github.com/kjarosh), [@sleepycatcoding](https://github.com/sleepycatcoding) and [@crumblingstatue](https://github.com/crumblingstatue) have all improved our Debug UI, making it more powerful with features like editing AVM1 properties live, seeing AVM2 Domains, and the focus order of every object.
-- [@torokati44](https://github.com/torokati44) has added support for H.264 FLV video playback, using Cisco's [OpenH264](https://www.openh264.org/). This downloads the library at runtime to comply with openh264's license, and can be disabled in the Preferences menu.
+- [@torokati44](https://github.com/torokati44) has added support for H.264 FLV video playback, using Cisco's [OpenH264](https://www.openh264.org/). This downloads the library at runtime to comply with OpenH264's license, and can be disabled in the Preferences menu.
 - [@kjarosh](https://github.com/kjarosh) has added the View menu, allowing you to change some settings on the fly (such as the scale mode).
 
 <video muted autoplay controls>
