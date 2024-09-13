@@ -126,6 +126,7 @@ There have been *so many* changes from so many people, it's hard to list them al
 - [@Lord-McSweeney](https://github.com/Lord-McSweeney) has implemented "Loader reuse", which unblocked many online/MMO games which relied on this.
 - [@dinnerbone](https://github.com/dinnerbone) has implemented `LocalConnection` support, which makes Club Penguin work in Ruffle.
 - [@evilpie](https://github.com/evilpie) has implemented File Selection APIs used by Scratch, allowing you to download and upload files in content that uses it.
+- [@wsxarcher](https://github.com/wsxarcher) has added support for content that imports parts of its library from other Flash files.
 
 ... and so so so many bug fixes and miscellaneous improvements!
 
