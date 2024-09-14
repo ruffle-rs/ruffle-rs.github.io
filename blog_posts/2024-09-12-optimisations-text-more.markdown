@@ -92,7 +92,7 @@ For a while now, [@torokati44](https://github.com/torokati44) has been maintaini
 However, it's still too early for us to feel comfortable publishing it to the Play Store, as there's a lot of UX that needs improving. Help is very much appreciated from any Android developers!
 
 We've seen that there's already a bunch of apps out there which package Ruffle, and that's pretty cool! However, they seem to all use the web version of Ruffle, which leaves a lot of performance on the table. We're hoping that by using the native codebase, we'll end up with really decent performance and stability... finally putting Flash back on mobile phones after all this time!
-*(perhaps iOS too, now that they've relaxed their rules about emulators... but we'd need an iOS developer to champion that!)*
+*(Perhaps iOS too, now that they've relaxed their rules about emulators... but we'd need an iOS developer to champion that!)*
 
 ## Browser Extension
 There's been a lot of improvements to the extension codebase, and some bug fixes here and there. The major points here though are:
@@ -138,7 +138,7 @@ As a reminder, Ruffle is a completely open source project and we're always looki
 - Speak another language? [Help translate Ruffle](https://crowdin.com/project/ruffle) to your native language over on Crowdin.
 - Got a few bucks to spare? [Sponsor the project](https://opencollective.com/ruffle) and help us fund future development.
 - Like playing games? Try Ruffle on your favourite content and [report any issues](https://github.com/ruffle-rs/ruffle/issues) you find - or maybe check out [the latest annual Flash Forward Jam](https://www.newgrounds.com/bbs/topic/1532035) on Newgrounds!
-- Can you code? Whip out your favourite IDE and [help us improve](https://github.com/ruffle-rs/ruffle/blob/master/CONTRIBUTING.md) - the player is in Rust, everything web is Typescript, and the android app is Kotlin.
+- Can you code? Whip out your favourite IDE and [help us improve](https://github.com/ruffle-rs/ruffle/blob/master/CONTRIBUTING.md) - the player is in Rust, everything web is TypeScript, and the Android app is Kotlin.
 - Got a friend? Tell them to help out! :D
 
 Thank you all again, and see you in the next blog post!
