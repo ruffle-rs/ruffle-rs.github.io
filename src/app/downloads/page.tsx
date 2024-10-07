@@ -30,7 +30,7 @@ function WebDownload({ latest }: { latest: GithubRelease | null }) {
         the latest available version of Ruffle.
       </Text>
       <Code block className={classes.cdn}>
-        {'<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>'}
+        {'<script src="https://unpkg.com/@ruffle-rs/ruffle" referrerpolicy="no-referrer"></script>'}
       </Code>
       <Text>
         If you'd like to host it yourself, you can grab{" "}
