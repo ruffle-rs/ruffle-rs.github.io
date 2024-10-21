@@ -3,11 +3,10 @@ import { Container } from "@mantine/core";
 import { BlogPost } from "@/app/blog/post";
 import { Metadata } from "next";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: PostPath;
+export async function generateMetadata(props: {
+  params: Promise<PostPath>;
 }): Promise<Metadata> {
+  const params = await props.params;
   const post = getPostData(
     `${params.year}-${params.month}-${params.day}-${params.slug}.markdown`,
   );
@@ -28,7 +27,8 @@ export async function generateMetadata({
   };
 }
 
-export default function Page({ params }: { params: PostPath }) {
+export default async function Page(props: { params: Promise<PostPath> }) {
+  const params = await props.params;
   const post = getPostData(
     `${params.year}-${params.month}-${params.day}-${params.slug}.markdown`,
   );

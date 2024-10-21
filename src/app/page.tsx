@@ -1,3 +1,5 @@
+"use client";
+
 import dynamic from "next/dynamic";
 import classes from "./index.module.css";
 import {
@@ -13,6 +15,7 @@ import Image from "next/image";
 import { IconCheck } from "@tabler/icons-react";
 import React from "react";
 import { getLatestReleases } from "@/app/downloads/github";
+import { GithubRelease } from "./downloads/config";
 
 const InteractiveLogo = dynamic(() => import("../components/logo"), {
   ssr: false,
@@ -22,9 +25,20 @@ const Installers = dynamic(() => import("./installers"), {
   ssr: false,
 });
 
-export default async function Home() {
-  const releases = await getLatestReleases();
-  const latest = releases.length > 0 ? releases[0] : null;
+export default function Home() {
+  const [latest, setLatest] = React.useState<GithubRelease | null>(null);
+
+  React.useEffect(() => {
+    const fetchReleases = async () => {
+      try {
+        const releases = await getLatestReleases();
+        setLatest(releases.length > 0 ? releases[0] : null);
+      } catch (err) {
+        console.warn("Failed to fetch releases", err);
+      }
+    };
+    fetchReleases();
+  }, []);
 
   return (
     <Container size="xl" className={classes.container}>
