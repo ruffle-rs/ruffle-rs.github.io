@@ -14,13 +14,9 @@ import { IconCheck } from "@tabler/icons-react";
 import React from "react";
 import { getLatestReleases } from "@/app/downloads/github";
 
-const InteractiveLogo = dynamic(() => import("../components/logo"), {
-  ssr: false,
-});
+const InteractiveLogo = dynamic(() => import("../components/logo"));
 
-const Installers = dynamic(() => import("./installers"), {
-  ssr: false,
-});
+const Installers = dynamic(() => import("./installers"));
 
 export default async function Home() {
   const releases = await getLatestReleases();

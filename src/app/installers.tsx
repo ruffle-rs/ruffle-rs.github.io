@@ -21,8 +21,21 @@ export default function Installers({
 }: {
   release: GithubRelease | null;
 }) {
-  const [selectors] = useDeviceSelectors(window.navigator.userAgent);
   const recommended: RecommendedDownload[] = [];
+
+  const [isClient, setIsClient] = React.useState(false);
+
+  React.useEffect(() => {
+    // This effect will run only on the client
+    setIsClient(true);
+  }, []);
+
+  // Only render on the client-side
+  if (!isClient) {
+    return null; // On the server, return null to avoid mismatches
+  }
+
+  const [selectors] = useDeviceSelectors(window.navigator.userAgent);
   const currentDevice: CurrentDevice = {
     windows: selectors.isWindows,
     mac: selectors.isMacOs,

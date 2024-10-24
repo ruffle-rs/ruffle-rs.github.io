@@ -1,4 +1,5 @@
-"use client"; // tables in mantine don't seem to work on server...
+"use client";
+// tables in mantine don't seem to work on server...
 
 import {
   Button,
