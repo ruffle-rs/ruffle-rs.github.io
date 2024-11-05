@@ -157,6 +157,7 @@ export default function Page() {
           alt="Person thanking you"
           width={185}
           height={200}
+          priority
           className={classes.image}
         />
         <Stack className={classes.actionscriptInfo}>

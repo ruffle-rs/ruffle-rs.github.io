@@ -36,6 +36,7 @@ function ExtensionBadge(info: Extension) {
         alt={info.alt}
         width={0} // set by css to 100% width
         height={66}
+        priority
         className={classes.badge}
       />
     </Link>

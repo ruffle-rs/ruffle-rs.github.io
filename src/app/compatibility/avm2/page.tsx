@@ -44,6 +44,7 @@ export default async function Page() {
             alt="Person viewing ActionScript classes"
             width={208}
             height={200}
+            priority
             className={classes.progressImage}
           />
           <Stack className={classes.actionscriptInfo}>
