@@ -41,6 +41,7 @@ export default async function Home() {
             alt="Person installing Ruffle"
             width={375}
             height={366}
+            priority
           />
           <div className={classes.heroInner}>
             <Text mt="md">

@@ -43,6 +43,7 @@ export default async function Downloads() {
             alt="Person comparing Ruffle compatibility"
             width={219}
             height={200}
+            priority
             className={classes.actionscriptImage}
           />
           <Stack className={classes.actionscriptInfo}>
