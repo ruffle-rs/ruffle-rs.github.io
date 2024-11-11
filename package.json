@@ -12,7 +12,7 @@
     "@mantine/charts": "^7.13.5",
     "@mantine/core": "7.13.5",
     "@mantine/hooks": "7.13.5",
-    "@next/bundle-analyzer": "^14.2.15",
+    "@next/bundle-analyzer": "^15.0.3",
     "@tabler/icons-react": "^3.21.0",
     "next": "14.2.15",
     "node-html-parser": "^6.1.13",
