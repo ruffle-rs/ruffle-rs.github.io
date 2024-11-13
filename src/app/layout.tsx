@@ -5,6 +5,7 @@ import { MantineProvider, ColorSchemeScript } from "@mantine/core";
 import { cssResolver, theme } from "@/theme";
 import { Header } from "@/components/header";
 import { FooterSocial } from "@/components/footer";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Ruffle - Flash Emulator",
@@ -42,7 +43,7 @@ export default function RootLayout({
       <body>
         <MantineProvider theme={theme} cssVariablesResolver={cssResolver}>
           <Header />
-          {children}
+          <Suspense>{children}</Suspense>
           <FooterSocial />
         </MantineProvider>
       </body>

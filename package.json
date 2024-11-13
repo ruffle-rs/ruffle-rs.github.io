@@ -38,6 +38,7 @@
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
     "jsdom": "^25.0.1",
+    "next-export-i18n": "^3.0.0",
     "octokit": "^4.0.2",
     "postcss": "^8.4.49",
     "postcss-preset-mantine": "^1.17.0",

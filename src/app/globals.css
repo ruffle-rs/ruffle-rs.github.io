@@ -2,3 +2,6 @@ a:link,
 a:visited {
   color: var(--ruffle-orange-3);
 }
+span[data-language-switcher] {
+  display: none;
+}

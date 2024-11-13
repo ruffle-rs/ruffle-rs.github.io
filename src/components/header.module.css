@@ -34,6 +34,12 @@
   }
 }
 
+.hiddenOnDesktop {
+  @media (min-width: $mantine-breakpoint-md) {
+    display: none;
+  }
+}
+
 .burger {
   --burger-color: var(--ruffle-orange);
 }

@@ -6,6 +6,8 @@ import classes from "./header.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { LanguageSwitcher } from "next-export-i18n";
+import React, { Suspense, useState, useEffect } from "react";
 
 const links = [
   { link: "/", label: "About Ruffle" },
@@ -21,8 +23,45 @@ const links = [
     target: "_blank",
   },
 ];
+const languages: Record<string, string> = {
+  en: "English",
+  es: "Español",
+};
 
 export function Header() {
+  const [selectedLang, setSelectedLang] = useState("en");
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const browserLang =
+        window.navigator.language || window.navigator.languages
+          ? (window.navigator.language || window.navigator.languages[0])
+              .split("-")[0]
+              .toLowerCase()
+          : "en";
+      setSelectedLang(browserLang);
+      const selectedLang = window.localStorage
+        ? window.localStorage.getItem("next-export-i18n-lang")
+        : null;
+      if (selectedLang) {
+        setSelectedLang(selectedLang);
+      }
+    }
+  }, []);
+
+  const handleLanguageChange = (
+    event: React.ChangeEvent<HTMLSelectElement>,
+  ) => {
+    const newLang = event.target.value;
+    setSelectedLang(newLang);
+    // Trigger the LanguageSwitcher programmatically
+    const languageSwitcher = document.querySelector(
+      `[data-language-switcher][aria-label='set language to ${newLang}']`,
+    ) as HTMLElement;
+    if (languageSwitcher) {
+      languageSwitcher.click();
+    }
+  };
+
   const [opened, { toggle, close }] = useDisclosure(false);
   const pathname = usePathname();
 
@@ -43,7 +82,7 @@ export function Header() {
 
   return (
     <header className={classes.header}>
-      <Container size="md" className={classes.inner}>
+      <Container size="lg" className={classes.inner}>
         <Link href="/">
           <Image
             src="/logo.svg"
@@ -55,7 +94,21 @@ export function Header() {
         </Link>
         <Group gap={5} visibleFrom="md">
           {items}
+          <select value={selectedLang} onChange={handleLanguageChange}>
+            {Object.entries(languages).map(([langCode, langName]) => (
+              <option key={langCode} value={langCode}>
+                {langName}
+              </option>
+            ))}
+          </select>
         </Group>{" "}
+        {Object.keys(languages).map((langCode) => (
+          <Suspense key={langCode}>
+            <LanguageSwitcher lang={langCode}>
+              {languages[langCode]}
+            </LanguageSwitcher>
+          </Suspense>
+        ))}
         <Drawer
           opened={opened}
           onClose={close}
@@ -69,6 +122,17 @@ export function Header() {
         >
           {items}
         </Drawer>
+        <select
+          className={classes.hiddenOnDesktop}
+          value={selectedLang}
+          onChange={handleLanguageChange}
+        >
+          {Object.entries(languages).map(([langCode, langName]) => (
+            <option key={langCode} value={langCode}>
+              {langName}
+            </option>
+          ))}
+        </select>
         <Burger
           opened={opened}
           onClick={toggle}

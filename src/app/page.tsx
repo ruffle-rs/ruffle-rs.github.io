@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { useTranslation } from "next-export-i18n";
 import classes from "./index.module.css";
 import {
   Container,
@@ -26,6 +27,7 @@ const Installers = dynamic(() => import("./installers"), {
 });
 
 export default function Home() {
+  const { t } = useTranslation();
   const [latest, setLatest] = React.useState<GithubRelease | null>(null);
 
   React.useEffect(() => {
@@ -45,8 +47,8 @@ export default function Home() {
       <InteractiveLogo className={classes.logo} />
 
       <Container size="md">
-        <Title className={classes.title}>
-          An open source Flash Player emulator
+        <Title className={classes.title} suppressHydrationWarning>
+          {t("tagline")}
         </Title>
         <div className={classes.hero}>
           <Image
