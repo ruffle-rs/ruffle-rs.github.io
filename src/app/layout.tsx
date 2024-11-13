@@ -42,9 +42,11 @@ export default function RootLayout({
       </head>
       <body>
         <MantineProvider theme={theme} cssVariablesResolver={cssResolver}>
-          <Header />
-          <Suspense>{children}</Suspense>
-          <FooterSocial />
+          <Suspense>
+            <Header />
+            {children}
+            <FooterSocial />
+          </Suspense>
         </MantineProvider>
       </body>
     </html>

@@ -1,3 +1,5 @@
 {
-  "tagline": "Un emulador de Flash Player de código abierto"
+  "home": {
+    "title": "Un emulador de Flash Player de código abierto"
+  }
 }

@@ -48,7 +48,7 @@ export default function Home() {
 
       <Container size="md">
         <Title className={classes.title} suppressHydrationWarning>
-          {t("tagline")}
+          {t("home.title")}
         </Title>
         <div className={classes.hero}>
           <Image
@@ -60,9 +60,8 @@ export default function Home() {
             priority
           />
           <div className={classes.heroInner}>
-            <Text mt="md">
-              Made to run natively on all modern operating systems and browsers,
-              Ruffle brings Flash content back to life with no extra fuss.
+            <Text mt="md" suppressHydrationWarning>
+              {t("home.intro")}
             </Text>
 
             <List
@@ -80,18 +79,31 @@ export default function Home() {
               }
             >
               <ListItem>
-                <b className={classes.key}>Safe to use</b> - Using the
-                guarantees of Rust and WASM, we avoid the security pitfalls
-                Flash was known for.
+                <b className={classes.key} suppressHydrationWarning>
+                  {t("home.safe")}
+                </b>{" "}
+                -{" "}
+                <span suppressHydrationWarning>
+                  {t("home.safe-description")}
+                </span>
               </ListItem>
               <ListItem>
-                <b className={classes.key}>Easy to install</b> - Whether
-                you&apos;re a user or a website owner, we&apos;ve made it as
-                easy as possible to get up and running.
+                <b className={classes.key} suppressHydrationWarning>
+                  {t("home.easy")}
+                </b>{" "}
+                -{" "}
+                <span suppressHydrationWarning>
+                  {t("home.easy-description")}
+                </span>
               </ListItem>
               <ListItem>
-                <b className={classes.key}>Free and open source</b> - Licensed
-                MIT/Apache 2.0, you&apos;re free to use Ruffle how you please!
+                <b className={classes.key} suppressHydrationWarning>
+                  {t("home.free")}
+                </b>{" "}
+                -{" "}
+                <span suppressHydrationWarning>
+                  {t("home.free-description")}
+                </span>
               </ListItem>
             </List>
 

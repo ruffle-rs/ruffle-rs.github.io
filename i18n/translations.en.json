@@ -1,3 +1,31 @@
 {
-  "tagline": "An open source Flash Player emulator"
+  "home": {
+    "title": "An open source Flash Player emulator",
+    "intro": "Made to run natively on all modern operating systems and browsers, Ruffle brings Flash content back to life with no extra fuss.",
+    "safe": "Safe to use",
+    "safe-description": "Using the guarantees of Rust and WASM, we avoid the security pitfalls Flash was known for.",
+    "easy": "Easy to install",
+    "easy-description": "Whether you're a user or a website owner, we've made it as easy as possible to get up and running.",
+    "free": "Free and open source",
+    "free-description": "Licensed MIT/Apache 2.0, you're free to use Ruffle how you please!"
+  },
+  "header": {
+    "about": "About Ruffle",
+    "downloads": "Downloads",
+    "compatibility": "Compatibility",
+    "contribute": "Get Involved",
+    "blog": "Blog",
+    "demo": "Demo",
+    "discord": "Discord",
+    "github": "GitHub"
+  },
+  "footer": {
+    "github": "GitHub",
+    "social-x": "X",
+    "tiktok": "TikTok",
+    "instagram": "Instagram",
+    "mastodon": "Mastodon",
+    "discord": "Discord",
+    "tagline": "Putting Flash back on the web"
+  }
 }

@@ -1,5 +1,8 @@
+"use client";
+
 import { Container, Group, ActionIcon, rem, Text } from "@mantine/core";
 import Link from "next/link";
+import { useTranslation } from "next-export-i18n";
 
 import {
   IconBrandX,
@@ -16,38 +19,40 @@ const allSocials = [
   {
     type: IconBrandGithub,
     url: "https://github.com/ruffle-rs",
-    title: "GitHub",
+    titleKey: "footer.github",
   },
   {
     type: IconBrandX,
     url: "https://twitter.com/ruffle_rs",
-    title: "X",
+    titleKey: "footer.social-x",
   },
   {
     type: IconBrandTiktok,
     url: "https://www.tiktok.com/@ruffle.rs",
-    title: "Tiktok",
+    titleKey: "footer.tiktok",
   },
   {
     type: IconBrandInstagram,
     url: "https://www.instagram.com/ruffle.rs/",
-    title: "Instagram",
+    titleKey: "footer.instagram",
   },
   {
     type: IconBrandMastodon,
     url: "https://mastodon.gamedev.place/@ruffle",
-    title: "Mastodon",
+    titleKey: "footer.mastodon",
   },
   {
     type: IconBrandDiscord,
     url: "https://discord.gg/ruffle",
-    title: "Discord",
+    titleKey: "footer.discord",
   },
 ];
 
 export function FooterSocial() {
+  const { t } = useTranslation();
   const socials = allSocials.map((social, i) => (
     <ActionIcon
+      suppressHydrationWarning
       key={i}
       size="lg"
       color="gray"
@@ -55,7 +60,7 @@ export function FooterSocial() {
       component={Link}
       href={social.url}
       target="_blank"
-      title={social.title}
+      title={t(social.titleKey)}
     >
       <social.type style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
     </ActionIcon>
@@ -72,8 +77,8 @@ export function FooterSocial() {
             width={91}
             priority
           />
-          <Text size="lg" className={classes.tagline}>
-            Putting Flash back on the web
+          <Text size="lg" className={classes.tagline} suppressHydrationWarning>
+            {t("footer.tagline")}
           </Text>
         </Container>
         <Group

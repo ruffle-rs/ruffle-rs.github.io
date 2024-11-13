@@ -6,20 +6,24 @@ import classes from "./header.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LanguageSwitcher } from "next-export-i18n";
-import React, { Suspense, useState, useEffect } from "react";
+import { LanguageSwitcher, useTranslation } from "next-export-i18n";
+import React, { useState, useEffect } from "react";
 
 const links = [
-  { link: "/", label: "About Ruffle" },
-  { link: "/downloads", label: "Downloads" },
-  { link: "/compatibility", label: "Compatibility" },
-  { link: "/contribute", label: "Get Involved" },
-  { link: "/blog", label: "Blog" },
-  { link: "/demo", label: "Demo", target: "_blank" },
-  { link: "https://discord.gg/ruffle", label: "Discord", target: "_blank" },
+  { link: "/", labelKey: "header.about" },
+  { link: "/downloads", labelKey: "header.downloads" },
+  { link: "/compatibility", labelKey: "header.compatibility" },
+  { link: "/contribute", labelKey: "header.contribute" },
+  { link: "/blog", labelKey: "header.blog" },
+  { link: "/demo", labelKey: "header.demo", target: "_blank" },
+  {
+    link: "https://discord.gg/ruffle",
+    labelKey: "header.discord",
+    target: "_blank",
+  },
   {
     link: "https://github.com/ruffle-rs/ruffle/",
-    label: "GitHub",
+    labelKey: "header.github",
     target: "_blank",
   },
 ];
@@ -64,10 +68,11 @@ export function Header() {
 
   const [opened, { toggle, close }] = useDisclosure(false);
   const pathname = usePathname();
+  const { t } = useTranslation();
 
   const items = links.map((link) => (
     <Link
-      key={link.label}
+      key={link.labelKey}
       href={link.link}
       target={link.target}
       className={classes.link}
@@ -75,8 +80,9 @@ export function Header() {
       onClick={() => {
         close();
       }}
+      suppressHydrationWarning
     >
-      {link.label}
+      {t(link.labelKey)}
     </Link>
   ));
 
@@ -103,11 +109,9 @@ export function Header() {
           </select>
         </Group>{" "}
         {Object.keys(languages).map((langCode) => (
-          <Suspense key={langCode}>
-            <LanguageSwitcher lang={langCode}>
-              {languages[langCode]}
-            </LanguageSwitcher>
-          </Suspense>
+          <LanguageSwitcher key={langCode} lang={langCode}>
+            {languages[langCode]}
+          </LanguageSwitcher>
         ))}
         <Drawer
           opened={opened}
