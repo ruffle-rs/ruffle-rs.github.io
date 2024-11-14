@@ -27,5 +27,8 @@
     "mastodon": "Mastodon",
     "discord": "Discord",
     "tagline": "Putting Flash back on the web"
+  },
+  "logo": {
+    "alt-tag": "Ruffle Logo"
   }
 }
