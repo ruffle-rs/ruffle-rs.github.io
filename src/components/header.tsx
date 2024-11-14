@@ -6,7 +6,7 @@ import classes from "./header.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LanguageSwitcher, useTranslation } from "next-export-i18n";
+import { useTranslation } from "next-export-i18n";
 import React, { useState, useEffect } from "react";
 
 const links = [
@@ -57,13 +57,9 @@ export function Header() {
   ) => {
     const newLang = event.target.value;
     setSelectedLang(newLang);
-    // Trigger the LanguageSwitcher programmatically
-    const languageSwitcher = document.querySelector(
-      `[data-language-switcher][aria-label='set language to ${newLang}']`,
-    ) as HTMLElement;
-    if (languageSwitcher) {
-      languageSwitcher.click();
-    }
+    window.localStorage.setItem("next-export-i18n-lang", newLang);
+    const langChangeEvent = new Event("localStorageLangChange");
+    document.dispatchEvent(langChangeEvent);
   };
 
   const [opened, { toggle, close }] = useDisclosure(false);
@@ -108,11 +104,6 @@ export function Header() {
             ))}
           </select>
         </Group>{" "}
-        {Object.keys(languages).map((langCode) => (
-          <LanguageSwitcher key={langCode} lang={langCode}>
-            {languages[langCode]}
-          </LanguageSwitcher>
-        ))}
         <Drawer
           opened={opened}
           onClose={close}
