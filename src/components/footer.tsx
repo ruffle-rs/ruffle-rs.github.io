@@ -2,7 +2,7 @@
 
 import { Container, Group, ActionIcon, rem, Text } from "@mantine/core";
 import Link from "next/link";
-import { useTranslation } from "next-export-i18n";
+import { useTranslation } from "@/app/translate";
 
 import {
   IconBrandX,
@@ -52,7 +52,6 @@ export function FooterSocial() {
   const { t } = useTranslation();
   const socials = allSocials.map((social, i) => (
     <ActionIcon
-      suppressHydrationWarning
       key={i}
       size="lg"
       color="gray"
@@ -77,7 +76,7 @@ export function FooterSocial() {
             width={91}
             priority
           />
-          <Text size="lg" className={classes.tagline} suppressHydrationWarning>
+          <Text size="lg" className={classes.tagline}>
             {t("footer.tagline")}
           </Text>
         </Container>
