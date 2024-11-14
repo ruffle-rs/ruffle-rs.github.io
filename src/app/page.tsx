@@ -1,7 +1,6 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useTranslation } from "next-export-i18n";
 import classes from "./index.module.css";
 import {
   Container,
@@ -16,6 +15,7 @@ import Image from "next/image";
 import { IconCheck } from "@tabler/icons-react";
 import React from "react";
 import { getLatestReleases } from "@/app/downloads/github";
+import { t } from "@/app/translate";
 import { GithubRelease } from "./downloads/config";
 
 const InteractiveLogo = dynamic(() => import("../components/logo"), {
@@ -27,7 +27,6 @@ const Installers = dynamic(() => import("./installers"), {
 });
 
 export default function Home() {
-  const { t } = useTranslation();
   const [latest, setLatest] = React.useState<GithubRelease | null>(null);
 
   React.useEffect(() => {
@@ -47,9 +46,7 @@ export default function Home() {
       <InteractiveLogo className={classes.logo} />
 
       <Container size="md">
-        <Title className={classes.title} suppressHydrationWarning>
-          {t("home.title")}
-        </Title>
+        <Title className={classes.title}>{t("home.title")}</Title>
         <div className={classes.hero}>
           <Image
             className={classes.heroImage}
@@ -60,9 +57,7 @@ export default function Home() {
             priority
           />
           <div className={classes.heroInner}>
-            <Text mt="md" suppressHydrationWarning>
-              {t("home.intro")}
-            </Text>
+            <Text mt="md">{t("home.intro")}</Text>
 
             <List
               mt={30}
@@ -79,31 +74,16 @@ export default function Home() {
               }
             >
               <ListItem>
-                <b className={classes.key} suppressHydrationWarning>
-                  {t("home.safe")}
-                </b>{" "}
-                -{" "}
-                <span suppressHydrationWarning>
-                  {t("home.safe-description")}
-                </span>
+                <b className={classes.key}>{t("home.safe")}</b> -{" "}
+                <span>{t("home.safe-description")}</span>
               </ListItem>
               <ListItem>
-                <b className={classes.key} suppressHydrationWarning>
-                  {t("home.easy")}
-                </b>{" "}
-                -{" "}
-                <span suppressHydrationWarning>
-                  {t("home.easy-description")}
-                </span>
+                <b className={classes.key}>{t("home.easy")}</b> -{" "}
+                <span>{t("home.easy-description")}</span>
               </ListItem>
               <ListItem>
-                <b className={classes.key} suppressHydrationWarning>
-                  {t("home.free")}
-                </b>{" "}
-                -{" "}
-                <span suppressHydrationWarning>
-                  {t("home.free-description")}
-                </span>
+                <b className={classes.key}>{t("home.free")}</b> -{" "}
+                <span>{t("home.free-description")}</span>
               </ListItem>
             </List>
 
