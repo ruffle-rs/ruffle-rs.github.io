@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import defaultTranslations from "@/i18n/translations.en.json";
 
 const languages = {
@@ -58,82 +58,58 @@ const getNestedTranslation = (
       break;
     }
   }
-  if (typeof acc === "string") {
-    return acc;
-  }
-  return undefined;
+  return typeof acc === "string" ? acc : undefined;
 };
 
-async function translate(translationKey: string) {
-  const language = await getAvailableLanguage();
-
-  // Helper function to load translations
-  const loadTranslations = async (lang: string) => {
-    try {
-      return await import(`@/i18n/translations.${lang}.json`);
-    } catch {
-      console.warn(`Translation file for language "${lang}" not found.`);
-      return null;
-    }
-  };
-
-  // Load translations for the selected language and the default language
-  const translations = await loadTranslations(language);
-
-  // Attempt to get the translation in the selected language, then fall back to default
-  const translation =
-    getNestedTranslation(translations, translationKey) ||
-    getNestedTranslation(defaultTranslations, translationKey);
-
-  // Render the translation if found; otherwise, return the key
-  return translation || translationKey;
+async function fetchTranslations(lang: string) {
+  try {
+    const translations = await import(`@/i18n/translations.${lang}.json`);
+    return translations;
+  } catch {
+    console.warn(`Translation file for language "${lang}" not found.`);
+    return null;
+  }
 }
 
-export const t = (translationKey: string): string => {
-  const defaultTranslation =
-    getNestedTranslation(defaultTranslations, translationKey) || translationKey;
-  const [translation, setTranslation] = useState(defaultTranslation);
-
-  const updateTranslation = async () => {
-    const translatedText = await translate(translationKey);
-    setTranslation(translatedText);
-  };
+export function useTranslation() {
+  const [translations, setTranslations] =
+    useState<TranslationObject>(defaultTranslations);
 
   useEffect(() => {
-    // Initial translation update
-    updateTranslation();
-
-    // Update translation when the language in localStorage changes from other browsing context
-    const handleStorageChange = (event: StorageEvent) => {
-      if (event.key === "next-export-i18n-lang") {
-        updateTranslation();
-      }
+    const fetchLanguageAndTranslations = async () => {
+      const lang = await getAvailableLanguage();
+      const loadedTranslations = await fetchTranslations(lang);
+      setTranslations(loadedTranslations || defaultTranslations);
     };
 
-    // Update translation when the language in localStorage changes from current browsing context
-    const handleLocalStorageLangChange = () => {
-      updateTranslation();
-    };
+    fetchLanguageAndTranslations();
 
-    // Listen for localStorage changes
-    window.addEventListener("storage", handleStorageChange);
+    const handleLocalStorageLangChange = () => fetchLanguageAndTranslations();
+
     window.addEventListener(
       "localStorageLangChange",
       handleLocalStorageLangChange,
     );
-
-    // Clean up listener on component unmount
-    return () => {
-      window.removeEventListener("storage", handleStorageChange);
+    return () =>
       window.removeEventListener(
         "localStorageLangChange",
         handleLocalStorageLangChange,
       );
-    };
-  }, [translationKey]);
+  }, []);
 
-  return translation;
-};
+  const t = useCallback(
+    (translationKey: string): string => {
+      return (
+        getNestedTranslation(translations, translationKey) ||
+        getNestedTranslation(defaultTranslations, translationKey) ||
+        translationKey
+      );
+    },
+    [translations],
+  );
+
+  return { t };
+}
 
 export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
   className,

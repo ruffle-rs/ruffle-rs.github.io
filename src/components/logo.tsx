@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Script from "next/script";
 import classes from "../app/index.module.css";
-import { t } from "@/app/translate";
+import { useTranslation } from "@/app/translate";
 
 declare global {
   interface Window {
@@ -29,6 +29,7 @@ interface LogoProps {
 }
 
 export default function InteractiveLogo({ className }: LogoProps) {
+  const { t } = useTranslation();
   const container = useRef<HTMLDivElement>(null);
   const [player, setPlayer] = useState<RufflePlayer | null>(null);
 
@@ -59,7 +60,9 @@ export default function InteractiveLogo({ className }: LogoProps) {
           splashScreen: false,
           preferredRenderer: "canvas",
         })
+        .then(() => console.log("LOADED"))
         .catch(() => {
+          console.log("Catch error");
           removeRufflePlayer();
         });
       rufflePlayer.style.width = "100%";

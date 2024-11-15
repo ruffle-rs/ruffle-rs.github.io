@@ -6,7 +6,7 @@ import classes from "./header.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LanguageSelector, t } from "@/app/translate";
+import { LanguageSelector, useTranslation } from "@/app/translate";
 import React from "react";
 
 const links = [
@@ -29,6 +29,7 @@ const links = [
 ];
 
 export function Header() {
+  const { t } = useTranslation();
   const [opened, { toggle, close }] = useDisclosure(false);
   const pathname = usePathname();
 

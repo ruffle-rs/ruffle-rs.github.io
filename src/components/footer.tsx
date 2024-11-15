@@ -2,7 +2,7 @@
 
 import { Container, Group, ActionIcon, rem, Text } from "@mantine/core";
 import Link from "next/link";
-import { t } from "@/app/translate";
+import { useTranslation } from "@/app/translate";
 
 import {
   IconBrandX,
@@ -49,6 +49,7 @@ const allSocials = [
 ];
 
 export function FooterSocial() {
+  const { t } = useTranslation();
   const socials = allSocials.map((social, i) => (
     <ActionIcon
       key={i}

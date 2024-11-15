@@ -15,7 +15,7 @@ import Image from "next/image";
 import { IconCheck } from "@tabler/icons-react";
 import React from "react";
 import { getLatestReleases } from "@/app/downloads/github";
-import { t } from "@/app/translate";
+import { useTranslation } from "@/app/translate";
 import { GithubRelease } from "./downloads/config";
 
 const InteractiveLogo = dynamic(() => import("../components/logo"), {
@@ -27,6 +27,7 @@ const Installers = dynamic(() => import("./installers"), {
 });
 
 export default function Home() {
+  const { t } = useTranslation();
   const [latest, setLatest] = React.useState<GithubRelease | null>(null);
 
   React.useEffect(() => {
