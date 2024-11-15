@@ -30,5 +30,54 @@
   },
   "logo": {
     "alt-tag": "Ruffle Logo"
+  },
+  "404": {
+    "not-found": "Page not found",
+    "not-found-description": "The requested page could not be found."
+  },
+  "installers": {
+    "windows-64-short-name": "Windows (64-bit)",
+    "windows-long-name": "Windows Executable",
+    "windows-32-short-name": "Windows (32-bit)",
+    "macos-short-name": "macOS",
+    "macos-long-name": "Mac Application",
+    "flatpak-short-name": "Flatpak",
+    "flatpak-long-name": "Flatpak App",
+    "linux-short-name": "Linux",
+    "linux-long-name": "Linux Executable",
+    "chrome-short-name": "Chrome",
+    "chrome-long-name": "Chrome Extension",
+    "edge-short-name": "Edge",
+    "edge-long-name": "Edge Extension",
+    "firefox-short-name": "Firefox",
+    "firefox-long-name": "Firefox Extension",
+    "safari-short-name": "Safari",
+    "safari-long-name": "Safari Extension",
+    "selfhosted-short-name": "Self Hosted",
+    "selfhosted-long-name": "Website Package",
+    "other-downloads": "Other Downloads"
+  },
+  "downloads": {
+    "version": "Version",
+    "desktop-app": "Desktop Application",
+    "desktop-app-description": "If you want to run Flash content on your computer without a browser in-between, we have native applications that will take full advantage of your GPU and system resources to get those extra frames when playing intense games.",
+    "browser-extension": "Browser Extension",
+    "browser-extension-description": "If you visit websites that have Flash content but aren't using Ruffle, or you want to ensure you're using the latest and greatest version of Ruffle on every website, then our browser extension is the perfect thing for you!",
+    "nightly-releases": "Nightly Releases",
+    "nightly-releases-description": "If none of the above are suitable for you, you can manually download the latest Nightly release. These are automatically built every day (approximately midnight UTC), unless there are no changes on that day. Older nightly releases are available on",
+    "web-package": "Web Package",
+    "web-package-description": "You can install Ruffle onto a website using one single line of code by using a CDN, no extra work required! It'll always stay up to date with the latest available version of Ruffle.",
+    "self-host-description-start": "If you'd like to host it yourself, you can grab",
+    "self-host-description-link": "the latest self-hosted package",
+    "self-host-description-end": "and upload it to your server. Then, include it on your page like so:",
+    "advanced-usage-description-start": "For advanced usage, consult",
+    "advanced-usage-description-link": "our documentation",
+    "advanced-usage-description-end": "for our JavaScript API and installation options.",
+    "chrome-extension-alt": "Available in the Chrome Web Store",
+    "firefox-extension-alt": "Get the Add-On for Firefox",
+    "edge-extension-alt": "Get it from Microsoft for Edge"
+  },
+  "common": {
+    "line-ender": "."
   }
 }

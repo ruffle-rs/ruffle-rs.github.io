@@ -115,32 +115,32 @@ export interface DownloadLink {
 export const desktopLinks: DownloadLink[] = [
   {
     key: "windows_64",
-    shortName: "Windows (64-bit)",
-    longName: "Windows Executable",
+    shortName: "installers.windows-64-short-name",
+    longName: "installers.windows-long-name",
     icon: IconBrandWindows,
     isRecommended: true,
     isDeviceRelevant: (device) => device.desktop && device.windows,
   },
   {
     key: "windows_32",
-    shortName: "Windows (32-bit)",
-    longName: "Windows Executable",
+    shortName: "installers.windows-32-short-name",
+    longName: "installers.windows-long-name",
     icon: IconBrandWindows,
     isRecommended: false,
     isDeviceRelevant: () => false,
   },
   {
     key: "macos",
-    shortName: "macOS",
-    longName: "Mac Application",
+    shortName: "installers.macos-short-name",
+    longName: "installers.macos-long-name",
     icon: IconBrandApple,
     isRecommended: true,
     isDeviceRelevant: (device) => device.desktop && device.mac,
   },
   {
     key: "flatpak",
-    shortName: "Flatpak",
-    longName: "Flatpak App",
+    shortName: "installers.flatpak-short-name",
+    longName: "installers.flatpak-long-name",
     icon: IconBox,
     isRecommended: true,
     recommendedUrl: flathubUrl,
@@ -148,8 +148,8 @@ export const desktopLinks: DownloadLink[] = [
   },
   {
     key: "linux",
-    shortName: "Linux",
-    longName: "Linux Executable",
+    shortName: "installers.linux-short-name",
+    longName: "installers.linux-long-name",
     icon: IconBrandLinux,
     isRecommended: true,
     isDeviceRelevant: (device) => device.desktop && device.linux,
@@ -159,8 +159,8 @@ export const desktopLinks: DownloadLink[] = [
 export const extensionLinks: DownloadLink[] = [
   {
     key: "chromium",
-    shortName: "Chrome",
-    longName: "Chrome Extension",
+    shortName: "installers.chrome-short-name",
+    longName: "installers.chrome-long-name",
     icon: IconBrandChrome,
     isDeviceRelevant: (device) => device.desktop && device.chrome,
     isRecommended: true,
@@ -169,8 +169,8 @@ export const extensionLinks: DownloadLink[] = [
   },
   {
     key: "chromium",
-    shortName: "Edge",
-    longName: "Edge Extension",
+    shortName: "installers.edge-short-name",
+    longName: "installers.edge-long-name",
     icon: IconBrandEdge,
     isDeviceRelevant: (device) => device.desktop && device.edge,
     isRecommended: true,
@@ -179,8 +179,8 @@ export const extensionLinks: DownloadLink[] = [
   },
   {
     key: "firefox",
-    shortName: "Firefox",
-    longName: "Firefox Extension",
+    shortName: "installers.firefox-short-name",
+    longName: "installers.firefox-long-name",
     icon: IconBrandFirefox,
     isDeviceRelevant: (device) =>
       (device.desktop || device.android) && device.firefox,
@@ -189,8 +189,8 @@ export const extensionLinks: DownloadLink[] = [
   },
   {
     key: "macos",
-    shortName: "Safari",
-    longName: "Safari Extension",
+    shortName: "installers.safari-short-name",
+    longName: "installers.safari-long-name",
     icon: IconBrandSafari,
     isRecommended: true,
     isDeviceRelevant: () => false,
@@ -200,8 +200,8 @@ export const extensionLinks: DownloadLink[] = [
 export const webLinks: DownloadLink[] = [
   {
     key: "web",
-    shortName: "Self Hosted",
-    longName: "Website Package",
+    shortName: "installers.selfhosted-short-name",
+    longName: "installers.selfhosted-long-name",
     icon: IconBrandJavascript,
     isRecommended: true,
     isDeviceRelevant: () => false,
