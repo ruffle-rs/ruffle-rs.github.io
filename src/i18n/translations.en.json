@@ -113,5 +113,34 @@
       "missing-members": "Missing Members",
       "done": "Done"
     }
+  },
+  "contribute": {
+    "involved": "Get Involved",
+    "involved-description": "Ruffle is an entirely open source project, maintained by volunteers like you who just want to help preserve a slice of history. We rely on contributions of any kind to keep this project going, and absolutely would not have come as far as we have without the amazing support of our community who came together to make Ruffle happen. If you'd like to join them, there are many ways to help make Ruffle better than ever!",
+    "code": "Contribute code",
+    "code-description": "There's a few different codebases in couple of different languages, and we'd welcome any help to try and maintain and improve them.",
+    "rust": "The actual {{emulator}} itself, and all of the {{desktop-player}}, is written in Rust.",
+    "emulator": "emulator",
+    "desktop-player": "desktop player",
+    "typescript": "The {{web-player}}, the {{extension}} and our {{website}} is written in TypeScript.",
+    "web-player": "web player",
+    "extension": "extension",
+    "website": "website",
+    "getting-started": "Check out our {{guidelines}} for information on how to start, and come join our {{discord}} if you need help!",
+    "guidelines": "Contributing Guidelines",
+    "test": "Test content",
+    "test-description": "Arguably more important than contributing code is testing Ruffle out. Go install Ruffle and try out your favourite games and animations. Look for any difference from the official Flash Player, and report your findings to us.",
+    "report-bugs": "If you find any bugs, changes of behaviour, performance issues or any visual differences then please report those to our {{bug-tracker}}.",
+    "bug-tracker": "our bug tracker",
+    "working": "If it runs flawlessly, come share the good news on {{our-discord}}!",
+    "our-discord": "our Discord",
+    "sponsor": "Sponsor the project",
+    "sponsor-description": "If you are able and willing to, we welcome any and all financial support to help us fund the project going forward. With your help, we can afford to spend more time dedicated to Ruffle, as well as pay for expenses such as build servers & hosting. We accept donations and sponsorships of any kind, big or small, through Open Source Collective 501(c)(6).",
+    "sponsor-info": "For more information, or to view the options available for sponsoring the project, please visit {{opencollective}}.",
+    "opencollective": "our Open Collective page",
+    "spread-the-word": "Spread the word!",
+    "spread-the-word-description": "Is your favourite Flash-based site shutting down? Let them know they can add one JavaScript file and keep it running! Feeling nostalgic for some old Flash games? Go play some on Newgrounds with Ruffle installed, and tell your friends about it! Maybe you're a streamer and looking for some silly content? There's literally decades worth, now unlocked and accessible once more.",
+    "diamond": "Diamond Sponsors",
+    "diamond-description": "We'd like to thank all of our sponsors, who help make this project possible. Below are our Diamond level sponsors, without whom we would not be here. Thank you."
   }
 }
