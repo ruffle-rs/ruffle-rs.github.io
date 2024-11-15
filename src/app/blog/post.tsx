@@ -1,3 +1,5 @@
+"use client";
+
 import { PostMetadata } from "@/app/blog/utils";
 import { Group, Stack, Text, Title } from "@mantine/core";
 import classes from "@/app/blog/post.module.css";
@@ -6,6 +8,7 @@ import Markdown from "react-markdown";
 import Image from "next/image";
 import rehypeRaw from "rehype-raw";
 import rehypeSlug from "rehype-slug";
+import { useTranslation } from "@/app/translate";
 
 export interface BlogPostProps {
   metadata: PostMetadata;
@@ -28,14 +31,15 @@ export function BlogPostAndIcon({ metadata, type }: BlogPostProps) {
 }
 
 export function BlogPost({ metadata, type }: BlogPostProps) {
+  const { t } = useTranslation();
   const url = `/blog/${metadata.year}/${metadata.month}/${metadata.day}/${metadata.slug}`;
   return (
     <Stack gap={0} className={classes.postInfo}>
       {type == "full" ? (
-        <Title className={classes.title}>{metadata.title}</Title>
+        <Title className={classes.title}>{t(metadata.title)}</Title>
       ) : (
         <Link href={url} className={classes.title}>
-          {metadata.title}
+          {t(metadata.title)}
         </Link>
       )}
       <Group wrap="nowrap" gap="xs" className={classes.info}>
@@ -68,7 +72,7 @@ export function BlogPost({ metadata, type }: BlogPostProps) {
       </div>
       {type == "excerpt" && (
         <Text className={classes.readMore}>
-          <Link href={url}>Read More...</Link>
+          <Link href={url}>{t("blog.read-more")}</Link>
         </Text>
       )}
     </Stack>

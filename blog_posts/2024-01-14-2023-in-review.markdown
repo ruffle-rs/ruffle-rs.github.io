@@ -1,5 +1,5 @@
 ---
-title:  "2023 in review"
+title:  "blog.20240114.title"
 date:   2024-01-14 08:28:00 +0100
 author: Dinnerbone
 icon: /undraw/undraw_new_year_2023_pfnc.svg

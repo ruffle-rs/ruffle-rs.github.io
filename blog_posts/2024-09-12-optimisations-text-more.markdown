@@ -1,5 +1,5 @@
 ---
-title:  "Optimisations, Text Input, Tab Focusing and More!"
+title:  "blog.20240912.title"
 date:   2024-09-12 21:02:00 +0100
 author: Dinnerbone
 icon: /undraw/undraw_setup_analytics_re_foim.svg
