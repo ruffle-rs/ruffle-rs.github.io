@@ -60,9 +60,7 @@ export default function InteractiveLogo({ className }: LogoProps) {
           splashScreen: false,
           preferredRenderer: "canvas",
         })
-        .then(() => console.log("LOADED"))
         .catch(() => {
-          console.log("Catch error");
           removeRufflePlayer();
         });
       rufflePlayer.style.width = "100%";
