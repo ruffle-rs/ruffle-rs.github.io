@@ -108,7 +108,7 @@ export default function Downloads() {
           className={classes.avms}
         >
           <AvmBlock
-            name="compatibility.avm1"
+            name="compatibility.avm1-title"
             language={{ done: 95 }}
             api={{ done: avm1ApiDone }}
             info_link_target="_blank"
@@ -119,7 +119,7 @@ export default function Downloads() {
           </AvmBlock>
 
           <AvmBlock
-            name="compatibility.avm2"
+            name="compatibility.avm2-title"
             language={{ done: 90 }}
             api={{ done: avm2ApiDone, stubbed: avm2ApiStubbed }}
             info_link="/compatibility/avm2"

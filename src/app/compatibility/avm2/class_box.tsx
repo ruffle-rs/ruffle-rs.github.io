@@ -14,11 +14,13 @@ import classes from "./avm2.module.css";
 import React from "react";
 import {
   ClassStatus,
-  ProgressIcon,
   displayedPercentage,
 } from "@/app/compatibility/avm2/report_utils";
+import { ProgressIcon } from "@/app/compatibility/avm2/icons";
+import { useTranslation } from "@/app/translate";
 
 export function ClassBox(props: ClassStatus) {
+  const { t } = useTranslation();
   const [opened, { toggle }] = useDisclosure(false);
   const pctDone = displayedPercentage(
     props.summary.impl_points - props.summary.stub_penalty,
@@ -33,13 +35,15 @@ export function ClassBox(props: ClassStatus) {
         );
   return (
     <Card bg="var(--ruffle-blue-9)" className={classes.class}>
-      <Title order={4}>{props.name || "(Package level)"}</Title>
+      <Title order={4}>
+        {props.name || t("compatibility.avm2.package-level")}
+      </Title>
       <ProgressRoot size="xl" radius={10} className={classes.progress}>
         <ProgressSection
           striped
           value={pctDone}
           color="var(--mantine-color-green-9)"
-          title={`${pctDone}% done`}
+          title={`${pctDone}% ${t("compatibility.done")}`}
         ></ProgressSection>
         {pctStub > 0 && (
           <ProgressSection
@@ -47,7 +51,7 @@ export function ClassBox(props: ClassStatus) {
             value={pctStub}
             color="ruffle-orange"
             className={classes.progressStub}
-            title={`${pctStub}% partially done`}
+            title={`${pctStub}% ${t("compatibility.partial")}`}
           ></ProgressSection>
         )}
       </ProgressRoot>
@@ -58,7 +62,10 @@ export function ClassBox(props: ClassStatus) {
             className={classes.showMemberButton}
             onClick={toggle}
           >
-            {opened ? "Hide" : "Show"} Missing Members
+            {opened
+              ? t("compatibility.avm2.hide")
+              : t("compatibility.avm2.show")}{" "}
+            {t("compatibility.avm2.missing-members")}
           </Button>
           <List hidden={!opened}>
             {props.items.map((item, i) => (

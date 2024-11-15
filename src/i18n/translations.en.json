@@ -83,16 +83,35 @@
     "language": "Language",
     "api-description": "The {{api}} is the underlying virtual machine itself and the language concepts that it understands, like variables and classes and how they all interact together.",
     "api": "API",
-    "avm1": "AVM 1: ActionScript 1 & 2",
+    "avm1-title": "AVM 1: ActionScript 1 & 2",
     "avm1-description": "AVM 1 is the original ActionScript Virtual Machine. All movies made before Flash Player 9 (June 2006) will be made with AVM 1, and it remained supported & available to authors until the release of Flash Professional CC (2013), after which point content started moving to AVM 2.",
     "avm1-support": "We believe that most AVM 1 content will work, but we are aware of some graphical inaccuracies and smaller bugs here and there. Please feel free to report any issues you find that are not present in the original Flash Player!",
-    "avm2": "AVM 2: ActionScript 3",
+    "avm2-title": "AVM 2: ActionScript 3",
     "avm2-description": "AVM 2 was introduced with Flash Player 9 (June 2006), to replace the earlier AVM 1. After the release of Flash Professional CC (2013), authors are required to use ActionScript 3 - making any movie made after that date very likely to fall under this category.",
     "avm2-support": "Ruffle now has decent support for AVM 2, and it's our experience that most games will work well enough to be played. We're still rapidly improving in this area though, so bug reports about any broken content are always welcome!",
     "weekly-contributions": "Weekly Contributions",
     "done": "done",
     "partial": "partially done",
     "more": "More Info",
-    "commits-description": "{{commitNumber}} commits on the week of {{week}}"
+    "commits-description": "{{commitNumber}} commits on the week of {{week}}",
+    "avm2": {
+      "title": "ActionScript 3 API Progress",
+      "description": "ActionScript 3 contains many different methods and classes - not all of which is ultimately useful to every application. The majority of content only uses a small portion of the available API, so even if we aren't 100% \"complete\" across the entirely of AVM 2, we may have enough for that content to run completely fine.",
+      "classification": "On this page, we list every single ActionScript 3 API that exists but Ruffle does not yet 100% implement. We classify items into three different stages:",
+      "implemented": "Implemented",
+      "implemented-description": "{{implemented}} items are marked as \"Done\", and we believe they are fully functional. For brevity, we do not list completed items on this page.",
+      "partial": "Partial",
+      "partial-description": "{{partial}} items exist and are enough for most content to work, but are incomplete. A partial class may be missing items, or a method may just simply return a value without performing its intended function.",
+      "missing": "Missing",
+      "missing-description": "{{missing}} items do not exist at all in Ruffle yet, and trying to use them will give an error.",
+      "tree": "You can also visualize the progress {{link}}.",
+      "tree-link": "as a tree graph",
+      "top-level": "(Top Level)",
+      "package-level": "(Package Level)",
+      "hide": "Hide",
+      "show": "Show",
+      "missing-members": "Missing Members",
+      "done": "Done"
+    }
   }
 }
