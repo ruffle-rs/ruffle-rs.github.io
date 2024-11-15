@@ -1,3 +1,5 @@
+"use client";
+
 import classes from "./avm.module.css";
 import {
   Button,
@@ -9,6 +11,7 @@ import {
   Title,
 } from "@mantine/core";
 import Link from "next/link";
+import { useTranslation } from "@/app/translate";
 
 interface AvmProgressProps {
   done: number;
@@ -21,17 +24,18 @@ interface AvmProgressPropsFull extends AvmProgressProps {
 }
 
 function AvmProgress(props: AvmProgressPropsFull) {
+  const { t } = useTranslation();
   return (
     <Group align="center" justify="spread-between" mt={props.mt}>
       <Text size="sm" className={classes.progressName}>
-        {props.name}: {props.done}%
+        {t(props.name)}: {props.done}%
       </Text>
       <ProgressRoot size="xl" radius={10} className={classes.progress}>
         <ProgressSection
           striped
           value={props.done}
           color="var(--mantine-color-green-9)"
-          title={`${props.done}% done`}
+          title={`${props.done}% ${t("compatibility.done")}`}
         ></ProgressSection>
         {props.stubbed && (
           <ProgressSection
@@ -39,7 +43,7 @@ function AvmProgress(props: AvmProgressPropsFull) {
             value={props.stubbed}
             color="ruffle-orange"
             className={classes.stub}
-            title={`${props.stubbed}% partially done`}
+            title={`${props.stubbed}% ${t("compatibility.partial")}`}
           ></ProgressSection>
         )}
       </ProgressRoot>
@@ -57,10 +61,11 @@ interface AvmBlockProps {
 }
 
 export function AvmBlock(props: AvmBlockProps) {
+  const { t } = useTranslation();
   return (
     <Stack className={classes.avm}>
       <Group justify="space-between">
-        <Title order={2}>{props.name}</Title>
+        <Title order={2}>{t(props.name)}</Title>
         <Button
           component={Link}
           href={props.info_link}
@@ -68,14 +73,18 @@ export function AvmBlock(props: AvmBlockProps) {
           size="compact-md"
           color="var(--ruffle-blue-7)"
         >
-          More Info
+          {t("compatibility.more")}
         </Button>
       </Group>
 
       {props.children}
 
-      <AvmProgress name="Language" mt="auto" {...props.language} />
-      <AvmProgress name="API" {...props.api} />
+      <AvmProgress
+        name="compatibility.language"
+        mt="auto"
+        {...props.language}
+      />
+      <AvmProgress name="compatibility.api" {...props.api} />
     </Stack>
   );
 }

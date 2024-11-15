@@ -2,6 +2,7 @@
 import { BarChart } from "@mantine/charts";
 import { Paper, Text } from "@mantine/core";
 import classes from "./weekly_contributions.module.css";
+import { Trans } from "@/app/translate";
 
 interface DataPoint {
   week: string;
@@ -23,7 +24,10 @@ function ChartTooltip({ label, payload }: ChartTooltipProps) {
   return (
     <Paper px="md" py="sm" withBorder shadow="md" radius="md">
       <Text fw={500} mb={5}>
-        {commits.value} commits on the week of {label}
+        <Trans
+          i18nKey="compatibility.commits-description"
+          values={{ commitNumber: commits.value, week: label }}
+        />
       </Text>
     </Paper>
   );

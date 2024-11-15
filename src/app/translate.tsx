@@ -136,24 +136,38 @@ export function useTranslation() {
 
 interface TransProps {
   i18nKey: string; // Translation key
+  values?: Record<string, React.ReactNode>; // Placeholder values
   components?: React.ReactNode[]; // Components to inject into placeholders
 }
 
-export const Trans: React.FC<TransProps> = ({ i18nKey, components = [] }) => {
+export const Trans: React.FC<TransProps> = ({
+  i18nKey,
+  values = {},
+  components = [],
+}) => {
   const { t } = useTranslation();
   const translation = t(i18nKey);
 
   const renderWithPlaceholders = (template: string) => {
     const parts = template.split(/({{.*?}})/g); // Split on placeholders like {{key}}
-    return parts.map((part) => {
+    return parts.map((part, index) => {
       const match = part.match(/{{(.*?)}}/); // Match placeholders
       if (match) {
         const placeholderKey = match[1];
-        const component = components.find(
-          (comp) => React.isValidElement(comp) && comp.key === placeholderKey,
-        );
-        if (component) {
-          return component;
+        if (placeholderKey in values) {
+          const value = values[placeholderKey];
+          return typeof value === "string" ? (
+            <React.Fragment key={index}>{value}</React.Fragment>
+          ) : (
+            value
+          );
+        } else {
+          const component = components.find(
+            (comp) => React.isValidElement(comp) && comp.key === placeholderKey,
+          );
+          if (component) {
+            return component;
+          }
         }
       }
       return part; // Return plain text if no placeholder
