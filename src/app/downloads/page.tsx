@@ -21,7 +21,7 @@ import {
   maxNightlies,
 } from "@/app/downloads/config";
 import { getLatestReleases } from "@/app/downloads/github";
-import { useTranslation } from "@/app/translate";
+import { useTranslation, Trans } from "@/app/translate";
 
 function WebDownload({ latest }: { latest: GithubRelease | null }) {
   const { t } = useTranslation();
@@ -33,24 +33,34 @@ function WebDownload({ latest }: { latest: GithubRelease | null }) {
         {'<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>'}
       </Code>
       <Text>
-        {t("downloads.self-host-description-start")}{" "}
-        <Link
-          href={latest?.downloads?.web || githubReleasesUrl}
-          target="_blank"
-        >
-          {t("downloads.self-host-description-link")}
-        </Link>{" "}
-        {t("downloads.self-host-description-end")}
+        <Trans
+          i18nKey="downloads.self-host-description"
+          components={[
+            <Link
+              key="link"
+              href={latest?.downloads?.web || githubReleasesUrl}
+              target="_blank"
+            >
+              {t("downloads.self-host-description-link")}
+            </Link>,
+          ]}
+        />
       </Text>
       <Code block className={classes.cdn}>
         {'<script src="path/to/ruffle.js"></script>'}
       </Code>
       <Text>
-        {t("downloads.advanced-usage-description-start")}{" "}
-        <Link href="https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#javascript-api">
-          {t("downloads.advanced-usage-description-link")}
-        </Link>{" "}
-        {t("downloads.advanced-usage-description-end")}
+        <Trans
+          i18nKey="downloads.advanced-usage-description"
+          components={[
+            <Link
+              key="link"
+              href="https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#javascript-api"
+            >
+              {t("downloads.advanced-usage-description-link")}
+            </Link>,
+          ]}
+        />
       </Text>
     </Stack>
   );
