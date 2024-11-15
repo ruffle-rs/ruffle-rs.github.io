@@ -74,5 +74,25 @@
     "chrome-extension-alt": "Available in the Chrome Web Store",
     "firefox-extension-alt": "Get the Add-On for Firefox",
     "edge-extension-alt": "Get it from Microsoft for Edge"
+  },
+  "compatibility": {
+    "title": "ActionScript Compatibility",
+    "description": "The biggest factor in content compatibility is ActionScript; the language that powers interactivity in games and applications made with Flash. All Flash content falls in one of two categories, depending on which version of the language was used to create it.",
+    "tracking": "We track our progress in each AVM by splitting them up into two different areas:",
+    "language-description": "The {{language}} is the underlying virtual machine itself and the language concepts that it understands, like variables and classes and how they all interact together.",
+    "language": "Language",
+    "api-description": "The {{api}} is the underlying virtual machine itself and the language concepts that it understands, like variables and classes and how they all interact together.",
+    "api": "API",
+    "avm1": "AVM 1: ActionScript 1 & 2",
+    "avm1-description": "AVM 1 is the original ActionScript Virtual Machine. All movies made before Flash Player 9 (June 2006) will be made with AVM 1, and it remained supported & available to authors until the release of Flash Professional CC (2013), after which point content started moving to AVM 2.",
+    "avm1-support": "We believe that most AVM 1 content will work, but we are aware of some graphical inaccuracies and smaller bugs here and there. Please feel free to report any issues you find that are not present in the original Flash Player!",
+    "avm2": "AVM 2: ActionScript 3",
+    "avm2-description": "AVM 2 was introduced with Flash Player 9 (June 2006), to replace the earlier AVM 1. After the release of Flash Professional CC (2013), authors are required to use ActionScript 3 - making any movie made after that date very likely to fall under this category.",
+    "avm2-support": "Ruffle now has decent support for AVM 2, and it's our experience that most games will work well enough to be played. We're still rapidly improving in this area though, so bug reports about any broken content are always welcome!",
+    "weekly-contributions": "Weekly Contributions",
+    "done": "done",
+    "partial": "partially done",
+    "more": "More Info",
+    "commits-description": "{{commitNumber}} commits on the week of {{week}}"
   }
 }
