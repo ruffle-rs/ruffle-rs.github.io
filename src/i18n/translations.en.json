@@ -64,20 +64,15 @@
     "browser-extension": "Browser Extension",
     "browser-extension-description": "If you visit websites that have Flash content but aren't using Ruffle, or you want to ensure you're using the latest and greatest version of Ruffle on every website, then our browser extension is the perfect thing for you!",
     "nightly-releases": "Nightly Releases",
-    "nightly-releases-description": "If none of the above are suitable for you, you can manually download the latest Nightly release. These are automatically built every day (approximately midnight UTC), unless there are no changes on that day. Older nightly releases are available on",
+    "nightly-releases-description": "If none of the above are suitable for you, you can manually download the latest Nightly release. These are automatically built every day (approximately midnight UTC), unless there are no changes on that day. Older nightly releases are available on {{link}}.",
     "web-package": "Web Package",
     "web-package-description": "You can install Ruffle onto a website using one single line of code by using a CDN, no extra work required! It'll always stay up to date with the latest available version of Ruffle.",
-    "self-host-description-start": "If you'd like to host it yourself, you can grab",
+    "self-host-description": "If you'd like to host it yourself, you can grab {{link}} and upload it to your server. Then, include it on your page like so:",
     "self-host-description-link": "the latest self-hosted package",
-    "self-host-description-end": "and upload it to your server. Then, include it on your page like so:",
-    "advanced-usage-description-start": "For advanced usage, consult",
+    "advanced-usage-description": "For advanced usage, consult {{link}} for our JavaScript API and installation options.",
     "advanced-usage-description-link": "our documentation",
-    "advanced-usage-description-end": "for our JavaScript API and installation options.",
     "chrome-extension-alt": "Available in the Chrome Web Store",
     "firefox-extension-alt": "Get the Add-On for Firefox",
     "edge-extension-alt": "Get it from Microsoft for Edge"
-  },
-  "common": {
-    "line-ender": "."
   }
 }

@@ -134,6 +134,35 @@ export function useTranslation() {
   return { t };
 }
 
+interface TransProps {
+  i18nKey: string; // Translation key
+  components?: React.ReactNode[]; // Components to inject into placeholders
+}
+
+export const Trans: React.FC<TransProps> = ({ i18nKey, components = [] }) => {
+  const { t } = useTranslation();
+  const translation = t(i18nKey);
+
+  const renderWithPlaceholders = (template: string) => {
+    const parts = template.split(/({{.*?}})/g); // Split on placeholders like {{key}}
+    return parts.map((part) => {
+      const match = part.match(/{{(.*?)}}/); // Match placeholders
+      if (match) {
+        const placeholderKey = match[1];
+        const component = components.find(
+          (comp) => React.isValidElement(comp) && comp.key === placeholderKey,
+        );
+        if (component) {
+          return component;
+        }
+      }
+      return part; // Return plain text if no placeholder
+    });
+  };
+
+  return <>{renderWithPlaceholders(translation)}</>;
+};
+
 export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
   className,
 }) => {

@@ -24,7 +24,7 @@ import {
   githubReleasesUrl,
   webLinks,
 } from "@/app/downloads/config";
-import { useTranslation } from "@/app/translate";
+import { useTranslation, Trans } from "@/app/translate";
 
 function DownloadLink({
   link,
@@ -130,15 +130,19 @@ export function NightlyList({
     <Stack>
       <Title id="nightly-releases">{t("downloads.nightly-releases")}</Title>
       <Text>
-        {t("downloads.nightly-releases-description")}{" "}
-        <Link
-          href={githubReleasesUrl}
-          className={classes.moreNightlies}
-          target="_blank"
-        >
-          {t("footer.github")}
-        </Link>
-        {t("common.line-ender")}
+        <Trans
+          i18nKey="downloads.nightly-releases-description"
+          components={[
+            <Link
+              key="link"
+              href={githubReleasesUrl}
+              className={classes.moreNightlies}
+              target="_blank"
+            >
+              {t("footer.github")}
+            </Link>,
+          ]}
+        />
       </Text>
       <Table
         horizontalSpacing="md"
