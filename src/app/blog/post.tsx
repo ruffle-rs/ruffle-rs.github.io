@@ -9,6 +9,7 @@ import Image from "next/image";
 import rehypeRaw from "rehype-raw";
 import rehypeSlug from "rehype-slug";
 import { useTranslation } from "@/app/translate";
+import React from "react";
 
 export interface BlogPostProps {
   metadata: PostMetadata;
@@ -28,6 +29,17 @@ export function BlogPostAndIcon({ metadata, type }: BlogPostProps) {
       <BlogPost metadata={metadata} type={type} />
     </Group>
   );
+}
+
+function processChild(
+  child: React.ReactNode,
+  t: (key: string) => string,
+): React.ReactNode {
+  if (typeof child === "string") {
+    // Replace all {{key}} occurrences with t("key")
+    return child.replace(/{{(.*?)}}/g, (_, key) => t(key.trim()));
+  }
+  return child; // Return as is if not a string
 }
 
 export function BlogPost({ metadata, type }: BlogPostProps) {
@@ -55,17 +67,30 @@ export function BlogPost({ metadata, type }: BlogPostProps) {
       </Group>
       <div>
         <Markdown
-          className={type == "excerpt" ? classes.excerpt : classes.contents}
+          className={type === "excerpt" ? classes.excerpt : classes.contents}
           rehypePlugins={[rehypeRaw, rehypeSlug]}
-          components={{
-            a(props) {
-              return (
-                <Link href={props.href || "#"} target="_blank">
-                  {props.children}
-                </Link>
-              );
-            },
-          }}
+          components={["a", "p", "h2", "li", "strong", "code", "em"].reduce(
+            (acc, tag) => ({
+              ...acc,
+              [tag]: (props: { children?: React.ReactNode; href?: string }) =>
+                tag === "a" ? (
+                  <Link href={props.href || "#"} target="_blank">
+                    {React.Children.map(props.children, (child) =>
+                      processChild(child, t),
+                    )}
+                  </Link>
+                ) : (
+                  React.createElement(
+                    tag,
+                    null,
+                    React.Children.map(props.children, (child) =>
+                      processChild(child, t),
+                    ),
+                  )
+                ),
+            }),
+            {},
+          )}
         >
           {type == "excerpt" ? metadata.excerpt : metadata.content}
         </Markdown>
