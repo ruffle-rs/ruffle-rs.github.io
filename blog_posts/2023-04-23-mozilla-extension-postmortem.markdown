@@ -1,5 +1,5 @@
 ---
-title:  "blog.20230423.title"
+title:  "A post-mortem of Ruffle's removal from addons.mozilla.org"
 date:   2023-04-23 04:07:00 -0400
 author: kmeisthax
 icon: /undraw/undraw_feeling_blue_-4-b7q.svg

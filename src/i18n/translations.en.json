@@ -142,23 +142,5 @@
     "spread-the-word-description": "Is your favourite Flash-based site shutting down? Let them know they can add one JavaScript file and keep it running! Feeling nostalgic for some old Flash games? Go play some on Newgrounds with Ruffle installed, and tell your friends about it! Maybe you're a streamer and looking for some silly content? There's literally decades worth, now unlocked and accessible once more.",
     "diamond": "Diamond Sponsors",
     "diamond-description": "We'd like to thank all of our sponsors, who help make this project possible. Below are our Diamond level sponsors, without whom we would not be here. Thank you."
-  },
-  "blog": {
-    "read-more": "Read more...",
-    "20230312": {
-      "title": "First post, progress report!"
-    },
-    "20230423": {
-      "title": "A post-mortem of Ruffle's removal from addons.mozilla.org"
-    },
-    "20230529": {
-      "title": "Ruffle News - May 2023"
-    },
-    "20240114": {
-      "title": "2023 in review"
-    },
-    "20240912": {
-      "title": "Optimisations, Text Input, Tab Focusing and More!"
-    }
   }
 }

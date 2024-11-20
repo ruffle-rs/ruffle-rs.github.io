@@ -1,5 +1,5 @@
 ---
-title:  "blog.20230312.title"
+title:  "First post, progress report!"
 date:   2023-03-12 01:23:00 +0100
 author: nosamu
 icon: /undraw/undraw_welcoming_re_x0qo.svg

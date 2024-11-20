@@ -1,5 +1,5 @@
 ---
-title:  "blog.20230529.title"
+title:  "Ruffle News - May 2023"
 date:   2023-05-09 00:00:01 +00:00
 author: nosamu
 icon: /undraw/undraw_percentages_re_a1ao.svg
