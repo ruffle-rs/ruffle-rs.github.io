@@ -1,6 +1,5 @@
 import { Feed } from "feed";
 import { getSortedPostsData } from "@/app/blog/utils";
-import { getBaseTranslation } from "@/app/utils";
 
 export async function GET() {
   const posts = getSortedPostsData();
@@ -23,10 +22,8 @@ export async function GET() {
     feed.addItem({
       date: post.date,
       link: `https://ruffle.rs/blog/${post.year}/${post.month}/${post.day}/${post.slug}`,
-      title: getBaseTranslation(post.title),
-      description: post.excerpt.replace(/{{(.*?)}}/g, (_, key) =>
-        getBaseTranslation(key.trim()),
-      ),
+      title: post.title,
+      description: post.excerpt,
       author: [{ name: post.author }],
     });
   }
@@ -38,5 +35,4 @@ export async function GET() {
   });
 }
 
-//export const dynamic = "force-static";
-export const revalidate = 1;
+export const dynamic = "force-static";

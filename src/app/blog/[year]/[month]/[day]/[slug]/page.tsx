@@ -2,7 +2,6 @@ import { getPostData, getSortedPostsData, PostPath } from "@/app/blog/utils";
 import { Container } from "@mantine/core";
 import { BlogPost } from "@/app/blog/post";
 import { Metadata } from "next";
-import { getBaseTranslation } from "@/app/utils";
 
 export async function generateMetadata(props: {
   params: Promise<PostPath>;
@@ -13,12 +12,12 @@ export async function generateMetadata(props: {
   );
   const baseUrl = process.env.BASE_URL || "";
   return {
-    title: `${getBaseTranslation(post.title)} - Ruffle`,
+    title: `${post.title} - Ruffle`,
     description: post.excerpt.split("\n")[0].trim(),
     metadataBase: baseUrl ? new URL(baseUrl) : null,
     openGraph: {
       type: "article",
-      title: getBaseTranslation(post.title),
+      title: post.title,
       siteName: "Ruffle",
       publishedTime: post.date.toISOString(),
       authors: [post.author],
