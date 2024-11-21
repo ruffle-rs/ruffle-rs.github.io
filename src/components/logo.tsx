@@ -70,7 +70,6 @@ export default function InteractiveLogo({ className }: LogoProps) {
   };
 
   useEffect(() => {
-    loadPlayer();
     return () => removeRufflePlayer();
   }, []);
 
