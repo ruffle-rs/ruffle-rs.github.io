@@ -4,9 +4,31 @@ import React, { useEffect, useState, useCallback } from "react";
 import defaultTranslations from "@/i18n/translations.en.json";
 
 const languages = {
-  en: "English",
-  es: "Español",
-  // ...
+  en: "English (United States)",
+  ar: "العربية",
+  ca: "Català",
+  "zh-CN": "简体中文",
+  "zh-TW": "繁體中文",
+  cs: "Čeština",
+  nl: "Nederlands",
+  fr: "Français (France)",
+  de: "Deutsch",
+  he: "עברית (ישראל)",
+  hu: "Magyar",
+  id: "Indonesian",
+  it: "Italiano (Italia)",
+  ja: "日本語",
+  ko: "한국어",
+  pl: "Polski (Polska)",
+  "pt-PT": "Português (Portugal)",
+  "pt-BR": "Português brasileiro",
+  ro: "Romanian",
+  ru: "Русский",
+  sk: "Slovenčina (Slovensko)",
+  "es-ES": "Español",
+  "sv-SE": "Svenska",
+  tr: "Türkçe",
+  uk: "Українська",
 };
 
 type TranslationObject = {
