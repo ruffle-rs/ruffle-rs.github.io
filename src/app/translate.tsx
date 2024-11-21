@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState, useCallback } from "react";
 import defaultTranslations from "@/i18n/translations.en.json";
+import classes from "@/components/header.module.css";
 
 const languages = {
   en: "English (United States)",
@@ -205,7 +206,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
 
   return (
     <select
-      className={className}
+      className={`${classes.languageSelector} ${className || ""}`}
       value={selectedLang}
       onChange={handleLanguageChange}
     >
