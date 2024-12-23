@@ -1,8 +1,11 @@
+"use client";
+
 import { Card, Group, Stack, Text, Title } from "@mantine/core";
 import classes from "./sponsors.module.css";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslation } from "@/app/translate";
 
 interface Sponsor {
   name: string;
@@ -115,14 +118,11 @@ function Sponsor(sponsor: Sponsor) {
 }
 
 export function SponsorList() {
+  const { t } = useTranslation();
   return (
     <Stack className={classes.list}>
-      <Title id="sponsors">💎 Diamond Sponsors</Title>
-      <Text>
-        We'd like to thank all of our sponsors, who help make this project
-        possible. Below are our Diamond level sponsors, without whom we would
-        not be here. Thank you.
-      </Text>
+      <Title id="sponsors">💎 {t("contribute.diamond")}</Title>
+      <Text>{t("contribute.diamond-description")}</Text>
       <Group justify="center" gap="sm">
         {sponsors.map((sponsor, index) => (
           <Sponsor key={index} {...sponsor} />
