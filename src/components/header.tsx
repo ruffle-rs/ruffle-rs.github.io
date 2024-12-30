@@ -6,29 +6,36 @@ import classes from "./header.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { LanguageSelector, useTranslation } from "@/app/translate";
+import React from "react";
 
 const links = [
-  { link: "/", label: "About Ruffle" },
-  { link: "/downloads", label: "Downloads" },
-  { link: "/compatibility", label: "Compatibility" },
-  { link: "/contribute", label: "Get Involved" },
-  { link: "/blog", label: "Blog" },
-  { link: "/demo", label: "Demo", target: "_blank" },
-  { link: "https://discord.gg/ruffle", label: "Discord", target: "_blank" },
+  { link: "/", labelKey: "header.about" },
+  { link: "/downloads", labelKey: "header.downloads" },
+  { link: "/compatibility", labelKey: "header.compatibility" },
+  { link: "/contribute", labelKey: "header.contribute" },
+  { link: "/blog", labelKey: "header.blog" },
+  { link: "/demo", labelKey: "header.demo", target: "_blank" },
+  {
+    link: "https://discord.gg/ruffle",
+    labelKey: "header.discord",
+    target: "_blank",
+  },
   {
     link: "https://github.com/ruffle-rs/ruffle/",
-    label: "GitHub",
+    labelKey: "header.github",
     target: "_blank",
   },
 ];
 
 export function Header() {
+  const { t } = useTranslation();
   const [opened, { toggle, close }] = useDisclosure(false);
   const pathname = usePathname();
 
   const items = links.map((link) => (
     <Link
-      key={link.label}
+      key={link.labelKey}
       href={link.link}
       target={link.target}
       className={classes.link}
@@ -37,13 +44,13 @@ export function Header() {
         close();
       }}
     >
-      {link.label}
+      {t(link.labelKey)}
     </Link>
   ));
 
   return (
     <header className={classes.header}>
-      <Container size="md" className={classes.inner}>
+      <Container size="lg" className={classes.inner}>
         <Link href="/">
           <Image
             src="/logo.svg"
@@ -55,6 +62,7 @@ export function Header() {
         </Link>
         <Group gap={5} visibleFrom="md">
           {items}
+          <LanguageSelector />
         </Group>{" "}
         <Drawer
           opened={opened}
@@ -69,6 +77,7 @@ export function Header() {
         >
           {items}
         </Drawer>
+        <LanguageSelector className={classes.hiddenOnDesktop} />
         <Burger
           opened={opened}
           onClick={toggle}

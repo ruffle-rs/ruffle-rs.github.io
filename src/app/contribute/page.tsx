@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Container,
   Group,
@@ -13,142 +15,166 @@ import Image from "next/image";
 import { IconBrandRust, IconBrandTypescript } from "@tabler/icons-react";
 import Link from "next/link";
 import { SponsorList } from "@/app/contribute/sponsors";
+import { useTranslation, Trans } from "@/app/translate";
 
 function ContributeCode() {
+  const { t } = useTranslation();
   return (
     <Stack className={classes.contributeSection}>
-      <Title className={classes.title}>🖥️ Contribute code</Title>
-      <Text>
-        There's a few different codebases in couple of different languages, and
-        we'd welcome any help to try and maintain and improve them.
-      </Text>
+      <Title className={classes.title}>🖥️ {t("contribute.code")}</Title>
+      <Text>{t("contribute.code-description")}</Text>
       <List>
         <ListItem icon={<IconBrandRust />}>
-          The actual{" "}
-          <Link target="_blank" href="https://github.com/ruffle-rs/ruffle/">
-            emulator
-          </Link>{" "}
-          itself, and all of the{" "}
-          <Link
-            target="_blank"
-            href="https://github.com/ruffle-rs/ruffle/tree/master/desktop"
-          >
-            desktop player
-          </Link>
-          , is written in Rust.
+          <Trans
+            i18nKey="contribute.rust"
+            components={[
+              <Link
+                key="emulator"
+                target="_blank"
+                href="https://github.com/ruffle-rs/ruffle/"
+              >
+                {t("contribute.emulator")}
+              </Link>,
+              <Link
+                key="desktop-player"
+                target="_blank"
+                href="https://github.com/ruffle-rs/ruffle/tree/master/desktop"
+              >
+                {t("contribute.desktop-player")}
+              </Link>,
+            ]}
+          />
         </ListItem>
         <ListItem icon={<IconBrandTypescript />}>
-          The{" "}
-          <Link
-            target="_blank"
-            href="https://github.com/ruffle-rs/ruffle/tree/master/web"
-          >
-            web player
-          </Link>
-          , the{" "}
-          <Link
-            target="_blank"
-            href="https://github.com/ruffle-rs/ruffle/tree/master/web/packages/extension"
-          >
-            extension
-          </Link>{" "}
-          and our{" "}
-          <Link
-            target="_blank"
-            href="https://github.com/ruffle-rs/ruffle-rs.github.io"
-          >
-            website
-          </Link>{" "}
-          is written in TypeScript.
+          <Trans
+            i18nKey="contribute.typescript"
+            components={[
+              <Link
+                key="web-player"
+                target="_blank"
+                href="https://github.com/ruffle-rs/ruffle/tree/master/web"
+              >
+                {t("contribute.web-player")}
+              </Link>,
+              <Link
+                key="extension"
+                target="_blank"
+                href="https://github.com/ruffle-rs/ruffle/tree/master/web/packages/extension"
+              >
+                {t("contribute.extension")}
+              </Link>,
+              <Link
+                key="website"
+                target="_blank"
+                href="https://github.com/ruffle-rs/ruffle-rs.github.io"
+              >
+                {t("contribute.website")}
+              </Link>,
+            ]}
+          />
         </ListItem>
       </List>
       <Text>
-        Check out our{" "}
-        <Link
-          target="_blank"
-          href="https://github.com/ruffle-rs/ruffle/blob/master/CONTRIBUTING.md"
-        >
-          Contributing Guidelines
-        </Link>{" "}
-        for information on how to start, and come join our{" "}
-        <Link target="_blank" href="https://discord.gg/ruffle">
-          Discord
-        </Link>{" "}
-        if you need help!
+        <Trans
+          i18nKey="contribute.getting-started"
+          components={[
+            <Link
+              key="guidelines"
+              target="_blank"
+              href="https://github.com/ruffle-rs/ruffle/blob/master/CONTRIBUTING.md"
+            >
+              {t("contribute.guidelines")}
+            </Link>,
+            <Link
+              key="discord"
+              target="_blank"
+              href="https://discord.gg/ruffle"
+            >
+              {t("footer.discord")}
+            </Link>,
+          ]}
+        />
       </Text>
     </Stack>
   );
 }
 
 function TestContent() {
+  const { t } = useTranslation();
   return (
     <Stack className={classes.contributeSection}>
-      <Title className={classes.title}>🕹️ Test content</Title>
+      <Title className={classes.title}>🕹️ {t("contribute.test")}</Title>
+      <Text>{t("contribute.test-description")}</Text>
       <Text>
-        Arguably more important than contributing code is testing Ruffle out. Go
-        install Ruffle and try out your favourite games and animations. Look for
-        any difference from the official Flash Player, and report your findings
-        to us.
+        <Trans
+          i18nKey="contribute.report-bugs"
+          components={[
+            <Link
+              key="bug-tracker"
+              target="_blank"
+              href="https://github.com/ruffle-rs/ruffle/issues"
+            >
+              {t("contribute.bug-tracker")}
+            </Link>,
+          ]}
+        />
       </Text>
       <Text>
-        If you find any bugs, changes of behaviour, performance issues or any
-        visual differences then please report those to{" "}
-        <Link target="_blank" href="https://github.com/ruffle-rs/ruffle/issues">
-          our bug tracker
-        </Link>
-        .
-      </Text>
-      <Text>
-        If it runs flawlessly, come share the good news on{" "}
-        <Link target="_blank" href="https://discord.gg/ruffle">
-          our Discord
-        </Link>
-        !
+        <Trans
+          i18nKey="contribute.working"
+          components={[
+            <Link
+              key="our-discord"
+              target="_blank"
+              href="https://discord.gg/ruffle"
+            >
+              {t("contribute.our-discord")}
+            </Link>,
+          ]}
+        />
       </Text>
     </Stack>
   );
 }
 
 function Sponsorship() {
+  const { t } = useTranslation();
   return (
     <Stack className={classes.contributeSection}>
-      <Title className={classes.title}>💲 Sponsor the project</Title>
+      <Title className={classes.title}>💲 {t("contribute.sponsor")}</Title>
+      <Text>{t("contribute.sponsor-description")}</Text>
       <Text>
-        If you are able and willing to, we welcome any and all financial support
-        to help us fund the project going forward. With your help, we can afford
-        to spend more time dedicated to Ruffle, as well as pay for expenses such
-        as build servers &amp; hosting. We accept donations and sponsorships of
-        any kind, big or small, through Open Source Collective 501(c)(6).
-      </Text>
-      <Text>
-        For more information, or to view the options available for sponsoring
-        the project, please visit{" "}
-        <Link target="_blank" href="https://opencollective.com/ruffle">
-          our Open Collective page
-        </Link>
-        .
+        <Trans
+          i18nKey="contribute.sponsor-info"
+          components={[
+            <Link
+              key="opencollective"
+              target="_blank"
+              href="https://opencollective.com/ruffle"
+            >
+              {t("contribute.opencollective")}
+            </Link>,
+          ]}
+        />
       </Text>
     </Stack>
   );
 }
 
 function SpreadTheWord() {
+  const { t } = useTranslation();
   return (
     <Stack className={classes.contributeSection}>
-      <Title className={classes.title}>💬 Spread the word!</Title>
-      <Text>
-        Is your favourite Flash-based site shutting down? Let them know they can
-        add one JavaScript file and keep it running! Feeling nostalgic for some
-        old Flash games? Go play some on Newgrounds with Ruffle installed, and
-        tell your friends about it! Maybe you're a streamer and looking for some
-        silly content? There's literally decades worth, now unlocked and
-        accessible once more.
-      </Text>
+      <Title className={classes.title}>
+        💬 {t("contribute.spread-the-word")}
+      </Title>
+      <Text>{t("contribute.spread-the-word-description")}</Text>
     </Stack>
   );
 }
 
 export default function Page() {
+  const { t } = useTranslation();
   return (
     <Container size="xl" className={classes.container}>
       <Group align="top" wrap="nowrap">
@@ -161,16 +187,8 @@ export default function Page() {
           className={classes.image}
         />
         <Stack className={classes.actionscriptInfo}>
-          <Title className={classes.title}>Get Involved</Title>
-          <Text>
-            Ruffle is an entirely open source project, maintained by volunteers
-            like you who just want to help preserve a slice of history. We rely
-            on contributions of any kind to keep this project going, and
-            absolutely would not have come as far as we have without the amazing
-            support of our community who came together to make Ruffle happen. If
-            you'd like to join them, there are many ways to help make Ruffle
-            better than ever!
-          </Text>
+          <Title className={classes.title}>{t("contribute.involved")}</Title>
+          <Text>{t("contribute.involved-description")}</Text>
         </Stack>
       </Group>
 
