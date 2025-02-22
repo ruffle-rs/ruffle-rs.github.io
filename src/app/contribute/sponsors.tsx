@@ -91,6 +91,11 @@ const sponsors: Sponsor[] = [
     url: "https://www.neopets.com",
     logo: "/sponsors/neopets.png",
   },
+  {
+    name: "Artix Entertainment",
+    url: "https://www.artix.com",
+    logo: "/sponsors/artix.png",
+  },
 ];
 
 function Sponsor(sponsor: Sponsor) {
