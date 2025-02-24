@@ -49,9 +49,8 @@ export function BlogPost({ metadata, type }: BlogPostProps) {
           {metadata.year}-{metadata.month}-{metadata.day}
         </Text>
       </Group>
-      <div>
+      <div className={type == "excerpt" ? classes.excerpt : classes.contents}>
         <Markdown
-          className={type == "excerpt" ? classes.excerpt : classes.contents}
           rehypePlugins={[rehypeRaw, rehypeSlug]}
           components={{
             a(props) {
