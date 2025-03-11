@@ -73,6 +73,7 @@ export async function getWeeklyContributions(): Promise<
   const octokit = new Octokit({ authStrategy: createGithubAuth });
   return octokit.rest.repos.getCommitActivityStats(repository);
 }
+
 export async function fetchReport(): Promise<AVM2Report | undefined> {
   const releases = await getLatestReleases();
   const latest = releases.find(
