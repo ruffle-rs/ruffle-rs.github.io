@@ -1,8 +1,11 @@
+"use client";
+
 import { Group, Stack, Text, Title } from "@mantine/core";
 import classes from "./extensions.module.css";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "@/app/translate";
 
 interface Extension {
   image: string;
@@ -14,26 +17,27 @@ const extensions: Extension[] = [
   {
     image: "/extension_badges/chrome.svg",
     url: "https://chromewebstore.google.com/detail/ruffle-flash-emulator/donbcfbmhbcapadipfkeojnmajbakjdc",
-    alt: "Available in the Chrome Web Store",
+    alt: "downloads.chrome-extension-alt",
   },
   {
     image: "/extension_badges/firefox.svg",
     url: "https://addons.mozilla.org/firefox/addon/ruffle_rs",
-    alt: "Get the Add-On for Firefox",
+    alt: "downloads.firefox-extension-alt",
   },
   {
     image: "/extension_badges/edge.svg",
     url: "https://microsoftedge.microsoft.com/addons/detail/ruffle/pipjjbgofgieknlpefmcckdmgaaegban",
-    alt: "Get it from Microsoft for Edge",
+    alt: "downloads.edge-extension-alt",
   },
 ];
 
 function ExtensionBadge(info: Extension) {
+  const { t } = useTranslation();
   return (
     <Link href={info.url} target="_blank">
       <Image
         src={info.image}
-        alt={info.alt}
+        alt={t(info.alt)}
         width={0} // set by css to 100% width
         height={66}
         priority
@@ -44,17 +48,13 @@ function ExtensionBadge(info: Extension) {
 }
 
 export function ExtensionList() {
+  const { t } = useTranslation();
   return (
     <Stack>
       <Title id="extension" className={classes.title}>
-        Browser Extension
+        {t("downloads.browser-extension")}
       </Title>
-      <Text>
-        If you visit websites that have Flash content but aren't using Ruffle,
-        or you want to ensure you're using the latest and greatest version of
-        Ruffle on every website, then our browser extension is the perfect thing
-        for you!
-      </Text>
+      <Text>{t("downloads.browser-extension-description")}</Text>
       <Group>
         {extensions.map((extension, i) => (
           <ExtensionBadge key={i} {...extension} />
