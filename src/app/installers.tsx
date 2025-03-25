@@ -6,6 +6,7 @@ import { useDeviceSelectors } from "react-device-detect";
 import classes from "./index.module.css";
 import { Button, Group } from "@mantine/core";
 import Link from "next/link";
+import { useTranslation } from "@/app/translate";
 import { allLinks, CurrentDevice, GithubRelease } from "@/app/downloads/config";
 
 interface RecommendedDownload {
@@ -21,6 +22,7 @@ export default function Installers({
 }: {
   release: GithubRelease | null;
 }) {
+  const { t } = useTranslation();
   const [selectors] = useDeviceSelectors(window.navigator.userAgent);
   const recommended: RecommendedDownload[] = [];
   const currentDevice: CurrentDevice = {
@@ -52,14 +54,14 @@ export default function Installers({
   }
 
   recommended.push({
-    name: "Website Package",
+    name: "installers.selfhosted-long-name",
     icon: IconBrandJavascript,
     url: "/downloads#website-package",
   });
 
   recommended.push({
     icon: IconList,
-    name: "Other Downloads",
+    name: "installers.other-downloads",
     url: "/downloads",
     className: classes.otherDownloadsButton,
   });
@@ -77,7 +79,7 @@ export default function Installers({
           target={download.target}
         >
           <download.icon />
-          {download.name}
+          {t(download.name)}
         </Button>
       ))}
     </Group>
