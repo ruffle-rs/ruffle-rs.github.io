@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Container,
   Group,
@@ -8,22 +10,26 @@ import {
   Title,
 } from "@mantine/core";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./avm2.module.css";
 import { ClassBox } from "@/app/compatibility/avm2/class_box";
 import {
   getReportByNamespace,
+  NamespaceStatus,
+} from "@/app/compatibility/avm2/report_utils";
+import {
   IconDone,
   IconMissing,
   IconStub,
-  NamespaceStatus,
-} from "@/app/compatibility/avm2/report_utils";
+} from "@/app/compatibility/avm2/icons";
 import Link from "next/link";
+import { useTranslation, Trans } from "@/app/translate";
 
 function NamespaceBox(props: NamespaceStatus) {
+  const { t } = useTranslation();
   return (
     <Stack className={classes.namespace}>
-      <Title order={2}>{props.name || "(Top Level)"}</Title>
+      <Title order={2}>{props.name || t("compatibility.avm2.top-level")}</Title>
       <Group align="baseline">
         {Object.entries(props.classes).map(([classname, classinfo]) => (
           <ClassBox key={classname} {...classinfo} />
@@ -33,8 +39,22 @@ function NamespaceBox(props: NamespaceStatus) {
   );
 }
 
-export default async function Page() {
-  const byNamespace = await getReportByNamespace();
+export default function Page() {
+  const { t } = useTranslation();
+  const [byNamespace, setByNamespace] = useState<
+    { [name: string]: NamespaceStatus } | undefined
+  >(undefined);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const byNamespace = await getReportByNamespace();
+        setByNamespace(byNamespace);
+      } catch (error) {
+        console.error("Error fetching data", error);
+      }
+    };
+    fetchData();
+  }, []);
   return (
     <Container size="xl">
       <Stack gap="xl">
@@ -48,43 +68,52 @@ export default async function Page() {
             className={classes.progressImage}
           />
           <Stack className={classes.actionscriptInfo}>
-            <Title className={classes.title}>ActionScript 3 API Progress</Title>
-            <Text>
-              ActionScript 3 contains many different methods and classes - not
-              all of which is ultimately <i>useful</i> to every application. The
-              majority of content only uses a small portion of the available
-              API, so even if we aren&apos;t 100% &quot;complete&quot; across
-              the entirely of AVM 2, we may have enough for that content to run
-              completely fine.
-            </Text>
-            <Text>
-              On this page, we list every single ActionScript 3 API that exists
-              but Ruffle does not yet 100% implement. We classify items into
-              three different stages:
-            </Text>
+            <Title className={classes.title}>
+              {t("compatibility.avm2.title")}
+            </Title>
+            <Text>{t("compatibility.avm2.description")}</Text>
+            <Text>{t("compatibility.avm2.classification")}</Text>
             <List spacing="sm">
               <ListItem icon={<IconDone />}>
-                <b>Implemented</b> items are marked as &quot;Done&quot;, and we
-                believe they are fully functional. For brevity, we do not list
-                completed items on this page.
+                <Trans
+                  i18nKey="compatibility.avm2.implemented-description"
+                  components={[
+                    <b key="implemented">
+                      {t("compatibility.avm2.implemented")}
+                    </b>,
+                  ]}
+                />
               </ListItem>
               <ListItem icon={<IconStub />}>
-                <b>Partial</b> items exist and are enough for most content to
-                work, but are incomplete. A partial class may be missing items,
-                or a method may just simply return a value without performing
-                its intended function.
+                <Trans
+                  i18nKey="compatibility.avm2.partial-description"
+                  components={[
+                    <b key="partial">{t("compatibility.avm2.partial")}</b>,
+                  ]}
+                />
               </ListItem>
               <ListItem icon={<IconMissing />}>
-                <b>Missing</b> items do not exist at all in Ruffle yet, and
-                trying to use them will give an error.
+                <Trans
+                  i18nKey="compatibility.avm2.missing-description"
+                  components={[
+                    <b key="missing">{t("compatibility.avm2.missing")}</b>,
+                  ]}
+                />
               </ListItem>
             </List>
             <Text>
-              You can also visualize the progress{" "}
-              <Link href="/compatibility/avm2/tree.svg" target="_blank">
-                as a tree graph
-              </Link>
-              .
+              <Trans
+                i18nKey="compatibility.avm2.tree"
+                components={[
+                  <Link
+                    key="link"
+                    href="/compatibility/avm2/tree.svg"
+                    target="_blank"
+                  >
+                    {t("compatibility.avm2.tree-link")}
+                  </Link>,
+                ]}
+              />
             </Text>
           </Stack>
         </Group>

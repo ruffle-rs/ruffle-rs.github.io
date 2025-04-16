@@ -34,6 +34,12 @@
   }
 }
 
+.hiddenOnDesktop {
+  @media (min-width: $mantine-breakpoint-md) {
+    display: none;
+  }
+}
+
 .burger {
   --burger-color: var(--ruffle-orange);
 }
@@ -48,4 +54,11 @@
 
 .overlay {
   top: rem(56px);
+}
+
+.languageSelector {
+  color: var(--ruffle-orange);
+  background: var(--ruffle-blue);
+  border: 1px solid var(--ruffle-orange);
+  padding: 4px;
 }

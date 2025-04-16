@@ -24,6 +24,7 @@ import {
   githubReleasesUrl,
   webLinks,
 } from "@/app/downloads/config";
+import { useTranslation, Trans } from "@/app/translate";
 
 function DownloadLink({
   link,
@@ -32,6 +33,7 @@ function DownloadLink({
   link: DownloadLink;
   release: GithubRelease;
 }) {
+  const { t } = useTranslation();
   const url = release.downloads[link.key];
   if (!url) {
     return <></>;
@@ -49,7 +51,7 @@ function DownloadLink({
       title={url ? "" : "Unavailable"}
     >
       <link.icon />
-      {link.shortName}
+      {t(link.shortName)}
     </Button>
   );
 }
@@ -90,24 +92,25 @@ function NightlyRow(release: GithubRelease) {
 }
 
 function NightlyCompactBox(release: GithubRelease) {
+  const { t } = useTranslation();
   return (
     <>
       <Link href={release.url} className={classes.nameAsHeader} target="_blank">
         {release.name}
       </Link>
-      <Title order={5}>Desktop Application</Title>
+      <Title order={5}>{t("downloads.desktop-app")}</Title>
       <Group>
         {desktopLinks.map((link, index) => (
           <DownloadLink key={index} link={link} release={release} />
         ))}
       </Group>
-      <Title order={5}>Browser Extension</Title>
+      <Title order={5}>{t("downloads.browser-extension")}</Title>
       <Group>
         {extensionLinks.map((link, index) => (
           <DownloadLink key={index} link={link} release={release} />
         ))}
       </Group>
-      <Title order={5}>Web Package</Title>
+      <Title order={5}>{t("downloads.web-package")}</Title>
       <Group>
         {webLinks.map((link, index) => (
           <DownloadLink key={index} link={link} release={release} />
@@ -117,23 +120,29 @@ function NightlyCompactBox(release: GithubRelease) {
   );
 }
 
-export function NightlyList({ nightlies }: { nightlies: GithubRelease[] }) {
+export function NightlyList({
+  nightlies,
+}: {
+  nightlies: GithubRelease[] | null;
+}) {
+  const { t } = useTranslation();
   return (
     <Stack>
-      <Title id="nightly-releases">Nightly Releases</Title>
+      <Title id="nightly-releases">{t("downloads.nightly-releases")}</Title>
       <Text>
-        If none of the above are suitable for you, you can manually download the
-        latest Nightly release. These are automatically built every day
-        (approximately midnight UTC), unless there are no changes on that day.{" "}
-        Older nightly releases are available on{" "}
-        <Link
-          href={githubReleasesUrl}
-          className={classes.moreNightlies}
-          target="_blank"
-        >
-          GitHub
-        </Link>
-        .
+        <Trans
+          i18nKey="downloads.nightly-releases-description"
+          components={[
+            <Link
+              key="link"
+              href={githubReleasesUrl}
+              className={classes.moreNightlies}
+              target="_blank"
+            >
+              {t("footer.github")}
+            </Link>,
+          ]}
+        />
       </Text>
       <Table
         horizontalSpacing="md"
@@ -144,14 +153,14 @@ export function NightlyList({ nightlies }: { nightlies: GithubRelease[] }) {
       >
         <TableThead className={classes.header}>
           <TableTr>
-            <TableTh>Version</TableTh>
-            <TableTh>Desktop Application</TableTh>
-            <TableTh>Browser Extension</TableTh>
-            <TableTh>Web Package</TableTh>
+            <TableTh>{t("downloads.version")}</TableTh>
+            <TableTh>{t("downloads.desktop-app")}</TableTh>
+            <TableTh>{t("downloads.browser-extension")}</TableTh>
+            <TableTh>{t("downloads.web-package")}</TableTh>
           </TableTr>
         </TableThead>
         <TableTbody className={classes.body}>
-          {nightlies.map((nightly) => (
+          {nightlies?.map((nightly) => (
             <NightlyRow key={nightly.id} {...nightly} />
           ))}
         </TableTbody>
@@ -159,7 +168,7 @@ export function NightlyList({ nightlies }: { nightlies: GithubRelease[] }) {
 
       <Stack hiddenFrom="sm">
         {/*Compact mobile view, because a table is far too wide*/}
-        {nightlies.map((nightly) => (
+        {nightlies?.map((nightly) => (
           <NightlyCompactBox key={nightly.id} {...nightly} />
         ))}
       </Stack>

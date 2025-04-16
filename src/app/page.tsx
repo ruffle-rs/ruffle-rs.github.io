@@ -15,6 +15,7 @@ import Image from "next/image";
 import { IconCheck } from "@tabler/icons-react";
 import React from "react";
 import { getLatestReleases } from "@/app/downloads/github";
+import { useTranslation } from "@/app/translate";
 import { GithubRelease } from "./downloads/config";
 
 const InteractiveLogo = dynamic(() => import("../components/logo"), {
@@ -26,6 +27,7 @@ const Installers = dynamic(() => import("./installers"), {
 });
 
 export default function Home() {
+  const { t } = useTranslation();
   const [latest, setLatest] = React.useState<GithubRelease | null>(null);
 
   React.useEffect(() => {
@@ -45,9 +47,7 @@ export default function Home() {
       <InteractiveLogo className={classes.logo} />
 
       <Container size="md">
-        <Title className={classes.title}>
-          An open source Flash Player emulator
-        </Title>
+        <Title className={classes.title}>{t("home.title")}</Title>
         <div className={classes.hero}>
           <Image
             className={classes.heroImage}
@@ -58,10 +58,7 @@ export default function Home() {
             priority
           />
           <div className={classes.heroInner}>
-            <Text mt="md">
-              Made to run natively on all modern operating systems and browsers,
-              Ruffle brings Flash content back to life with no extra fuss.
-            </Text>
+            <Text mt="md">{t("home.intro")}</Text>
 
             <List
               mt={30}
@@ -78,18 +75,16 @@ export default function Home() {
               }
             >
               <ListItem>
-                <b className={classes.key}>Safe to use</b> - Using the
-                guarantees of Rust and WASM, we avoid the security pitfalls
-                Flash was known for.
+                <b className={classes.key}>{t("home.safe")}</b> -{" "}
+                <span>{t("home.safe-description")}</span>
               </ListItem>
               <ListItem>
-                <b className={classes.key}>Easy to install</b> - Whether
-                you&apos;re a user or a website owner, we&apos;ve made it as
-                easy as possible to get up and running.
+                <b className={classes.key}>{t("home.easy")}</b> -{" "}
+                <span>{t("home.easy-description")}</span>
               </ListItem>
               <ListItem>
-                <b className={classes.key}>Free and open source</b> - Licensed
-                MIT/Apache 2.0, you&apos;re free to use Ruffle how you please!
+                <b className={classes.key}>{t("home.free")}</b> -{" "}
+                <span>{t("home.free-description")}</span>
               </ListItem>
             </List>
 

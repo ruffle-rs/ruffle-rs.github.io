@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Button,
   Code,
@@ -19,53 +21,57 @@ import {
   maxNightlies,
 } from "@/app/downloads/config";
 import { getLatestReleases } from "@/app/downloads/github";
+import { useTranslation, Trans } from "@/app/translate";
 
 function WebDownload({ latest }: { latest: GithubRelease | null }) {
+  const { t } = useTranslation();
   return (
     <Stack>
-      <Title id="website-package">Website Package</Title>
-      <Text>
-        You can install Ruffle onto a website using one single line of code by
-        using a CDN, no extra work required! It'll always stay up to date with
-        the latest available version of Ruffle.
-      </Text>
+      <Title id="website-package">{t("installers.selfhosted-long-name")}</Title>
+      <Text>{t("downloads.web-package-description")}</Text>
       <Code block className={classes.cdn}>
         {'<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>'}
       </Code>
       <Text>
-        If you'd like to host it yourself, you can grab{" "}
-        <Link
-          href={latest?.downloads?.web || githubReleasesUrl}
-          target="_blank"
-        >
-          the latest self-hosted package
-        </Link>{" "}
-        and upload it to your server. Then, include it on your page like so:
+        <Trans
+          i18nKey="downloads.self-host-description"
+          components={[
+            <Link
+              key="link"
+              href={latest?.downloads?.web || githubReleasesUrl}
+              target="_blank"
+            >
+              {t("downloads.self-host-description-link")}
+            </Link>,
+          ]}
+        />
       </Text>
       <Code block className={classes.cdn}>
         {'<script src="path/to/ruffle.js"></script>'}
       </Code>
       <Text>
-        For advanced usage, consult{" "}
-        <Link href="https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#javascript-api">
-          our documentation
-        </Link>{" "}
-        for our JavaScript API and installation options.
+        <Trans
+          i18nKey="downloads.advanced-usage-description"
+          components={[
+            <Link
+              key="link"
+              href="https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#javascript-api"
+            >
+              {t("downloads.advanced-usage-description-link")}
+            </Link>,
+          ]}
+        />
       </Text>
     </Stack>
   );
 }
 
 function DesktopDownload({ latest }: { latest: GithubRelease | null }) {
+  const { t } = useTranslation();
   return (
     <Stack>
-      <Title id="desktop-app">Desktop Application</Title>
-      <Text>
-        If you want to run Flash content on your computer without a browser
-        in-between, we have native applications that will take full advantage of
-        your GPU and system resources to get those extra frames when playing
-        intense games.
-      </Text>
+      <Title id="desktop-app">{t("downloads.desktop-app")}</Title>
+      <Text>{t("downloads.desktop-app-description")}</Text>
       <Group>
         {desktopLinks
           .filter((link) => link.isRecommended)
@@ -84,7 +90,7 @@ function DesktopDownload({ latest }: { latest: GithubRelease | null }) {
                 title={url ? "" : "Unavailable"}
               >
                 <link.icon />
-                {link.shortName}
+                {t(link.shortName)}
               </Button>
             );
           })}
@@ -93,12 +99,26 @@ function DesktopDownload({ latest }: { latest: GithubRelease | null }) {
   );
 }
 
-export default async function Page() {
-  const releases = await getLatestReleases();
-  const latest = releases.length > 0 ? releases[0] : null;
-  const nightlies = releases
-    .filter((release) => release.prerelease)
-    .slice(0, maxNightlies);
+export default function Page() {
+  const [latest, setLatest] = React.useState<GithubRelease | null>(null);
+  const [nightlies, setNightlies] = React.useState<GithubRelease[] | null>(
+    null,
+  );
+  React.useEffect(() => {
+    const fetchReleases = async () => {
+      try {
+        const releases = await getLatestReleases();
+        const nightlies = releases
+          .filter((release) => release.prerelease)
+          .slice(0, maxNightlies);
+        setNightlies(nightlies);
+        setLatest(releases.length > 0 ? releases[0] : null);
+      } catch (err) {
+        console.warn("Failed to fetch releases", err);
+      }
+    };
+    fetchReleases();
+  }, []);
   return (
     <Container size="xl" className={classes.container}>
       <Stack gap="xl">
