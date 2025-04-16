@@ -82,7 +82,7 @@ export default async function Downloads() {
         >
           <AvmBlock
             name="AVM 1: ActionScript 1 & 2"
-            language={{ done: 95 }}
+            language={{ done: 99 }}
             api={{ done: avm1ApiDone }}
             info_link_target="_blank"
             info_link="https://github.com/ruffle-rs/ruffle/issues/310"
