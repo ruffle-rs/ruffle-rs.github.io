@@ -1,5 +1,6 @@
 .cdn {
   font-size: var(--mantine-font-size-md);
+  color: var(--mantine-color-black);
 }
 
 .download {
