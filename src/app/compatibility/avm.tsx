@@ -1,3 +1,5 @@
+"use client";
+
 import classes from "./avm.module.css";
 import {
   Button,
@@ -24,7 +26,10 @@ function AvmProgress(props: AvmProgressPropsFull) {
   return (
     <Group align="center" justify="spread-between" mt={props.mt}>
       <Text size="sm" className={classes.progressName}>
-        {props.name}: {props.done}%
+        {props.name}:{" "}
+        {typeof props.done === "number" && props.done > 0
+          ? `${props.done}%`
+          : "Loading..."}
       </Text>
       <ProgressRoot size="xl" radius={10} className={classes.progress}>
         <ProgressSection
@@ -33,7 +38,7 @@ function AvmProgress(props: AvmProgressPropsFull) {
           color="var(--mantine-color-green-9)"
           title={`${props.done}% done`}
         ></ProgressSection>
-        {props.stubbed && (
+        {typeof props.stubbed === "number" && props.stubbed > 0 && (
           <ProgressSection
             striped
             value={props.stubbed}
