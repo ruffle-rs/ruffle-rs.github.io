@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, Group, Stack, Text, Title } from "@mantine/core";
 import classes from "./sponsors.module.css";
 import React from "react";
