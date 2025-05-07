@@ -14,9 +14,9 @@ import classes from "./avm2.module.css";
 import React from "react";
 import {
   ClassStatus,
-  ProgressIcon,
   displayedPercentage,
 } from "@/app/compatibility/avm2/report_utils";
+import { ProgressIcon } from "@/app/compatibility/avm2/icons";
 
 export function ClassBox(props: ClassStatus) {
   const [opened, { toggle }] = useDisclosure(false);

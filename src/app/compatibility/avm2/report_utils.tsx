@@ -1,59 +1,4 @@
-import { rem, ThemeIcon } from "@mantine/core";
-import { IconCheck, IconProgress, IconX } from "@tabler/icons-react";
-import { fetchReport } from "@/app/downloads/github";
-import React from "react";
-
-export function IconDone() {
-  return (
-    <ThemeIcon
-      size={20}
-      radius="xl"
-      color="var(--mantine-color-green-9)"
-      title="Done"
-    >
-      <IconCheck
-        color="white"
-        style={{ width: rem(12), height: rem(12) }}
-        stroke={4}
-      />
-    </ThemeIcon>
-  );
-}
-
-export function IconStub() {
-  return (
-    <ThemeIcon size={20} radius="xl" title="Partial">
-      <IconProgress
-        color="#3c1518"
-        style={{ width: rem(12), height: rem(12) }}
-        stroke={4}
-      />
-    </ThemeIcon>
-  );
-}
-
-export function IconMissing() {
-  return (
-    <ThemeIcon size={20} radius="xl" color="#3c1518" title="Missing">
-      <IconX
-        color="white"
-        style={{ width: rem(12), height: rem(12) }}
-        stroke={4}
-      />
-    </ThemeIcon>
-  );
-}
-
-export function ProgressIcon(type: "stub" | "missing" | "done") {
-  switch (type) {
-    case "stub":
-      return <IconStub />;
-    case "missing":
-      return <IconMissing />;
-    case "done":
-      return <IconDone />;
-  }
-}
+import type { AVM2Report } from "@/app/downloads/config";
 
 export interface SummaryStatistics {
   max_points: number;
@@ -82,7 +27,8 @@ export async function getReportByNamespace(): Promise<
   { [name: string]: NamespaceStatus } | undefined
 > {
   let byNamespace: { [name: string]: NamespaceStatus } = {};
-  const report = await fetchReport();
+  const reportReq = await fetch("/compatibility/fetch-report");
+  const report: AVM2Report = await reportReq.json();
   if (!report) {
     return;
   }
