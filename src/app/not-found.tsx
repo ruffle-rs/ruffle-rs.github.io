@@ -1,3 +1,5 @@
+"use client";
+
 import classes from "./not-found.module.css";
 import { Stack, Text, Title } from "@mantine/core";
 import React from "react";

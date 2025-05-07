@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Container,
   Group,
@@ -8,16 +10,18 @@ import {
   Title,
 } from "@mantine/core";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./avm2.module.css";
 import { ClassBox } from "@/app/compatibility/avm2/class_box";
 import {
   getReportByNamespace,
+  NamespaceStatus,
+} from "@/app/compatibility/avm2/report_utils";
+import {
   IconDone,
   IconMissing,
   IconStub,
-  NamespaceStatus,
-} from "@/app/compatibility/avm2/report_utils";
+} from "@/app/compatibility/avm2/icons";
 import Link from "next/link";
 
 function NamespaceBox(props: NamespaceStatus) {
@@ -33,8 +37,21 @@ function NamespaceBox(props: NamespaceStatus) {
   );
 }
 
-export default async function Page() {
-  const byNamespace = await getReportByNamespace();
+export default function Page() {
+  const [byNamespace, setByNamespace] = useState<
+    { [name: string]: NamespaceStatus } | undefined
+  >(undefined);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const byNamespace = await getReportByNamespace();
+        setByNamespace(byNamespace);
+      } catch (error) {
+        console.error("Error fetching data", error);
+      }
+    };
+    fetchData();
+  }, []);
   return (
     <Container size="xl">
       <Stack gap="xl">
