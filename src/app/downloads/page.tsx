@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
 import {
   Button,
   Code,
@@ -8,7 +11,6 @@ import {
   Title,
 } from "@mantine/core";
 import classes from "./downloads.module.css";
-import React from "react";
 import { ExtensionList } from "@/app/downloads/extensions";
 import { NightlyList } from "@/app/downloads/nightlies";
 import Link from "next/link";
@@ -93,12 +95,24 @@ function DesktopDownload({ latest }: { latest: GithubRelease | null }) {
   );
 }
 
-export default async function Page() {
-  const releases = await getLatestReleases();
-  const latest = releases.length > 0 ? releases[0] : null;
-  const nightlies = releases
-    .filter((release) => release.prerelease)
-    .slice(0, maxNightlies);
+export default function Page() {
+  const [latest, setLatest] = useState<GithubRelease | null>(null);
+  const [nightlies, setNightlies] = useState<GithubRelease[]>([]);
+  useEffect(() => {
+    const fetchReleases = async () => {
+      try {
+        const releases = await getLatestReleases();
+        const nightlies = releases
+          .filter((release) => release.prerelease)
+          .slice(0, maxNightlies);
+        setNightlies(nightlies);
+        setLatest(releases.length > 0 ? releases[0] : null);
+      } catch (err) {
+        console.warn("Failed to fetch releases", err);
+      }
+    };
+    fetchReleases();
+  }, []);
   return (
     <Container size="xl" className={classes.container}>
       <Stack gap="xl">

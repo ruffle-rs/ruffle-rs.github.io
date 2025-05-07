@@ -1,3 +1,5 @@
+"use client";
+
 import { Group, Stack, Text, Title } from "@mantine/core";
 import classes from "./extensions.module.css";
 import React from "react";
