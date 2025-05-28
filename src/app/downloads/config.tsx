@@ -34,7 +34,8 @@ export interface ReleaseDownloads {
   windows_64?: string;
   windows_32?: string;
   macos?: string;
-  linux?: string;
+  linux_x86_64?: string;
+  linux_aarch64?: string;
   flatpak?: string;
 
   firefox?: string;
@@ -49,7 +50,8 @@ export const FilenamePatterns: Record<DownloadKey, string | null> = {
   windows_64: "-windows-x86_64",
   windows_32: "-windows-x86_32",
   macos: "-macos",
-  linux: "-linux",
+  linux_x86_64: "-linux-x86_64",
+  linux_aarch64: "-linux-aarch64",
   firefox: "-firefox-unsigned",
   chromium: "-extension.",
   web: "-selfhosted",
@@ -147,12 +149,20 @@ export const desktopLinks: DownloadLink[] = [
     isDeviceRelevant: (device) => device.linux,
   },
   {
-    key: "linux",
-    shortName: "Linux",
+    key: "linux_x86_64",
+    shortName: "Linux (x86_64)",
     longName: "Linux Executable",
     icon: IconBrandLinux,
     isRecommended: true,
     isDeviceRelevant: (device) => device.desktop && device.linux,
+  },
+  {
+    key: "linux_aarch64",
+    shortName: "Linux (ARM64)",
+    longName: "Linux Executable",
+    icon: IconBrandLinux,
+    isRecommended: true,
+    isDeviceRelevant: () => false,
   },
 ];
 
