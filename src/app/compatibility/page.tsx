@@ -1,38 +1,67 @@
+"use client";
+
+import React, { useEffect, useState } from "react";
 import { Container, Flex, Group, Stack, Text } from "@mantine/core";
 import classes from "./compatibility.module.css";
 import { AvmBlock } from "@/app/compatibility/avm";
 import Image from "next/image";
-import React from "react";
 import { Title } from "@mantine/core";
 import { List, ListItem } from "@mantine/core";
 import { WeeklyContributions } from "@/app/compatibility/weekly_contributions";
 import {
-  fetchReport,
   getAVM1Progress,
   getWeeklyContributions,
 } from "@/app/downloads/github";
 
-export default async function Downloads() {
-  const contributions = await getWeeklyContributions();
-  const data = contributions.data.map((item) => {
-    return {
-      week: new Date(item.week * 1000).toISOString().split("T")[0],
-      Commits: item.total,
+interface DataPoint {
+  week: string;
+  Commits: number;
+}
+
+export default function Downloads() {
+  const [data, setData] = useState<DataPoint[]>([]);
+  const [avm1ApiDone, setAvm1ApiDone] = useState<number>(0);
+  const [avm2ApiDone, setAvm2ApiDone] = useState<number>(0);
+  const [avm2ApiStubbed, setAvm2ApiStubbed] = useState<number>(0);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Fetch weekly contributions
+        const contributionsRes = await getWeeklyContributions();
+        const contributionsData = contributionsRes.data.map((item) => ({
+          week: new Date(item.week * 1000).toISOString().split("T")[0],
+          Commits: item.total,
+        }));
+        setData(contributionsData);
+
+        // Fetch AVM1 progress
+        const avm1ApiRes = await getAVM1Progress();
+        setAvm1ApiDone(avm1ApiRes);
+
+        // Fetch report
+        const reportReq = await fetch("/compatibility/fetch-report");
+        const reportRes = await reportReq.json();
+        if (reportRes) {
+          const { summary } = reportRes;
+          const maxPoints = summary.max_points;
+          const implPoints = summary.impl_points;
+          const stubPenalty = summary.stub_penalty;
+
+          const avm2ApiDone = Math.round(
+            ((implPoints - stubPenalty) / maxPoints) * 100,
+          );
+          setAvm2ApiDone(avm2ApiDone);
+
+          const avm2ApiStubbed = Math.round((stubPenalty / maxPoints) * 100);
+          setAvm2ApiStubbed(avm2ApiStubbed);
+        }
+      } catch (error) {
+        console.error("Error fetching data", error);
+      }
     };
-  });
-  const avm1ApiDone = await getAVM1Progress();
-  const report = await fetchReport();
-  if (!report) {
-    return;
-  }
-  const summary = report.summary;
-  const maxPoints = summary.max_points;
-  const implPoints = summary.impl_points;
-  const stubPenalty = summary.stub_penalty;
-  const avm2ApiDone = Math.round(
-    ((implPoints - stubPenalty) / maxPoints) * 100,
-  );
-  const avm2ApiStubbed = Math.round((stubPenalty / maxPoints) * 100);
+
+    fetchData();
+  }, []);
 
   return (
     <Container size="xl" className={classes.container}>

@@ -1,3 +1,5 @@
+"use client";
+
 import { Container, Group, ActionIcon, rem, Text } from "@mantine/core";
 import Link from "next/link";
 
