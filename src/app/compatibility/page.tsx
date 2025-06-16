@@ -39,7 +39,7 @@ export default function Downloads() {
         setAvm1ApiDone(avm1ApiRes);
 
         // Fetch report
-        const reportReq = await fetch("/compatibility/fetch-report");
+        const reportReq = await fetch("/avm2_report.json");
         const reportRes = await reportReq.json();
         if (reportRes) {
           const { summary } = reportRes;

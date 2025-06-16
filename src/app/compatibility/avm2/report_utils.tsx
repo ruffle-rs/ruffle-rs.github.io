@@ -27,7 +27,7 @@ export async function getReportByNamespace(): Promise<
   { [name: string]: NamespaceStatus } | undefined
 > {
   let byNamespace: { [name: string]: NamespaceStatus } = {};
-  const reportReq = await fetch("/compatibility/fetch-report");
+  const reportReq = await fetch("/avm2_report.json");
   const report: AVM2Report = await reportReq.json();
   if (!report) {
     return;
