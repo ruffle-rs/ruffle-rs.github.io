@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Script from "next/script";
 import classes from "../app/index.module.css";
@@ -27,44 +27,29 @@ interface LogoProps {
   className?: string;
 }
 
-interface LogoState {
-  player: RufflePlayer | null;
-}
+export default function InteractiveLogo({ className }: LogoProps) {
+  const container = useRef<HTMLDivElement>(null);
+  const [player, setPlayer] = useState<RufflePlayer | null>(null);
 
-export default class InteractiveLogo extends React.Component<
-  LogoProps,
-  LogoState
-> {
-  private readonly container: React.RefObject<HTMLDivElement>;
-  private player: RufflePlayer | null = null;
+  const removeRufflePlayer = () => {
+    player?.remove();
+    setPlayer(null);
+  };
 
-  constructor(props: LogoProps) {
-    super(props);
-
-    this.container = React.createRef();
-    this.state = {
-      player: null,
-    };
-  }
-
-  private removeRufflePlayer() {
-    this.player?.remove();
-    this.player = null;
-    this.setState({ player: null });
-  }
-
-  private load() {
-    if (this.player) {
+  const loadPlayer = () => {
+    if (player) {
       // Already loaded.
       return;
     }
 
-    this.player = (window.RufflePlayer as PublicAPI)?.newest()?.createPlayer();
+    const rufflePlayer = (window.RufflePlayer as PublicAPI)
+      ?.newest()
+      ?.createPlayer();
 
-    if (this.player) {
-      this.container.current!.appendChild(this.player);
+    if (rufflePlayer) {
+      container.current!.appendChild(rufflePlayer);
 
-      this.player
+      rufflePlayer
         .load({
           url: "/logo-anim.swf",
           autoplay: "on",
@@ -75,39 +60,33 @@ export default class InteractiveLogo extends React.Component<
           preferredRenderer: "canvas",
         })
         .catch(() => {
-          this.removeRufflePlayer();
+          removeRufflePlayer();
         });
-      this.player.style.width = "100%";
-      this.player.style.height = "100%";
-      this.setState({ player: this.player });
+      rufflePlayer.style.width = "100%";
+      rufflePlayer.style.height = "100%";
+      setPlayer(rufflePlayer);
     }
-  }
+  };
 
-  componentDidMount() {
-    this.load();
-  }
+  useEffect(() => {
+    return () => removeRufflePlayer();
+  }, []);
 
-  componentWillUnmount() {
-    this.removeRufflePlayer();
-  }
-
-  render() {
-    return (
-      <>
-        <Script
-          src="https://unpkg.com/@ruffle-rs/ruffle"
-          onReady={() => this.load()}
+  return (
+    <>
+      <Script
+        src="https://unpkg.com/@ruffle-rs/ruffle"
+        onReady={() => loadPlayer()}
+      />
+      <div ref={container} className={className}>
+        <Image
+          src="/logo.svg"
+          alt="Ruffle Logo"
+          className={player ? classes.hidden : classes.staticLogo}
+          width="340"
+          height="110"
         />
-        <div ref={this.container} className={this.props.className}>
-          <Image
-            src="/logo.svg"
-            alt="Ruffle Logo"
-            className={this.state.player ? classes.hidden : classes.staticLogo}
-            width="340"
-            height="110"
-          />
-        </div>
-      </>
-    );
-  }
+      </div>
+    </>
+  );
 }
