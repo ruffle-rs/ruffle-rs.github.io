@@ -13,11 +13,13 @@ import classes from "./avm2.module.css";
 import { ClassBox } from "@/app/compatibility/avm2/class_box";
 import {
   getReportByNamespace,
+  NamespaceStatus,
+} from "@/app/compatibility/avm2/report_utils";
+import {
   IconDone,
   IconMissing,
   IconStub,
-  NamespaceStatus,
-} from "@/app/compatibility/avm2/report_utils";
+} from "@/app/compatibility/avm2/icons";
 import Link from "next/link";
 
 function NamespaceBox(props: NamespaceStatus) {
