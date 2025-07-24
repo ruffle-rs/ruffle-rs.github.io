@@ -7,6 +7,7 @@ import { Header } from "@/components/header";
 import { FooterSocial } from "@/components/footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ruffle.rs"),
   title: "Ruffle - Flash Emulator",
   description:
     "Ruffle is a Flash Player emulator written in Rust. Ruffle targets both desktop and the web using WebAssembly.",
