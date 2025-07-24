@@ -10,16 +10,16 @@
   },
   "dependencies": {
     "@mantine/charts": "^8.2.1",
-    "@mantine/core": "^8.0.0",
-    "@mantine/hooks": "^8.0.0",
+    "@mantine/core": "^8.2.1",
+    "@mantine/hooks": "^8.2.1",
     "@next/bundle-analyzer": "15.4.4",
     "@tabler/icons-react": "^3.34.1",
     "next": "15.4.4",
     "node-html-parser": "^7.0.1",
-    "react": "^18",
+    "react": "^19",
     "react-device-detect": "^2.2.3",
-    "react-dom": "^18",
-    "recharts": "^2.15.4"
+    "react-dom": "^19",
+    "recharts": "^3.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
@@ -27,8 +27,8 @@
     "@types/d3": "^7.4.3",
     "@types/jsdom": "^21.1.7",
     "@types/node": "^24",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "@typescript-eslint/eslint-plugin": "^8.38.0",
     "@typescript-eslint/parser": "^8.32.1",
     "d3": "^7.9.0",

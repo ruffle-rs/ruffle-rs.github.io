@@ -9,13 +9,13 @@ interface DataPoint {
 }
 
 interface ChartTooltipProps {
-  label: string;
+  label?: string | number;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   payload: Record<string, any>[] | undefined;
 }
 
 function ChartTooltip({ label, payload }: ChartTooltipProps) {
-  if (!payload) return null;
+  if (!payload || !label) return null;
 
   const commits = payload.find((item) => item.name == "Commits");
   if (!commits) return null;
