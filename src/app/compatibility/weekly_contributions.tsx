@@ -1,4 +1,5 @@
 "use client";
+import { ReferenceLine } from "recharts";
 import { BarChart } from "@mantine/charts";
 import { Paper, Text } from "@mantine/core";
 import classes from "./weekly_contributions.module.css";
@@ -43,6 +44,10 @@ export function WeeklyContributions({ data }: { data: DataPoint[] }) {
         ),
       }}
       className={classes.chart}
-    />
+    >
+      {/* This invisible line is a workaround for https://github.com/mantinedev/mantine/issues/8110,
+          a regression with switching to Recharts 3. TODO: Remove when fixed. */}
+      <ReferenceLine y={0} stroke="transparent" ifOverflow="extendDomain" />
+    </BarChart>
   );
 }
