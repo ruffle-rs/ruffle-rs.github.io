@@ -89,7 +89,8 @@ export default function Home() {
               </ListItem>
               <ListItem>
                 <b className={classes.key}>Free and open source</b> - Licensed
-                MIT/Apache 2.0, you&apos;re free to use Ruffle how you please!
+                MIT/Apache 2.0, you&apos;re free to use Ruffle however you
+                please!
               </ListItem>
             </List>
 
