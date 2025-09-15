@@ -9,17 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mantine/charts": "^8.2.8",
+    "@mantine/charts": "^8.3.1",
     "@mantine/core": "^8.2.1",
     "@mantine/hooks": "^8.2.1",
-    "@next/bundle-analyzer": "15.5.2",
+    "@next/bundle-analyzer": "15.5.3",
     "@tabler/icons-react": "^3.34.1",
-    "next": "15.5.2",
+    "next": "15.5.3",
     "node-html-parser": "^7.0.1",
     "react": "^19",
     "react-device-detect": "^2.2.3",
     "react-dom": "^19",
-    "recharts": "^3.1.2"
+    "recharts": "^3.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
@@ -29,11 +29,11 @@
     "@types/node": "^24",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/eslint-plugin": "^8.43.0",
     "@typescript-eslint/parser": "^8.32.1",
     "d3": "^7.9.0",
     "eslint": "^9.35.0",
-    "eslint-config-next": "15.5.2",
+    "eslint-config-next": "15.5.3",
     "eslint-config-prettier": "^10.1.8",
     "feed": "^5.1.0",
     "gray-matter": "^4.0.3",
