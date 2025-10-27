@@ -12,6 +12,15 @@ const compat = new FlatCompat({
 });
 
 export default [
+  {
+    ignores: [
+      "node_modules/**",
+      ".next/**",
+      "out/**",
+      "build/**",
+      "next-env.d.ts",
+    ],
+  },
   ...compat.extends(
     "prettier",
     "eslint:recommended",
