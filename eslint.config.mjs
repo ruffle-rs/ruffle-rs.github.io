@@ -12,10 +12,25 @@ const compat = new FlatCompat({
 });
 
 export default [
+  {
+    ignores: [
+      "node_modules/**",
+      ".next/**",
+      "out/**",
+      "build/**",
+      "next-env.d.ts",
+    ],
+  },
   ...compat.extends(
     "prettier",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@next/next/core-web-vitals",
   ),
+  {
+    files: ["postcss.config.js", "next.config.js"],
+    languageOptions: {
+      sourceType: "commonjs",
+    },
+  },
 ];
