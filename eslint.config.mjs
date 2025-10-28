@@ -27,4 +27,10 @@ export default [
     "plugin:@typescript-eslint/recommended",
     "plugin:@next/next/core-web-vitals",
   ),
+  {
+    files: ["postcss.config.js", "next.config.js"],
+    languageOptions: {
+      sourceType: "commonjs",
+    },
+  },
 ];
