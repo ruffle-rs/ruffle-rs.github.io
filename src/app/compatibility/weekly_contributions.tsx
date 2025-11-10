@@ -11,7 +11,7 @@ interface DataPoint {
 interface ChartTooltipProps {
   label?: string | number;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  payload: Record<string, any>[] | undefined;
+  payload: readonly Record<string, any>[] | undefined;
 }
 
 function ChartTooltip({ label, payload }: ChartTooltipProps) {
