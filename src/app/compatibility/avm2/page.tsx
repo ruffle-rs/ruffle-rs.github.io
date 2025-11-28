@@ -52,12 +52,12 @@ export default async function Page() {
           <Stack className={classes.actionscriptInfo}>
             <Title className={classes.title}>ActionScript 3 API Progress</Title>
             <Text>
-              ActionScript 3 contains many different methods and classes - not
-              all of which is ultimately <i>useful</i> to every application. The
-              majority of content only uses a small portion of the available
-              API, so even if we aren&apos;t 100% &quot;complete&quot; across
-              the entirely of AVM 2, we may have enough for that content to run
-              completely fine.
+              ActionScript 3 contains many different methods and classes &mdash;
+              not all of which are ultimately <em>useful</em> to every
+              application. The majority of content only uses a small portion of
+              the available API, so even if we aren&rsquo;t 100%
+              &ldquo;complete&rdquo; across the entirely of AVM 2, we may have
+              enough for that content to run completely fine.
             </Text>
             <Text>
               On this page, we list every single ActionScript 3 API that exists
@@ -66,9 +66,9 @@ export default async function Page() {
             </Text>
             <List spacing="sm">
               <ListItem icon={<IconDone />}>
-                <b>Implemented</b> items are marked as &quot;Done&quot;, and we
-                believe they are fully functional. For brevity, we do not list
-                completed items on this page.
+                <b>Implemented</b> items are marked as &ldquo;Done&rdquo;, and
+                we believe they are fully functional. For brevity, we do not
+                list completed items on this page.
               </ListItem>
               <ListItem icon={<IconStub />}>
                 <b>Partial</b> items exist and are enough for most content to

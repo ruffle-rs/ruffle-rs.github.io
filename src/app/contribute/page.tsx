@@ -19,8 +19,8 @@ function ContributeCode() {
     <Stack className={classes.contributeSection}>
       <Title className={classes.title}>🖥️ Contribute code</Title>
       <Text>
-        There's a few different codebases in couple of different languages, and
-        we'd welcome any help to try and maintain and improve them.
+        There are a few different codebases in a couple of different languages,
+        and we&rsquo;d welcome any help to try and maintain and improve them.
       </Text>
       <List>
         <ListItem icon={<IconBrandRust />}>
@@ -117,7 +117,7 @@ function Sponsorship() {
         If you are able and willing to, we welcome any and all financial support
         to help us fund the project going forward. With your help, we can afford
         to spend more time dedicated to Ruffle, as well as pay for expenses such
-        as build servers &amp; hosting. We accept donations and sponsorships of
+        as build servers and hosting. We accept donations and sponsorships of
         any kind, big or small, through Open Source Collective 501(c)(6).
       </Text>
       <Text>
@@ -140,9 +140,9 @@ function SpreadTheWord() {
         Is your favourite Flash-based site shutting down? Let them know they can
         add one JavaScript file and keep it running! Feeling nostalgic for some
         old Flash games? Go play some on Newgrounds with Ruffle installed, and
-        tell your friends about it! Maybe you're a streamer and looking for some
-        silly content? There's literally decades worth, now unlocked and
-        accessible once more.
+        tell your friends about it! Maybe you&rsquo;re a streamer and looking
+        for some silly content? There&rsquo;s literally decades worth, now
+        unlocked and accessible once more.
       </Text>
     </Stack>
   );
@@ -168,8 +168,8 @@ export default function Page() {
             on contributions of any kind to keep this project going, and
             absolutely would not have come as far as we have without the amazing
             support of our community who came together to make Ruffle happen. If
-            you'd like to join them, there are many ways to help make Ruffle
-            better than ever!
+            you&rsquo;d like to join them, there are many ways to help make
+            Ruffle better than ever!
           </Text>
         </Stack>
       </Group>

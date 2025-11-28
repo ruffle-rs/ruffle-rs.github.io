@@ -26,14 +26,14 @@ function WebDownload({ latest }: { latest: GithubRelease | null }) {
       <Title id="website-package">Website Package</Title>
       <Text>
         You can install Ruffle onto a website using one single line of code by
-        using a CDN, no extra work required! It'll always stay up to date with
-        the latest available version of Ruffle.
+        using a CDN, no extra work required! It&rsquo;ll always stay up to date
+        with the latest available version of Ruffle.
       </Text>
       <Code block className={classes.cdn}>
         {'<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>'}
       </Code>
       <Text>
-        If you'd like to host it yourself, you can grab{" "}
+        If you&rsquo;d like to host it yourself, you can grab{" "}
         <Link
           href={latest?.downloads?.web || githubReleasesUrl}
           target="_blank"
