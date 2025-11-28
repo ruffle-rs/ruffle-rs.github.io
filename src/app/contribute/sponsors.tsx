@@ -124,7 +124,7 @@ export function SponsorList() {
     <Stack className={classes.list}>
       <Title id="sponsors">💎 Diamond Sponsors</Title>
       <Text>
-        We'd like to thank all of our sponsors, who help make this project
+        We&rsquo;d like to thank all of our sponsors, who help make this project
         possible. Below are our Diamond level sponsors, without whom we would
         not be here. Thank you.
       </Text>

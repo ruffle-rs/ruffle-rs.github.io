@@ -90,8 +90,8 @@ export default async function Downloads() {
             <Text>
               AVM 1 is the original ActionScript Virtual Machine. All movies
               made before Flash Player 9 (June 2006) will be made with AVM 1,
-              and it remained supported &amp; available to authors until the
-              release of Flash Professional CC (2013), after which point content
+              which remained supported and available to authors until the
+              release of Flash Professional CC (2013), at which point content
               started moving to AVM 2.
             </Text>
             <Text>
@@ -111,14 +111,14 @@ export default async function Downloads() {
             <Text>
               AVM 2 was introduced with Flash Player 9 (June 2006), to replace
               the earlier AVM 1. After the release of Flash Professional CC
-              (2013), authors are required to use ActionScript 3 - making any
-              movie made after that date very likely to fall under this
+              (2013), authors are required to use ActionScript 3 &mdash; making
+              any movie made after that date very likely to fall under this
               category.
             </Text>
             <Text>
-              Ruffle now has decent support for AVM 2, and it&apos;s our
+              Ruffle now has decent support for AVM 2, and it&rsquo;s our
               experience that most games will work well enough to be played.
-              We&apos;re still rapidly improving in this area though, so bug
+              We&rsquo;re still rapidly improving in this area though, so bug
               reports about any broken content are always welcome!
             </Text>
           </AvmBlock>

@@ -50,10 +50,10 @@ export function ExtensionList() {
         Browser Extension
       </Title>
       <Text>
-        If you visit websites that have Flash content but aren't using Ruffle,
-        or you want to ensure you're using the latest and greatest version of
-        Ruffle on every website, then our browser extension is the perfect thing
-        for you!
+        If you visit websites that have Flash content but aren&rsquo;t using
+        Ruffle, or you want to ensure you&rsquo;re using the latest and greatest
+        version of Ruffle on every website, then our browser extension is the
+        perfect thing for you!
       </Text>
       <Group>
         {extensions.map((extension, i) => (
