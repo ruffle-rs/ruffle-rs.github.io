@@ -87,7 +87,7 @@ function TestContent() {
       <Text>
         Arguably more important than contributing code is testing Ruffle out. Go
         install Ruffle and try out your favourite games and animations. Look for
-        any difference from the official Flash Player, and report your findings
+        any differences from the official Flash Player, and report your findings
         to us.
       </Text>
       <Text>
