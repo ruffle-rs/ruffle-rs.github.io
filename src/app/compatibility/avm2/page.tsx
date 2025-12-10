@@ -56,13 +56,13 @@ export default async function Page() {
               not all of which are ultimately <em>useful</em> to every
               application. The majority of content only uses a small portion of
               the available API, so even if we aren&rsquo;t 100%
-              &ldquo;complete&rdquo; across the entirely of AVM 2, we may have
+              &ldquo;complete&rdquo; across the entirety of AVM 2, we may have
               enough for that content to run completely fine.
             </Text>
             <Text>
-              On this page, we list every single ActionScript 3 API that exists
-              but Ruffle does not yet 100% implement. We classify items into
-              three different stages:
+              On this page, we list every single ActionScript 3 API that Ruffle
+              does not yet 100% implement. We classify items into three
+              different stages:
             </Text>
             <List spacing="sm">
               <ListItem icon={<IconDone />}>

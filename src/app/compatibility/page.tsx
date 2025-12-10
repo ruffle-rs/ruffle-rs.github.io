@@ -49,14 +49,14 @@ export default async function Downloads() {
           <Stack className={classes.actionscriptInfo}>
             <Title className={classes.title}>ActionScript Compatibility</Title>
             <Text>
-              The biggest factor in content compatibility is ActionScript; the
+              The biggest factor in content compatibility is ActionScript: the
               language that powers interactivity in games and applications made
               with Flash. All Flash content falls in one of two categories,
               depending on which version of the language was used to create it.
             </Text>
             <Text>
-              We track our progress in each AVM by splitting them up into two
-              different areas:
+              We track our progress in each ActionScript Virtual Machine (AVM)
+              by splitting them up into two different areas:
             </Text>
             <List>
               <ListItem>
