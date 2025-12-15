@@ -1,5 +1,4 @@
 import {
-  Icon,
   IconBox,
   IconBrandApple,
   IconBrandChrome,
@@ -94,7 +93,7 @@ export interface DownloadLink {
   /**
    * Icon to represent this link
    */
-  icon: React.ExoticComponent<React.RefAttributes<Icon>>;
+  icon: React.ForwardRefExoticComponent<React.RefAttributes<SVGSVGElement>>;
 
   /**
    * Whether or not to recommend this link to the given device
