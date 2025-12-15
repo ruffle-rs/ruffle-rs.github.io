@@ -1,6 +1,6 @@
 "use client";
 
-import { Icon, IconBrandJavascript, IconList } from "@tabler/icons-react";
+import { IconBrandJavascript, IconList } from "@tabler/icons-react";
 import React from "react";
 import { useDeviceSelectors } from "react-device-detect";
 import classes from "./index.module.css";
@@ -9,7 +9,7 @@ import Link from "next/link";
 import { allLinks, CurrentDevice, GithubRelease } from "@/app/downloads/config";
 
 interface RecommendedDownload {
-  icon: React.ExoticComponent<React.RefAttributes<Icon>>;
+  icon: React.ForwardRefExoticComponent<React.RefAttributes<SVGSVGElement>>;
   name: string;
   url: string;
   className?: string;
