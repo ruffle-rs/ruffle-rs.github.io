@@ -1,7 +1,7 @@
 import { PostMetadata } from "@/app/blog/utils";
 import { Group, Stack, Text, Title } from "@mantine/core";
 import classes from "@/app/blog/post.module.css";
-import Link from "next/link";
+import Link from "@/components/link";
 import Markdown from "react-markdown";
 import Image from "next/image";
 import rehypeRaw from "rehype-raw";

@@ -1,5 +1,5 @@
 import { Container, Group, ActionIcon, rem, Text } from "@mantine/core";
-import Link from "next/link";
+import Link from "@/components/link";
 
 import {
   IconBrandX,

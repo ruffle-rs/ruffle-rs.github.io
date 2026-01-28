@@ -4,7 +4,7 @@ import { Burger, Container, Drawer, Group } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./header.module.css";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/link";
 import { usePathname } from "next/navigation";
 
 const links = [

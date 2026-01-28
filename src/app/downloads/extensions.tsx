@@ -2,7 +2,7 @@ import { Group, Stack, Text, Title } from "@mantine/core";
 import classes from "./extensions.module.css";
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/link";
 
 interface Extension {
   image: string;
