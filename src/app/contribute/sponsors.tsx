@@ -1,7 +1,7 @@
 import { Card, Group, Stack, Text, Title } from "@mantine/core";
 import classes from "./sponsors.module.css";
 import React from "react";
-import Link from "next/link";
+import Link from "@/components/link";
 import Image from "next/image";
 
 interface Sponsor {

@@ -20,7 +20,7 @@ import {
   IconMissing,
   IconStub,
 } from "@/app/compatibility/avm2/icons";
-import Link from "next/link";
+import Link from "@/components/link";
 
 function NamespaceBox(props: NamespaceStatus) {
   return (

@@ -11,7 +11,7 @@ import classes from "./contribute.module.css";
 import React from "react";
 import Image from "next/image";
 import { IconBrandRust, IconBrandTypescript } from "@tabler/icons-react";
-import Link from "next/link";
+import Link from "@/components/link";
 import { SponsorList } from "@/app/contribute/sponsors";
 
 function ContributeCode() {

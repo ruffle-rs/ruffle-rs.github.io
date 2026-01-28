@@ -8,7 +8,7 @@ import {
   Text,
   Title,
 } from "@mantine/core";
-import Link from "next/link";
+import Link from "@/components/link";
 
 interface AvmProgressProps {
   done: number;

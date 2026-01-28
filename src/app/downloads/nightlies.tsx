@@ -14,7 +14,7 @@ import {
   Title,
 } from "@mantine/core";
 import React from "react";
-import Link from "next/link";
+import Link from "@/components/link";
 import classes from "./nightlies.module.css";
 import {
   desktopLinks,

@@ -11,7 +11,7 @@ import classes from "./downloads.module.css";
 import React from "react";
 import { ExtensionList } from "@/app/downloads/extensions";
 import { NightlyList } from "@/app/downloads/nightlies";
-import Link from "next/link";
+import Link from "@/components/link";
 import {
   desktopLinks,
   GithubRelease,
