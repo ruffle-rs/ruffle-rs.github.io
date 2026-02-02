@@ -9,7 +9,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@mantine/charts": "^8.3.13",
+    "@mantine/charts": "^8.3.14",
     "@mantine/core": "^8.2.1",
     "@mantine/hooks": "^8.2.1",
     "@next/bundle-analyzer": "16.1.6",
@@ -29,7 +29,7 @@
     "@types/node": "^25",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@typescript-eslint/eslint-plugin": "^8.53.1",
+    "@typescript-eslint/eslint-plugin": "^8.54.0",
     "@typescript-eslint/parser": "^8.32.1",
     "d3": "^7.9.0",
     "eslint": "^9.39.2",
