@@ -9,11 +9,11 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@mantine/charts": "^8.3.14",
+    "@mantine/charts": "^8.3.15",
     "@mantine/core": "^8.2.1",
     "@mantine/hooks": "^8.2.1",
     "@next/bundle-analyzer": "16.1.6",
-    "@tabler/icons-react": "^3.36.1",
+    "@tabler/icons-react": "^3.37.1",
     "next": "16.1.6",
     "node-html-parser": "^7.0.2",
     "react": "^19",
@@ -22,11 +22,11 @@
     "recharts": "^3.7.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.3",
+    "@eslint/eslintrc": "^3.3.4",
     "@eslint/js": "^9.39.2",
     "@next/eslint-plugin-next": "^16.1.6",
     "@types/d3": "^7.4.3",
-    "@types/jsdom": "^27.0.0",
+    "@types/jsdom": "^28.0.0",
     "@types/node": "^25",
     "@types/react": "^19",
     "@types/react-dom": "^19",
@@ -38,7 +38,7 @@
     "eslint-config-prettier": "^10.1.8",
     "feed": "^5.2.0",
     "gray-matter": "^4.0.3",
-    "jsdom": "^28.0.0",
+    "jsdom": "^28.1.0",
     "octokit": "^5.0.5",
     "postcss": "^8.5.6",
     "postcss-preset-mantine": "^1.18.0",
