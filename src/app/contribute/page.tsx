@@ -109,6 +109,39 @@ function TestContent() {
   );
 }
 
+function Translate() {
+  return (
+    <Stack className={classes.contributeSection}>
+      <Title className={classes.title}>🌐 Translate Ruffle</Title>
+      <Text>
+        Ruffle is used by people all over the world, and we want to make it
+        accessible to everyone. You can help us translate Ruffle into your
+        native language. No coding experience required!
+      </Text>
+      <Text>
+        Ruffle can be translated on{" "}
+        <Link target="_blank" href="https://crowdin.com/project/ruffle">
+          Crowdin
+        </Link>
+        . If you don&rsquo;t see your language, you can request it directly
+        through Crowdin or by opening an issue on{" "}
+        <Link target="_blank" href="https://github.com/ruffle-rs/ruffle/issues">
+          GitHub
+        </Link>
+        .
+      </Text>
+      <Text>
+        If you have questions or are unsure how to start, feel free to ask the
+        community on our{" "}
+        <Link target="_blank" href="https://discord.gg/ruffle">
+          Discord
+        </Link>{" "}
+        server.
+      </Text>
+    </Stack>
+  );
+}
+
 function Sponsorship() {
   return (
     <Stack className={classes.contributeSection}>
@@ -176,6 +209,7 @@ export default function Page() {
 
       <Group align="baseline" justify="space-between">
         <ContributeCode />
+        <Translate />
         <TestContent />
         <Sponsorship />
         <SpreadTheWord />
