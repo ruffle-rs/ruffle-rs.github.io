@@ -126,6 +126,12 @@ export default async function Downloads() {
 
         <Stack w="100%" align="center">
           <Title order={2}>Weekly Contributions</Title>
+          <Text>
+            This graph tracks Ruffle&rsquo;s development velocity, showing the
+            total number of code improvements made by our community each week
+            over the past year. High bars indicate weeks of high developer focus
+            and progress.
+          </Text>
           <WeeklyContributions data={data} />
         </Stack>
       </Stack>

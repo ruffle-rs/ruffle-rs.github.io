@@ -1,3 +1,4 @@
 .chart {
   --chart-cursor-fill: var(--mantine-color-ruffle-blue-9);
+  margin: 1em 0;
 }
