@@ -35,9 +35,6 @@ export function WeeklyContributions({ data }: { data: DataPoint[] }) {
       h={300}
       w="100%"
       data={data}
-      // This manually updated grid property is a workaround for https://github.com/mantinedev/mantine/issues/8110,
-      // a regression with switching to Recharts 3. TODO: Remove when fixed.
-      gridProps={{ yAxisId: "left" }}
       dataKey="week"
       series={[{ name: "Commits", color: "ruffle-orange" }]}
       tooltipProps={{
