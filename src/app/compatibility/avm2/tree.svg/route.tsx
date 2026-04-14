@@ -141,7 +141,6 @@ export async function GET() {
       .attr("stdDeviation", 3);
 
     // build layers, order them correctly (note: d3 docs have a bug, they don't sort)
-    // @ts-expect-error TS2802
     const groups = [...d3.group(root, (d) => d.height)];
     groups.sort((a, b) => d3.descending(a[0], b[0]));
 
