@@ -12,6 +12,7 @@ import {
 import { Octokit } from "octokit";
 import { RestEndpointMethodTypes } from "@octokit/plugin-rest-endpoint-methods";
 import { parse } from "node-html-parser";
+import { components } from "@octokit/openapi-types";
 
 function createGithubAuth() {
   if (process.env.GITHUB_TOKEN) {
@@ -28,6 +29,31 @@ function throwBuildError() {
   throw new Error("Build failed");
 }
 
+function mapRelease(release: components["schemas"]["release"]): GithubRelease {
+  const downloads: ReleaseDownloads = {};
+  let avm2_report_asset_id: number | undefined = undefined;
+  for (const asset of release.assets) {
+    if (asset.name === "avm2_report.json") {
+      avm2_report_asset_id = asset.id;
+    }
+    for (const [key, pattern] of Object.entries(FilenamePatterns)) {
+      if (pattern && asset.name.indexOf(pattern) > -1) {
+        downloads[key as DownloadKey] = asset.browser_download_url;
+      }
+    }
+  }
+
+  return {
+    id: release.id,
+    name: release.name || release.tag_name,
+    prerelease: release.prerelease,
+    url: release.html_url,
+    downloads,
+    tag: release.tag_name,
+    avm2_report_asset_id,
+  };
+}
+
 export async function getLatestReleases(): Promise<GithubRelease[]> {
   const octokit = new Octokit({ authStrategy: createGithubAuth });
   try {
@@ -37,28 +63,8 @@ export async function getLatestReleases(): Promise<GithubRelease[]> {
       ...repository,
     });
     const result = [];
-    let avm2_report_asset_id: number | undefined = undefined;
     for (const release of releases.data) {
-      const downloads: ReleaseDownloads = {};
-      for (const asset of release.assets) {
-        if (asset.name === "avm2_report.json") {
-          avm2_report_asset_id = asset.id;
-        }
-        for (const [key, pattern] of Object.entries(FilenamePatterns)) {
-          if (pattern && asset.name.indexOf(pattern) > -1) {
-            downloads[key as DownloadKey] = asset.browser_download_url;
-          }
-        }
-      }
-
-      result.push({
-        id: release.id,
-        name: release.name || release.tag_name,
-        prerelease: release.prerelease,
-        url: release.html_url,
-        downloads,
-        avm2_report_asset_id,
-      });
+      result.push(mapRelease(release));
     }
     return result;
   } catch (error) {
