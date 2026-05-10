@@ -153,7 +153,7 @@ export function ReleaseList({
       >
         <TableThead className={classes.header}>
           <TableTr>
-            <TableTh>Version</TableTh>
+            <TableTh>{nightly ? "Date" : "Version"}</TableTh>
             <TableTh>Desktop Application</TableTh>
             <TableTh>Browser Extension</TableTh>
             <TableTh>Web Package</TableTh>
