@@ -15,7 +15,7 @@ import {
 } from "@mantine/core";
 import React from "react";
 import Link from "@/components/link";
-import classes from "./nightlies.module.css";
+import classes from "./releases.module.css";
 import {
   desktopLinks,
   type DownloadLink,
@@ -54,7 +54,7 @@ function DownloadLink({
   );
 }
 
-function NightlyRow(release: GithubRelease) {
+function ReleaseRow(release: GithubRelease) {
   // The nightly prefix is a bit superfluous here
   const name = release.name.replace(/^Nightly /, "");
   return (
@@ -89,7 +89,7 @@ function NightlyRow(release: GithubRelease) {
   );
 }
 
-function NightlyCompactBox(release: GithubRelease) {
+function ReleaseCompactBox(release: GithubRelease) {
   return (
     <>
       <Link href={release.url} className={classes.nameAsHeader} target="_blank">
@@ -117,7 +117,16 @@ function NightlyCompactBox(release: GithubRelease) {
   );
 }
 
-export function NightlyList({ nightlies }: { nightlies: GithubRelease[] }) {
+export function ReleaseList({
+  releases,
+  nightly,
+}: {
+  releases: GithubRelease[];
+  nightly: boolean;
+}) {
+  if (!nightly) {
+    throw new Error("Only nightly releases supported");
+  }
   return (
     <Stack>
       <Title id="nightly-releases">Nightly Releases</Title>
@@ -151,16 +160,16 @@ export function NightlyList({ nightlies }: { nightlies: GithubRelease[] }) {
           </TableTr>
         </TableThead>
         <TableTbody className={classes.body}>
-          {nightlies.map((nightly) => (
-            <NightlyRow key={nightly.id} {...nightly} />
+          {releases.map((release) => (
+            <ReleaseRow key={release.id} {...release} />
           ))}
         </TableTbody>
       </Table>
 
       <Stack hiddenFrom="sm">
         {/*Compact mobile view, because a table is far too wide*/}
-        {nightlies.map((nightly) => (
-          <NightlyCompactBox key={nightly.id} {...nightly} />
+        {releases.map((release) => (
+          <ReleaseCompactBox key={release.id} {...release} />
         ))}
       </Stack>
     </Stack>
