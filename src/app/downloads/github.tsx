@@ -14,6 +14,13 @@ import { RestEndpointMethodTypes } from "@octokit/plugin-rest-endpoint-methods";
 import { parse } from "node-html-parser";
 import { components } from "@octokit/openapi-types";
 
+const octokit = new Octokit({ authStrategy: createGithubAuth });
+
+const requestCache = {
+  // Set cache to 30 min to prevent rate limiting during development.
+  request: { next: { revalidate: 1800 } },
+};
+
 function createGithubAuth() {
   if (process.env.GITHUB_TOKEN) {
     return createTokenAuth(process.env.GITHUB_TOKEN);
@@ -55,11 +62,10 @@ function mapRelease(release: components["schemas"]["release"]): GithubRelease {
 }
 
 export async function getLatestReleases(): Promise<GithubRelease[]> {
-  const octokit = new Octokit({ authStrategy: createGithubAuth });
   try {
     const releases = await octokit.rest.repos.listReleases({
       per_page: maxNightlies + 2, // more than we need to account for a possible draft release + possible full release
-      request: { next: { revalidate: 1800 } },
+      ...requestCache,
       ...repository,
     });
     const result = [];
