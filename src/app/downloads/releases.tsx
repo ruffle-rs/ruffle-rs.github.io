@@ -117,18 +117,12 @@ function ReleaseCompactBox(release: GithubRelease) {
   );
 }
 
-export function ReleaseList({
-  releases,
-  nightly,
-}: {
-  releases: GithubRelease[];
-  nightly: boolean;
-}) {
+function ReleaseIntro({ nightly }: { nightly: boolean }) {
   if (!nightly) {
     throw new Error("Only nightly releases supported");
   }
   return (
-    <Stack>
+    <>
       <Title id="nightly-releases">Nightly Releases</Title>
       <Text>
         If none of the above are suitable for you, you can manually download the
@@ -144,6 +138,20 @@ export function ReleaseList({
         </Link>
         .
       </Text>
+    </>
+  );
+}
+
+export function ReleaseList({
+  releases,
+  nightly,
+}: {
+  releases: GithubRelease[];
+  nightly: boolean;
+}) {
+  return (
+    <Stack>
+      <ReleaseIntro nightly={nightly} />
       <Table
         horizontalSpacing="md"
         verticalSpacing="md"
