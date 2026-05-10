@@ -26,6 +26,7 @@ export interface GithubRelease {
   prerelease: boolean;
   downloads: ReleaseDownloads;
   url: string;
+  tag: string;
   avm2_report_asset_id?: number;
 }
 
