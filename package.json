@@ -15,7 +15,7 @@
     "@mantine/hooks": "^9.0.0",
     "@next/bundle-analyzer": "16.2.4",
     "@tabler/icons-react": "^3.41.1",
-    "next": "16.2.4",
+    "next": "16.2.6",
     "node-html-parser": "^7.1.0",
     "react": "^19",
     "react-device-detect": "^2.2.3",
