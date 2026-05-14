@@ -64,7 +64,8 @@ function mapRelease(release: components["schemas"]["release"]): GithubRelease {
 export async function getLatestReleases(): Promise<GithubRelease[]> {
   try {
     const releases = await octokit.rest.repos.listReleases({
-      per_page: maxNightlies + 2, // more than we need to account for a possible draft release + possible full release
+      // Assume there's less regular releases than nightlies.
+      per_page: maxNightlies * 2,
       ...requestCache,
       ...repository,
     });
