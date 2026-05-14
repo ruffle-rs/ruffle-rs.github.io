@@ -17,6 +17,7 @@ export const repository = { owner: "ruffle-rs", repo: "ruffle" };
 export const maxNightlies = 5;
 
 export const githubReleasesUrl = `https://github.com/${repository.owner}/${repository.repo}/releases`;
+export const githubNightlyReleasesUrl = `${githubReleasesUrl}?q=prerelease:true`;
 
 export const flathubUrl = "https://flathub.org/apps/rs.ruffle.Ruffle";
 
