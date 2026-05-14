@@ -21,7 +21,7 @@ import {
   type DownloadLink,
   extensionLinks,
   type GithubRelease,
-  githubReleasesUrl,
+  githubNightlyReleasesUrl,
   webLinks,
 } from "@/app/downloads/config";
 
@@ -130,7 +130,7 @@ function ReleaseIntro({ nightly }: { nightly: boolean }) {
         (approximately midnight UTC), unless there are no changes on that day.{" "}
         Older nightly releases are available on{" "}
         <Link
-          href={githubReleasesUrl}
+          href={githubNightlyReleasesUrl}
           className={classes.moreNightlies}
           target="_blank"
         >
