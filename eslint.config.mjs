@@ -41,6 +41,16 @@ export default [
     files: ["postcss.config.js", "next.config.js"],
     languageOptions: {
       sourceType: "commonjs",
+      globals: {
+        require: "readonly",
+        module: "writable",
+        __dirname: "readonly",
+        __filename: "readonly",
+        process: "readonly",
+      },
+    },
+    rules: {
+      "@typescript-eslint/no-require-imports": "off",
     },
   },
 ];

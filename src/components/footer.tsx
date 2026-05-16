@@ -1,5 +1,6 @@
 import { Container, Group, ActionIcon, rem, Text } from "@mantine/core";
 import Link from "@/components/link";
+import { t } from "@/i18n/t";
 
 import {
   IconBrandX,
@@ -73,7 +74,7 @@ export function FooterSocial() {
             priority
           />
           <Text size="lg" className={classes.tagline}>
-            Putting Flash back on the web
+            {t("footer.tagline")}
           </Text>
         </Container>
         <Group
