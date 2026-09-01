@@ -1,0 +1,12 @@
+.select {
+  color: var(--ruffle-orange);
+  background: var(--ruffle-blue-7);
+  border: 0px;
+  padding: 2px 6px;
+  border-radius: var(--mantine-radius-sm);
+  font-size: var(--mantine-font-size-sm);
+}
+
+.select:hover {
+  background: var(--ruffle-blue-6);
+}

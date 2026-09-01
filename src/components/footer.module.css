@@ -29,8 +29,17 @@
   }
 }
 
+.linkbox {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  flex-grow: 1;
+}
+
 .links {
   @media (max-width: $mantine-breakpoint-xs) {
     margin-top: var(--mantine-spacing-md);
   }
+
+  margin-bottom: rem(10);
 }
