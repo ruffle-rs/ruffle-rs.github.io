@@ -69,6 +69,12 @@ export interface CurrentDevice {
   mac: boolean;
   linux: boolean;
 
+  /**
+   * Detected CPU architecture, when running on Linux.
+   * `null` if not running Linux or the architecture couldn't be determined.
+   */
+  linuxArch: "x86_64" | "aarch64" | "i686" | null;
+
   android: boolean;
   ios: boolean;
 
@@ -160,7 +166,10 @@ export const desktopLinks: DownloadLink[] = [
     longName: "Linux Executable",
     icon: IconBrandLinux,
     isRecommended: true,
-    isDeviceRelevant: (device) => device.desktop && device.linux,
+    isDeviceRelevant: (device) =>
+      device.desktop &&
+      device.linux &&
+      (device.linuxArch === "x86_64" || device.linuxArch === null),
   },
   {
     key: "linux_aarch64",
@@ -168,7 +177,8 @@ export const desktopLinks: DownloadLink[] = [
     longName: "Linux Executable",
     icon: IconBrandLinux,
     isRecommended: true,
-    isDeviceRelevant: () => false,
+    isDeviceRelevant: (device) =>
+      device.desktop && device.linux && device.linuxArch === "aarch64",
   },
   {
     key: "linux_i686",
@@ -176,7 +186,8 @@ export const desktopLinks: DownloadLink[] = [
     longName: "Linux Executable",
     icon: IconBrandLinux,
     isRecommended: false,
-    isDeviceRelevant: () => false,
+    isDeviceRelevant: (device) =>
+      device.desktop && device.linux && device.linuxArch === "i686",
   },
 ];
 

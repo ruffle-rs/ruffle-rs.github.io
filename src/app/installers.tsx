@@ -16,6 +16,22 @@ interface RecommendedDownload {
   target?: string;
 }
 
+// Browsers only reliably report the real CPU architecture in the Linux
+// User-Agent token (e.g. "X11; Linux aarch64"); Windows/macOS UAs don't
+// disambiguate ARM from x86 this way, so we don't attempt it there.
+function detectLinuxArch(userAgent: string): CurrentDevice["linuxArch"] {
+  if (/linux (aarch64|arm64)/i.test(userAgent)) {
+    return "aarch64";
+  }
+  if (/linux i[3-6]86/i.test(userAgent)) {
+    return "i686";
+  }
+  if (/linux x86_64/i.test(userAgent)) {
+    return "x86_64";
+  }
+  return null;
+}
+
 export default function Installers({
   release,
 }: {
@@ -28,6 +44,7 @@ export default function Installers({
     mac: selectors.isMacOs,
     android: selectors.isAndroid,
     linux: selectors.osName.toLowerCase() == "linux", // https://github.com/duskload/react-device-detect/issues/200
+    linuxArch: detectLinuxArch(window.navigator.userAgent),
     ios: selectors.isIOS,
     firefox: selectors.isFirefox,
     chrome: selectors.isChrome,
