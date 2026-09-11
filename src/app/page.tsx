@@ -16,6 +16,7 @@ import { IconCheck } from "@tabler/icons-react";
 import React from "react";
 import { getLatestRelease } from "@/app/downloads/github";
 import { GithubRelease } from "./downloads/config";
+import { t } from "@/i18n/t";
 
 const InteractiveLogo = dynamic(() => import("../components/logo"), {
   ssr: false,
@@ -44,9 +45,7 @@ export default function Home() {
       <InteractiveLogo className={classes.logo} />
 
       <Container size="md">
-        <Title className={classes.title}>
-          An open source Flash Player emulator
-        </Title>
+        <Title className={classes.title}>{t("home.title")}</Title>
         <div className={classes.hero}>
           <Image
             className={classes.heroImage}
