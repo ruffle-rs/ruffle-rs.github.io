@@ -40,6 +40,7 @@ export interface ReleaseDownloads {
   macos?: string;
   linux_x86_64?: string;
   linux_aarch64?: string;
+  linux_i686?: string;
   flatpak?: string;
 
   firefox?: string;
@@ -56,6 +57,7 @@ export const FilenamePatterns: Record<DownloadKey, string | null> = {
   macos: "-macos",
   linux_x86_64: "-linux-x86_64",
   linux_aarch64: "-linux-aarch64",
+  linux_i686: "-linux-i686",
   firefox: "-firefox-unsigned",
   chromium: "-extension.",
   web: "-selfhosted",
@@ -166,6 +168,14 @@ export const desktopLinks: DownloadLink[] = [
     longName: "Linux Executable",
     icon: IconBrandLinux,
     isRecommended: true,
+    isDeviceRelevant: () => false,
+  },
+  {
+    key: "linux_i686",
+    shortName: "Linux (i686)",
+    longName: "Linux Executable",
+    icon: IconBrandLinux,
+    isRecommended: false,
     isDeviceRelevant: () => false,
   },
 ];
