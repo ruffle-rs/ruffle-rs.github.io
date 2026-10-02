@@ -5,6 +5,7 @@ import { MantineProvider, ColorSchemeScript } from "@mantine/core";
 import { cssResolver, theme } from "@/theme";
 import { Header } from "@/components/header";
 import { FooterSocial } from "@/components/footer";
+import { locale } from "@/i18n/t";
 
 export const metadata: Metadata = {
   title: "Ruffle - Flash Emulator",
@@ -30,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <ColorSchemeScript />
         {/*<link rel="shortcut icon" href="/favicon.svg" />*/}
