@@ -16,7 +16,7 @@
     "@next/bundle-analyzer": "16.4.0",
     "@tabler/icons-react": "^3.49.0",
     "next": "16.4.0",
-    "node-html-parser": "^7.1.0",
+    "node-html-parser": "^9.0.4",
     "react": "^19",
     "react-device-detect": "^2.2.3",
     "react-dom": "^19",
