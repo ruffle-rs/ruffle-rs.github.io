@@ -37,7 +37,7 @@ We'll still release nightlies for those brave souls who are willing to test thin
 
 ### Desktop App
 Our desktop app does not auto update by itself, so you'll still need to manually download either the stable or nightly releases whenever you wish to update.
-You can find the links on [our download page](https://ruffle.rs/downloads). For Linux users, we do update our [FlatPak](https://flathub.org/en/apps/rs.ruffle.Ruffle) for stable releases.
+You can find the links on [our download page](https://ruffle.rs/downloads). For Linux users, [our Flatpak app](https://flathub.org/en/apps/rs.ruffle.Ruffle) updates automatically for stable releases.
 
 ### Browser Extension
 We've changed the official store releases of our extensions to use stable releases, nice and easy. If you want stable releases, there's nothing to do here, hurray!
