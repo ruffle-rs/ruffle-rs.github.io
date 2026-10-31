@@ -36,8 +36,8 @@ Stable releases do not have a fixed frequency, and will mainly drop when we feel
 We'll still release nightlies for those brave souls who are willing to test things ahead of time and want to help us find and fix bugs, but we do recommend that users switch to stable releases if they, frankly, just don't want the fuss.
 
 ### Desktop App
-Our desktop app does not auto update, so you'll still need to manually download either the stable or nightly releases whenever you wish to update.
-You can find the links on [our download page](https://ruffle.rs/downloads).
+Our desktop app does not auto update by itself, so you'll still need to manually download either the stable or nightly releases whenever you wish to update.
+You can find the links on [our download page](https://ruffle.rs/downloads). For Linux users, we do update our [FlatPak](https://flathub.org/en/apps/rs.ruffle.Ruffle) for stable releases.
 
 ### Browser Extension
 We've changed the official store releases of our extensions to use stable releases, nice and easy. If you want stable releases, there's nothing to do here, hurray!
