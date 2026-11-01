@@ -198,7 +198,7 @@ A frequent topic on these blog posts, it turns out that _text rendering is hard_
 <a href="/2026-10-23-stable-releases-and-everything-else/ebf4.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/ebf4.png" title="Epic Battle Fantasy 4" alt="Epic Battle Fantasy 4" style="max-height: 300px"></a>
 
 ## Test Framework
-We're extremely proud of our tests in Ruffle, with over 500 unit tests and over 4500 conformance tests (often consisting of dozens or hundreds of smaller tests).
+We're extremely proud of our tests in Ruffle, with over 500 unit tests and over 4500 conformance tests (often consisting of dozens or hundreds of smaller tests). That's a 60% increase in tests since our last blog post!
 We're firm believers that any investment into test frameworks will always be worth it and pay off, and in a world where more people are throwing automation at problems, tests help keep the slop at bay.
 
 Since the last blog post, we've had over 170 PRs aimed directly at our tests, excluding all the regular PRs that happen to include tests.
