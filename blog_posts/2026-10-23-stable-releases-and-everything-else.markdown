@@ -22,7 +22,7 @@ Since the last blog post (over 2 years ago)...
 - We've merged **TODO** pull requests from **TODO** <del>people</del> users! (humans? bots? who's to say anymore!)
 - We've closed **TODO** issues!
 - We've added **TODO** new automated tests!
-- _TODO: Any other neat stats to compare?_
+- The number of languages on [Crowdin](https://crowdin.com/project/ruffle) has gone from 25 to 37.
 
 ---
 
