@@ -172,6 +172,7 @@ A frequent topic on these blog posts, it turns out that _text rendering is hard_
 - [@kjarosh](https://github.com/kjarosh) added RTL support for context menus ([#19950](https://github.com/ruffle-rs/ruffle/pull/19950), [#19943](https://github.com/ruffle-rs/ruffle/pull/19943)).
 - [@danielhjacobs](https://github.com/danielhjacobs) removed script injection on all browsers except old Firefox ([#20255](https://github.com/ruffle-rs/ruffle/pull/20255)).
 - [@kjarosh](https://github.com/kjarosh) fixed CORS issues with content trying to download from `fpdownload.adobe.com` ([#22168](https://github.com/ruffle-rs/ruffle/pull/22168)).
+- [@kjarosh](https://github.com/kjarosh) added URL rewriting to help preserve content that relies on broken or outdated links ([#18252](https://github.com/ruffle-rs/ruffle/pull/18252)).
 
 ## General Bug Fixes
 - [@Lord-McSweeney](https://github.com/Lord-McSweeney) allowed running AVM2 SWFs with SWF versions 8 and below ([#21055](https://github.com/ruffle-rs/ruffle/pull/21055)).
