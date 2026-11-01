@@ -92,7 +92,7 @@ We can confidently say that almost every real world movie will work, but we're c
   - Added peephole passes to the optimizer ([#20202](https://github.com/ruffle-rs/ruffle/pull/20202)).
   - Fewer allocations on method calls ([#19946](https://github.com/ruffle-rs/ruffle/pull/19946)).
   - Faster native calls (built in methods) ([#20328](https://github.com/ruffle-rs/ruffle/pull/20328)).
-  - Vector indexing improvements ([#20565](https://github.com/ruffle-rs/ruffle/pull/20565)).
+  - Vector indexing improvements, which fixed one version of Run 2 ([#20565](https://github.com/ruffle-rs/ruffle/pull/20565)).
   - Use stack slices for activations, speeding up stack access ([#20829](https://github.com/ruffle-rs/ruffle/pull/20829)).
   - Removed `PrimitiveObject` ([#18995](https://github.com/ruffle-rs/ruffle/pull/18995)).
   - Better trait verification, fixing a black screen in Cardinal Quest ([#17119](https://github.com/ruffle-rs/ruffle/pull/17119)).
@@ -103,7 +103,7 @@ We can confidently say that almost every real world movie will work, but we're c
 - [@adrian17](https://github.com/adrian17) made `ByteArray.compress` more accurate to how Flash compresses things, fixing progress not being saved in GemCraft Labyrinth ([#18366](https://github.com/ruffle-rs/ruffle/pull/18366)).
 - [@uaua](https://github.com/uaua) made hover events dispatch whilst dragging ([#21661](https://github.com/ruffle-rs/ruffle/pull/21661)).
 - [@atirna](https://github.com/atirna) made mouse events be clipped to an object's `scrollRect`, fixing the inventory cursor in The Enchanted Cave 2 ([#24475](https://github.com/ruffle-rs/ruffle/pull/24475)).
-- [@SuchAFuriousDeath](https://github.com/SuchAFuriousDeath) fixed a crash in `Array.splice` ([#23197](https://github.com/ruffle-rs/ruffle/pull/23197)).
+- [@SuchAFuriousDeath](https://github.com/SuchAFuriousDeath) fixed a crash in `Array.splice`, which fixed Dynapuff Jump ([#23197](https://github.com/ruffle-rs/ruffle/pull/23197)).
 - [@AllinolCP](https://github.com/AllinolCP) made `URLRequest` with an empty body perform a `GET`, matching Flash ([#20242](https://github.com/ruffle-rs/ruffle/pull/20242)).
 - [@adrian17](https://github.com/adrian17) fixed a crash with using null ratios in `Graphics`'s gradient APIs ([#18699](https://github.com/ruffle-rs/ruffle/pull/18699)).
 
@@ -139,7 +139,7 @@ A frequent topic on these blog posts, it turns out that _text rendering is hard_
 ## Rendering Improvements
 - [@ChrisCPI](https://github.com/ChrisCPI) added JPEG XR image loading ([#23789](https://github.com/ruffle-rs/ruffle/pull/23789)).
 - [@darktohka](https://github.com/darktohka) improved hairline and scaling strokes on WebGL and WGPU, fixing the infamous "thick lines" issues in almost every game or movie ([#23011](https://github.com/ruffle-rs/ruffle/pull/23011)).
-- [@kjarosh](https://github.com/kjarosh) added support for transparency in masks ([#21497](https://github.com/ruffle-rs/ruffle/pull/21497)).
+- [@kjarosh](https://github.com/kjarosh) added support for transparency in masks, fixing rendering in Typographist and Tim Credible ([#21497](https://github.com/ruffle-rs/ruffle/pull/21497)).
 - [@dinnerbone](https://github.com/dinnerbone) has started rewriting the wgpu backend for performance ([#24947](https://github.com/ruffle-rs/ruffle/pull/24947)).
 - [@kjarosh](https://github.com/kjarosh) fixed using masks in `BitmapData.draw`, fixing rendering in Fireboy & Watergirl 2 and 3 ([#21624](https://github.com/ruffle-rs/ruffle/pull/21624)).
 - [@Aaron1011](https://github.com/Aaron1011) implemented `surfaceSelector` in `Context3D.setRenderToTexture` ([#15495](https://github.com/ruffle-rs/ruffle/pull/15495)).
@@ -178,7 +178,7 @@ A frequent topic on these blog posts, it turns out that _text rendering is hard_
 - [@Lord-McSweeney](https://github.com/Lord-McSweeney) allowed running AVM2 SWFs with SWF versions 8 and below ([#21055](https://github.com/ruffle-rs/ruffle/pull/21055)).
 - [@Lord-McSweeney](https://github.com/Lord-McSweeney) fixed a crash with SWF v8 code moving `AVM1Movie`s around, fixing SpongeBob Decorating Dilemma freezing on its loading screen ([#21528](https://github.com/ruffle-rs/ruffle/pull/21528)).
 - [@Lord-McSweeney](https://github.com/Lord-McSweeney) fixed a crash with AVM1 movies loaded by AVM2 trying to overwrite themselves, fixing crashes in many games such as Bloons Super Monkey 2 and the Sara's Cooking Class series ([#19761](https://github.com/ruffle-rs/ruffle/pull/19761)).
-- [@Lord-McSweeney](https://github.com/Lord-McSweeney) made root MovieClips register as a character ([#21514](https://github.com/ruffle-rs/ruffle/pull/21514)).
+- [@Lord-McSweeney](https://github.com/Lord-McSweeney) made root MovieClips register as a character, fixing many games, such as Mister Rain ([#21514](https://github.com/ruffle-rs/ruffle/pull/21514)).
 - [@nivkner](https://github.com/nivkner) fixed the ordering of running frame scripts, fixing a bug with Flight ([#19941](https://github.com/ruffle-rs/ruffle/pull/19941)).
 - [@nivkner](https://github.com/nivkner) made queued `goto` actions overwrite prior `goto`s, fixing a bug with Epic Battle Fantasy 4 ([#20254](https://github.com/ruffle-rs/ruffle/pull/20254)).
 - [@nivkner](https://github.com/nivkner) made frame scripts refresh registration, fixing a bug with Snail Bob ([#20293](https://github.com/ruffle-rs/ruffle/pull/20293)).
@@ -186,7 +186,7 @@ A frequent topic on these blog posts, it turns out that _text rendering is hard_
 - [@Lord-McSweeney](https://github.com/Lord-McSweeney) fixed queued `play`/`stop` actions whilst queueing `goto`s, fixing Gacha World, Tomb Chess and William and Sly ([#24684](https://github.com/ruffle-rs/ruffle/pull/24684)).
 - [@lsaa](https://github.com/lsaa) fixed invalid `gotoAndStop`s in SWF 9 & SWF 10, fixing the medal graphics in Super Crazy Guitar Maniac Deluxe 2 ([#24741](https://github.com/ruffle-rs/ruffle/pull/24741)).
 - [@dinnerbone](https://github.com/dinnerbone) fixed an `ImportAssets` bug by pausing preloading until imports finish ([#16968](https://github.com/ruffle-rs/ruffle/pull/16968)).
-- [@moulins](https://github.com/moulins) fixed an `ImportAssets` bug with executing `DoInitAction` code with the proper context ([#21944](https://github.com/ruffle-rs/ruffle/pull/21944)).
+- [@moulins](https://github.com/moulins) fixed an `ImportAssets` bug with executing `DoInitAction` code with the proper context, fixing Cubis 2 ([#21944](https://github.com/ruffle-rs/ruffle/pull/21944)).
 - [@cookie-s](https://github.com/cookie-s) fixed `hitTest` on the edges of shapes, fixing characters falling through floors in Castle Cat and Powerfox ([#20811](https://github.com/ruffle-rs/ruffle/pull/20811)).
 - [@masterwebx](https://github.com/masterwebx) fixed `BitmapData.hitTest` with `0` alpha threshold, fixing collision issues in Super Smash Flash 2 ([#23870](https://github.com/ruffle-rs/ruffle/pull/23870)).
 - [@kjarosh](https://github.com/kjarosh) unified key input across all platforms, moving Flash-specific behaviour into core and simplifying the frontends ([#19616](https://github.com/ruffle-rs/ruffle/pull/19616)).
