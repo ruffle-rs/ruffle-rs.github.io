@@ -53,6 +53,8 @@ If you want to stay on the bleeding edge, though, swap that to `<script src="htt
 ### Android App
 The Android app is technically a separate project and is not affected by the stable releases. If there's demand for this, we'll look into it - but we also want help maintaining it!
 
+Speaking of apps, [@madsmtm](https://github.com/madsmtm) has been working on an iOS app! It's still a work in progress but worth [checking out](https://github.com/madsmtm/ruffle-ios).
+
 ## A stable JavaScript API
 In early versions of Ruffle, we just started putting methods and properties on the `<ruffle-player>` element itself. Turns out, this wasn't so smart, and we ended up conflicting with the `ExternalInterface` API and Flash's own (mostly undocumented) API.
 
