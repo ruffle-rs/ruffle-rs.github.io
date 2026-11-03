@@ -86,6 +86,13 @@ We can confidently say that almost every real world movie will work, but we're c
 </video>
 
 ## AVM2 (ActionScript 3)
+We've come a very long way since the early days when we had the infamous "ActionScript 3 is not yet supported" screen. You've been able to play almost any game in Ruffle with little issues for a while now, which is super cool!
+
+However, as we've been focusing heavily on "getting it working correctly", we certainly are not as _fast_ as Flash Player was, it's true.
+Our philosophy has always been to make things correct, add _all_ the tests we can possibly think of, and then use those tests to make sure that any optimizations we do are correct and stable.
+
+All that said - the fantastic [@Lord-McSweeney](https://github.com/Lord-McSweeney) has been hard at work improving the performance of AVM2 content in Ruffle, and it's coming along great!
+
 - [@Lord-McSweeney](https://github.com/Lord-McSweeney) has made many improvements to the AVM2 performance, almost all of which also bring some bonus bug fixes:
   - Preallocate stack sizes and improved the verifier/optimizer ([#17140](https://github.com/ruffle-rs/ruffle/pull/17140)).
   - Rewrote the optimizer with proper state merging ([#19884](https://github.com/ruffle-rs/ruffle/pull/19884)).
@@ -131,6 +138,8 @@ A frequent topic on these blog posts, it turns out that _text rendering is hard_
 - [@adrian17](https://github.com/adrian17) implemented a better text wrapping algorithm that supports CJK and parentheses ([#22730](https://github.com/ruffle-rs/ruffle/pull/22730)).
 
 ## Audio & Video
+We've had many bugs with sounds, especially older AVM1 games. Thankfully, we're significantly better than we were 2 years ago – no more sudden loud noises here!
+
 - [@torokati44](https://github.com/torokati44) added AAC audio decoding ([#16526](https://github.com/ruffle-rs/ruffle/pull/16526)).
 - [@torokati44](https://github.com/torokati44) added H.264 decoding on web using the WebCodecs API ([#16794](https://github.com/ruffle-rs/ruffle/pull/16794)).
 - [@Toad06](https://github.com/Toad06) made sure sounds get stopped on children of unloaded movies, fixing a music regression in Super Mario Bros Z ([#18516](https://github.com/ruffle-rs/ruffle/pull/18516)).
@@ -139,8 +148,14 @@ A frequent topic on these blog posts, it turns out that _text rendering is hard_
 - [@1bugproof](https://github.com/1bugproof) made `new Video(0, 0)` use the default video size, matching Flash ([#23708](https://github.com/ruffle-rs/ruffle/pull/23708)).
 
 ## Rendering Improvements
+It's hard to overstate how many improvements have been made to our rendering pipeline, but the biggest change of all has to be that we now finally support hairline and scaled strokes.
+Thanks to the hard work of [@darktohka](https://github.com/darktohka) in [#23011](https://github.com/ruffle-rs/ruffle/pull/23011), many games and movies now look true to how they did in Flash, and not just "crazy thick lines" all over the place. Hurrah!
+
+<a href="/2026-10-23-stable-releases-and-everything-else/club_penguin_strokes.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/club_penguin_strokes.png" title="Club Penguin before/after" alt="Club Penguin before/after" style="max-height: 300px"></a>
+
+Other notable improvements include:
+
 - [@ChrisCPI](https://github.com/ChrisCPI) added JPEG XR image loading ([#23789](https://github.com/ruffle-rs/ruffle/pull/23789)).
-- [@darktohka](https://github.com/darktohka) improved hairline and scaling strokes on WebGL and WGPU, fixing the infamous "thick lines" issues in almost every game or movie ([#23011](https://github.com/ruffle-rs/ruffle/pull/23011)).
 - [@kjarosh](https://github.com/kjarosh) added support for transparency in masks, fixing rendering in Typographist and Tim Credible ([#21497](https://github.com/ruffle-rs/ruffle/pull/21497)).
 - [@dinnerbone](https://github.com/dinnerbone) has started rewriting the wgpu backend for performance ([#24947](https://github.com/ruffle-rs/ruffle/pull/24947)).
 - [@kjarosh](https://github.com/kjarosh) fixed using masks in `BitmapData.draw`, fixing rendering in Fireboy & Watergirl 2 and 3 ([#21624](https://github.com/ruffle-rs/ruffle/pull/21624)).
@@ -155,9 +170,9 @@ A frequent topic on these blog posts, it turns out that _text rendering is hard_
 - [@cookie-s](https://github.com/cookie-s) partially implemented `DisplayObject.z`, making games like Hexagon playable ([#19405](https://github.com/ruffle-rs/ruffle/pull/19405)).
 - [@kjarosh](https://github.com/kjarosh) added a workaround for using blendmodes in masks, fixing many crashes such as in FlashThemes' content ([#23452](https://github.com/ruffle-rs/ruffle/pull/23452)).
 
-<a href="/2026-10-23-stable-releases-and-everything-else/club_penguin_strokes.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/club_penguin_strokes.png" title="Club Penguin before/after" alt="Club Penguin before/after" style="max-height: 300px"></a>
-
 ## Desktop Application
+The desktop application has been getting a little love, with a focus on better RTL and CJK support. We're not entirely done yet, the IME support is still a work in progress, but it's certainly getting there!
+
 - [@kjarosh](https://github.com/kjarosh) added the ability to export the currently playing content as a Ruffle Bundle ([#21994](https://github.com/ruffle-rs/ruffle/pull/21994)).
 - [@kjarosh](https://github.com/kjarosh) added basic IME support on desktop, which is currently disabled by default pending further improvements ([#19666](https://github.com/ruffle-rs/ruffle/pull/19666)).
 - [@kjarosh](https://github.com/kjarosh) enabled LTO for releases ([#23863](https://github.com/ruffle-rs/ruffle/pull/23863)).
@@ -170,6 +185,9 @@ A frequent topic on these blog posts, it turns out that _text rendering is hard_
 <a href="/2026-10-23-stable-releases-and-everything-else/bundle.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/bundle.png" title="Export Bundle dialog" alt="Export Bundle dialog" style="max-height: 300px"></a>
 
 ## Web & Extension
+Ruffle is used on so many websites now, including the [Wayback Machine](https://web.archive.org/) (does that count as us being on _every_ website?).
+We've also surpassed over 1,000,000 active users on our Chrome extension alone, which is absolutely astounding!
+
 - [@robinmiau](https://github.com/robinmiau) added a "background tick mode" so content keeps running in hidden tabs ([#23395](https://github.com/ruffle-rs/ruffle/pull/23395)).
 - [@robinmiau](https://github.com/robinmiau) improved the context menu behaviour and styling ([#23535](https://github.com/ruffle-rs/ruffle/pull/23535)).
 - [@evilpie](https://github.com/evilpie) added support for mapping gamepad input on the web ([#18083](https://github.com/ruffle-rs/ruffle/pull/18083)).
@@ -180,6 +198,8 @@ A frequent topic on these blog posts, it turns out that _text rendering is hard_
 - [@kjarosh](https://github.com/kjarosh) made scrolling the mouse _not_ scroll the page when it scrolls AVM2 content ([#19029](https://github.com/ruffle-rs/ruffle/pull/19029)).
 
 ## General Bug Fixes
+Don't let the lack of specificity fool you, these fixes are just as important as all of the above, perhaps even more so – it's just hard to group them together! ;)
+
 - [@Lord-McSweeney](https://github.com/Lord-McSweeney) allowed running AVM2 SWFs with SWF versions 8 and below ([#21055](https://github.com/ruffle-rs/ruffle/pull/21055)).
 - [@Lord-McSweeney](https://github.com/Lord-McSweeney) fixed a crash with SWF v8 code moving `AVM1Movie`s around, fixing SpongeBob Decorating Dilemma freezing on its loading screen ([#21528](https://github.com/ruffle-rs/ruffle/pull/21528)).
 - [@Lord-McSweeney](https://github.com/Lord-McSweeney) fixed a crash with AVM1 movies loaded by AVM2 trying to overwrite themselves, fixing crashes in many games such as Bloons Super Monkey 2 and the Sara's Cooking Class series ([#19761](https://github.com/ruffle-rs/ruffle/pull/19761)).
