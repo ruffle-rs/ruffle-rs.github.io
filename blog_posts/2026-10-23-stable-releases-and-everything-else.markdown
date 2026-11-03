@@ -106,6 +106,7 @@ We can confidently say that almost every real world movie will work, but we're c
 - [@SuchAFuriousDeath](https://github.com/SuchAFuriousDeath) fixed a crash in `Array.splice`, which fixed Dynapuff Jump ([#23197](https://github.com/ruffle-rs/ruffle/pull/23197)).
 - [@AllinolCP](https://github.com/AllinolCP) made `URLRequest` with an empty body perform a `GET`, matching Flash ([#20242](https://github.com/ruffle-rs/ruffle/pull/20242)).
 - [@adrian17](https://github.com/adrian17) fixed a crash with using null ratios in `Graphics`'s gradient APIs ([#18699](https://github.com/ruffle-rs/ruffle/pull/18699)).
+- [@evilpie](https://github.com/evilpie) implemented `BitmapData.histogram`, fixing BoxHead: The Nightmare ([#18075](https://github.com/ruffle-rs/ruffle/pull/18075)).
 
 <a href="/2026-10-23-stable-releases-and-everything-else/typing_maniac.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/typing_maniac.png" title="A screenshot of Typing Maniac" alt="A screenshot of Typing Maniac" style="max-height: 300px"></a>
 <a href="/2026-10-23-stable-releases-and-everything-else/zombidle.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/zombidle.png" title="A screenshot of Zombidle" alt="A screenshot of Zombidle" style="max-height: 300px"></a>
@@ -127,6 +128,7 @@ A frequent topic on these blog posts, it turns out that _text rendering is hard_
   - Implemented the `TextField` AVM2 scroll event ([#24625](https://github.com/ruffle-rs/ruffle/pull/24625)).
 - [@cmdocmd](https://github.com/cmdocmd) added HTML `<img>` tag parsing/serialization ([#24802](https://github.com/ruffle-rs/ruffle/pull/24802)).
 - [@wsxarcher](https://github.com/wsxarcher) made it possible to load ttf/otf/ttc/otc files as default fonts in the extension ([#17668](https://github.com/ruffle-rs/ruffle/pull/17668)).
+- [@adrian17](https://github.com/adrian17) implemented a better text wrapping algorithm that supports CJK and parentheses ([#22730](https://github.com/ruffle-rs/ruffle/pull/22730)).
 
 ## Audio & Video
 - [@torokati44](https://github.com/torokati44) added AAC audio decoding ([#16526](https://github.com/ruffle-rs/ruffle/pull/16526)).
@@ -150,6 +152,8 @@ A frequent topic on these blog posts, it turns out that _text rendering is hard_
 - [@Bubby4j](https://github.com/Bubby4j) fixed an OOM by flushing GPU work periodically during cache processing ([#23175](https://github.com/ruffle-rs/ruffle/pull/23175)).
 - [@crumblingstatue](https://github.com/crumblingstatue) fixed a crash when doing a `colorTransform` out of bounds, as seen in Mega Mash ([#20363](https://github.com/ruffle-rs/ruffle/pull/20363)).
 - [@kjarosh](https://github.com/kjarosh) made sure we flushed any draws before updating bitmap textures, fixing overlapping text in Robot Wants Kitty ([#19066](https://github.com/ruffle-rs/ruffle/pull/19066)).
+- [@cookie-s](https://github.com/cookie-s) partially implemented `DisplayObject.z`, making games like Hexagon playable ([#19405](https://github.com/ruffle-rs/ruffle/pull/19405)).
+- [@kjarosh](https://github.com/kjarosh) added a workaround for using blendmodes in masks, fixing many crashes such as in FlashThemes' content ([#23452](https://github.com/ruffle-rs/ruffle/pull/23452)).
 
 <a href="/2026-10-23-stable-releases-and-everything-else/club_penguin_strokes.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/club_penguin_strokes.png" title="Club Penguin before/after" alt="Club Penguin before/after" style="max-height: 300px"></a>
 
@@ -173,6 +177,7 @@ A frequent topic on these blog posts, it turns out that _text rendering is hard_
 - [@danielhjacobs](https://github.com/danielhjacobs) removed script injection on all browsers except old Firefox ([#20255](https://github.com/ruffle-rs/ruffle/pull/20255)).
 - [@kjarosh](https://github.com/kjarosh) fixed CORS issues with content trying to download from `fpdownload.adobe.com` ([#22168](https://github.com/ruffle-rs/ruffle/pull/22168)).
 - [@kjarosh](https://github.com/kjarosh) added URL rewriting to help preserve content that relies on broken or outdated links ([#18252](https://github.com/ruffle-rs/ruffle/pull/18252)).
+- [@kjarosh](https://github.com/kjarosh) made scrolling the mouse _not_ scroll the page when it scrolls AVM2 content ([#19029](https://github.com/ruffle-rs/ruffle/pull/19029)).
 
 ## General Bug Fixes
 - [@Lord-McSweeney](https://github.com/Lord-McSweeney) allowed running AVM2 SWFs with SWF versions 8 and below ([#21055](https://github.com/ruffle-rs/ruffle/pull/21055)).
@@ -194,6 +199,7 @@ A frequent topic on these blog posts, it turns out that _text rendering is hard_
 - [@CUB3D](https://github.com/CUB3D) fixed many crashes with `SharedObject` ([#18046](https://github.com/ruffle-rs/ruffle/pull/18046)).
 - [@kjarosh](https://github.com/kjarosh) fixed a crash loading LZMA-compressed SWFs with incorrect lengths, fixing Sherwood Dungeon not loading ([#24487](https://github.com/ruffle-rs/ruffle/pull/24487)).
 - [@Bale001](https://github.com/Bale001) allowed playing of frames beyond what the SWF header defined ([#21526](https://github.com/ruffle-rs/ruffle/pull/21526)).
+- [@Lord-McSweeney](https://github.com/Lord-McSweeney) corrected the order that objects on `goto`'d frames are made, fixing games such as Road of the Dead or Wedding Trouble ([#22677](https://github.com/ruffle-rs/ruffle/pull/22677)).
 
 <a href="/2026-10-23-stable-releases-and-everything-else/ebf4.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/ebf4.png" title="Epic Battle Fantasy 4" alt="Epic Battle Fantasy 4" style="max-height: 300px"></a>
 
