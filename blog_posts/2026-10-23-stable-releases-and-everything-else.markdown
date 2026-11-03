@@ -9,7 +9,6 @@ images:
 videos:
   - /2026-10-23-stable-releases-and-everything-else/sm63.mp4
 ---
-
 Well, we *said* we'd make these posts more often... it's been over two years since the last one!
 We'll come up with a poor excuse for our absence at the bottom of the post, but we're hoping that all these really cool changes will distract you from that!
 
