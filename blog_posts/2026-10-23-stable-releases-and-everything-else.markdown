@@ -241,7 +241,7 @@ It's hard to imagine projects thriving where that isn't true.
 
 It's worth noting that our PR backlog is _long_, and it rises every day. It's very easy to create a dozen pull requests, but each one requires _more_ effort and time from our maintainers than it did for someone to create them.
 Maintainer burnout is real, and it's becoming a serious problem. It's not solely due to LLMs, of course, but it's certainly the biggest factor as of writing this post.
-This is a problem that affects the entire open source community as a whole, not just Ruffle, and there's no solution in sight. Be kind to your local OSS maintainers :)
+This is a problem that affects the entire open source community as a whole, not just Ruffle, and there's no solution in sight. Be kind to your local OSS maintainers! :)
 
 ## Thank you all!
 I'm so very proud of how far we've got with Ruffle, and I know that it only gets better from here. Thank you to everybody who helped keep Ruffle alive throughout these crazy times, and see you in the next post!
