@@ -68,11 +68,19 @@ Unfortunately, we're very much in the ["90/90 rule"](https://en.wikipedia.org/wi
 We've made many incorrect assumptions during the early days of our AVM1 implementation which we're trying to correct now in the final 1%.
 We can confidently say that almost every real world movie will work, but we're constantly finding areas that we would not match Flash, and trying to fix those is difficult.
 
+The most notable fix here comes from [@relrelb](https://github.com/relrelb) in [#24725](https://github.com/ruffle-rs/ruffle/pull/24725),
+which finally fixes the long standing issue in Super Mario 63 where the game is stuck on the final battle. 
+
+<video muted autoplay controls>
+    <source src="/2026-10-23-stable-releases-and-everything-else/sm63.mp4" type="video/mp4">
+</video>
+
+Other notable changes include:
+
 - [@dinnerbone](https://github.com/dinnerbone) introduced an AVM1 "playerglobal", laying the groundwork for moving our built-in functions to ActionScript ([#23730](https://github.com/ruffle-rs/ruffle/pull/23730)).
 - [@relrelb](https://github.com/relrelb) moved `Point` and `AsBroadcaster` from Rust to ActionScript ([#24873](https://github.com/ruffle-rs/ruffle/pull/24873), [#24736](https://github.com/ruffle-rs/ruffle/pull/24736)).
 - [@moulins](https://github.com/moulins) made a bunch of built-in classes resolve dynamically ([#24327](https://github.com/ruffle-rs/ruffle/pull/24327), [#24500](https://github.com/ruffle-rs/ruffle/pull/24500), [#24656](https://github.com/ruffle-rs/ruffle/pull/24656), [#24658](https://github.com/ruffle-rs/ruffle/pull/24658), [#24696](https://github.com/ruffle-rs/ruffle/pull/24696), [#24961](https://github.com/ruffle-rs/ruffle/pull/24961)).
 - [@moulins](https://github.com/moulins) migrated functions and `super` to `NativeObject`, finally killing off `TObject` ([#19936](https://github.com/ruffle-rs/ruffle/pull/19936), [#20204](https://github.com/ruffle-rs/ruffle/pull/20204)).
-- [@relrelb](https://github.com/relrelb) fixed resolving variables on removed clips ([#24725](https://github.com/ruffle-rs/ruffle/pull/24725)), finally fixing the infamous Super Mario 63 bug!
 - [@jarca0123](https://github.com/jarca0123) fixed the clip removal logic when rewinding, fixing bugs in Electricman 2, Ratman Ralph, Super Sub Hero and Pink Tac Toe ([#21336](https://github.com/ruffle-rs/ruffle/pull/21336)).
 - [@CUB3D](https://github.com/CUB3D) fixed the base clip path of functions, fixing a bug in Champion Archer ([#20861](https://github.com/ruffle-rs/ruffle/pull/20861)).
 - [@ste42](https://github.com/ste42) fixed timeline scope on target clip removing, fixing a bug in Achilles ([#20837](https://github.com/ruffle-rs/ruffle/pull/20837)).
@@ -81,9 +89,8 @@ We can confidently say that almost every real world movie will work, but we're c
 - [@kjarosh](https://github.com/kjarosh) fixed a crash when removing objects ([#19462](https://github.com/ruffle-rs/ruffle/pull/19462)).
 - [@Toad06](https://github.com/Toad06) fixed the unloading of button's children, fixing looping sound effects in Escaping the Prison and a regression in Pestilence Z ([#18520](https://github.com/ruffle-rs/ruffle/pull/18520)).
 
-<video muted autoplay controls>
-    <source src="/2026-10-23-stable-releases-and-everything-else/sm63.mp4" type="video/mp4">
-</video>
+<a href="/2026-10-23-stable-releases-and-everything-else/super-sub-hero.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/super-sub-hero.png" title="A screenshot of Super Sub Hero" alt="A screenshot of Super Sub Hero" style="max-height: 300px"></a>
+<a href="/2026-10-23-stable-releases-and-everything-else/ben-10.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/ben-10.png" title="A screenshot of Ben 10: To The Rescue" alt="A screenshot of Ben 10: To The Rescue" style="max-height: 300px"></a>
 
 ## AVM2 (ActionScript 3)
 We've come a very long way since the early days when we had the infamous "ActionScript 3 is not yet supported" screen. You've been able to play almost any game in Ruffle with little issues for a while now, which is super cool!
@@ -117,6 +124,7 @@ All that said - the fantastic [@Lord-McSweeney](https://github.com/Lord-McSweene
 
 <a href="/2026-10-23-stable-releases-and-everything-else/typing_maniac.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/typing_maniac.png" title="A screenshot of Typing Maniac" alt="A screenshot of Typing Maniac" style="max-height: 300px"></a>
 <a href="/2026-10-23-stable-releases-and-everything-else/zombidle.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/zombidle.png" title="A screenshot of Zombidle" alt="A screenshot of Zombidle" style="max-height: 300px"></a>
+<a href="/2026-10-23-stable-releases-and-everything-else/enchanted-cave-2.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/enchanted-cave-2.png" title="A screenshot of The Enchanted Cave 2" alt="A screenshot of The Enchanted Cave 2" style="max-height: 300px"></a>
 
 ## Text Fields & Fonts
 A frequent topic on these blog posts, it turns out that _text rendering is hard_... Who knew!
@@ -124,7 +132,7 @@ A frequent topic on these blog posts, it turns out that _text rendering is hard_
 - [@kjarosh](https://github.com/kjarosh) has put an incredible amount of work into improving our font rendering; both in terms of correctness and performance:
   - Implemented AVM2 `TextField.styleSheet` (CSS-like) support, as used by Transformice and Dead Maze ([#19143](https://github.com/ruffle-rs/ruffle/pull/19143)).
   - Fixed text layout measurements ([#18332](https://github.com/ruffle-rs/ruffle/pull/18332)).
-  - Fixed text alignment for autosize fields, fixing misaligned numbers in Nanaca Crash ([#18494](https://github.com/ruffle-rs/ruffle/pull/18494)).
+  - Fixed text alignment for autosize fields, fixing misaligned text in Nanaca Crash and Rogue Soul 2 ([#18494](https://github.com/ruffle-rs/ruffle/pull/18494)).
   - Improved the performance of rendering fonts by measuring them less ([#23862](https://github.com/ruffle-rs/ruffle/pull/23862)).
   - Made autosize bounds calculate lazily ([#18870](https://github.com/ruffle-rs/ruffle/pull/18870)).
   - Implemented glyph fallback for device fonts, matching Flash Player ([#20639](https://github.com/ruffle-rs/ruffle/pull/20639)).
@@ -136,6 +144,9 @@ A frequent topic on these blog posts, it turns out that _text rendering is hard_
 - [@cmdocmd](https://github.com/cmdocmd) added HTML `<img>` tag parsing/serialization ([#24802](https://github.com/ruffle-rs/ruffle/pull/24802)).
 - [@wsxarcher](https://github.com/wsxarcher) made it possible to load ttf/otf/ttc/otc files as default fonts in the extension ([#17668](https://github.com/ruffle-rs/ruffle/pull/17668)).
 - [@adrian17](https://github.com/adrian17) implemented a better text wrapping algorithm that supports CJK and parentheses ([#22730](https://github.com/ruffle-rs/ruffle/pull/22730)).
+
+<a href="/2026-10-23-stable-releases-and-everything-else/rogue-soul-2.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/rogue-soul-2.png" title="A screenshot of Rogue Soul 2" alt="A screenshot of Rogue Soul 2" style="max-height: 300px"></a>
+<a href="/2026-10-23-stable-releases-and-everything-else/transformice.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/transformice.png" title="A screenshot of Transformice" alt="A screenshot of Transformice" style="max-height: 300px"></a>
 
 ## Audio & Video
 We've had many bugs with sounds, especially older AVM1 games. Thankfully, we're significantly better than we were 2 years ago – no more sudden loud noises here!
@@ -169,6 +180,9 @@ Other notable improvements include:
 - [@kjarosh](https://github.com/kjarosh) made sure we flushed any draws before updating bitmap textures, fixing overlapping text in Robot Wants Kitty ([#19066](https://github.com/ruffle-rs/ruffle/pull/19066)).
 - [@cookie-s](https://github.com/cookie-s) partially implemented `DisplayObject.z`, making games like Hexagon playable ([#19405](https://github.com/ruffle-rs/ruffle/pull/19405)).
 - [@kjarosh](https://github.com/kjarosh) added a workaround for using blendmodes in masks, fixing many crashes such as in FlashThemes' content ([#23452](https://github.com/ruffle-rs/ruffle/pull/23452)).
+
+<a href="/2026-10-23-stable-releases-and-everything-else/fireboy-watergirl-2.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/fireboy-watergirl-2.png" title="A screenshot of Fireboy & Watergirl 2" alt="A screenshot of Fireboy & Watergirl 2" style="max-height: 300px"></a>
+<a href="/2026-10-23-stable-releases-and-everything-else/tim-credible.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/tim-credible.png" title="A screenshot of Tim Credible" alt="A screenshot of Tim Credible" style="max-height: 300px"></a>
 
 ## Desktop Application
 The desktop application has been getting a little love, with a focus on better RTL and CJK support. We're not entirely done yet, the IME support is still a work in progress, but it's certainly getting there!
@@ -222,6 +236,7 @@ Don't let the lack of specificity fool you, these fixes are just as important as
 - [@Lord-McSweeney](https://github.com/Lord-McSweeney) corrected the order that objects on `goto`'d frames are made, fixing games such as Road of the Dead or Wedding Trouble ([#22677](https://github.com/ruffle-rs/ruffle/pull/22677)).
 
 <a href="/2026-10-23-stable-releases-and-everything-else/ebf4.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/ebf4.png" title="Epic Battle Fantasy 4" alt="Epic Battle Fantasy 4" style="max-height: 300px"></a>
+<a href="/2026-10-23-stable-releases-and-everything-else/castle-cat-4.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/castle-cat-4.png" title="A screenshot of Castle Cat 4" alt="A screenshot of Castle Cat 4" style="max-height: 300px"></a>
 
 ## Test Framework
 We're extremely proud of our tests in Ruffle, with over 500 unit tests and over 4500 conformance tests (often consisting of dozens or hundreds of smaller tests). That's a 60% increase in tests since our last blog post!
