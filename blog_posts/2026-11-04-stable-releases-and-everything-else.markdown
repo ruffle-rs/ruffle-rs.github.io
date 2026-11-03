@@ -1,13 +1,13 @@
 ---
 title:  "Stable Releases, API, Text... and Everything Else!"
-date:   2026-10-23 21:00:00 +0100
+date:   2026-11-04 00:05:00 +0100
 author: Dinnerbone
 icon: /undraw/undraw_turn-back-time_rspn.svg
 images:
-  - /2026-10-23-stable-releases-and-everything-else/club_penguin_strokes.png
-  - /2026-10-23-stable-releases-and-everything-else/zombidle.png
+  - /2026-11-04-stable-releases-and-everything-else/club_penguin_strokes.png
+  - /2026-11-04-stable-releases-and-everything-else/zombidle.png
 videos:
-  - /2026-10-23-stable-releases-and-everything-else/sm63.mp4
+  - /2026-11-04-stable-releases-and-everything-else/sm63.mp4
 ---
 Well, we *said* we'd make these posts more often... it's been over two years since the last one!
 We'll come up with a poor excuse for our absence at the bottom of the post, but we're hoping that all these really cool changes will distract you from that!
@@ -74,7 +74,7 @@ The most notable fix here comes from [@relrelb](https://github.com/relrelb) in [
 which finally fixes the long standing issue in Super Mario 63 where the game is stuck on the final battle. 
 
 <video muted autoplay controls>
-    <source src="/2026-10-23-stable-releases-and-everything-else/sm63.mp4" type="video/mp4">
+    <source src="/2026-11-04-stable-releases-and-everything-else/sm63.mp4" type="video/mp4">
 </video>
 
 Other notable changes include:
@@ -91,8 +91,8 @@ Other notable changes include:
 - [@kjarosh](https://github.com/kjarosh) fixed a crash when removing objects ([#19462](https://github.com/ruffle-rs/ruffle/pull/19462)).
 - [@Toad06](https://github.com/Toad06) fixed the unloading of button's children, fixing looping sound effects in Escaping the Prison and a regression in Pestilence Z ([#18520](https://github.com/ruffle-rs/ruffle/pull/18520)).
 
-<a href="/2026-10-23-stable-releases-and-everything-else/super-sub-hero.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/super-sub-hero.png" title="A screenshot of Super Sub Hero" alt="A screenshot of Super Sub Hero" style="max-height: 300px"></a>
-<a href="/2026-10-23-stable-releases-and-everything-else/ben-10.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/ben-10.png" title="A screenshot of Ben 10: To The Rescue" alt="A screenshot of Ben 10: To The Rescue" style="max-height: 300px"></a>
+<a href="/2026-11-04-stable-releases-and-everything-else/super-sub-hero.png" target="_blank"><img src="/2026-11-04-stable-releases-and-everything-else/super-sub-hero.png" title="A screenshot of Super Sub Hero" alt="A screenshot of Super Sub Hero" style="max-height: 300px"></a>
+<a href="/2026-11-04-stable-releases-and-everything-else/ben-10.png" target="_blank"><img src="/2026-11-04-stable-releases-and-everything-else/ben-10.png" title="A screenshot of Ben 10: To The Rescue" alt="A screenshot of Ben 10: To The Rescue" style="max-height: 300px"></a>
 
 ## AVM2 (ActionScript 3)
 We've come a very long way since the early days when we had the infamous "ActionScript 3 is not yet supported" screen. You've been able to play almost any game in Ruffle with little issues for a while now, which is super cool!
@@ -100,18 +100,18 @@ We've come a very long way since the early days when we had the infamous "Action
 However, as we've been focusing heavily on "getting it working correctly", we certainly are not as _fast_ as Flash Player was, it's true.
 Our philosophy has always been to make things correct, add _all_ the tests we can possibly think of, and then use those tests to make sure that any optimizations we do are correct and stable.
 
-All that said - the fantastic [@Lord-McSweeney](https://github.com/Lord-McSweeney) has been hard at work improving the performance of AVM2 content in Ruffle, and it's coming along great!
+All that said - the fantastic [@Lord-McSweeney](https://github.com/Lord-McSweeney) has been hard at work improving the performance of AVM2 content in Ruffle, almost all of which also bring some bonus bug fixes:
+- Preallocate stack sizes and improved the verifier/optimizer ([#17140](https://github.com/ruffle-rs/ruffle/pull/17140)).
+- Rewrote the optimizer with proper state merging ([#19884](https://github.com/ruffle-rs/ruffle/pull/19884)).
+- Added peephole passes to the optimizer ([#20202](https://github.com/ruffle-rs/ruffle/pull/20202)).
+- Fewer allocations on method calls ([#19946](https://github.com/ruffle-rs/ruffle/pull/19946)).
+- Faster native calls (built in methods) ([#20328](https://github.com/ruffle-rs/ruffle/pull/20328)).
+- Vector indexing improvements, which fixed one version of Run 2 ([#20565](https://github.com/ruffle-rs/ruffle/pull/20565)).
+- Use stack slices for activations, speeding up stack access ([#20829](https://github.com/ruffle-rs/ruffle/pull/20829)).
+- Removed `PrimitiveObject` ([#18995](https://github.com/ruffle-rs/ruffle/pull/18995)).
+- Better trait verification, fixing a black screen in Cardinal Quest ([#17119](https://github.com/ruffle-rs/ruffle/pull/17119)).
 
-- [@Lord-McSweeney](https://github.com/Lord-McSweeney) has made many improvements to the AVM2 performance, almost all of which also bring some bonus bug fixes:
-  - Preallocate stack sizes and improved the verifier/optimizer ([#17140](https://github.com/ruffle-rs/ruffle/pull/17140)).
-  - Rewrote the optimizer with proper state merging ([#19884](https://github.com/ruffle-rs/ruffle/pull/19884)).
-  - Added peephole passes to the optimizer ([#20202](https://github.com/ruffle-rs/ruffle/pull/20202)).
-  - Fewer allocations on method calls ([#19946](https://github.com/ruffle-rs/ruffle/pull/19946)).
-  - Faster native calls (built in methods) ([#20328](https://github.com/ruffle-rs/ruffle/pull/20328)).
-  - Vector indexing improvements, which fixed one version of Run 2 ([#20565](https://github.com/ruffle-rs/ruffle/pull/20565)).
-  - Use stack slices for activations, speeding up stack access ([#20829](https://github.com/ruffle-rs/ruffle/pull/20829)).
-  - Removed `PrimitiveObject` ([#18995](https://github.com/ruffle-rs/ruffle/pull/18995)).
-  - Better trait verification, fixing a black screen in Cardinal Quest ([#17119](https://github.com/ruffle-rs/ruffle/pull/17119)).
+We've also been working on general fixes and improvements, for example:
 - [@Lord-McSweeney](https://github.com/Lord-McSweeney) made `Dictionary` match Flash's "JIT mode" behaviour for `QName` keys, fixing a black screen in Typing Maniac ([#24890](https://github.com/ruffle-rs/ruffle/pull/24890)).
 - [@Lord-McSweeney](https://github.com/Lord-McSweeney) fixed the serialization of `Dictionary`, fixing save games in Reactance 2 and Muse Quest ([#21428](https://github.com/ruffle-rs/ruffle/pull/21428)).
 - [@Lord-McSweeney](https://github.com/Lord-McSweeney) fixed the version of some `Context3D` methods, fixing Tamagotchi Friends: Dream Town, Zombidle and Mutant Fighting Cup 2 ([#22077](https://github.com/ruffle-rs/ruffle/pull/22077)).
@@ -124,9 +124,9 @@ All that said - the fantastic [@Lord-McSweeney](https://github.com/Lord-McSweene
 - [@adrian17](https://github.com/adrian17) fixed a crash with using null ratios in `Graphics`'s gradient APIs ([#18699](https://github.com/ruffle-rs/ruffle/pull/18699)).
 - [@evilpie](https://github.com/evilpie) implemented `BitmapData.histogram`, fixing BoxHead: The Nightmare ([#18075](https://github.com/ruffle-rs/ruffle/pull/18075)).
 
-<a href="/2026-10-23-stable-releases-and-everything-else/typing_maniac.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/typing_maniac.png" title="A screenshot of Typing Maniac" alt="A screenshot of Typing Maniac" style="max-height: 300px"></a>
-<a href="/2026-10-23-stable-releases-and-everything-else/zombidle.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/zombidle.png" title="A screenshot of Zombidle" alt="A screenshot of Zombidle" style="max-height: 300px"></a>
-<a href="/2026-10-23-stable-releases-and-everything-else/enchanted-cave-2.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/enchanted-cave-2.png" title="A screenshot of The Enchanted Cave 2" alt="A screenshot of The Enchanted Cave 2" style="max-height: 300px"></a>
+<a href="/2026-11-04-stable-releases-and-everything-else/typing_maniac.png" target="_blank"><img src="/2026-11-04-stable-releases-and-everything-else/typing_maniac.png" title="A screenshot of Typing Maniac" alt="A screenshot of Typing Maniac" style="max-height: 300px"></a>
+<a href="/2026-11-04-stable-releases-and-everything-else/zombidle.png" target="_blank"><img src="/2026-11-04-stable-releases-and-everything-else/zombidle.png" title="A screenshot of Zombidle" alt="A screenshot of Zombidle" style="max-height: 300px"></a>
+<a href="/2026-11-04-stable-releases-and-everything-else/enchanted-cave-2.png" target="_blank"><img src="/2026-11-04-stable-releases-and-everything-else/enchanted-cave-2.png" title="A screenshot of The Enchanted Cave 2" alt="A screenshot of The Enchanted Cave 2" style="max-height: 300px"></a>
 
 ## Text Fields & Fonts
 A frequent topic on these blog posts, it turns out that _text rendering is hard_... Who knew!
@@ -147,8 +147,8 @@ A frequent topic on these blog posts, it turns out that _text rendering is hard_
 - [@wsxarcher](https://github.com/wsxarcher) made it possible to load ttf/otf/ttc/otc files as default fonts in the extension ([#17668](https://github.com/ruffle-rs/ruffle/pull/17668)).
 - [@adrian17](https://github.com/adrian17) implemented a better text wrapping algorithm that supports CJK and parentheses ([#22730](https://github.com/ruffle-rs/ruffle/pull/22730)).
 
-<a href="/2026-10-23-stable-releases-and-everything-else/rogue-soul-2.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/rogue-soul-2.png" title="A screenshot of Rogue Soul 2" alt="A screenshot of Rogue Soul 2" style="max-height: 300px"></a>
-<a href="/2026-10-23-stable-releases-and-everything-else/transformice.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/transformice.png" title="A screenshot of Transformice" alt="A screenshot of Transformice" style="max-height: 300px"></a>
+<a href="/2026-11-04-stable-releases-and-everything-else/rogue-soul-2.png" target="_blank"><img src="/2026-11-04-stable-releases-and-everything-else/rogue-soul-2.png" title="A screenshot of Rogue Soul 2" alt="A screenshot of Rogue Soul 2" style="max-height: 300px"></a>
+<a href="/2026-11-04-stable-releases-and-everything-else/transformice.png" target="_blank"><img src="/2026-11-04-stable-releases-and-everything-else/transformice.png" title="A screenshot of Transformice" alt="A screenshot of Transformice" style="max-height: 300px"></a>
 
 ## Audio & Video
 We've had many bugs with sounds, especially older AVM1 games. Thankfully, we're significantly better than we were 2 years ago – no more sudden loud noises here!
@@ -164,7 +164,7 @@ We've had many bugs with sounds, especially older AVM1 games. Thankfully, we're 
 It's hard to overstate how many improvements have been made to our rendering pipeline, but the biggest change of all has to be that we now finally support hairline and scaled strokes.
 Thanks to the hard work of [@darktohka](https://github.com/darktohka) in [#23011](https://github.com/ruffle-rs/ruffle/pull/23011), many games and movies now look true to how they did in Flash, and not just "crazy thick lines" all over the place. Hurrah!
 
-<a href="/2026-10-23-stable-releases-and-everything-else/club_penguin_strokes.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/club_penguin_strokes.png" title="Club Penguin before/after" alt="Club Penguin before/after" style="max-height: 300px"></a>
+<a href="/2026-11-04-stable-releases-and-everything-else/club_penguin_strokes.png" target="_blank"><img src="/2026-11-04-stable-releases-and-everything-else/club_penguin_strokes.png" title="Club Penguin before/after" alt="Club Penguin before/after" style="max-height: 300px"></a>
 
 Other notable improvements include:
 
@@ -183,8 +183,8 @@ Other notable improvements include:
 - [@cookie-s](https://github.com/cookie-s) partially implemented `DisplayObject.z`, making games like Hexagon playable ([#19405](https://github.com/ruffle-rs/ruffle/pull/19405)).
 - [@kjarosh](https://github.com/kjarosh) added a workaround for using blendmodes in masks, fixing many crashes such as in FlashThemes' content ([#23452](https://github.com/ruffle-rs/ruffle/pull/23452)).
 
-<a href="/2026-10-23-stable-releases-and-everything-else/fireboy-watergirl-2.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/fireboy-watergirl-2.png" title="A screenshot of Fireboy & Watergirl 2" alt="A screenshot of Fireboy & Watergirl 2" style="max-height: 300px"></a>
-<a href="/2026-10-23-stable-releases-and-everything-else/tim-credible.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/tim-credible.png" title="A screenshot of Tim Credible" alt="A screenshot of Tim Credible" style="max-height: 300px"></a>
+<a href="/2026-11-04-stable-releases-and-everything-else/fireboy-watergirl-2.png" target="_blank"><img src="/2026-11-04-stable-releases-and-everything-else/fireboy-watergirl-2.png" title="A screenshot of Fireboy & Watergirl 2" alt="A screenshot of Fireboy & Watergirl 2" style="max-height: 300px"></a>
+<a href="/2026-11-04-stable-releases-and-everything-else/tim-credible.png" target="_blank"><img src="/2026-11-04-stable-releases-and-everything-else/tim-credible.png" title="A screenshot of Tim Credible" alt="A screenshot of Tim Credible" style="max-height: 300px"></a>
 
 ## Desktop Application
 The desktop application has been getting a little love, with a focus on better RTL and CJK support. We're not entirely done yet, the IME support is still a work in progress, but it's certainly getting there!
@@ -198,7 +198,7 @@ The desktop application has been getting a little love, with a focus on better R
 - [@kjarosh](https://github.com/kjarosh) coalesced mouse move events on desktop for performance, fixing freezes in Club Penguin's Puffle Rescue ([#24881](https://github.com/ruffle-rs/ruffle/pull/24881)).
 - [@SuchAFuriousDeath](https://github.com/SuchAFuriousDeath) fixed a crash when saving files on macOS ([#22776](https://github.com/ruffle-rs/ruffle/pull/22776)).
 
-<a href="/2026-10-23-stable-releases-and-everything-else/bundle.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/bundle.png" title="Export Bundle dialog" alt="Export Bundle dialog" style="max-height: 300px"></a>
+<a href="/2026-11-04-stable-releases-and-everything-else/bundle.png" target="_blank"><img src="/2026-11-04-stable-releases-and-everything-else/bundle.png" title="Export Bundle dialog" alt="Export Bundle dialog" style="max-height: 300px"></a>
 
 ## Web & Extension
 Ruffle is used on so many websites now, including the [Wayback Machine](https://web.archive.org/) (does that count as us being on _every_ website?).
@@ -237,8 +237,8 @@ Don't let the lack of specificity fool you, these fixes are just as important as
 - [@Bale001](https://github.com/Bale001) allowed playing of frames beyond what the SWF header defined ([#21526](https://github.com/ruffle-rs/ruffle/pull/21526)).
 - [@Lord-McSweeney](https://github.com/Lord-McSweeney) corrected the order that objects on `goto`'d frames are made, fixing games such as Road of the Dead or Wedding Trouble ([#22677](https://github.com/ruffle-rs/ruffle/pull/22677)).
 
-<a href="/2026-10-23-stable-releases-and-everything-else/ebf4.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/ebf4.png" title="Epic Battle Fantasy 4" alt="Epic Battle Fantasy 4" style="max-height: 300px"></a>
-<a href="/2026-10-23-stable-releases-and-everything-else/castle-cat-4.png" target="_blank"><img src="/2026-10-23-stable-releases-and-everything-else/castle-cat-4.png" title="A screenshot of Castle Cat 4" alt="A screenshot of Castle Cat 4" style="max-height: 300px"></a>
+<a href="/2026-11-04-stable-releases-and-everything-else/ebf4.png" target="_blank"><img src="/2026-11-04-stable-releases-and-everything-else/ebf4.png" title="Epic Battle Fantasy 4" alt="Epic Battle Fantasy 4" style="max-height: 300px"></a>
+<a href="/2026-11-04-stable-releases-and-everything-else/castle-cat-4.png" target="_blank"><img src="/2026-11-04-stable-releases-and-everything-else/castle-cat-4.png" title="A screenshot of Castle Cat 4" alt="A screenshot of Castle Cat 4" style="max-height: 300px"></a>
 
 ## Test Framework
 We're extremely proud of our tests in Ruffle, with over 500 unit tests and over 4500 conformance tests (often consisting of dozens or hundreds of smaller tests). That's a 60% increase in tests since our last blog post!
