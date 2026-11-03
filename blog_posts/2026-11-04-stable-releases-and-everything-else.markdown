@@ -79,10 +79,6 @@ which finally fixes the long standing issue in Super Mario 63 where the game is 
 
 Other notable changes include:
 
-- [@dinnerbone](https://github.com/dinnerbone) introduced an AVM1 "playerglobal", laying the groundwork for moving our built-in functions to ActionScript ([#23730](https://github.com/ruffle-rs/ruffle/pull/23730)).
-- [@relrelb](https://github.com/relrelb) moved `Point` and `AsBroadcaster` from Rust to ActionScript ([#24873](https://github.com/ruffle-rs/ruffle/pull/24873), [#24736](https://github.com/ruffle-rs/ruffle/pull/24736)).
-- [@moulins](https://github.com/moulins) made a bunch of built-in classes resolve dynamically ([#24327](https://github.com/ruffle-rs/ruffle/pull/24327), [#24500](https://github.com/ruffle-rs/ruffle/pull/24500), [#24656](https://github.com/ruffle-rs/ruffle/pull/24656), [#24658](https://github.com/ruffle-rs/ruffle/pull/24658), [#24696](https://github.com/ruffle-rs/ruffle/pull/24696), [#24961](https://github.com/ruffle-rs/ruffle/pull/24961)).
-- [@moulins](https://github.com/moulins) migrated functions and `super` to `NativeObject`, finally killing off `TObject` ([#19936](https://github.com/ruffle-rs/ruffle/pull/19936), [#20204](https://github.com/ruffle-rs/ruffle/pull/20204)).
 - [@jarca0123](https://github.com/jarca0123) fixed the clip removal logic when rewinding, fixing bugs in Electricman 2, Ratman Ralph, Super Sub Hero and Pink Tac Toe ([#21336](https://github.com/ruffle-rs/ruffle/pull/21336)).
 - [@CUB3D](https://github.com/CUB3D) fixed the base clip path of functions, fixing a bug in Champion Archer ([#20861](https://github.com/ruffle-rs/ruffle/pull/20861)).
 - [@ste42](https://github.com/ste42) fixed timeline scope on target clip removing, fixing a bug in Achilles ([#20837](https://github.com/ruffle-rs/ruffle/pull/20837)).
@@ -90,6 +86,10 @@ Other notable changes include:
 - [@kjarosh](https://github.com/kjarosh) implemented `loadVariables` for non-movie-clip targets ([#19467](https://github.com/ruffle-rs/ruffle/pull/19467)).
 - [@kjarosh](https://github.com/kjarosh) fixed a crash when removing objects ([#19462](https://github.com/ruffle-rs/ruffle/pull/19462)).
 - [@Toad06](https://github.com/Toad06) fixed the unloading of button's children, fixing looping sound effects in Escaping the Prison and a regression in Pestilence Z ([#18520](https://github.com/ruffle-rs/ruffle/pull/18520)).
+- [@dinnerbone](https://github.com/dinnerbone) introduced an AVM1 "playerglobal", laying the groundwork for moving our built-in functions to ActionScript ([#23730](https://github.com/ruffle-rs/ruffle/pull/23730)).
+- [@relrelb](https://github.com/relrelb) moved `Point` and `AsBroadcaster` from Rust to ActionScript ([#24873](https://github.com/ruffle-rs/ruffle/pull/24873), [#24736](https://github.com/ruffle-rs/ruffle/pull/24736)).
+- [@moulins](https://github.com/moulins) made a bunch of built-in classes resolve dynamically ([#24327](https://github.com/ruffle-rs/ruffle/pull/24327), [#24500](https://github.com/ruffle-rs/ruffle/pull/24500), [#24656](https://github.com/ruffle-rs/ruffle/pull/24656), [#24658](https://github.com/ruffle-rs/ruffle/pull/24658), [#24696](https://github.com/ruffle-rs/ruffle/pull/24696), [#24961](https://github.com/ruffle-rs/ruffle/pull/24961)).
+- [@moulins](https://github.com/moulins) migrated functions and `super` to `NativeObject`, finally killing off `TObject` ([#19936](https://github.com/ruffle-rs/ruffle/pull/19936), [#20204](https://github.com/ruffle-rs/ruffle/pull/20204)).
 
 <a href="/2026-11-04-stable-releases-and-everything-else/super-sub-hero.png" target="_blank"><img src="/2026-11-04-stable-releases-and-everything-else/super-sub-hero.png" title="A screenshot of Super Sub Hero" alt="A screenshot of Super Sub Hero" style="max-height: 300px"></a>
 <a href="/2026-11-04-stable-releases-and-everything-else/ben-10.png" target="_blank"><img src="/2026-11-04-stable-releases-and-everything-else/ben-10.png" title="A screenshot of Ben 10: To The Rescue" alt="A screenshot of Ben 10: To The Rescue" style="max-height: 300px"></a>
