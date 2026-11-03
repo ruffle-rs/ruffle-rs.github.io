@@ -192,7 +192,7 @@ We've also surpassed over 1,000,000 active users on our Chrome extension alone, 
 - [@robinmiau](https://github.com/robinmiau) improved the context menu behaviour and styling ([#23535](https://github.com/ruffle-rs/ruffle/pull/23535)).
 - [@evilpie](https://github.com/evilpie) added support for mapping gamepad input on the web ([#18083](https://github.com/ruffle-rs/ruffle/pull/18083)).
 - [@kjarosh](https://github.com/kjarosh) added RTL support for context menus ([#19950](https://github.com/ruffle-rs/ruffle/pull/19950), [#19943](https://github.com/ruffle-rs/ruffle/pull/19943)).
-- [@danielhjacobs](https://github.com/danielhjacobs) removed script injection on all browsers except old Firefox ([#20255](https://github.com/ruffle-rs/ruffle/pull/20255)).
+- [@danielhjacobs](https://github.com/danielhjacobs) made the extension use content scripts on all browsers except old Firefox ([#20255](https://github.com/ruffle-rs/ruffle/pull/20255)).
 - [@kjarosh](https://github.com/kjarosh) fixed CORS issues with content trying to download from `fpdownload.adobe.com` ([#22168](https://github.com/ruffle-rs/ruffle/pull/22168)).
 - [@kjarosh](https://github.com/kjarosh) added URL rewriting to help preserve content that relies on broken or outdated links ([#18252](https://github.com/ruffle-rs/ruffle/pull/18252)).
 - [@kjarosh](https://github.com/kjarosh) made scrolling the mouse _not_ scroll the page when it scrolls AVM2 content ([#19029](https://github.com/ruffle-rs/ruffle/pull/19029)).
