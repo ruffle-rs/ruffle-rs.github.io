@@ -51,7 +51,7 @@ If you installed Ruffle onto your website through our recommended `<script src="
 If you want to stay on the bleeding edge, though, swap that to `<script src="https://unpkg.com/@ruffle-rs/ruffle@nightly"></script>` instead.
 
 ### Android App
-The Android app is technically a separate project and is not affected by the stable releases. If there's demand for this, we'll look into it - but we also want help maintaining it!
+The [Android app](https://github.com/ruffle-rs/ruffle-android) is technically a separate project and is not affected by the stable releases. If there's demand for this, we'll look into it - but we also want help maintaining it!
 
 Speaking of apps, [@madsmtm](https://github.com/madsmtm) has been working on an iOS app! It's still a work in progress but worth [checking out](https://github.com/madsmtm/ruffle-ios).
 
