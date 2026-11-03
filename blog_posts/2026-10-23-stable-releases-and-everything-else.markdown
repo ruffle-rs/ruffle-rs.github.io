@@ -18,9 +18,9 @@ Since the last blog post (over 2 years ago)...
 - ActionScript 3 API has gone up from 76% to **82%**!
 - ActionScript 1/2 Language has gone from 95% to **99%**!
 - ActionScript 1/2 API has gone up from 78% to **82%**!
-- We've merged **TODO** pull requests from **TODO** <del>people</del> users! (humans? bots? who's to say anymore!)
-- We've closed **TODO** issues!
-- We've added **TODO** new automated tests!
+- We've merged **2,329** pull requests from **92** <del>people</del> users! (humans? bots? who's to say anymore!)
+- We've closed **3,379** issues!
+- We've added **1,922** new automated tests!
 - The number of languages on [Crowdin](https://crowdin.com/project/ruffle) has gone from 25 to 37.
 
 ---
